@@ -1,0 +1,855 @@
+
+/* ==========================================
+   ESTRUCTURA GENERAL DE MODALES (Unificado)
+   ========================================== */
+
+/* 1. Fondo oscuro traslúcido */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* 2. Caja contenedora principal del modal */
+.modal-contenido {
+    background: #1a1818;
+    padding: 40px 20px 20px 20px; /* Espacio arriba para que la X no pise el contenido */
+    border-radius: 12px;
+    width: 92%;
+    max-width: 700px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+}
+
+/* 3. Botón de cerrar (La "X") en la esquina limpia */
+.modal-contenido .btn-cerrar,
+.modal-overlay .btn-cerrar {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    background:   rgb(236, 0, 0) !important;
+    color: #000000 !important;
+    border: 1px solid #444 !important;      /* Opcional: un borde sutil para que luzca como caja */
+    border-radius: 6px !important;          /* <-- CAMBIADO: De 50% (círculo) a 6px (cuadrado con esquinas redondeadas) */
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 1.1rem !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10 !important;
+    transition: background 0.2s ease, color 0.2s ease !important;
+     box-shadow: none !important; /* Quita sombras azules de selección */
+}
+
+.modal-contenido .btn-cerrar:hover,
+.modal-overlay .btn-cerrar:hover {
+    background: #ff4d4d !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================
+   ELEMENTOS INTERNOS DE LOS MODALES
+   ========================================== */
+
+/* Inputs y selects dentro del modal */
+.modal-contenido input, 
+.modal-contenido select {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.modal-contenido label {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Estructura de cuadrícula para modales de productos (ej. vista rápida) */
+.modal-body-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* --- TAMAÑO FIJO Y SEGURO PARA LA IMAGEN DEL MODAL DE PRODUCTO --- */
+img.img-modal-detalle {
+    width: 100% !important;
+    max-width: 250px !important;
+    height: 280px !important;
+    object-fit: contain !important;
+    background-color: #111 !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 0 auto 15px auto !important; /* Centrada y con espacio abajo */
+}
+
+.modal-info {
+    flex: 1;
+}
+
+/* Botón principal de acción dentro del modal (ej. carrito) */
+#modal-btn-comprar.btn-comprar {
+    background-color: #eeeeee !important;
+    color: #111111 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 15px 30px !important;
+    margin-top: 15px !important;
+    border-radius: 6px !important;
+    box-sizing: border-box !important;
+    font-size: 0.9rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#modal-btn-comprar.btn-comprar:hover {
+    background-color: #4d4d4d !important;
+}
+
+
+
+/* ========================================== */
+/* ESTILOS PARA EL PANEL Y BOTÓN DE FILTROS   */
+/* ========================================== */
+
+#panel-filtros-categoria {
+    margin: 20px 0;
+}
+
+/* Botón desplegable de filtros personalizado */
+#btn-toggle-filtros {
+    background: #ffffff;
+    color: #050505 ; /* Asegura que el texto general sea blanco */
+    border: 1px solid #444444;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    
+    /* MODIFICACIÓN DE ANCHO: Ya no ocupa el 100%, se adapta al contenido */
+    width: auto; 
+    min-width: 220px; /* Un ancho mínimo prudente para que se vea bien */
+    max-width: 100%;
+    
+    text-align: left;
+    font-weight: bold;
+    display: inline-flex; /* Cambiado a inline-flex para que no se estire de más */
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Espacio entre el texto y la flecha */
+    font-size: 0.95rem;
+    transition: background 0.3s ease, border-color 0.3s ease;
+
+   box-shadow: none !important;
+}
+
+#btn-toggle-filtros:hover {
+    background: #3a3a3a;
+    border-color: #666666;
+}
+
+/* Forzar que cualquier texto o span dentro del botón sea blanco y sin tonos azules */
+#btn-toggle-filtros span {
+    color: #000000 !important;
+}
+
+/* Contenedor interno de los selects */
+#caja-selects-filtros {
+    display: none; /* Inicialmente oculto por JS */
+    margin-top: 10px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333333;
+}
+
+/* Título dentro de la caja */
+#titulo-categoria-activa {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+/* Fila que contiene los selects */
+.filtros-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Grupo individual de cada select (Precio, Marca, Color) */
+.filtro-grupo {
+    flex: 1;
+    min-width: 140px;
+}
+
+.filtro-grupo label {
+    color: #cccccc;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filtro-grupo select {
+    width: 100%;
+    background: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444444;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.filtro-grupo select:focus {
+    border-color: #888888;
+}
+
+/* ========================================================================== */
+/* 1. ESTILOS GENERALES PARA LAS TARJETAS DE PRODUCTOS (TODOS LOS CONTENEDORES) */
+/* ========================================================================== */
+
+/* Aplica a cualquier contenedor de productos que empiece por id="contenedor-" */
+[id^="contenedor-"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 8px !important;
+    margin: 0 !important;
+}
+
+[id^="contenedor-"] article {
+    width: calc(50% - 5px) !important;
+    margin: 0 0 12px 0 !important;
+    padding: 10px !important;
+    background: #141414 !important;
+    border: 1px solid #2a2a2a !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* Ocultar elementos sobrantes de la plantilla */
+[id^="contenedor-"] article:before,
+[id^="contenedor-"] article:after {
+    display: none !important;
+}
+
+/* Imagen dentro de la tarjeta */
+[id^="contenedor-"] article .image {
+    height: 140px !important;
+    margin-bottom: 8px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #1a1a1a !important;
+    border-radius: 6px !important;
+}
+
+[id^="contenedor-"] article .image img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: contain !important;
+}
+
+/* Textos de la tarjeta */
+[id^="contenedor-"] article h3,
+[id^="contenedor-"] article h2,
+[id^="contenedor-"] article .titulo-producto {
+    font-size: 0.85rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+}
+
+[id^="contenedor-"] article p,
+[id^="contenedor-"] article .precio-container {
+    font-size: 0.75rem !important;
+    margin-bottom: 8px !important;
+}
+
+
+/* ========================================================================== */
+/* 2. ESTILO DEFINITIVO PARA EL BOTÓN DE COMPRA (AGREGAR AL CARRITO) */
+/* ========================================================================== */
+
+[id^="contenedor-"] article .btn-comprar,
+[id^="contenedor-"] article button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    background-color: #ffffff !important; 
+    color: #000000 !important;            
+    font-size: 0.7rem !important; 
+    padding: 6px 4px !important;  
+    border-radius: 4px !important; 
+    border: none !important; 
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-align: center !important;
+    line-height: 1.1 !important;
+    gap: 4px !important;
+    margin-top: 8px !important;
+    box-shadow: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+[id^="contenedor-"] article .btn-comprar:hover,
+[id^="contenedor-"] article button:hover {
+    background-color: #fa4545 !important;
+    color: #ffffff !important;
+    border: 1px solid #fa4545 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transform: translateY(-2px);
+}
+
+/* css del contador de carrito para que aparezca cuantos productos llevamos  */
+.cart-badge {
+    position: absolute;
+    top: -8px;    /* Lo sube hacia la esquina superior */
+    right: -8px;  /* Lo mueve hacia la esquina derecha */
+    
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    
+    padding: 2px 6px;
+    font-size: 11px;
+    font-weight: bold;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+}
+
+/* ========================================================================== */
+/* 3. COMPORTAMIENTO DE CARRUSEL HORIZONTAL (SOLO EN EL INICIO) */
+/* ========================================================================== */
+
+.pagina-inicio .carrusel-productos-container [id^="contenedor-"] {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 15px !important;
+    padding: 0 5px !important;
+    justify-content: flex-start !important;
+    width: max-content !important;
+}
+
+.pagina-inicio .carrusel-productos-container [id^="contenedor-"] article {
+    min-width: 230px !important;
+    max-width: 230px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: start !important;
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* ========================================== */
+/* CONFIGURACION DE COMO SE VEN LOS PRECIOS
+   Estilo general del contenedor de precios   */
+/* ========================================== */
+
+.precio-producto {
+    font-weight: bold;
+}
+
+/* Tamaño grande para el precio normal cuando NO hay oferta */
+.precio-producto .precio-normal {
+    font-size: 1.25rem; 
+    color: #fff; /* O el color que prefieras para tus precios */
+}
+
+/* Tamaño y estilo para el precio en oferta */
+.precio-producto .precio-oferta {
+    font-size: 1.25rem;
+    color: #ffffff; /* Rojo destacado */
+}
+
+/* Mantener más pequeño el precio tachado de las ofertas */
+.precio-producto .precio-tachado {
+   text-decoration: line-through;
+    font-size: 0.95rem;
+    font-weight: normal;
+    color: #888;
+}
+/* ETIQUETA DEL PORCENTAJE DE  DESCUENTO EN LAS IMAGENES */
+
+.image {
+    position: relative; /* Obligatorio para que la etiqueta se ubique bien dentro de la caja de la imagen */
+}
+
+.badge-descuento {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4757; /* Color rojo llamativo de oferta */
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 2; /* Para asegurarnos de que quede por encima de la foto */
+}
+
+/* ========================================== */
+/* ESTILOS PARA EL BOTON DE RESPIRAR FUERTE  */
+/* ========================================== */
+
+
+/* Estilo base y animación de "respiración" para el botón Ver Más ofertas */
+.btn-respirar-fuerte {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c) !important; /* Color degradado (puedes cambiarlo) */
+    color: #ffffff !important; /* Texto blanco obligado */
+    padding: 14px 28px !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4) !important;
+    animation: latido 2s infinite ease-in-out !important;
+    border: none !important;
+}
+/* Efecto al pasar el mouse por encima */
+.btn-respirar:hover {
+    transform: scale(1.05);
+    animation: none; /* Se detiene la respiración al tocarlo para que responda fluido */
+}
+
+/* Animación de respiración forzada para asegurar que funcione */
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-respirar-fuerte {
+    animation: latido 2s infinite ease-in-out !important;
+    display: inline-block !important;
+}
+
+/* --- IGUALAR TAMAÑO DE LOS BOTONES "VER MÁS" --- */
+.btn-respirar-fuerte {
+    display: inline-block !important;
+    width: 280px !important;    /* Todos los botones medirán 280px de ancho */
+    max-width: 90% !important;  /* Por si la pantalla es muy pequeña */
+    text-align: center !important;
+    box-sizing: border-box !important;
+    padding: 12px 20px !important;
+    font-size: 0.9rem !important;
+    white-space: normal !important; /* Permite que el texto salte de línea si es necesario */
+    line-height: 1.2 !important;
+}
+
+/* ==========================================
+ ==========================================
+           AJUSTES PARA EL CARRITO HTML 
+    ==========================================
+   ========================================== */
+
+/* ==========================================
+   CARRITO DE COMPRAS - ESTILOS UNIFICADOS
+   ========================================== */
+
+/* 1. Tarjeta individual de cada producto en el carrito */
+.carrito-item-card {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 15px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.carrito-item-card img {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    border: 1px solid #444 !important;
+}
+
+.carrito-info-controls {
+    flex-grow: 1 !important;
+}
+
+/* Textos dentro de la tarjeta */
+.carrito-item-card h4 {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    margin: 0 0 5px 0 !important;
+}
+
+.carrito-item-card p {
+    color: #ffffff !important;
+    font-size: 0.9rem !important;
+    margin: 0 0 5px 0 !important;
+}
+
+/* ==========================================
+     2. CONTROLES DE CANTIDAD (+ y -) 
+   ========================================== */
+
+.carrito-botones-cantidad, 
+.control-cantidad {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-top: 8px !important;
+}
+
+/* Estilo unificado para los botones de sumar y restar (Cuadrados perfectos) */
+.btn-cantidad, 
+.btn-sumar, 
+.btn-restar {
+    width: 36px !important;       /* Ancho fijo exacto */
+    height: 36px !important;      /* Alto fijo exacto */
+    padding: 0 !important;        
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    border: 1px solid #555 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+    background-color: #000000 !important;
+    transition: background 0.2s !important;
+}
+
+.btn-restar:hover, .carrito-botones-cantidad .btn-cantidad:first-child:hover {
+    background-color: #c9302c !important; /* Rojo al pasar el mouse por restar */
+}
+
+.btn-sumar:hover, .carrito-botones-cantidad .btn-cantidad:last-child:hover {
+    background-color: #449d44 !important; /* Verde al pasar el mouse por sumar */
+}
+
+/* Número de la cantidad en el medio */
+.carrito-botones-cantidad span, 
+.numero-cantidad {
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    min-width: 25px !important;
+    text-align: center !important;
+}
+
+/* =====================================================================
+   3.CONTENEDOR DERECHO Y BOTONES DE ACCION (EDITAR ✏️ Y ELIMINAR 🗑️)
+   ===================================================================== */
+
+/* Fuerza a que la columna derecha mantenga orden y no se aplaste en móviles */
+.carrito-item-card div[style*="text-align: right"],
+.carrito-item-card .carrito-acciones-derecha {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Fila horizontal para que el lápiz y la papelera queden bien alineados uno al lado del otro */
+.carrito-item-card div[style*="text-align: right"] > div:first-child {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 6px !important;
+}
+
+/* Tamaños simétricos para los botones de editar y eliminar */
+.btn-editar, 
+.btn-eliminar {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+   font-size: 1.35rem !important;          /* <-- Aumentado de 1.1rem a 1.35rem para que sea más grande */
+    font-weight: bold !important;          /* <-- Opcional: Le da un toque más marcado */
+    outline: none !important;
+    box-shadow: none !important;
+    transition: transform 0.2s, background 0.2s !important;
+}
+
+.btn-editar {
+    background: rgba(255, 193, 7, 0.15) !important;
+    border: 1px solid #ffc107 !important;
+    color: #ffc107 !important;
+}
+
+.btn-editar:hover {
+    background-color: #ffc107 !important;
+    color: #000000 !important;
+    transform: scale(1.08) !important;
+}
+
+.btn-eliminar {
+    background: rgba(201, 48, 44, 0.15) !important;
+    border: 1px solid #c9302c !important;
+    color: #ff6b6b !important;
+}
+
+.btn-eliminar:hover {
+    background-color: #c9302c !important;
+    color: #ffffff !important;
+    transform: scale(1.08) !important;
+}
+
+/* =====================================================================
+    4. BOTONES DE ACCION PRINCIPALES (WHATSAPP / SEGUIR COMPRANDO)
+   ===================================================================== */
+.btn-comprar-wa, .btn-seguir {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;       /* Padding equilibrado para botones tipo caja */
+    border-radius: 6px !important;       /* <-- CAMBIADO: De 50px (pastilla) a 6px (cuadrado con esquinas suaves) */
+    font-size: 1em !important;
+    gap: 8px !important;
+    transition: 0.2s ease;
+    border: 1px solid #555 !important;   /* Borde sutil y limpio */
+    cursor: pointer;
+}
+
+/* --- botones de html de carrito para pedir por ws o seguir comprando --- */
+.btn-comprar-wa { background-color: #050404 !important; color: #ffffff !important; box-shadow: none !important; }
+.btn-seguir { background-color: #ffffff !important; color: #000000 !important; box-shadow: none !important;} /* Nota: Cambié el color de texto a blanco para que resalte bien en el fondo gris */
+
+.btn-comprar-wa:hover, .btn-seguir:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+/* ==========================================
+ ==========================================
+           FIN DE AJUSTES DE CARRITO HTML 
+    ==========================================
+   ========================================== */
+
+   /* ==========================================
+   ==============================================
+  CONFIGUARACIONES PARA BILLBOARDS Y CARRUSELES 
+   ==============================================
+   ============================================== */
+
+   1. CONFIGURACIÓN GLOBAL Y RESET DE LÍNEAS
+
+html, body {
+    overflow-x: hidden !important;
+}
+
+/* Eliminar líneas divisorias y decoraciones de cabeceras que ensucian el diseño */
+hr, 
+.major::after, 
+section > header.major::before,
+section > header.major::after {
+    display: none !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    height: 0 !important;
+}
+
+#contenedor-ofertas, 
+section {
+    border-top: none !important;
+}
+
+
+/* ==========================================================================
+   2. ESTRUCTURA DEL BILLBOARD / CARRUSEL PRINCIPAL
+   ========================================================================== */
+
+.billboard-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 12px !important;
+    margin-bottom: 30px !important;
+    background: #111 !important;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.billboard-container.oculto {
+    display: none !important;
+}
+
+.billboard-track {
+    display: flex !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+}
+
+.billboard-slide {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    aspect-ratio: 17/10 !important; /* estaba en 16/7 Más largo y menos alto en móviles */
+    height: auto !important;         
+    max-height: 310px !important; /*estaba a 200 para subirlo*/
+    scroll-snap-align: start !important;
+}
+
+.billboard-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 10px !important;
+    display: block !important;
+}
+
+
+/* ==========================================================================
+   3. CONTENIDO Y BOTONES DEL BILLBOARD
+   ========================================================================== */
+
+.billboard-content {
+    position: absolute !important;
+    bottom: 6px !important;
+    left: 6px !important;
+    right: 6px !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 4px 8px !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.billboard-content h2 {
+    color: #ffffff !important;
+    font-size: 0.75rem !important; 
+    margin: 0 !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+}
+
+.billboard-content .button {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+    padding: 5px 10px !important;
+    font-size: 0.75rem !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+.billboard-content .button:hover {
+    background-color: #222 !important;
+    border-color: #666 !important;
+}
+
+/* Clases de personalización extra */
+.billboard-titulo-personalizado {
+    font-size: 0.55rem !important;  
+    margin: 0 !important;
+    color: #ffffff !important;
+}
+
+.billboard-btn-personalizado {
+    font-size: 0.55rem !important;
+    padding: 4px 8px !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+/* ==========================================================================
+   4. CARRUSELES Y ESPACIADO GENERAL (SOLO PÁGINA DE INICIO)
+   ========================================================================== */
+
+.pagina-inicio .carrusel-productos-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+    margin-top: 10px;
+}
+
+.pagina-inicio .carrusel-productos-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Compactar espacio vertical entre secciones */
+#seccion-ver-mas, 
+div[style*="text-align: center"] {
+    margin: 10px 0 20px 0 !important;
+}
+
+section {
+    padding-bottom: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+section header.major {
+    margin-bottom: 15px !important;
+}
+
+
+/* ==========================================================================
+   5. MEDIA QUERIES (PANTALLAS GRANDES / TABLET / PC)
+   ========================================================================== */
+
+@media screen and (min-width: 768px) {
+    .billboard-content h2 {
+        font-size: 1.2rem !important;
+    }
+}
+ /* ====================================================
+   =====================================================
+   FIN DE CONFIGUARACIONES PARA BILLBOARDS Y CARRUSELES 
+   =====================================================
+   ===================================================== */
+
+

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Carrito de Compras - Tienda</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/custom.css" />
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Main -->
+                    <div id="main">
+                        <div class="inner">
+
+                            <!-- Header -->
+                                 <header id="header">
+    <a href="index.html" class="logo"><strong>Licorería</strong> El Barril</a>
+    <ul class="icons">
+        <!-- Reemplaza el link de abajo con el de tu Instagram -->
+        <li><a href="https://www.instagram.com/blledd.21/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <!-- Reemplaza el número con el formato internacional sin el + -->
+        <li><a href="https://wa.me/584249081574" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+    </ul>
+</header>
+
+                            <!-- Sección del Carrito -->
+                                <section>
+                                    <header class="major">
+                                        <h2>🛒 Tu Carrito de Compras</h2>
+                                    </header>
+
+                                    <!-- Aquí se pintarán dinámicamente los productos con JavaScript -->
+                                    <div id="tabla-carrito-container">
+                                        <p>Tu carrito está vacío actualmente.</p>
+                                    </div>
+
+                                    <hr />
+
+                                    <!-- Acciones del Carrito -->                       
+                                 <div class="actions" style="margin-top: 2em; display: flex; gap: 15px;">
+                                        <button onclick="finalizarCompraWhatsApp('5804249081574')" class="btn-comprar-wa">Pedir por WhatsApp 📱</button>
+                                        <a href="index.html" class="btn-seguir">Seguir comprando</a>
+                                    </div>  
+                                </section>
+
+                        </div>
+                    </div>
+
+                <!-- Sidebar (El mismo menú lateral de tus otras páginas) -->
+                    <div id="sidebar">
+                        <div class="inner">
+                            <nav id="menu">
+                                <header class="major">
+                                    <h2>Menú</h2>
+                                </header>
+                                <ul>
+        <li><a href="index.html">Inicio / Todo</a></li>
+         <!-- Categoría CABALLERO -->
+        <li>
+            <span class="opener">Caballero 👔</span>
+            <ul>
+                <li><a href="index.html?cat=caballero-camisas">Camisas</a></li>
+                <li><a href="index.html?cat=caballero-zapatos">Zapatos</a></li>
+                <li><a href="index.html?cat=caballero-sueteres">Suéteres</a></li>
+                <li><a href="index.html?cat=caballero-accesorios">Accesorios</a></li>
+                <li><a href="index.html?cat=caballero">Ver todo Caballero</a></li>
+            </ul>
+        </li>
+
+        <!-- Categoría DAMA -->
+        <li>
+            <span class="opener">Dama 👗</span>
+            <ul>
+                <li><a href="index.html?cat=dama-camisas">Camisas / Blusas</a></li>
+                <li><a href="index.html?cat=dama-zapatos">Zapatos</a></li>
+                <li><a href="index.html?cat=dama-sueteres">Suéteres</a></li>
+                <li><a href="index.html?cat=dama-accesorios">Accesorios</a></li>
+                <li><a href="index.html?cat=dama">Ver todo Dama</a></li>
+            </ul>
+        </li>
+
+        <!-- Otras Categorías -->
+        <li>
+            <span class="opener">Licores y Bebidas</span>
+            <ul>
+                <li><a href="index.html?cat=ofertas">🔥 Ofertas y Combos</a></li>
+                <li><a href="index.html?cat=rones">Rones</a></li>
+                <li><a href="index.html?cat=whiskeys">Whiskeys</a></li>
+                <li><a href="index.html?cat=cervezas">Cervezas</a></li>
+                <li><a href="index.html?cat=vinos">Vinos</a></li>
+                <li><a href="index.html?cat=licores">📦 Ver todo Licores</a></li>
+            </ul>
+        </li>
+
+        <li><a href="carrito.html">Ver Carrito 🛒</a></li>
+    </ul>
+                                                        <!-- Section: Contacto Rápido -->
+                               <section>
+    <header class="major">
+        <h2>Contacto Directo</h2>
+    </header>
+    <p>¿Tienes dudas? Escríbenos y te asesoramos al instante.</p>
+    <ul class="contact">
+        <!-- Correo -->
+        <li class="icon solid fa-envelope">
+            <a href="mailto:ventas@licoleria.com">ventas@licoleria.com</a>
+        </li>
+        <!-- Teléfono que abre WhatsApp -->
+        <li class="icon solid fa-phone">
+            <a href="https://wa.me/584249081574" target="_blank">+58 (424) 9081574</a>
+        </li>
+        <!-- Dirección que abre Google Maps -->
+        <li class="icon solid fa-home">
+            <a href="https://maps.app.goo.gl/TU_ENLACE_AQUI" target="_blank">
+                Local Comercial, Av. Principal, Venezuela
+            </a>
+        </li>
+    </ul>
+</section>
+                                
+                            <!-- Footer -->
+                                <footer id="footer">
+                                    <p class="copyright">&copy; Licorería El Barril. Todos los derechos reservados.</p>
+                                </footer>
+
+                        </div>
+                    </div>
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/productos.js"></script>
+            <script src="assets/js/render.js"></script>
+            <script src="assets/js/carrito.js"></script>
+            
+            <!-- Script específico para pintar el carrito en esta página -->
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    renderizarCarritoVisual();
+                });
+            </script>
+
+       <!-- VENTANA MODAL PARA DATOS DE WHATSAPP -->
+            <div id="modal-whatsapp" class="modal-overlay" style="display: none;">
+                <div class="modal-contenido">
+                    <button id="cerrar-modal-wsp" class="btn-cerrar">&times;</button>
+                    <h3 style="text-align: center; color: #fff; margin-bottom: 20px;">📦 Finalizar Pedido</h3>
+                    
+                    <form id="form-whatsapp-datos">
+                        <div>
+                            <label>Nombre y Apellido:</label>
+                            <input type="text" id="wsp-nombre" required placeholder="Ej. Carlos Pérez">
+                        </div>
+                        
+                        <div>
+                            <label>Sucursal de preferencia:</label>
+                            <select id="wsp-sucursal">
+                                <option value="Puerto Ordaz - villa colombia">📍 Puerto Ordaz - villa colombia</option>
+                                <option value="Puerto Ordaz - Alta Vista">📍 Puerto Ordaz - Alta Vista</option>
+                                <option value="puerto ordaz- unare">📍 Puerto Ordaz - unare</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Tipo de Entrega:</label>
+                            <select id="wsp-entrega" onchange="actualizarOpcionesEntrega()">
+                                <option value="Delivery">🛵 Delivery a domicilio</option>
+                                <option value="Retirar en Tienda">📦 Retirar en tienda física</option>
+                            </select>
+                        </div>
+
+                        <div id="aviso-delivery" style="background: #2d3b26; padding: 10px; border-radius: 5px; font-size: 0.85rem; color: #a8d08d; margin-bottom: 15px;">
+                            ℹ️ El delivery tiene un costo extra según la zona.
+                        </div>
+
+                        <div id="contenedor-zona">
+                            <label>Zona / Sector:</label>
+                            <input type="text" id="wsp-zona" required placeholder="Ej. Alta Vista, Unare, Centro...">
+                        </div>
+
+                        <div>
+                            <label>Método de Pago:</label>
+                            <select id="wsp-pago">
+                                <option value="Efectivo USD">💵 Efectivo USD</option>
+                                <option value="Pago Móvil">📱 Pago Móvil (Bs)</option>
+                                <option value="Zelle">💳 Zelle</option>
+                                <option value="Binance (USDT)">🪙 Binance (USDT)</option>
+                                <option id="opcion-punto-venta" value="Punto de Venta">💳 POS - Punto de Venta (Solo en Tienda)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn-enviar-wsp">Enviar Pedido a WhatsApp 📱</button>
+                    </form>
+                </div>
+            </div>
+
+        </div> <!-- Fin del Wrapper -->
+
+     <!-- VENTANA MODAL DE DETALLES -->
+<div id="modal-producto" class="modal-overlay" style="display: none;">
+    <div class="modal-contenido">
+        <button id="cerrar-modal" class="btn-cerrar">&times;</button>
+        <div class="modal-body-grid">
+            <!-- Sección de Galería de Imágenes -->
+            <div class="modal-galeria">
+                <div class="modal-imagen-principal">
+                   <img id="modal-img" class="img-modal-detalle" src="" alt="Producto" />
+                </div>
+                <!-- Contenedor para las miniaturas de otras fotos -->
+                <div id="modal-miniaturas" class="modal-miniaturas-container" style="display: flex; gap: 8px; margin-top: 10px; overflow-x: auto;">
+                    <!-- Las miniaturas adicionales se inyectarán aquí por JavaScript -->
+                </div>
+            </div>
+            <!-- Sección de Información -->
+            <div class="modal-info">
+                <h2 id="modal-titulo"></h2>
+                <p id="modal-descripcion"></p>
+                <ul id="modal-detalles"></ul>
+                <p id="modal-precio" class="precio-producto"></p>
+                
+                <!-- Aquí es donde el render.js inyectará dinámicamente los selectores de Talla y Color -->
+                
+                <ul class="actions">
+                    <li><button id="modal-btn-comprar" class="btn-comprar">Agregar 🛒</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>

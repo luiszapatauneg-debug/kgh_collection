@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de Pedido - Tienda</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .factura-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #1a1818;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .factura-header {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .factura-header h2 {
+            margin: 0 0 5px 0;
+            color: #ffffff;
+        }
+
+        .factura-header p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .cliente-info {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+        }
+
+        .cliente-info p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+
+        .cliente-info strong {
+            color: #fff;
+        }
+
+        /* Tarjeta de producto de solo lectura */
+        .factura-item-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .factura-item-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background-color: #111;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .factura-item-card img:hover {
+            transform: scale(1.05);
+            border-color: #ffc107;
+        }
+
+        .factura-item-info {
+            flex-grow: 1;
+        }
+
+        .factura-item-info h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+        }
+
+        .factura-item-info p {
+            color: #ccc;
+            font-size: 0.85rem;
+            margin: 0 0 4px 0;
+        }
+
+        .factura-item-subtotal {
+            text-align: right;
+        }
+
+        .factura-item-subtotal p {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        .factura-total {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffffff;
+            border-top: 2px solid #444;
+            padding-top: 15px;
+        }
+
+        .error-mensaje {
+            text-align: center;
+            padding: 40px;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+        }
+
+        /* --- MODAL PARA AMPLIAR IMAGEN --- */
+        #modal-zoom {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #modal-zoom img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            border: 2px solid #444;
+            object-fit: contain;
+        }
+
+        #modal-zoom span {
+            color: #fff;
+            margin-top: 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: #333;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="factura-container" id="factura-contenedor">
+        <p style="text-align: center; color: #aaa;">Cargando detalles del pedido...</p>
+    </div>
+
+    <!-- Modal para ver la foto en grande -->
+    <div id="modal-zoom" onclick="cerrarZoom()">
+        <img id="img-ampliada" src="" alt="Vista ampliada">
+        <span>Cerrar ✕</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/productos.js"></script>
+    <script src="assets/js/carrusel_pc.js"></script>
+    <script src="assets/js/render.js"></script>
+    <script src="assets/js/filtros.js"></script>
+    <script src="assets/js/buscador.js"></script>
+    <script src="assets/js/carrito.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const dataParam = params.get('data'); // <--- Leemos el parámetro 'data' del enlace
+
+            const contenedor = document.getElementById('factura-contenedor');
+
+            if (!dataParam) {
+                contenedor.innerHTML = `<div class="error-mensaje">❌ No se encontró información del pedido en el enlace.</div>`;
+                return;
+            }
+
+            try {
+                // Decodificamos el JSON que viene viajando por la URL
+                const jsonString = decodeURIComponent(dataParam);
+                const pedido = JSON.parse(jsonString);
+                
+                const listaProductos = typeof productosData !== 'undefined' ? productosData : (typeof productos !== 'undefined' ? productos : []);
+
+                let html = `
+                    <div class="factura-header">
+                        <h2>📋 Orden de Pedido</h2>
+                        <p>Fecha: ${pedido.fecha || 'N/A'}</p>
+                    </div>
+
+                    <div class="cliente-info">
+                        <p>📍 <strong>Sucursal:</strong> ${pedido.sucursal}</p>
+                        <p>👤 <strong>Cliente:</strong> ${pedido.cliente}</p>
+                        <p>🚚 <strong>Método de Entrega:</strong> ${pedido.entrega}</p>
+                        ${pedido.entrega !== 'Retirar en Tienda' ? `<p>🏠 <strong>Zona / Sector:</strong> ${pedido.zona}</p>` : ''}
+                        <p>💳 <strong>Método de Pago:</strong> ${pedido.pago}</p>
+                    </div>
+
+                    <h3>Productos solicitados:</h3>
+                    <div class="factura-items-list">
+                `;
+
+                let totalGeneral = 0;
+
+                pedido.productos.forEach((item, index) => {
+                    let subtotal = item.precio * item.cantidad;
+                    totalGeneral += subtotal;
+
+                    // 1. Buscamos el producto en la lista maestra por ID o Nombre
+                    let productoOficial = listaProductos.find(p => p.id === item.id);
+                    
+                    if (!productoOficial && item.nombre) {
+                        productoOficial = listaProductos.find(p => p.nombre.trim().toLowerCase() === item.nombre.trim().toLowerCase());
+                    }
+                    
+                    // 2. Determinamos la imagen correcta
+                    let imagenRuta = 'images/default.jpg';
+                    if (item.imagen) {
+                        imagenRuta = item.imagen;
+                    } else if (productoOficial && productoOficial.imagen) {
+                        imagenRuta = productoOficial.imagen;
+                    }
+
+                    // 3. Blindaje total de la ruta para GitHub Pages
+                    let imagen = imagenRuta.trim().replace(/ /g, '%20');
+                    if (imagen.startsWith('./')) {
+                        imagen = imagen.substring(2);
+                    }
+                    
+                    if (!imagen.startsWith('http') && !imagen.startsWith('/')) {
+                        let pathArray = window.location.pathname.split('/');
+                        pathArray.pop(); 
+                        let basePath = pathArray.join('/');
+                        imagen = basePath + '/' + imagen;
+                    }
+
+                    let descripcion = productoOficial && productoOficial.descripcion ? productoOficial.descripcion : '';
+
+                    let variacionesHtml = '';
+                    if (item.talla && item.talla !== 'N/A') {
+                        variacionesHtml += `Talla: <strong>${item.talla}</strong> | `;
+                    }
+                    if (item.color && item.color !== 'N/A') {
+                        let colorLower = item.color.toLowerCase().trim();
+                        let mapaColores = {
+                            'blanco': '#ffffff', 'negro': '#000000', 'rojo': '#ff0000',
+                            'azul': '#0000ff', 'verde': '#008000', 'amarillo': '#ffff00',
+                            'gris': '#808080', 'morado': '#800080', 'naranja': '#ffa500',
+                            'rosado': '#ffc0cb', 'celeste': '#87ceeb'
+                        };
+                        let colorCss = mapaColores[colorLower] || item.color;
+                        let esBlanco = colorLower === 'blanco' || colorCss === '#ffffff' || colorCss === '#fff';
+                        let estiloBorde = esBlanco ? 'border: 1px solid #777;' : 'border: 1px solid transparent;';
+
+                        variacionesHtml += `Color: <span style="display:inline-block; width:12px; height:12px; background:${colorCss}; border-radius:50%; vertical-align:middle; ${estiloBorde} margin-right: 3px;"></span> ${item.color}`;
+                    }
+
+                    html += `
+                        <div class="factura-item-card">
+                            <img src="${imagen}" alt="${item.nombre}" onclick="ampliarImagen('${imagen}')" title="Haz clic para ver en grande">
+                            
+                            <div class="factura-item-info">
+                                <h4>${index + 1}. ${item.nombre}</h4>
+                                ${descripcion ? `<p>${descripcion}</p>` : ''}
+                                ${variacionesHtml ? `<p>${variacionesHtml}</p>` : ''}
+                                <p>Cantidad: <strong>x${item.cantidad}</strong> | Precio unitario: $${item.precio}</p>
+                            </div>
+
+                            <div class="factura-item-subtotal">
+                                <p>$${subtotal.toFixed(2)}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    </div>
+                    <div class="factura-total">
+                        Total General: $${totalGeneral.toFixed(2)} USD
+                    </div>
+                `;
+
+                contenedor.innerHTML = html;
+
+            } catch (error) {
+                console.error(error);
+                contenedor.innerHTML = `<div class="error-mensaje">⚠️ Hubo un error al leer los datos de la orden. El enlace podría estar dañado.</div>`;
+            }
+        });
+
+        // Funciones para abrir y cerrar el zoom de la imagen
+        function ampliarImagen(urlImagen) {
+            const modalZoom = document.getElementById('modal-zoom');
+            const imgAmpliada = document.getElementById('img-ampliada');
+            imgAmpliada.src = urlImagen;
+            modalZoom.style.display = 'flex';
+        }
+
+        function cerrarZoom() {
+            const modalZoom = document.getElementById('modal-zoom');
+            modalZoom.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
