@@ -35,12 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Diccionario de títulos para la tienda
     const nombresCategorias = {
-        "rones": "🍾 Rones y Bebidas",
-        "cervezas": "🍻 Cervezas",
-        "vinos": "🍷 Vinos",
-        "whiskeys": "🥃 Whiskeys",
         "camisas": "👕 Camisas y Ropa",
-        "licores": "📦 Catálogo de Licores",
         "caballero": "👔 Catálogo para Caballero",
         "caballero-camisas": "👔 Camisas de Caballero",
         "caballero-zapatos": "👞 Zapatos de Caballero",
@@ -53,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         "dama-sueteres": "🧥 Suéteres de Dama",
         "dama-accesorios": "👜 Accesorios de Dama",
         "dama-ofertas": "🔥 Ofertas Exclusivas para Dama",
-        "licores-ofertas": "🔥 Ofertas Destacadas de licores",
         "todos": "📦 Catálogo Completo"
     };
 
@@ -116,20 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- VISTA DE CATEGORÍA ESPECÍFICA ---
         const catLimpia = categoriaFiltro.toLowerCase().trim();
         let productosAMostrar = productosData;
-if (catLimpia === "ofertas") {
+
+        if (catLimpia === "ofertas") {
             productosAMostrar = productosData.filter(p => p.precioTachado || p.categoria === "ofertas");
         } else if (catLimpia === "todo" || catLimpia === "todos") {
             productosAMostrar = productosData;
-        } else if (catLimpia === "licores") {
-            // 🍾 Muestra TODOS los licores (rones, whiskeys, cervezas, vinos)
-            const licoresValidos = ["rones", "whiskeys", "cervezas", "vinos"];
-            productosAMostrar = productosData.filter(p => p.categoria && licoresValidos.includes(p.categoria.toLowerCase()));
-        } else if (catLimpia === "licores-ofertas") {
-            // 🔥 Muestra ÚNICAMENTE los licores que están en oferta
-            const licoresValidos = ["rones", "whiskeys", "cervezas", "vinos"];
-            productosAMostrar = productosData.filter(p => p.categoria && licoresValidos.includes(p.categoria.toLowerCase()) && (p.precioTachado || p.categoria === "ofertas"));
         } else {
-            // 🌟 NUEVO: Detecta si piden ofertas de una categoría (ej: "caballero-ofertas")
+            // 🌟 Detecta si piden ofertas de una categoría (ej: "caballero-ofertas") o categorías normales
             productosAMostrar = productosData.filter(p => {
                 if (!p.categoria) return false;
                 const catProd = p.categoria.toLowerCase();
@@ -154,11 +141,8 @@ if (catLimpia === "ofertas") {
             window.renderizarProductosEnContenedor('contenedor-ofertas', productosAMostrar);
         }
 
-    
     } else {
         // --- VISTA DE LA PÁGINA PRINCIPAL (HOME CON MÚLTIPLES CARRUSELES) ---
-        
-        // Asegurar que las secciones del Home estén visibles
         seccionesHome.forEach(sec => sec.style.display = 'block');
 
         // 1. Carrusel de Ofertas (Inicio)
