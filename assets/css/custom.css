@@ -358,6 +358,76 @@ img.img-modal-detalle {
 }
 
 /* ========================================================================== */
+/*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) */
+/* ========================================================================== */
+
+
+/* --- ESTILOS PARA EL CARRUSEL DE CATEGORÍAS DESTACADAS --- */
+.categorias-slider-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Estilo personalizado para la barra de desplazamiento horizontal */
+.categorias-slider-container::-webkit-scrollbar {
+    height: 6px;
+}
+.categorias-slider-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.categoria-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1b1b1b;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.categoria-card-img-wrapper {
+    position: relative;
+    height: 350px;
+}
+
+.categoria-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.categoria-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.categoria-card-title {
+    color: #fff;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+.categoria-card-footer {
+    padding: 15px;
+    text-align: center;
+    background: #151515;
+}
+
+/* ========================================================================== */
 /* 3. COMPORTAMIENTO DE CARRUSEL HORIZONTAL (SOLO EN EL INICIO) */
 /* ========================================================================== */
 

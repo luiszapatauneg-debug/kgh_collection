@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const billboard = document.getElementById('billboard-principal');
     const segundoBillboard = document.getElementById('billboard-segundo'); 
+    const seccionCategorias = document.getElementById('seccion-categorias-destacadas'); // 👈 Capturamos el nuevo carrusel
     const tituloSeccion = document.getElementById('titulo-seccion-principal') || document.querySelector('section > header.major > h2');
 
     // Leer qué categoría viene en la URL
@@ -70,13 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputBusqueda = document.getElementById('query');
         const hayBusquedaActiva = inputBusqueda && inputBusqueda.value.trim().length > 0;
 
-        // Si no hay texto en el buscador, no alteramos el Home en el inicio
         if (!hayBusquedaActiva && (!categoriaFiltro || categoriaFiltro === "todos")) {
             return;
         }
 
         if (billboard) billboard.style.display = 'none';
         if (segundoBillboard) segundoBillboard.style.display = 'none';
+        if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en búsqueda
         if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
         if (tituloSeccion) tituloSeccion.textContent = "🔍 Resultados de búsqueda";
 
@@ -90,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // VISTA PÁGINA PRINCIPAL (HOME)
         if (billboard) billboard.style.display = 'block';
         if (segundoBillboard) segundoBillboard.style.display = 'block';
+        if (seccionCategorias) seccionCategorias.style.setProperty('display', 'block', 'important'); // 👈 Se muestra en el Home
         if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'block', 'important');
         document.body.classList.add('pagina-inicio');
 
@@ -103,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // VISTA DE CATEGORÍA ESPECÍFICA
         if (billboard) billboard.style.display = 'none';
         if (segundoBillboard) segundoBillboard.style.display = 'none';
+        if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en categorías
         if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
         document.body.classList.remove('pagina-inicio');
 
@@ -163,7 +166,7 @@ function abrirModal(id) {
 
     let opcionesHTML = `<div id="selector-opciones-dinamico" style="margin: 15px 0;">`;
 
-    if (producto.tallas && producto.tallas.length > 0) {
+    if (producto.talla && producto.tallas.length > 0) {
         opcionesHTML += `
             <div style="margin-bottom:10px;">
                 <label><strong>Talla:</strong></label>
