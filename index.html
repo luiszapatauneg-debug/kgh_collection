@@ -6,7 +6,7 @@
 -->
 <html>
     <head>
-        <title>kgh collection| Catálogo Principal</title>
+        <title>kgh collection | Catálogo Principal</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
@@ -22,254 +22,197 @@
                         <div class="inner">
 
                             <!-- Header -->
-                               <header id="header">
-    <a href="index.html" class="logo"><strong>kgh</strong> collection </a>
-    <ul class="icons">
-        <!-- Reemplaza el link de abajo con el de tu Instagram -->
-        <li><a href="https://www.instagram.com/blledd.21/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        <!-- Reemplaza el número con el formato internacional sin el + -->
-        <li><a href="https://wa.me/584249081574" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-    </ul>
-</header>
+                            <header id="header">
+                                <a href="index.html" class="logo"><strong>kgh</strong> collection </a>
+                                <ul class="icons">
+                                    <li><a href="https://www.instagram.com/blledd.21/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="https://wa.me/584249081574" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+                                </ul>
+                            </header>
 
                             <!-- Carrito Flotante -->
                             <a href="carrito.html" class="btn-carrito-flotante">
                                 🛒 Ver Carrito
                                 <span id="contador-carrito-flotante" class="cart-badge">0</span>
-
                             </a>
-                              
-                              <!-- bilboard banner de arriba  -->
 
-                              <!-- Billboard Principal Desplazable -->
-<section class="billboard-container bloque-home" id="billboard-principal">
-    <div class="billboard-track">
-        <!-- Banner 1 -->
-        <div class="billboard-slide">
-            <img src="images/banner_camisa_uno.png" alt="Lo mejor para el hogar">
-            <div class="billboard-content">
-                <h2 class="billboard-titulo-personalizado">LO MEJOR EN ROPA PARA CABALLEROS</h2>
-                <a href="index.html?cat=caballero-camisas" class="button billboard-btn-personalizado">EXPLORA</a>
-            </div>
-        </div>
-        <!-- Banner 2 -->
-        <div class="billboard-slide">
-            <img src="images/pic02.jpg" alt="Nuevas Ofertas">
-            <div class="billboard-content">
-                <h2 class="billboard-titulo-personalizado">OFERTAS Y COMBOS</h2>
-                <a href="index.html?cat=caballero-sueteres" class="button billboard-btn-personalizado">VER MÁS</a>
-            </div>
-        </div>
-    </div>
-</section>
+                            <!-- 1. PRIMER BILLBOARD (ARRIBA) -->
+                            <section class="billboard-container bloque-home" id="billboard-principal">
+                                <div class="billboard-track">
+                                    <!-- Banner 1 -->
+                                    <div class="billboard-slide">
+                                        <img src="images/banner_camisa_uno.png" alt="Lo mejor para el hogar">
+                                        <div class="billboard-content">
+                                            <h2 class="billboard-titulo-personalizado">LO MEJOR EN ROPA PARA CABALLEROS</h2>
+                                            <a href="index.html?cat=caballero-camisas" class="button billboard-btn-personalizado">EXPLORA</a>
+                                        </div>
+                                    </div>
+                                    <!-- Banner 2 -->
+                                    <div class="billboard-slide">
+                                        <img src="images/pic02.jpg" alt="Nuevas Ofertas">
+                                        <div class="billboard-content">
+                                            <h2 class="billboard-titulo-personalizado">OFERTAS Y COMBOS</h2>
+                                            <a href="index.html?cat=caballero-sueteres" class="button billboard-btn-personalizado">VER MÁS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
 
-<!-- ========================================== -->
-<!-- PANEL DE FILTROS DESPLEGABLE -->
-<!-- ========================================== -->
-<section id="panel-filtros-categoria" style="display: none;">
-    <!-- Botón para desplegar/ocultar los filtros -->
-    <button id="btn-toggle-filtros">
-        <span>⚙️ Filtrar resultados</span>
-        <span id="icono-flecha">▼</span>
-    </button>
+                            <!-- PANEL DE FILTROS DESPLEGABLE -->
+                            <section id="panel-filtros-categoria" style="display: none;">
+                                <button id="btn-toggle-filtros">
+                                    <span>⚙️ Filtrar resultados</span>
+                                    <span id="icono-flecha">▼</span>
+                                </button>
+                                <div id="caja-selects-filtros">
+                                    <h3 id="titulo-categoria-activa">👕 Filtrando categoría</h3>
+                                    <div class="filtros-grid">
+                                        <div class="filtro-grupo">
+                                            <label>Precio:</label>
+                                            <select id="filtro-precio">
+                                                <option value="todos">Todos los precios</option>
+                                                <option value="ofertas">🔥 Solo Ofertas</option>
+                                                <option value="bajo">Menos de $20</option>
+                                                <option value="medio">$20 - $50</option>
+                                                <option value="alto">Más de $50</option>
+                                            </select>
+                                        </div>
+                                        <div class="filtro-grupo">
+                                            <label>Marca:</label>
+                                            <select id="filtro-marca">
+                                                <option value="todas">Todas las marcas</option>
+                                                <option value="zara">Zara</option>
+                                                <option value="nike">Nike</option>
+                                                <option value="adidas">adidas</option>
+                                                <option value="levis">Levi's</option>
+                                            </select>
+                                        </div>
+                                        <div class="filtro-grupo">
+                                            <label>Color:</label>
+                                            <select id="filtro-color">
+                                                <option value="todos">Todos los colores</option>
+                                                <option value="blanco">Blanco</option>
+                                                <option value="Gris">Gris</option>
+                                                <option value="negro">Negro</option>
+                                                <option value="azul">Azul</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
 
-    <!-- Contenedor interno de los selects -->
-    <div id="caja-selects-filtros">
-        <h3 id="titulo-categoria-activa">👕 Filtrando categoría</h3>
-        <div class="filtros-grid">
-            
-            <!-- Filtro por Precio -->
-            <div class="filtro-grupo">
-                <label>Precio:</label>
-                <select id="filtro-precio">
-                    <option value="todos">Todos los precios</option>
-                    <option value="ofertas">🔥 Solo Ofertas</option>
-                    <option value="bajo">Menos de $20</option>
-                    <option value="medio">$20 - $50</option>
-                    <option value="alto">Más de $50</option>
-                </select>
-            </div>
+                            <!-- 2. CARRUSEL EN EL MEDIO -->
+                            <section class="seccion-carrusel-home bloque-home">
+                                <header class="major">
+                                    <h2 id="titulo-seccion-principal">👗 Lo Mejor para Dama</h2>
+                                </header>
+                                <div class="carrusel-productos-container">
+                                    <div class="posts" id="contenedor-dama-camisas">
+                                        <!-- Productos se inyectan dinámicamente aquí -->
+                                    </div>
+                                </div>
+                                <div id="contenedor-btn-ver-todo" style="text-align: center; margin: 40px 0;">
+                                    <a href="index.html?cat=dama" class="btn-respirar-fuerte">👗 Ver todo Dama</a>
+                                </div>
+                            </section>
 
-            <!-- Filtro por Marca -->
-            <div class="filtro-grupo">
-                <label>Marca:</label>
-                <select id="filtro-marca">
-                    <option value="todas">Todas las marcas</option>
-                    <option value="zara">Zara</option>
-                    <option value="nike">Nike</option>
-                     <option value="adidas">adidas</option>
-                    <option value="levis">Levi's</option>
-                </select>
-            </div>
-
-            <!-- Filtro por Color -->
-            <div class="filtro-grupo">
-                <label>Color:</label>
-                <select id="filtro-color">
-                    <option value="todos">Todos los colores</option>
-                    <option value="blanco">Blanco</option>
-                      <option value="Gris">Gris</option>
-                    <option value="negro">Negro</option>
-                    <option value="azul">Azul</option>
-                </select>
-            </div>
-
-        </div>
-    </div>
-</section>
-                        
-                            <!-- SECCIÓN PRINCIPAL: CATÁLOGO DE OFERTAS (Directo al grano) -->
-                           
-<!-- SECCIÓN PRINCIPAL: CATÁLOGO DE OFERTAS Y PRODUCTOS -->
-<section class="seccion-carrusel-home bloque-home">
-    <header class="major">
-        <h2>🔥 Ofertas Destacadas y Disponibles</h2>
-    </header>
-    <div class="carrusel-productos-container">
-        <div class="posts" id="contenedor-ofertas">
-            <!-- Productos principales se inyectan aquí -->
-        </div>
-    </div>
-</section>
-
-
-
-
-                        <!-- SECCIÓN 2A: CARRUSEL DE CABALLERO -->
-<section class="seccion-carrusel-home bloque-home">
-    <header class="major">
-        <h2>👔 Lo Mejor para Caballero</h2>
-    </header>
-    <div class="carrusel-productos-container">
-        <div class="posts" id="contenedor-caballero-camisas">
-            <!-- Productos de caballero -->
-        </div>
-    </div>
-    <div style="text-align: center; margin: 40px 0;">
-        <a href="index.html?cat=caballero" class="btn-respirar-fuerte">👔 Ver todo Caballero</a>
-    </div>
-</section>
-
-
-<section class="billboard-container bloque-home" id="billboard-segundo">
-    <div class="billboard-track">
-        <!-- Banner 1 -->
-        <div class="billboard-slide">
-            <img src="images/banner_camisa_uno.png" alt="Lo mejor para el hogar">
-            <div class="billboard-content">
-                <h2 class="billboard-titulo-personalizado">LO MEJOR EN ROPA PARA CABALLEROS</h2>
-                <a href="index.html?cat=caballero-camisas" class="button billboard-btn-personalizado">EXPLORA</a>
-            </div>
-        </div>
-        <!-- Banner 2 -->
-        <div class="billboard-slide">
-            <img src="images/pic02.jpg" alt="Nuevas Ofertas">
-            <div class="billboard-content">
-                <h2 class="billboard-titulo-personalizado">OFERTAS Y COMBOS</h2>
-                <a href="index.html?cat=caballero-sueteres" class="button billboard-btn-personalizado">VER MÁS</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SECCIÓN 2B: CARRUSEL DE DAMA -->
-<section class="seccion-carrusel-home bloque-home">
-    <header class="major">
-        <h2>👗 Lo Mejor para Dama</h2>
-    </header>
-    <div class="carrusel-productos-container">
-        <div class="posts" id="contenedor-dama-camisas">
-            <!-- Productos de dama -->
-        </div>
-    </div>
-    <div style="text-align: center; margin: 40px 0;">
-        <a href="index.html?cat=dama" class="btn-respirar-fuerte">👗 Ver todo Dama</a>
-    </div>
-</section>
+                            <!-- 3. SEGUNDO BILLBOARD (ABAJO) -->
+                            <section class="billboard-container bloque-home" id="billboard-segundo">
+                                <div class="billboard-track">
+                                    <div class="billboard-slide">
+                                        <img src="images/banner_camisa_uno.png" alt="Lo mejor para el hogar">
+                                        <div class="billboard-content">
+                                            <h2 class="billboard-titulo-personalizado">LO MEJOR EN ROPA PARA CABALLEROS</h2>
+                                            <a href="index.html?cat=caballero-camisas" class="button billboard-btn-personalizado">EXPLORA</a>
+                                        </div>
+                                    </div>
+                                    <div class="billboard-slide">
+                                        <img src="images/pic02.jpg" alt="Nuevas Ofertas">
+                                        <div class="billboard-content">
+                                            <h2 class="billboard-titulo-personalizado">OFERTAS Y COMBOS</h2>
+                                            <a href="index.html?cat=caballero-sueteres" class="button billboard-btn-personalizado">VER MÁS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
 
                         </div>
                     </div>
-
-                    
 
                 <!-- Sidebar -->
                     <div id="sidebar">
                         <div class="inner">
 
                             <!-- Search -->
-                                <section id="search" class="alt">
-                                    <form method="post" action="#">
-                                        <input type="text" name="query" id="query" placeholder="Buscar camisas, zapatos, suéteres..." />
-                                    </form>
-                                </section>
+                            <section id="search" class="alt">
+                                <form method="post" action="#">
+                                    <input type="text" name="query" id="query" placeholder="Buscar camisas, zapatos, suéteres..." />
+                                </form>
+                            </section>
 
                             <!-- Menu -->
-                              <nav id="menu">
-    <header class="major">
-        <h2>Menú</h2>
-    </header>
-    <ul>
-        <li><a href="index.html">Inicio / Todo</a></li>
-        
-        <!-- Categoría CABALLERO -->
-        <li>
-            <span class="opener">Caballero 👔</span>
-            <ul>
-                <li><a href="index.html?cat=caballero-camisas">Camisas</a></li>
-                <li><a href="index.html?cat=caballero-zapatos">Zapatos</a></li>
-                <li><a href="index.html?cat=caballero-sueteres">Suéteres</a></li>
-                <li><a href="index.html?cat=caballero-accesorios">Accesorios</a></li>
-                <li><a href="index.html?cat=caballero-ofertas">🔥 Ofertas Exclusivas para Caballero</a></li>
-                <li><a href="index.html?cat=caballero">Ver todo Caballero</a></li>
-            </ul>
-        </li>
+                            <nav id="menu">
+                                <header class="major">
+                                    <h2>Menú</h2>
+                                </header>
+                                <ul>
+                                    <li><a href="index.html">Inicio / Todo</a></li>
+                                    
+                                    <!-- Categoría CABALLERO -->
+                                    <li>
+                                        <span class="opener">Caballero 👔</span>
+                                        <ul>
+                                            <li><a href="index.html?cat=caballero-camisas">Camisas</a></li>
+                                            <li><a href="index.html?cat=caballero-zapatos">Zapatos</a></li>
+                                            <li><a href="index.html?cat=caballero-sueteres">Suéteres</a></li>
+                                            <li><a href="index.html?cat=caballero-accesorios">Accesorios</a></li>
+                                            <li><a href="index.html?cat=caballero-ofertas">🔥 Ofertas Exclusivas para Caballero</a></li>
+                                            <li><a href="index.html?cat=caballero">Ver todo Caballero</a></li>
+                                        </ul>
+                                    </li>
 
-        <!-- Categoría DAMA -->
-        <li>
-            <span class="opener">Dama 👗</span>
-            <ul>
-                <li><a href="index.html?cat=dama-camisas">Camisas / Blusas</a></li>
-                <li><a href="index.html?cat=dama-zapatos">Zapatos</a></li>
-                <li><a href="index.html?cat=dama-sueteres">Suéteres</a></li>
-                <li><a href="index.html?cat=dama-accesorios">Accesorios</a></li>
-                 <li><a href="index.html?cat=dama-ofertas">🔥 Ofertas Exclusivas para Dama</a></li>
-                <li><a href="index.html?cat=dama">Ver todo Dama</a></li>
-            </ul>
-        </li>
+                                    <!-- Categoría DAMA -->
+                                    <li>
+                                        <span class="opener">Dama 👗</span>
+                                        <ul>
+                                            <li><a href="index.html?cat=dama-camisas">Camisas / Blusas</a></li>
+                                            <li><a href="index.html?cat=dama-zapatos">Zapatos</a></li>
+                                            <li><a href="index.html?cat=dama-sueteres">Suéteres</a></li>
+                                            <li><a href="index.html?cat=dama-accesorios">Accesorios</a></li>
+                                            <li><a href="index.html?cat=dama-ofertas">🔥 Ofertas Exclusivas para Dama</a></li>
+                                            <li><a href="index.html?cat=dama">Ver todo Dama</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a href="carrito.html">Ver Carrito 🛒 </a></li>
+                                </ul>
+                            </nav>
 
-        <!-- Otras Categorías -->
-        
-       <li><a href="carrito.html">Ver Carrito 🛒 </a></li>
-    </ul>
-</nav>
                             <!-- Section: Contacto Rápido -->
-                               <section>
-    <header class="major">
-        <h2>Contacto Directo</h2>
-    </header>
-    <p>¿Tienes dudas? Escríbenos y te asesoramos al instante.</p>
-    <ul class="contact">
-        <!-- Correo -->
-        <li class="icon solid fa-envelope">
-            <a href="mailto:ventas@licoleria.com">ventas@licoleria.com</a>
-        </li>
-        <!-- Teléfono que abre WhatsApp -->
-        <li class="icon solid fa-phone">
-            <a href="https://wa.me/584249081574" target="_blank">+58 (424) 9081574</a>
-        </li>
-        <!-- Dirección que abre Google Maps -->
-        <li class="icon solid fa-home">
-            <a href="https://maps.app.goo.gl/TU_ENLACE_AQUI" target="_blank">
-                Local Comercial, Av. Principal, Venezuela
-            </a>
-        </li>
-    </ul>
-</section>
+                            <section>
+                                <header class="major">
+                                    <h2>Contacto Directo</h2>
+                                </header>
+                                <p>¿Tienes dudas? Escríbenos y te asesoramos al instante.</p>
+                                <ul class="contact">
+                                    <li class="icon solid fa-envelope">
+                                        <a href="mailto:ventas@licoleria.com">ventas@licoleria.com</a>
+                                    </li>
+                                    <li class="icon solid fa-phone">
+                                        <a href="https://wa.me/584249081574" target="_blank">+58 (424) 9081574</a>
+                                    </li>
+                                    <li class="icon solid fa-home">
+                                        <a href="https://maps.app.goo.gl/TU_ENLACE_AQUI" target="_blank">
+                                            Local Comercial, Av. Principal, Venezuela
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
                                 
                             <!-- Footer -->
-                                <footer id="footer">
-                                    <p class="copyright">&copy; kgh collection. Todos los derechos reservados.</p>
-                                </footer>
+                            <footer id="footer">
+                                <p class="copyright">&copy; kgh collection. Todos los derechos reservados.</p>
+                            </footer>
 
                         </div>
                     </div>
@@ -286,38 +229,33 @@
             <script src="assets/js/carrusel_pc.js"></script>
             <script src="assets/js/render.js"></script>
             <script src="assets/js/filtros.js"></script>
-			<script src="assets/js/buscador.js"></script>
+            <script src="assets/js/buscador.js"></script>
             <script src="assets/js/carrito.js"></script>
 
-
-<!-- VENTANA MODAL DE DETALLES -->
-<div id="modal-producto" class="modal-overlay" style="display: none;">
-    <div class="modal-contenido">
-        <button id="cerrar-modal" class="btn-cerrar">&times;</button>
-        <div class="modal-body-grid">
-            <!-- Sección de Galería de Imágenes -->
-            <div class="modal-galeria">
-                <div class="modal-imagen-principal">
-                   <img id="modal-img" class="img-modal-detalle" src="" alt="Producto" />
+        <!-- VENTANA MODAL DE DETALLES -->
+        <div id="modal-producto" class="modal-overlay" style="display: none;">
+            <div class="modal-contenido">
+                <button id="cerrar-modal" class="btn-cerrar">&times;</button>
+                <div class="modal-body-grid">
+                    <div class="modal-galeria">
+                        <div class="modal-imagen-principal">
+                            <img id="modal-img" class="img-modal-detalle" src="" alt="Producto" />
+                        </div>
+                        <div id="modal-miniaturas" class="modal-miniaturas-container" style="display: flex; gap: 8px; margin-top: 10px; overflow-x: auto;">
+                        </div>
+                    </div>
+                    <div class="modal-info">
+                        <h2 id="modal-titulo"></h2>
+                        <p id="modal-descripcion"></p>
+                        <ul id="modal-detalles"></ul>
+                        <p id="modal-precio" class="precio-producto"></p>
+                        <ul class="actions">
+                            <li><button id="modal-btn-comprar" class="btn-comprar">Agregar 🛒</button></li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Contenedor para las miniaturas de otras fotos -->
-                <div id="modal-miniaturas" class="modal-miniaturas-container" style="display: flex; gap: 8px; margin-top: 10px; overflow-x: auto;">
-                    <!-- Las miniaturas adicionales se inyectarán aquí por JavaScript -->
-                </div>
-            </div>
-            <!-- Sección de Información -->
-            <div class="modal-info">
-                <h2 id="modal-titulo"></h2>
-                <p id="modal-descripcion"></p>
-                <ul id="modal-detalles"></ul>
-                <p id="modal-precio" class="precio-producto"></p>
-                <ul class="actions">
-                    <li><button id="modal-btn-comprar" class="btn-comprar">Agregar 🛒</button></li>
-                </ul>
             </div>
         </div>
-    </div>
-</div>
 
     </body>
 </html>
