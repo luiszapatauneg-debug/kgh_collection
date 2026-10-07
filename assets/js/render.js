@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (billboard) billboard.style.display = 'none';
         if (segundoBillboard) segundoBillboard.style.display = 'none';
-        if (btnVerTodoDama) btnVerTodoDama.style.display = 'none';
+        if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
         if (tituloSeccion) tituloSeccion.textContent = "🔍 Resultados de búsqueda";
 
         window.renderizarProductosEnContenedor('contenedor-dama-camisas', lista);
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // VISTA PÁGINA PRINCIPAL (HOME)
         if (billboard) billboard.style.display = 'block';
         if (segundoBillboard) segundoBillboard.style.display = 'block';
-        if (btnVerTodoDama) btnVerTodoDama.style.display = 'block';
+        if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'block', 'important');
         document.body.classList.add('pagina-inicio');
 
         if (tituloSeccion) tituloSeccion.textContent = "👗 Lo Mejor para Dama";
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // VISTA DE CATEGORÍA ESPECÍFICA
         if (billboard) billboard.style.display = 'none';
         if (segundoBillboard) segundoBillboard.style.display = 'none';
-        if (btnVerTodoDama) btnVerTodoDama.style.display = 'none';
+        if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
         document.body.classList.remove('pagina-inicio');
 
         const catLimpia = categoriaFiltro.toLowerCase().trim();
