@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const barraEnvios = document.getElementById('barra-envios'); //
+    const bannerLogoPrincipal = document.getElementById('banner-logo-principal'); 
     const billboard = document.getElementById('billboard-principal');
     const segundoBillboard = document.getElementById('billboard-segundo'); 
     const seccionCategorias = document.getElementById('seccion-categorias-destacadas'); // 👈 Capturamos el nuevo carrusel
@@ -89,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (esPaginaInicio) {
         // VISTA PÁGINA PRINCIPAL (HOME)
+        if (barraEnvios) barraEnvios.style.setProperty('display', 'block', 'important');
+        if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'block', 'important');
         if (billboard) billboard.style.display = 'block';
         if (segundoBillboard) segundoBillboard.style.display = 'block';
         if (seccionCategorias) seccionCategorias.style.setProperty('display', 'block', 'important'); // 👈 Se muestra en el Home
@@ -103,6 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     } else {
         // VISTA DE CATEGORÍA ESPECÍFICA
+        if (barraEnvios) barraEnvios.style.setProperty('display', 'none', 'important');
+        if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'none', 'important');
         if (billboard) billboard.style.display = 'none';
         if (segundoBillboard) segundoBillboard.style.display = 'none';
         if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en categorías
