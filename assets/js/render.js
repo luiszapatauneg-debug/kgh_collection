@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const segundoBillboard = document.getElementById('billboard-segundo'); 
     const seccionCategorias = document.getElementById('seccion-categorias-destacadas'); // 👈 Capturamos el nuevo carrusel
     const tituloSeccion = document.getElementById('titulo-seccion-principal') || document.querySelector('section > header.major > h2');
-
+    const seccionComfort = document.querySelectorAll('.seccion-comfort');
     // Leer qué categoría viene en la URL
     const params = new URLSearchParams(window.location.search);
     const categoriaFiltro = params.get('cat');
@@ -81,6 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.seccion-ideas-looks').forEach(sec => {
             sec.style.setProperty('display', 'none', 'important');
         });
+
+        document.querySelectorAll('.seccion-comfort').forEach(sec => {
+            sec.style.setProperty('display', 'none', 'important');
+        });
+
        if (seccionLooks) seccionLooks.style.setProperty('display', 'none', 'important');
         if (billboard) billboard.style.display = 'none';
         if (segundoBillboard) segundoBillboard.style.display = 'none';
@@ -99,6 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.seccion-ideas-looks').forEach(sec => {
             sec.style.setProperty('display', 'block', 'important');
         });
+
+        document.querySelectorAll('.seccion-comfort').forEach(sec => {
+            sec.style.setProperty('display', 'block', 'important'); // 👈 Se muestra en el Home
+        });
+
        if (seccionLooks) seccionLooks.style.setProperty('display', 'block', 'important');
         if (barraEnvios) barraEnvios.style.setProperty('display', 'block', 'important');
         if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'block', 'important');
