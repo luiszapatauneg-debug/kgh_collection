@@ -586,6 +586,97 @@ img.img-modal-detalle {
     box-shadow: none !important;
 }
 
+
+/* ========================================== */
+/* SECCIÓN DE IDEAS DE LOOKS (SHOP THE LOOK) */
+/* ========================================== */
+
+.seccion-ideas-looks {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.look-principal-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #111;
+}
+
+.foto-look {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botón Hotspot Minimalista (Sin fondo ni borde) */
+.hotspot-btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background: transparent !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 22px;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    transition: transform 0.2s ease;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+.hotspot-btn:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Tarjeta flotante del producto (Popup) */
+.look-popup {
+    position: absolute;
+    background: #fff;
+    color: #000;
+    width: 170px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    display: none;
+    z-index: 20;
+    text-align: left;
+}
+
+.look-popup.active {
+    display: block;
+}
+
+.look-popup img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.look-popup h4 {
+    font-size: 0.75rem;
+    margin: 0 0 4px 0;
+    color: #111;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.look-popup .precio-look {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
 /* ========================================== */
 /* CONFIGURACION DE COMO SE VEN LOS PRECIOS
    Estilo general del contenedor de precios   */
