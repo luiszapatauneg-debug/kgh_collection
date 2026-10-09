@@ -256,9 +256,14 @@
     </div>
 </section>
                             
-<!-- "images/BODY_CORTE IMPERIAL_KGH_LADRILLO.jpeg" -->
+
 
 <!-- SECCIÓN IDEAS DE LOOKS (SHOP THE LOOK) -->
+
+<!-- ========================================== -->
+<!-- PRIMER LOOK INTERACTIVO -->
+<!-- ========================================== -->
+
 <section class="seccion-ideas-looks">
     <h3 class="looks-titulo" style="text-align: center; margin-bottom: 20px;">Ideas de Looks</h3>
     
@@ -266,30 +271,55 @@
         <!-- Foto principal del outfit completo -->
         <img src="images/BODY_CORTE IMPERIAL_KGH_LADRILLO.jpeg" alt="Look Principal" class="foto-look">
         
-        <!-- Hotspot 1: Parte Superior (Ej: Camisa) -->
-        <button class="hotspot-btn" style="top: 42%; left: 60%;" onclick="togglePopup('popup-camisa', event)">+</button>
-        <div id="popup-camisa" class="look-popup" style="top: 25%; left: 15%;">
-            <!-- Al hacer clic en la tarjeta del popup, abre los detalles de la prenda -->
-            <a href="javascript:void(0)" onclick="abrirModal('ID_DE_TU_CAMISA')" style="text-decoration:none; color:inherit;">
-                <img src="images/foto_set.jpg" alt="Body mesh">
-                <h4>Body mesh M/L black</h4>
-                <p class="precio-look">$54.99</p>
-            </a>
-        </div>
+        <!-- Hotspot 1: Accesorio (Gorra) -->
+        <button class="hotspot-btn" style="top: 42%; left: 60%;" data-product-id="accesorio-gorra-01" onclick="toggleLookPopup(this, event)">+</button>
+        <div class="look-popup" style="top: 25%; left: 15%;"></div>
 
-        <!-- Hotspot 2: Parte Inferior (Ej: Pantalón) -->
-        <button class="hotspot-btn" style="top: 65%; left: 60%;" onclick="togglePopup('popup-pantalon', event)">+</button>
-        <div id="popup-pantalon" class="look-popup" style="top: 48%; left: 15%;">
-            <a href="javascript:void(0)" onclick="abrirModal('ID_DE_TU_PANTALON')" style="text-decoration:none; color:inherit;">
-                <img src="images/foto_calzado.jpg" alt="Jeans">
-                <h4>Jeans Wide Leg Light</h4>
-                <p class="precio-look">$48.00</p>
-            </a>
-        </div>
+        <!-- Hotspot 2: Suéter Adidas -->
+        <button class="hotspot-btn" style="top: 65%; left: 60%;" data-product-id="camisa-urbana-01" onclick="toggleLookPopup(this, event)">+</button>
+        <div class="look-popup" style="top: 50%; left: 15%;"></div>
     </div>
 </section>
 
+<!-- ========================================== -->
+<!-- SEGUNDO LOOK INTERACTIVO -->
+<!-- ========================================== -->
+<section class="seccion-ideas-looks">
+    <h3 class="looks-titulo" style="text-align: center; margin-bottom: 20px;">Estilo Urbano</h3>
+    
+    <div class="look-principal-container">
+        <!-- Foto principal del segundo outfit -->
+        <img src="images/BODY_CORTE IMPERIAL_KGH_LADRILLO.jpeg" alt="Segundo Look" class="foto-look">
+        
+        <!-- Hotspot 1: Accesorio (Gorra) -->
+        <button class="hotspot-btn" style="top: 42%; left: 60%;" data-product-id="accesorio-gorra-01" onclick="toggleLookPopup(this, event)">+</button>
+        <div class="look-popup" style="top: 25%; left: 15%;"></div>
 
+        <!-- Hotspot 2: Suéter Adidas -->
+        <button class="hotspot-btn" style="top: 65%; left: 60%;" data-product-id="camisa-urbana-01" onclick="toggleLookPopup(this, event)">+</button>
+        <div class="look-popup" style="top: 50%; left: 15%;"></div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- TERCER LOOK INTERACTIVO -->
+<!-- ========================================== -->
+<section class="seccion-ideas-looks">
+    <h3 class="looks-titulo" style="text-align: center; margin-bottom: 20px;">Casual & Chic</h3>
+    
+    <div class="look-principal-container">
+        <!-- Foto principal del tercer outfit -->
+        <img src="images/BODY_CORTE IMPERIAL_KGH_LADRILLO.jpeg" alt="Tercer Look" class="foto-look">
+        
+        <!-- Hotspot 1: Accesorio (Gorra) -->
+        <button class="hotspot-btn" style="top: 42%; left: 60%;" data-product-id="accesorio-gorra-01" onclick="toggleLookPopup(this, event)">+</button>
+        <div class="look-popup" style="top: 25%; left: 15%;"></div>
+
+       <!-- Hotspot 2 (Prenda inferior de este look) -->
+        <button class="hotspot-btn" style="top: 70%; left: 50%;" data-product-id="AQUI_EL_ID_PRODUCTO_4" onclick="toggleLookPopup(this, event)">+</button>
+        <div class="look-popup" style="top: 45%; left: 10%;"></div>
+    </div>
+</section>
 
  <!-- 2. CARRUSEL EN EL MEDIO -->
                             <section class="seccion-carrusel-home bloque-home">

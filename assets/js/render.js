@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const barraEnvios = document.getElementById('barra-envios'); 
     const seccionLooks = document.getElementById('seccion-looks');
+    const seccionIdeasLooks = document.querySelectorAll('.seccion-ideas-looks');
     const bannerLogoPrincipal = document.getElementById('banner-logo-principal'); 
     const billboard = document.getElementById('billboard-principal');
     const segundoBillboard = document.getElementById('billboard-segundo'); 
@@ -77,6 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!hayBusquedaActiva && (!categoriaFiltro || categoriaFiltro === "todos")) {
             return;
         }
+        document.querySelectorAll('.seccion-ideas-looks').forEach(sec => {
+            sec.style.setProperty('display', 'none', 'important');
+        });
        if (seccionLooks) seccionLooks.style.setProperty('display', 'none', 'important');
         if (billboard) billboard.style.display = 'none';
         if (segundoBillboard) segundoBillboard.style.display = 'none';
@@ -92,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (esPaginaInicio) {
         // VISTA PÁGINA PRINCIPAL (HOME)
+        document.querySelectorAll('.seccion-ideas-looks').forEach(sec => {
+            sec.style.setProperty('display', 'block', 'important');
+        });
        if (seccionLooks) seccionLooks.style.setProperty('display', 'block', 'important');
         if (barraEnvios) barraEnvios.style.setProperty('display', 'block', 'important');
         if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'block', 'important');
@@ -275,4 +282,45 @@ document.addEventListener('click', (e) => {
     if (modal && (e.target === modal || e.target === btnCerrar)) {
         cerrarModal();
     }
+});
+
+// --- LÓGICA AUTOMÁTICA PARA EL SHOP THE LOOK (AL HACER CLIC) ---
+window.toggleLookPopup = function(btn, event) {
+    event.stopPropagation();
+    const popupActual = btn.nextElementSibling;
+    if (!popupActual) return;
+
+    // Obtener el ID del producto desde el botón
+    const productId = btn.getAttribute('data-product-id');
+
+    // Buscar el producto en productosData en tiempo real
+    if (typeof productosData !== 'undefined' && productosData) {
+        const producto = productosData.find(p => String(p.id).trim() === String(productId).trim());
+
+        if (producto) {
+            // Pintar la tarjeta usando clases de CSS limpias
+            popupActual.innerHTML = `
+                <a href="javascript:void(0)" onclick="abrirModal('${producto.id}')">
+                    <img src="${producto.imagen}" alt="${producto.nombre}" class="look-popup-img">
+                    <h4 class="look-popup-title">${producto.nombre}</h4>
+                    <p class="look-popup-precio">$${producto.precio}</p>
+                </a>
+            `;
+        } else {
+            popupActual.innerHTML = `<p class="look-popup-error">Producto no encontrado (${productId})</p>`;
+        }
+    }
+
+    // Cierra todos los demás popups
+    document.querySelectorAll('.look-popup').forEach(p => {
+        if (p !== popupActual) p.classList.remove('active');
+    });
+
+    // Alterna el actual
+    popupActual.classList.toggle('active');
+};
+
+// Cerrar al hacer clic fuera
+document.addEventListener('click', () => {
+    document.querySelectorAll('.look-popup').forEach(p => p.classList.remove('active'));
 });

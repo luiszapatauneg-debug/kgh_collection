@@ -654,7 +654,14 @@ img.img-modal-detalle {
     display: block;
 }
 
-.look-popup img {
+/* Estilos de los elementos internos de la tarjeta flotante */
+.look-popup a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.look-popup-img {
     width: 100%;
     height: 130px;
     object-fit: cover;
@@ -662,7 +669,7 @@ img.img-modal-detalle {
     margin-bottom: 6px;
 }
 
-.look-popup h4 {
+.look-popup-title {
     font-size: 0.75rem;
     margin: 0 0 4px 0;
     color: #111;
@@ -671,12 +678,20 @@ img.img-modal-detalle {
     letter-spacing: normal;
 }
 
-.look-popup .precio-look {
+.look-popup-precio {
     font-size: 0.8rem;
     font-weight: bold;
     color: #000;
     margin: 0;
 }
+
+.look-popup-error {
+    font-size: 11px;
+    padding: 5px;
+    color: #000;
+}
+
+
 /* ========================================== */
 /* CONFIGURACION DE COMO SE VEN LOS PRECIOS
    Estilo general del contenedor de precios   */
@@ -971,7 +986,7 @@ img.img-modal-detalle {
    ==============================================
    ============================================== */
 
-   1. CONFIGURACIÓN GLOBAL Y RESET DE LÍNEAS
+   /* ---1. CONFIGURACIÓN GLOBAL Y RESET DE LÍNEAS--- */
 
 html, body {
     overflow-x: hidden !important;
