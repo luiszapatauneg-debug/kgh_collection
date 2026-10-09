@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const barraEnvios = document.getElementById('barra-envios'); //
+    const barraEnvios = document.getElementById('barra-envios'); 
+    const seccionLooks = document.getElementById('seccion-looks');
     const bannerLogoPrincipal = document.getElementById('banner-logo-principal'); 
     const billboard = document.getElementById('billboard-principal');
     const segundoBillboard = document.getElementById('billboard-segundo'); 
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!hayBusquedaActiva && (!categoriaFiltro || categoriaFiltro === "todos")) {
             return;
         }
-
+       if (seccionLooks) seccionLooks.style.setProperty('display', 'none', 'important');
         if (billboard) billboard.style.display = 'none';
         if (segundoBillboard) segundoBillboard.style.display = 'none';
         if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en búsqueda
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (esPaginaInicio) {
         // VISTA PÁGINA PRINCIPAL (HOME)
+       if (seccionLooks) seccionLooks.style.setProperty('display', 'block', 'important');
         if (barraEnvios) barraEnvios.style.setProperty('display', 'block', 'important');
         if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'block', 'important');
         if (billboard) billboard.style.display = 'block';

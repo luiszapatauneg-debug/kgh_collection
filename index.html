@@ -22,22 +22,20 @@
                         <div class="inner">
 
                             <!-- Header 'images/kgh_logo.JPG' foto_de_logo_dos.jpg-->
-                    <!-- 🚚 BARRA DE ANUNCIOS: Envíos Nacionales -->
-<div style="background: #000; color: #fff; text-align: center; padding: 10px 15px; font-size: 0.85rem; letter-spacing: 1.5px; border-bottom: 1px solid #222; text-transform: uppercase; margin-bottom: 20px;">
+               <!-- 🚚 BARRA DE ANUNCIOS: Envíos Nacionales -->
+<div class="barra-anuncios">
     📦 Envíos nacionales a cualquier parte del país
 </div>
 
-<!-- Header limpio sin imagen de fondo pero conservando la misma distribución -->
-<header id="header" style="background: transparent; padding: 20px 10px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between;">
-    
-    <!-- Contenido (Nombre de la tienda e Iconos de redes) -->
-    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-        <a href="index.html" class="logo" style="color: #fff; font-size: 1.5rem; text-decoration: none;">
+<!-- Header limpio sin estilos inline -->
+<header id="header" class="header-limpio">
+    <div class="header-inner-content">
+        <a href="index.html" class="logo">
             <strong>kgh</strong> collection
         </a>
-        <ul class="icons" style="margin: 0; display: flex; gap: 15px; list-style: none; padding: 0;">
-            <li><a href="https://www.instagram.com/blledd.21/" target="_blank" class="icon brands fa-instagram" style="color: #fff; font-size: 1.2rem;"><span class="label">Instagram</span></a></li>
-            <li><a href="https://wa.me/584249081574" target="_blank" class="icon brands fa-whatsapp" style="color: #fff; font-size: 1.2rem;"><span class="label">WhatsApp</span></a></li>
+        <ul class="icons">
+            <li><a href="https://www.instagram.com/blledd.21/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="https://wa.me/584249081574" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
         </ul>
     </div>
 </header>
@@ -210,6 +208,54 @@
                             </section>
 
 
+
+<!-- CARRUSEL HORIZONTAL DE CATEGORÍAS (5 CATEGORÍAS) -->
+<section id="seccion-looks" class="seccion-looks">
+    <h3 class="looks-titulo">Choose Your Favorite</h3>
+    
+    <div class="looks-grid">
+        <!-- Tarjeta 1: Sets -->
+        <a href="index.html?cat=sets" class="look-card">
+            <div class="look-imagen-container">
+                <img src="images/BODY_CORTE IMPERIAL_KGH_LADRILLO.jpeg" alt="Sets">
+            </div>
+            <span class="look-titulo">Sets</span>
+        </a>
+
+        <!-- Tarjeta 2: Dama -->
+        <a href="index.html?cat=dama" class="look-card">
+            <div class="look-imagen-container">
+                <img src="images/BODY_CORTE IMPERIAL_KGH_LADRILLO.jpeg" alt="Dama">
+            </div>
+            <span class="look-titulo">Dama</span>
+        </a>
+
+        <!-- Tarjeta 3: Caballeros -->
+        <a href="index.html?cat=caballeros" class="look-card">
+            <div class="look-imagen-container">
+                <img src="images/foto_caballero.jpg" alt="Caballeros">
+            </div>
+            <span class="look-titulo">Caballeros</span>
+        </a>
+
+        <!-- Tarjeta 4: Calzado -->
+        <a href="index.html?cat=calzado" class="look-card">
+            <div class="look-imagen-container">
+                <img src="images/foto_calzado.jpg" alt="Calzado">
+            </div>
+            <span class="look-titulo">Calzado</span>
+        </a>
+
+        <!-- Tarjeta 5: Accesorios -->
+        <a href="index.html?cat=accesorios" class="look-card">
+            <div class="look-imagen-container">
+                <img src="images/foto_accesorios.jpg" alt="Accesorios">
+            </div>
+            <span class="look-titulo">Accesorios</span>
+        </a>
+    </div>
+</section>
+                            
  <!-- 2. CARRUSEL EN EL MEDIO -->
                             <section class="seccion-carrusel-home bloque-home">
                                 <header class="major">

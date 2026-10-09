@@ -358,6 +358,61 @@ img.img-modal-detalle {
 }
 
 /* ========================================================================== */
+/*  CSS PARA ENVIO Y PRINCIPIO DE LA PAGINA  */
+/* ========================================================================== */
+
+/* --- BARRA DE ANUNCIOS SUPERIOR --- */
+.barra-anuncios {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #222;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* --- HEADER LIMPIO --- */
+#header.header-limpio {
+    background: transparent;
+    padding: 20px 10px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-inner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#header.header-limpio .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#header.header-limpio .icons {
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+#header.header-limpio .icons a {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+
+
+/* ========================================================================== */
 /*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) */
 /* ========================================================================== */
 
@@ -427,6 +482,8 @@ img.img-modal-detalle {
     background: #151515;
 }
 
+
+
 /* ========================================================================== */
 /* 3. COMPORTAMIENTO DE CARRUSEL HORIZONTAL (SOLO EN EL INICIO) */
 /* ========================================================================== */
@@ -448,6 +505,78 @@ img.img-modal-detalle {
     margin-bottom: 0 !important;
     margin-right: 0 !important;
 }
+
+/* ========================================================================== */
+/* 3. SEGUNDO CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) */
+/* ========================================================================== */
+
+/* --- CARRUSEL HORIZONTAL DE CATEGORÍAS (ESTILO LOOKBOOK) --- */
+.seccion-looks {
+    width: 100%;
+    margin: 35px 0;
+}
+
+.looks-titulo {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.looks-grid {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+.looks-grid::-webkit-scrollbar {
+    height: 4px;
+}
+.looks-grid::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.look-card {
+    flex: 0 0 230px; /* Ancho fijo para cada tarjeta en celulares */
+    width: 230px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+
+.look-imagen-container {
+    width: 100%;
+    height: 330px; /* Altura alargada vertical tipo retrato */
+    background: #1a1a1a; /* Fondo gris oscuro por si la imagen tarda en cargar */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.look-imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.look-titulo {
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
 
 /* ========================================== */
 /* CONFIGURACION DE COMO SE VEN LOS PRECIOS
