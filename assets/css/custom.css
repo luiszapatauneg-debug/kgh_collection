@@ -577,6 +577,14 @@ img.img-modal-detalle {
     font-weight: 600;
 }
 
+/* --- ELIMINAR LÍNEA O BORDE DE LOS ENLACES DEL CARRUSEL --- */
+.look-card, 
+.look-card:hover, 
+.look-card:focus {
+    border-bottom: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
 
 /* ========================================== */
 /* CONFIGURACION DE COMO SE VEN LOS PRECIOS
