@@ -181,7 +181,7 @@ function abrirModal(id) {
 
     let opcionesHTML = `<div id="selector-opciones-dinamico" style="margin: 15px 0;">`;
 
-    if (producto.talla && producto.tallas.length > 0) {
+    if (producto.tallas && producto.tallas.length > 0) {
         opcionesHTML += `
             <div style="margin-bottom:10px;">
                 <label><strong>Talla:</strong></label>
