@@ -16,6 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const contDama = document.getElementById('contenedor-dama-camisas');
     const btnVerTodoDama = document.getElementById('contenedor-btn-ver-todo');
 
+
+// --- SOLUCIÓN DEFINITIVA PARA ACORDEÓN MULTINIVEL EN EL MENÚ ---
+    setTimeout(() => {
+        if (typeof $ !== 'undefined') {
+            // 1. Desactivar el evento global original de la plantilla en los openers
+            $('#menu .opener').off('click');
+
+            // 2. Crear nuestro propio evento seguro con stopPropagation
+            $('#menu').on('click', '.opener', function(e) {
+                e.preventDefault();
+                e.stopPropagation(); // ¡Esto es lo que frena el cierre global!
+
+                const $this = $(this);
+                $this.toggleClass('active');
+                $this.parent().toggleClass('active');
+                $this.next('ul').slideToggle(300);
+            });
+        }
+    }, 400);
+
+
     // Diccionario de títulos para la tienda
     const nombresCategorias = {
         "camisas": "👕 Camisas y Ropa",
@@ -25,12 +46,33 @@ document.addEventListener('DOMContentLoaded', () => {
         "caballero-sueteres": "🧥 Suéteres de Caballero",
         "caballero-accesorios": "🕶️ Accesorios de Caballero",
         "caballero-ofertas": "🔥 Ofertas Exclusivas para Caballero",
+        // DAMA GENERAL
         "dama": "👗 Catálogo para Dama",
-        "dama-camisas": "👚 Blusas y Camisas de Dama",
-        "dama-zapatos": "👠 Zapatos de Dama",
-        "dama-sueteres": "🧥 Suéteres de Dama",
-        "dama-accesorios": "👜 Accesorios de Dama",
         "dama-ofertas": "🔥 Ofertas Exclusivas para Dama",
+
+        // ROPA SUPERIOR
+        "dama-camisas": "👚 Camisas y Blusas de Dama",
+        "dama-top": "👕 Tops y T-Shirts de Dama",
+        "dama-chaquetas": "🧥 Chaquetas de Dama",
+        "dama-chalecos": "🦺 Chalecos de Dama",
+
+        // ROPA INFERIOR Y PIEZAS COMPLETAS
+        "dama-pantalones": "👖 Pantalones de Dama",
+        "dama-vestidos": "👗 Vestidos de Dama",
+        "dama-conjuntos": "✨ Conjuntos y Sets de Dama",
+        "dama-faldas": "💃 Faldas de Dama",
+        "dama-bragas": "🩱 Bragas y Jumpsuits de Dama",
+
+        // CALZADO Y MARROQUINERÍA
+        "dama-calzado": "👠 Calzado de Dama",
+        "dama-carteras": "👜 Carteras de Dama",
+        "dama-monederos": "👛 Monederos y Billeteras de Dama",
+
+        // ACCESORIOS Y BELLEZA
+        "dama-accesorios": "💎 Accesorios y Joyería de Dama",
+        "dama-lentes": "🕶️ Lentes de Dama",
+        "dama-relojes": "⌚ Relojes de Dama",
+        "dama-perfumeria": "✨ Perfumería de Dama",
         "todos": "📦 Catálogo Completo"
     };
 
