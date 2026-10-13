@@ -46,27 +46,49 @@
                                 <span id="contador-carrito-flotante" class="cart-badge">0</span>
                             </a>
 
-                            <!-- 1. PRIMER BILLBOARD (ARRIBA) -->
-                            <section class="billboard-container bloque-home" id="billboard-principal">
-                                <div class="billboard-track">
-                                    <!-- Banner 1 -->
-                                    <div class="billboard-slide">
-                                        <img src="images/banner_camisa_uno.png" alt="Lo mejor para el hogar">
-                                        <div class="billboard-content">
-                                            <h2 class="billboard-titulo-personalizado">LO MEJOR EN ROPA PARA CABALLEROS</h2>
-                                            <a href="index.html?cat=caballero-camisas" class="button billboard-btn-personalizado">EXPLORA</a>
-                                        </div>
-                                    </div>
-                                    <!-- Banner 2 -->
-                                    <div class="billboard-slide">
-                                        <img src="images/pic02.jpg" alt="Nuevas Ofertas">
-                                        <div class="billboard-content">
-                                            <h2 class="billboard-titulo-personalizado">OFERTAS Y COMBOS</h2>
-                                            <a href="index.html?cat=caballero-sueteres" class="button billboard-btn-personalizado">VER MÁS</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                       <!-- 1. PRIMER BILLBOARD / CARRUSEL PRINCIPAL -->
+<section class="billboard-container bloque-home" id="billboard-principal">
+    <div class="billboard-track">
+        
+        <!-- SLIDE 1: El Mosaico Triple de Moda -->
+        <div class="billboard-slide slide-mosaico">
+            <div class="banner-mosaico-container">
+                <!-- Columna 1 (Izquierda) -->
+                <div class="banner-panel">
+                    <img src="images/fotos_productos/camisas/CAMISA MANGA BOMBACHE KGH VINO.png" alt="Model 1">
+                </div>
+
+                <!-- Columna 2 (Centro con Texto y Botón) -->
+                <div class="banner-panel banner-panel-center">
+                    <img src="images/fotos_productos/camisas/CAMISA CON FLORES DE RELIEVE Y PIEDRERIA AZUL.jpeg" alt="Model 2">
+                    <div class="banner-overlay-content">
+                        <h2>meet our <strong>new</strong> arrivals</h2>
+                        <a href="index.html?cat=dama-camisas" class="btn-shop-now">Shop now</a>
+                    </div>
+                </div>
+
+                <!-- Columna 3 (Derecha) -->
+                <div class="banner-panel">
+                    <img src="images/fotos_productos/camisas/CAMISA CON BOTONES GRANDES ROJA.jpeg" alt="Model 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Imagen única con el tamaño exacto del primer slide -->
+<div class="billboard-slide slide-imagen-unica">
+    <div class="banner-imagen-unica-container">
+        <img src="images/kgh_logo.JPG" alt="Ofertas y Combos">
+        
+        <!-- Texto y botón superpuesto idéntico al estilo tienda -->
+        <div class="banner-overlay-content">
+            <h2>ofertas y <strong>combos</strong></h2>
+            <a href="index.html?cat=caballero-ofertas" class="btn-shop-now">Ver más</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+</section>
 
                             <!-- PANEL DE FILTROS DESPLEGABLE -->
                             <section id="panel-filtros-categoria" style="display: none;">

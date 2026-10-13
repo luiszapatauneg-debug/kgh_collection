@@ -1052,9 +1052,10 @@ section {
 
 
 /* ==========================================================================
-   2. ESTRUCTURA DEL BILLBOARD / CARRUSEL PRINCIPAL
+   ESTRUCTURA CORRECTA DEL CARRUSEL (BILLBOARD) Y EL MOSAICO
    ========================================================================== */
 
+/* 1. Contenedor principal del carrusel */
 .billboard-container {
     width: 100% !important;
     max-width: 100% !important;
@@ -1064,7 +1065,7 @@ section {
     -webkit-overflow-scrolling: touch !important;
     border-radius: 12px !important;
     margin-bottom: 30px !important;
-    background: #111 !important;
+    background: transparent !important;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -1072,25 +1073,37 @@ section {
     display: none !important;
 }
 
+/* 2. La pista que alinea los slides de forma horizontal */
 .billboard-track {
     display: flex !important;
     width: 100% !important;
     flex-wrap: nowrap !important;
 }
 
+/* 3. Cada diapositiva (Slide) individual dentro del carrusel */
 .billboard-slide {
     flex: 0 0 100% !important;
     width: 100% !important;
     min-width: 100% !important;
     max-width: 100% !important;
     position: relative !important;
-    aspect-ratio: 17/10 !important; /* estaba en 16/7 Más largo y menos alto en móviles */
-    height: auto !important;         
-    max-height: 310px !important; /*estaba a 200 para subirlo*/
     scroll-snap-align: start !important;
+    box-sizing: border-box !important;
 }
 
-.billboard-slide img {
+/* Si el slide es el mosaico triple, se adapta sin romper la pista */
+.billboard-slide.slide-mosaico {
+    height: auto !important;
+    max-height: none !important;
+}
+
+/* Slide clásico (para el segundo banner de ofertas) */
+.billboard-slide:not(.slide-mosaico) {
+    aspect-ratio: 17/10 !important;
+    max-height: 310px !important;
+}
+
+.billboard-slide:not(.slide-mosaico) img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -1099,9 +1112,93 @@ section {
     display: block !important;
 }
 
+/* ==========================================================================
+   ESTILO DEL MOSAICO TRIPLE DE 3 COLUMNAS
+   ========================================================================== */
+
+.banner-mosaico-container {
+    display: flex !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+/* Panel individual (altura grande para no cortar las cabezas) */
+.banner-panel {
+    flex: 1 !important;
+    position: relative !important;
+    height: 520px !important;
+    overflow: hidden !important;
+}
+
+.banner-panel img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top !important; /* Prioriza la parte superior (cabezas) */
+    display: block !important;
+}
+
+.banner-panel-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.banner-overlay-content {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: rgba(0, 0, 0, 0.15) !important;
+    padding: 15px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
+
+.banner-overlay-content h2 {
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    font-weight: 300 !important;
+    text-transform: lowercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 25px !important;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+.banner-overlay-content h2 strong {
+    font-weight: 700 !important;
+}
+
+.btn-shop-now {
+    background-color: #e8d5d1 !important;
+    color: #1a1a1a !important;
+    padding: 12px 35px !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-shop-now:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+}
 
 /* ==========================================================================
-   3. CONTENIDO Y BOTONES DEL BILLBOARD
+   ESTILOS DE CONTENIDO PARA EL SEGUNDO BANNER CLÁSICO
    ========================================================================== */
 
 .billboard-content {
@@ -1117,15 +1214,15 @@ section {
     align-items: center !important;
 }
 
-.billboard-content h2 {
-    color: #ffffff !important;
-    font-size: 0.75rem !important; 
+.billboard-titulo-personalizado {
+    font-size: 0.75rem !important;  
     margin: 0 !important;
+    color: #ffffff !important;
     font-weight: bold !important;
     text-transform: uppercase;
 }
 
-.billboard-content .button {
+.billboard-btn-personalizado {
     background-color: #000 !important;
     color: #fff !important;
     border: 1px solid #444 !important;
@@ -1133,28 +1230,23 @@ section {
     font-size: 0.75rem !important;
     border-radius: 4px !important;
     text-decoration: none !important;
-    box-shadow: none !important;
 }
 
-.billboard-content .button:hover {
-    background-color: #222 !important;
-    border-color: #666 !important;
-}
+/* Adaptación para dispositivos móviles */
+@media (max-width: 768px) {
+    .banner-panel {
+        height: 380px !important;
+    }
+    
+    .banner-overlay-content h2 {
+        font-size: 1.1rem !important;
+        margin-bottom: 15px !important;
+    }
 
-/* Clases de personalización extra */
-.billboard-titulo-personalizado {
-    font-size: 0.55rem !important;  
-    margin: 0 !important;
-    color: #ffffff !important;
-}
-
-.billboard-btn-personalizado {
-    font-size: 0.55rem !important;
-    padding: 4px 8px !important;
-    margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    .btn-shop-now {
+        padding: 8px 20px !important;
+        font-size: 0.8rem !important;
+    }
 }
 
 

@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
        if (seccionLooks) seccionLooks.style.setProperty('display', 'none', 'important');
-        if (billboard) billboard.style.display = 'none';
+        if (billboard) billboard.style.setProperty('display', 'none', 'important');
         if (segundoBillboard) segundoBillboard.style.display = 'none';
         if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en búsqueda
         if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // VISTA DE CATEGORÍA ESPECÍFICA
         if (barraEnvios) barraEnvios.style.setProperty('display', 'none', 'important');
         if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'none', 'important');
-        if (billboard) billboard.style.display = 'none';
+       if (billboard) billboard.style.setProperty('display', 'none', 'important');
         if (segundoBillboard) segundoBillboard.style.display = 'none';
         if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en categorías
         if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
