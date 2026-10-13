@@ -37,7 +37,7 @@
     position: absolute !important;
     top: 12px !important;
     right: 12px !important;
-    background:   rgb(236, 0, 0) !important;
+    background:   rgb(247, 244, 69) !important;
     color: #000000 !important;
     border: 1px solid #444 !important;      /* Opcional: un borde sutil para que luzca como caja */
     border-radius: 6px !important;          /* <-- CAMBIADO: De 50% (círculo) a 6px (cuadrado con esquinas redondeadas) */
@@ -130,7 +130,48 @@ img.img-modal-detalle {
     background-color: #4d4d4d !important;
 }
 
+/* =============================================================
+   ESTILOS PARA LOS BOTONES DE CANTIDAD DENTRO DEL MODAL  (+ / -)
+   ============================================================== */
+.modal-contenido .selector-cantidad-wrapper,
+#selector-opciones-dinamico div {
+    display: flex;
+    align-items: center;
+}
 
+/* Contenedor de la cantidad en el modal */
+.modal-contenido input[type="number"] {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Botones de + y - cuadrados y personalizables */
+.btn-cantidad-modal {
+    background: #2a2a2a !important;   /* Color de fondo inicial (gris oscuro) */
+    color: #ffffff !important;         /* Color del texto (+ o -) */
+    border: 1px solid #444 !important; /* Borde sutil */
+    border-radius: 6px !important;     /* Esquinas ligeramente redondeadas (cuadrado moderno) */
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background 0.2s ease, border-color 0.2s ease !important;
+    padding: 0 !important;
+    margin: 0 5px !important;
+    box-shadow: none !important;
+}
+
+/* Efecto al pasar el ratón (Hover) - ¡Aquí puedes cambiar el color a tu gusto! */
+.btn-cantidad-modal:hover {
+    background: rgb(247, 244, 69) !important; /* Color amarillo al pasar el mouse (puedes cambiarlo) */
+    color: #000000 !important;
+    border-color: rgb(247, 244, 69) !important;
+}
 
 /* ========================================== */
 /* ESTILOS PARA EL PANEL Y BOTÓN DE FILTROS   */

@@ -47,33 +47,34 @@ document.addEventListener('DOMContentLoaded', () => {
         "caballero-accesorios": "🕶️ Accesorios de Caballero",
         "caballero-ofertas": "🔥 Ofertas Exclusivas para Caballero",
         // DAMA GENERAL
-        "dama": "👗 Catálogo para Dama",
-        "dama-ofertas": "🔥 Ofertas Exclusivas para Dama",
+        // General
+    "dama": "👗 Catálogo para Dama",
+    "dama-ofertas": "🔥 Ofertas Exclusivas para Dama",
+    "todos": "📦 Catálogo Completo",
 
-        // ROPA SUPERIOR
-        "dama-camisas": "👚 Camisas y Blusas de Dama",
-        "dama-top": "👕 Tops y T-Shirts de Dama",
-        "dama-chaquetas": "🧥 Chaquetas de Dama",
-        "dama-chalecos": "🦺 Chalecos de Dama",
+    // 1. Ropa Superior
+    "dama-camisas": "👚 Camisas ",
+    "dama-top": "👕 Tops y T-Shirts de Dama",
+    "dama-chaquetas": "🧥 Chaquetas de Dama",
+    "dama-chalecos": "🦺 Chalecos de Dama",
 
-        // ROPA INFERIOR Y PIEZAS COMPLETAS
-        "dama-pantalones": "👖 Pantalones de Dama",
-        "dama-vestidos": "👗 Vestidos de Dama",
-        "dama-conjuntos": "✨ Conjuntos y Sets de Dama",
-        "dama-faldas": "💃 Faldas de Dama",
-        "dama-bragas": "🩱 Bragas y Jumpsuits de Dama",
+    // 2. Ropa Inferior y Piezas
+    "dama-pantalones": "👖 Pantalones de Dama",
+    "dama-vestidos": "👗 Vestidos de Dama",
+    "dama-conjuntos": "✨ Conjuntos y Sets de Dama",
+    "dama-faldas": "💃 Faldas de Dama",
+    "dama-bragas": "🩱 Bragas y Jumpsuits de Dama",
 
-        // CALZADO Y MARROQUINERÍA
-        "dama-calzado": "👠 Calzado de Dama",
-        "dama-carteras": "👜 Carteras de Dama",
-        "dama-monederos": "👛 Monederos y Billeteras de Dama",
+    // 3. Calzado y Marroquinería
+    "dama-calzado": "👠 Calzado de Dama",
+    "dama-carteras": "👜 Carteras de Dama",
+    "dama-monederos": "👛 Monederos y Billeteras de Dama",
 
-        // ACCESORIOS Y BELLEZA
-        "dama-accesorios": "💎 Accesorios y Joyería de Dama",
-        "dama-lentes": "🕶️ Lentes de Dama",
-        "dama-relojes": "⌚ Relojes de Dama",
-        "dama-perfumeria": "✨ Perfumería de Dama",
-        "todos": "📦 Catálogo Completo"
+    // 4. Accesorios y Belleza
+    "dama-accesorios": "💎 Accesorios y Joyería de Dama",
+    "dama-lentes": "🕶️ Lentes de Dama",
+    "dama-relojes": "⌚ Relojes de Dama",
+    "dama-perfumeria": "✨ Perfumería de Dama"
     };
 
     // Función global para pintar productos en un contenedor específico
@@ -231,6 +232,14 @@ function abrirModal(id) {
     const existingSelectors = document.getElementById('selector-opciones-dinamico');
     if (existingSelectors) existingSelectors.remove();
 
+    // 👈 Definir el stock inicial (si tiene colores, toma el stock del primer color)
+    let stockInicial = 5;
+    if (producto.colores && producto.colores.length > 0) {
+        stockInicial = producto.colores[0].stock || 5;
+    } else if (producto.stock) {
+        stockInicial = producto.stock;
+    }
+
     let opcionesHTML = `<div id="selector-opciones-dinamico" style="margin: 15px 0;">`;
 
     if (producto.tallas && producto.tallas.length > 0) {
@@ -251,13 +260,26 @@ function abrirModal(id) {
                     ${producto.colores.map(c => `
                         <div class="color-circle" data-color="${c.nombre}" 
                              style="width:30px; height:30px; border-radius:50%; background-color:${c.hex}; border:2px solid #ccc; cursor:pointer;"
-                             onclick="marcarColor(this, '${c.nombre}', '${c.foto}')"
-                             title="${c.nombre}">
+                             onclick="marcarColor(this, '${c.nombre}', '${c.foto}',${c.stock || 5})"
+                             title="${c.nombre} (Stock:${c.stock || 5})">
                         </div>
                     `).join('')}
                 </div>
             </div>`;
     }
+
+   // 🛒 SELECTOR DE CANTIDAD CON CLASE CSS PERSONALIZADA
+    opcionesHTML += `
+        <div style="margin-bottom:15px;">
+            <label><strong>Cantidad:</strong></label>
+            <div style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
+                <button type="button" class="btn-cantidad-modal" onclick="cambiarCantidadModal('-')">-</button>
+                <input type="number" id="modal-input-cantidad" value="1" min="1" max="${stockInicial}" readonly style="width: 60px; height: 38px; text-align: center; margin: 0;">
+                <button type="button" class="btn-cantidad-modal" onclick="cambiarCantidadModal('+')">+</button>
+            </div>
+        </div>
+    `;
+
     opcionesHTML += `</div>`;
     document.getElementById('modal-descripcion').insertAdjacentHTML('afterend', opcionesHTML);
 
@@ -298,6 +320,7 @@ function abrirModal(id) {
         nuevoBtnComprar.textContent = "Agregar 🛒";
         nuevoBtnComprar.onclick = () => {
             const talla = document.getElementById('modal-select-talla') ? document.getElementById('modal-select-talla').value : null;
+            const cantidad = parseInt(document.getElementById('modal-input-cantidad').value) || 1;
             
             let colorElegido = window.colorSeleccionado;
             if (!colorElegido && producto.colores && producto.colores.length > 0) {
@@ -305,6 +328,8 @@ function abrirModal(id) {
                 colorElegido = circuloMarcado ? circuloMarcado.getAttribute('data-color') : producto.colores[0].nombre;
             }
 
+            // Nota: Si tu función 'agregarAlCarritoPorId' acepta cantidad como parámetro extra, puedes pasarla (ej: agregarAlCarritoPorId(producto.id, talla, colorElegido, cantidad)). 
+            // Si solo recibe 3 parámetros, asegúrate de gestionar la cantidad dentro de ella leyendo el input.
             agregarAlCarritoPorId(producto.id, talla, colorElegido); 
             cerrarModal();
         };
@@ -313,13 +338,38 @@ function abrirModal(id) {
     document.getElementById('modal-producto').style.display = 'flex';
 }
 
-window.marcarColor = function(elemento, nombreColor, fotoColor) {
+// 🎨 MARCAR COLOR Y ACTUALIZAR EL STOCK MÁXIMO DEL INPUT AUTOMÁTICAMENTE
+window.marcarColor = function(elemento, nombreColor, fotoColor, stockColor) {
     window.colorSeleccionado = nombreColor;
     document.querySelectorAll('.color-circle').forEach(el => el.style.borderColor = '#ccc');
     elemento.style.borderColor = '#000'; 
 
     if (fotoColor) {
         document.getElementById('modal-img').src = fotoColor;
+    }
+
+    // Actualizar el límite del input según el stock específico de este color
+    const inputCant = document.getElementById('modal-input-cantidad');
+    if (inputCant) {
+        inputCant.max = stockColor;
+        inputCant.value = 1; // Reiniciar a 1 por seguridad al cambiar de tono
+    }
+};
+
+// ➕➖ CONTROLADORES DE LOS BOTONES DE CANTIDAD EN EL MODAL
+window.cambiarCantidadModal = function(operador) {
+    const input = document.getElementById('modal-input-cantidad');
+    if (!input) return;
+
+    let actual = parseInt(input.value) || 1;
+    let maxStock = parseInt(input.max) || 5;
+
+    if (operador === '+' && actual < maxStock) {
+        input.value = actual + 1;
+    } else if (operador === '-' && actual > 1) {
+        input.value = actual - 1;
+    } else if (operador === '+' && actual >= maxStock) {
+        alert(`¡Lo sentimos! Solo quedan ${maxStock} unidades disponibles en este color.`);
     }
 };
 
@@ -328,13 +378,21 @@ function cerrarModal() {
     window.indiceItemEnEdicion = null; 
 }
 
-document.addEventListener('click', (e) => {
-    const modal = document.getElementById('modal-producto');
-    const btnCerrar = document.getElementById('cerrar-modal');
-    if (modal && (e.target === modal || e.target === btnCerrar)) {
-        cerrarModal();
+
+// --- CERRAR MODAL DE PRODUCTO AL HACER CLIC FUERA (EN EL FONDO OSCURO) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const modalProducto = document.getElementById('modal-producto');
+    if (modalProducto) {
+        modalProducto.addEventListener('click', (e) => {
+            // Si el clic es exactamente en el fondo oscuro (overlay) y no dentro de la caja de contenido
+            if (e.target === modalProducto) {
+                cerrarModal();
+            }
+        });
     }
 });
+
+
 
 // --- LÓGICA AUTOMÁTICA PARA EL SHOP THE LOOK (AL HACER CLIC) ---
 window.toggleLookPopup = function(btn, event) {
