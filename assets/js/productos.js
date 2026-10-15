@@ -23,10 +23,10 @@ window.productosData = [
                 "nombre": "rosa",
                 "hex": "#FFC0CB",
                 "foto": "images/fotos_productos/camisas/CAMISA MANGA BOMBACHE KGH ROSA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
-        "stock": 3,
+        "stock": 1,
         "descripcion": "CAMISA MANGA BOMBACHE KGH ROSA",
         "detalles": [
             "Categoría: Camisas",
@@ -43,18 +43,18 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/camisas/CAMISA MANGA BOMBACHE KGH VINO.png"
         ],
-        "tallas": [
-            "S-M-L"
-        ],
+        "tallas": 
+            ["S", "M", "L", ],
+        
         "colores": [
             {
                 "nombre": "vino",
                 "hex": "#722F37",
                 "foto": "images/fotos_productos/camisas/CAMISA MANGA BOMBACHE KGH VINO.png",
-                "stock": 3
+                "stock": 1
             }
         ],
-        "stock": 3,
+        "stock": 1,
         "descripcion": "CAMISA MANGA BOMBACHE KGH VINO",
         "detalles": [
             "Categoría: Camisas",
@@ -72,17 +72,17 @@ window.productosData = [
             "images/fotos_productos/camisas/CAMISA MANGA BOMBACHE KGH AZUL.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+            "S", "M", "L",
         ],
         "colores": [
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/camisas/CAMISA MANGA BOMBACHE KGH AZUL.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
-        "stock": 3,
+        "stock": 1,
         "descripcion": "CAMISA MANGA BOMBACHE KGH AZUL",
         "detalles": [
             "Categoría: Camisas",
@@ -109,16 +109,24 @@ window.productosData = [
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/camisas/CAMISA CON FLORES DE RELIEVE Y PIEDRERIA AZUL.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
                 "nombre": "fucsia",
                 "hex": "#FF00FF",
                 "foto": "images/fotos_productos/camisas/CAMISA CON FLORES DE RELIEVE Y PIEDRERIA FUCSIA.jpeg",
-                "stock": 3
+                "stock": 1
+            },
+
+             {
+                "nombre": "rojo",
+                "hex": "#e40202",
+                "foto": "images/fotos_productos/camisas/CAMISA CON FLORES DE RELIEVE Y PIEDRERIA ROJA.jpeg",
+                "stock": 1
             }
+
         ],
-        "stock": 3,
+        "stock": 1,
         "descripcion": "CAMISA CON FLORES DE RELIEVE Y PIEDRERIA",
         "detalles": [
             "Categoría: Camisas",
@@ -149,34 +157,49 @@ window.productosData = [
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/camisas/CAMISA CON BOTONES GRANDES ROJA.jpeg",
-                "stock": 8
+                "stock": 1
             },
             {
                 "nombre": "rosa",
-                "hex": "#FFC0CB",
+                "hex": "#f0a3b0",
                 "foto": "images/fotos_productos/camisas/CAMISA CON BOTONES GRANDE ROSADA.jpeg",
-                "stock": 8
+                "stock": 1
             },
             {
                 "nombre": "verde",
                 "hex": "#008000",
                 "foto": "images/fotos_productos/camisas/CAMISA CON BOTONES GRANDES VERDE MANZANA.jpeg",
-                "stock": 8
+                "stock": 1
             },
             {
                 "nombre": "azul",
-                "hex": "#0000FF",
+                "hex": "#50a5eb",
                 "foto": "images/fotos_productos/camisas/CAMISA CON BOTONES GRANDES AZUL AGUA.jpeg",
-                "stock": 8
+                "stock": 1
             },
             {
                 "nombre": "fucsia",
                 "hex": "#FF00FF",
                 "foto": "images/fotos_productos/camisas/CAMISA CON BOTONES GRANDES FUCSIA.jpg",
-                "stock": 8
+                "stock": 1
+            },
+            
+             {
+                "nombre": "roja",
+                "hex": "#dd0606",
+                "foto":"images/fotos_productos/camisas/CAMISA CON BOTONES GRANDES ROJA.jpeg",
+                "stock": 2
+            },
+
+            {
+                "nombre": "negra",
+                "hex": "#000000",
+                "foto":  "images/fotos_productos/camisas/CAMISA CON BOTONES GRANDES NEGRA.jpg",
+                "stock": 1
             }
+
         ],
-        "stock": 8,
+        "stock": 1,
         "descripcion": "CAMISA CON BOTONES GRANDES",
         "detalles": [
             "Categoría: Camisas",
@@ -192,15 +215,15 @@ window.productosData = [
         "imagen": "images/fotos_productos/camisas/CAMISA ELASTICA EN LA MANGA CORTA BLANCA.jpeg",
         "fotosExtras": [
             "images/fotos_productos/camisas/CAMISA ELASTICA EN LA MANGA CORTA BLANCA.jpeg",
-            "images/fotos_productos/camisas/CAMISA ELASTICA EN LA MANGA CORTA BLANCA.jpeg"
+           
         ],
         "tallas": [
             "UNICA"
         ],
         "colores": [
             {
-                "nombre": "rosa",
-                "hex": "#FFC0CB",
+                "nombre": "blanco",
+                "hex": "#ffffff",
                 "foto": "images/fotos_productos/camisas/CAMISA ELASTICA EN LA MANGA CORTA BLANCA.jpeg",
                 "stock": 2
             }
@@ -223,14 +246,14 @@ window.productosData = [
             "images/fotos_productos/camisas/CAMISA CON CORBATA KGH NUDE.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+          "S", "M", "L",
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "nude",
+                "hex": "#fa8888",
                 "foto": "images/fotos_productos/camisas/CAMISA CON CORBATA KGH NUDE.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -251,14 +274,14 @@ window.productosData = [
             "images/fotos_productos/camisas/CAMISA CON CORBATA KGH MOSTAZA.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+           "S", "M", "L",
         ],
         "colores": [
             {
                 "nombre": "mostaza",
-                "hex": "#FFDB58",
+                "hex": "#e9c12f",
                 "foto": "images/fotos_productos/camisas/CAMISA CON CORBATA KGH MOSTAZA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -283,8 +306,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "rojo",
+                "hex": "#ff0b0b",
                 "foto": "images/fotos_productos/camisas/CAMISA CON CORBATA KGH ROJA.jpeg",
                 "stock": 1
             }
@@ -307,14 +330,14 @@ window.productosData = [
             "images/fotos_productos/camisas/CAMISA MANGA PLISADA KGH VERDE TURQUESA.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+           "S", "M", "L",
         ],
         "colores": [
             {
-                "nombre": "verde",
-                "hex": "#008000",
+                "nombre": "verde turquesa",
+                "hex": "#66f1cfc2",
                 "foto": "images/fotos_productos/camisas/CAMISA MANGA PLISADA KGH VERDE TURQUESA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -335,14 +358,14 @@ window.productosData = [
             "images/fotos_productos/camisas/CAMISA DE VESTIR 3-4 KGH.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+            "S", "M", "L",
         ],
         "colores": [
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/camisas/CAMISA DE VESTIR 3-4 KGH.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -454,10 +477,31 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "verde",
-                "hex": "#008000",
+                "nombre": "lila",
+                "hex": "#ba66bd",
                 "foto": "images/fotos_productos/camisas/CAMISA CON FLOR MANGA CORTA LILA.png",
-                "stock": 4
+                "stock": 1
+            },
+
+             {
+                "nombre": "blanco",
+                "hex": "#ffffff",
+                 "foto":"images/fotos_productos/camisas/CAMISA CON FLOR MANGA CORTA BLANCA.jpeg",
+                "stock": 1
+            },
+
+             {
+                "nombre": "verde turquesa",
+                "hex": "#55ccbc",
+                "foto":  "images/fotos_productos/camisas/CAMISA CON FLOR MANGA CORTA TURQUESA VERDE.jpeg",
+                "stock": 1
+            },
+
+             {
+                "nombre": "verde manzana claro",
+                "hex": "#7ee97a",
+                "foto":  "images/fotos_productos/camisas/CAMISA CON FLOR MANGA CORTA VERDE MANZANA CLARO.jpeg",
+                "stock": 1
             }
         ],
         "stock": 4,
@@ -515,29 +559,43 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "azul",
-                "hex": "#0000FF",
+                "nombre": "azul agua claro",
+                "hex": "#74d4e0",
                 "foto": "images/fotos_productos/camisas/CAMISA LINO CON NUDO AZUL AGUA.jpeg",
-                "stock": 6
+                "stock": 1
             },
             {
                 "nombre": "fucsia",
                 "hex": "#FF00FF",
                 "foto": "images/fotos_productos/camisas/CAMISA LINO CON NUDO FUCSIA.jpeg",
-                "stock": 6
+                "stock": 1
             },
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/camisas/CAMISA LINO CON NUDO NEGRO.jpeg",
-                "stock": 6
+                "stock": 1
             },
             {
                 "nombre": "naranja",
-                "hex": "#FFA500",
+                "hex": "#f07c38",
                 "foto": "images/fotos_productos/camisas/CAMISA LINO CON NUDO NARANJA.jpeg",
-                "stock": 6
-            }
+                "stock": 1
+            },
+
+            {
+                "nombre": "azul calro",
+                "hex": "#438dee",
+                "foto":  "images/fotos_productos/camisas/CAMISA LINO CON NUDO AZUL CLARO.jpeg",
+                "stock": 1
+            },
+
+            {
+                "nombre": "blanco",
+                "hex": "#ffffff",
+                "foto":"images/fotos_productos/camisas/CAMISA LINO CON NUDO BLANCA.jpeg",
+                "stock": 1
+            },
         ],
         "stock": 6,
         "descripcion": "CAMISA LINO CON NUDO",
@@ -562,7 +620,7 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "único",
-                "hex": "#CCCCCC",
+                "hex": "#030303",
                 "foto": "images/fotos_productos/camisas/CAMISA LINO CLASICA NEGRA.jpeg",
                 "stock": 1
             }
@@ -593,16 +651,16 @@ window.productosData = [
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/camisas/CAMISA TOP DE JEAN CON TELA NEGRO.jpeg",
-                "stock": 3
+                "stock": 2
             },
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/camisas/CAMISA TOP DE JEAN CON TELA BLANCA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
-        "stock": 3,
+        "stock":3,
         "descripcion": "CAMISA TOP DE JEAN CON TELA",
         "detalles": [
             "Categoría: Camisas",
@@ -620,14 +678,14 @@ window.productosData = [
             "images/fotos_productos/camisas/CAMISA MANGA LARGA CLASICA BLANCA MNG.jpeg"
         ],
         "tallas": [
-            "L-S"
+            "L","S",
         ],
         "colores": [
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/camisas/CAMISA MANGA LARGA CLASICA BLANCA MNG.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -648,14 +706,14 @@ window.productosData = [
             "images/fotos_productos/camisas/CAMISA MANGA LARGA TIPO SEDA   CON BOTONES DORADOS MNG.jpeg"
         ],
         "tallas": [
-            "L-M"
+            "L","M",
         ],
         "colores": [
             {
                 "nombre": "único",
-                "hex": "#CCCCCC",
+                "hex": "#fcd059d3",
                 "foto": "images/fotos_productos/camisas/CAMISA MANGA LARGA TIPO SEDA   CON BOTONES DORADOS MNG.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -6079,9 +6137,16 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/top/T-SHIRT FUCSIA CON DISEÑO DE DISNEY SIDE BY SIDE GRRRR YUM YUM.jpeg"
         ],
-        "tallas": [
-            "2 M-XL"
-        ],
+       "tallas": [
+        {
+            "nombre": "M",
+            "stock": 2
+        },
+        {
+            "nombre": "XL",
+            "stock": 1
+        }
+    ],
         "colores": [
             {
                 "nombre": "fucsia",
@@ -6103,18 +6168,31 @@ window.productosData = [
         "precio": 25.0,
         "categoria": "dama-top",
         "marca": "splash",
-        "imagen": "images/fotos_productos/top/T-SHIRT AMARILLO PASTEL  CON ESTAMPADO DE CALIFORNIA CON FRESAS CON BRILLO FOTO 2",
+        "imagen": "images/fotos_productos/top/T-SHIRT AMARILLO PASTEL  CON ESTAMPADO DE CALIFORNIA CON FRESAS CON BRILLO FOTO 2_.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/T-SHIRT AMARILLO PASTEL  CON ESTAMPADO DE CALIFORNIA CON FRESAS CON BRILLO FOTO 2"
+            "images/fotos_productos/top/T-SHIRT AMARILLO PASTEL  CON ESTAMPADO DE CALIFORNIA CON FRESAS CON BRILLO FOTO 2_.jpg"
         ],
-        "tallas": [
-            "2L-2M-XL"
-        ],
+
+
+         "tallas": [
+        {
+            "nombre": "L",
+            "stock": 2
+        },
+        {
+            "nombre": "XL",
+            "stock": 1
+        },
+         {
+            "nombre": "M",
+            "stock": 2
+        }
+    ],
         "colores": [
             {
                 "nombre": "amarillo",
                 "hex": "#FFFF00",
-                "foto": "images/fotos_productos/top/T-SHIRT AMARILLO PASTEL  CON ESTAMPADO DE CALIFORNIA CON FRESAS CON BRILLO FOTO 2",
+                "foto":"images/fotos_productos/top/T-SHIRT AMARILLO PASTEL  CON ESTAMPADO DE CALIFORNIA CON FRESAS CON BRILLO FOTO 2_.jpg",
                 "stock": 5
             }
         ],
@@ -6125,51 +6203,36 @@ window.productosData = [
             "Stock disponible: 5"
         ]
     },
-    {
-        "id": "top003",
-        "nombre": "T-SHIRT ROJA",
-        "precio": 0.0,
-        "categoria": "dama-top",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/top/T-SHIRT ROJA.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/top/T-SHIRT ROJA.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/top/T-SHIRT ROJA.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "T-SHIRT ROJA",
-        "detalles": [
-            "Categoría: Top",
-            "Stock disponible: 5"
-        ]
-    },
+    
     {
         "id": "top004",
         "nombre": "T-SHIRT NEGRA CON ESTAMPADO DE MUJER PRETTY HURS",
         "precio": 25.0,
         "categoria": "dama-top",
         "marca": "splash",
-        "imagen": "images/fotos_productos/top/T-SHIRT NEGRA CON ESTAMPADO DE MUJER PRETTY HURS  FOTO 2",
+        "imagen": "images/fotos_productos/top/T-SHIRT NEGRA CON ESTAMPADO DE MUJER PRETTY HURS  FOTO 2.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/T-SHIRT NEGRA CON ESTAMPADO DE MUJER PRETTY HURS  FOTO 2"
+            "images/fotos_productos/top/T-SHIRT NEGRA CON ESTAMPADO DE MUJER PRETTY HURS  FOTO 2.jpg"
         ],
-        "tallas": [
-            "3M-L-XL"
-        ],
+
+         "tallas": [
+        {
+            "nombre": "M",
+            "stock": 3
+        },
+        {
+            "nombre": "XL",
+            "stock": 1
+        },
+         {
+            "nombre": "L",
+            "stock": 1
+        }
+    ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "negro",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/top/T-SHIRT NEGRA CON ESTAMPADO DE MUJER PRETTY HURS  FOTO 2",
                 "stock": 5
             }
@@ -6187,18 +6250,18 @@ window.productosData = [
         "precio": 25.0,
         "categoria": "dama-top",
         "marca": "disney",
-        "imagen": "images/fotos_productos/top/T-SHIRT NEGRA  DISNEY CON ESTAMPADO MICKEY/MINNIETHE ONE AND ONLY GOOD VIBES FOTO 2",
+        "imagen": "images/fotos_productos/top/T-SHIRT NEGRA  DISNEY CON ESTAMPADO MICKEY AND MINNIE THE ONE AND ONLY GOOD VIBES FOTO 2.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/T-SHIRT NEGRA  DISNEY CON ESTAMPADO MICKEY/MINNIETHE ONE AND ONLY GOOD VIBES FOTO 2"
+           "images/fotos_productos/top/T-SHIRT NEGRA  DISNEY CON ESTAMPADO MICKEY AND MINNIE THE ONE AND ONLY GOOD VIBES FOTO 2.jpg"
         ],
         "tallas": [
             "M"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/top/T-SHIRT NEGRA  DISNEY CON ESTAMPADO MICKEY/MINNIETHE ONE AND ONLY GOOD VIBES FOTO 2",
+                "nombre": "Negra",
+                "hex": "#000000",
+                "foto": "images/fotos_productos/top/T-SHIRT NEGRA  DISNEY CON ESTAMPADO MICKEY AND MINNIE THE ONE AND ONLY GOOD VIBES FOTO 2.jpg",
                 "stock": 1
             }
         ],
@@ -6220,60 +6283,33 @@ window.productosData = [
             "images/fotos_productos/top/T-SHIRT BLANCA CON ESTAMPADO LOVE LAST FOREVER.jpeg"
         ],
         "tallas": [
-            "L- M"
+            "L", "M",
         ],
         "colores": [
             {
                 "nombre": "único",
                 "hex": "#CCCCCC",
                 "foto": "images/fotos_productos/top/T-SHIRT BLANCA CON ESTAMPADO LOVE LAST FOREVER.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
-        "stock": 2,
+        "stock": 1,
         "descripcion": "T-SHIRT BLANCA CON ESTAMPADO LOVE LAST FOREVER",
         "detalles": [
             "Categoría: Top",
             "Stock disponible: 2"
         ]
     },
-    {
-        "id": "top007",
-        "nombre": "T-SHIRT BLANCA LAZO",
-        "precio": 0.0,
-        "categoria": "dama-top",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/top/T-SHIRT BLANCA LAZO.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/top/T-SHIRT BLANCA LAZO.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/top/T-SHIRT BLANCA LAZO.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "T-SHIRT BLANCA LAZO",
-        "detalles": [
-            "Categoría: Top",
-            "Stock disponible: 5"
-        ]
-    },
+    
     {
         "id": "top008",
         "nombre": "T-SHIRT GRIS CON ESTAMPADO DE FLORES RELIEVE THERE IS A QUIET PEACE TO BE FOUND IN THE  HEART OF THE GARDEN",
         "precio": 25.0,
         "categoria": "dama-top",
         "marca": "sin marca",
-        "imagen": "images/fotos_productos/top/T-SHIRT GRIS CON ESTAMPADO DE FLORES RELIEVE THERE IS A QUIET PEACE TO BE FOUND IN THE  HEART OF THE GARDEN FOTO 2",
+        "imagen": "images/fotos_productos/top/T-SHIRT GRIS CON ESTAMPADO DE FLORES RELIEVE THERE IS A QUIET PEACE TO BE FOUND IN THE  HEART OF THE GARDEN FOTO 2.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/T-SHIRT GRIS CON ESTAMPADO DE FLORES RELIEVE THERE IS A QUIET PEACE TO BE FOUND IN THE  HEART OF THE GARDEN FOTO 2"
+            "images/fotos_productos/top/T-SHIRT GRIS CON ESTAMPADO DE FLORES RELIEVE THERE IS A QUIET PEACE TO BE FOUND IN THE  HEART OF THE GARDEN FOTO 2.jpg"
         ],
         "tallas": [
             "UNICA"
@@ -6282,7 +6318,7 @@ window.productosData = [
             {
                 "nombre": "gris",
                 "hex": "#808080",
-                "foto": "images/fotos_productos/top/T-SHIRT GRIS CON ESTAMPADO DE FLORES RELIEVE THERE IS A QUIET PEACE TO BE FOUND IN THE  HEART OF THE GARDEN FOTO 2",
+                "foto": "images/fotos_productos/top/T-SHIRT GRIS CON ESTAMPADO DE FLORES RELIEVE THERE IS A QUIET PEACE TO BE FOUND IN THE  HEART OF THE GARDEN FOTO 2.jpg",
                 "stock": 1
             }
         ],
@@ -6299,9 +6335,9 @@ window.productosData = [
         "precio": 25.0,
         "categoria": "dama-top",
         "marca": "m y f",
-        "imagen": "images/fotos_productos/top/TOP NEGRO M Y F CORAZON SOME PEOPLE PLAYING NEGATIVE SPACE  FOTO 2",
+        "imagen": "images/fotos_productos/top/TOP NEGRO M Y F CORAZON SOME PEOPLE PLAYING NEGATIVE SPACE  FOTO 2.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/TOP NEGRO M Y F CORAZON SOME PEOPLE PLAYING NEGATIVE SPACE  FOTO 2"
+            "images/fotos_productos/top/TOP NEGRO M Y F CORAZON SOME PEOPLE PLAYING NEGATIVE SPACE  FOTO 2.jpg"
         ],
         "tallas": [
             "UNICA"
@@ -6310,7 +6346,7 @@ window.productosData = [
             {
                 "nombre": "negro",
                 "hex": "#000000",
-                "foto": "images/fotos_productos/top/TOP NEGRO M Y F CORAZON SOME PEOPLE PLAYING NEGATIVE SPACE  FOTO 2",
+                "foto": "images/fotos_productos/top/TOP NEGRO M Y F CORAZON SOME PEOPLE PLAYING NEGATIVE SPACE  FOTO 2.jpg",
                 "stock": 1
             }
         ],
@@ -6327,9 +6363,9 @@ window.productosData = [
         "precio": 25.0,
         "categoria": "dama-top",
         "marca": "r/b",
-        "imagen": "images/fotos_productos/top/T-SHIRT R/B BLANCA CON ESTAMPADO  DE LENTEJUELAS ROCK FOTO 2",
+        "imagen": "images/fotos_productos/top/T-SHIRT R&B BLANCA CON ESTAMPADO  DE LENTEJUELAS ROCK FOTO 2.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/T-SHIRT R/B BLANCA CON ESTAMPADO  DE LENTEJUELAS ROCK FOTO 2"
+            "images/fotos_productos/top/T-SHIRT R&B BLANCA CON ESTAMPADO  DE LENTEJUELAS ROCK FOTO 2.jpg"
         ],
         "tallas": [
             "L"
@@ -6338,7 +6374,7 @@ window.productosData = [
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
-                "foto": "images/fotos_productos/top/T-SHIRT R/B BLANCA CON ESTAMPADO  DE LENTEJUELAS ROCK FOTO 2",
+                "foto": "images/fotos_productos/top/T-SHIRT R&B BLANCA CON ESTAMPADO  DE LENTEJUELAS ROCK FOTO 2.jpg",
                 "stock": 1
             }
         ],
@@ -8867,6 +8903,10 @@ window.productosData = [
             "Stock disponible: 3"
         ]
     },
+
+ /* ===================== */
+/* conjunto set  */
+/* =====================*/
     {
         "id": "set3001",
         "nombre": "SET DE SHORT DE TELA AZUL Y ROSA ESTAMPA",

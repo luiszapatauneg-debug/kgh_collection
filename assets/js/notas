@@ -1,0 +1,44 @@
+
+            
+
+
+            ,
+
+            {
+                "nombre": "negra",
+                "hex": "#000000",
+                "foto":  "images/fotos_productos/camisas/CAMISA CON BOTONES GRANDES NEGRA.jpg",
+                "stock": 1
+            }
+             {
+                "nombre": "blanco",
+                "hex": "#ffffff",
+                "images/fotos_productos/camisas/CAMISA CON FLOR MANGA CORTA BLANCA.jpeg",
+                "stock": 1
+            },
+
+             {
+                "nombre": "verde turquesa",
+                "hex": "#55ccbc",
+                "foto":  "images/fotos_productos/camisas/CAMISA CON FLOR MANGA CORTA TURQUESA VERDE.jpeg",
+                "stock": 1
+            },
+
+             {
+                "nombre": "verde manzana claro",
+                "hex": "#7ee97a",
+                "foto":  "images/fotos_productos/camisas/CAMISA CON FLOR MANGA CORTA VERDE MANZANA CLARO.jpeg",
+                "stock": 1
+            }
+
+             "S", "M", "L",
+
+              "tallas": [
+        {
+            "nombre": "M",
+            "stock": 2
+        },
+        {
+            "nombre": "XL",
+            "stock": 1
+        }
