@@ -6397,21 +6397,29 @@ window.productosData = [
             "images/fotos_productos/top/T-SHIRT NUDO KGH  NEGRO.jpeg",
             "images/fotos_productos/top/T-SHIRT NUDO KGH VERDE.jpeg"
         ],
-        "tallas": [
-            "2M NEGRO-1M BLANCO"
-        ],
+
+         "tallas": [
+        {
+            "nombre": "L",
+            "stock": 2
+        },
+        {
+            "nombre": "M",
+            "stock": 1
+        }
+    ],
         "colores": [
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/top/T-SHIRT ENCAJE NEGRA KGH.jpeg",
-                "stock": 3
+                "stock": 2
             },
             {
-                "nombre": "verde",
-                "hex": "#008000",
+                "nombre": "blanco",
+                "hex": "#ececec",
                 "foto": "images/fotos_productos/top/T-SHIRT NUDO KGH VERDE.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
