@@ -256,7 +256,7 @@ window.productosData = [
                 "stock": 1
             }
         ],
-        "stock": 3,
+        "stock": 1,
         "descripcion": "CAMISA CON CORBATA KGH NUDE",
         "detalles": [
             "Categoría: Camisas",
@@ -284,7 +284,7 @@ window.productosData = [
                 "stock": 1
             }
         ],
-        "stock": 3,
+        "stock": 1,
         "descripcion": "CAMISA CON CORBATA KGH MOSTAZA",
         "detalles": [
             "Categoría: Camisas",
@@ -340,7 +340,7 @@ window.productosData = [
                 "stock": 1
             }
         ],
-        "stock": 3,
+        "stock": 1,
         "descripcion": "CAMISA MANGA PLISADA KGH",
         "detalles": [
             "Categoría: Camisas",
@@ -368,7 +368,7 @@ window.productosData = [
                 "stock": 1
             }
         ],
-        "stock": 3,
+        "stock": 1,
         "descripcion": "CAMISA DE VESTIR 3/4 KGH",
         "detalles": [
             "Categoría: Camisas",
@@ -504,7 +504,7 @@ window.productosData = [
                 "stock": 1
             }
         ],
-        "stock": 4,
+        "stock": 1,
         "descripcion": "CAMISA CON FLOR MANGA CORTA",
         "detalles": [
             "Categoría: Camisas",
@@ -597,7 +597,7 @@ window.productosData = [
                 "stock": 1
             },
         ],
-        "stock": 6,
+        "stock": 1,
         "descripcion": "CAMISA LINO CON NUDO",
         "detalles": [
             "Categoría: Camisas",
@@ -660,7 +660,7 @@ window.productosData = [
                 "stock": 1
             }
         ],
-        "stock":3,
+       "stock": 3,
         "descripcion": "CAMISA TOP DE JEAN CON TELA",
         "detalles": [
             "Categoría: Camisas",
@@ -5501,14 +5501,14 @@ window.productosData = [
             "images/fotos_productos/vestidos/VESTIDO CAMISERO MANGA PLISADA KGH GRIS.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "gris",
                 "hex": "#808080",
                 "foto": "images/fotos_productos/vestidos/VESTIDO CAMISERO MANGA PLISADA KGH GRIS.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -5529,14 +5529,14 @@ window.productosData = [
             "images/fotos_productos/vestidos/VESTIDO CAMISERO MANGA PLISADA KGH CORAL.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "único",
                 "hex": "#CCCCCC",
                 "foto": "images/fotos_productos/vestidos/VESTIDO CAMISERO MANGA PLISADA KGH CORAL.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -5557,14 +5557,14 @@ window.productosData = [
             "images/fotos_productos/vestidos/VESTIDO CAMISERO MANGA PLISADA KGH ROSA VIEJA.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "rosa",
                 "hex": "#FFC0CB",
                 "foto": "images/fotos_productos/vestidos/VESTIDO CAMISERO MANGA PLISADA KGH ROSA VIEJA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -5585,16 +5585,44 @@ window.productosData = [
             "images/fotos_productos/vestidos/VESTIDO DE SEDA GRAPEADO  KGH AZUL OSCURO.jpeg",
             "images/fotos_productos/vestidos/VESTIDO DE SEDA GRAPEADO  KGH TURQUESA.jpeg"
         ],
-        "tallas": [
-            "S TURQUESA- M AZUL OSCURO"
-        ],
-        "colores": [
-            {
-                "nombre": "azul",
+
+         "colores": [
+
+        {
+
+          "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/vestidos/VESTIDO DE SEDA GRAPEADO  KGH AZUL OSCURO.jpeg",
-                "stock": 2
-            }
+
+            "tallas": [
+
+                {
+
+                    "nombre": "M",
+                    "stock": 1
+
+                }
+
+            ]
+
+        },
+         {
+
+          "nombre": "turqueza",
+                "hex": "#4ce9cf",
+                "foto":"images/fotos_productos/vestidos/VESTIDO DE SEDA GRAPEADO  KGH TURQUESA.jpeg",
+
+            "tallas": [
+
+                {
+
+                    "nombre": "S",
+                    "stock": 1
+
+                }
+
+            ]
+        }
         ],
         "stock": 2,
         "descripcion": "VESTIDO DE SEDA GRAPEADO  KGH",
@@ -5624,25 +5652,25 @@ window.productosData = [
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/vestidos/VESTIDO BOHEMIO ESTAMPADO AZUL CIELO.jpeg",
-                "stock": 4
+                "stock": 1
             },
             {
                 "nombre": "naranja",
                 "hex": "#FFA500",
                 "foto": "images/fotos_productos/vestidos/VESTIDO BOHEMIO ESTAMPADO NARANJA.jpeg",
-                "stock": 4
+                "stock": 1
             },
             {
                 "nombre": "verde",
                 "hex": "#008000",
                 "foto": "images/fotos_productos/vestidos/VESTIDO BOHEMIO ESTAMPADO VERDE.jpeg",
-                "stock": 4
+                "stock": 1
             },
             {
                 "nombre": "mostaza",
                 "hex": "#FFDB58",
                 "foto": "images/fotos_productos/vestidos/VESTIDO BOHEMIO ESTAMPADO MOSTAZA.jpeg",
-                "stock": 4
+                "stock": 1
             }
         ],
         "stock": 4,
@@ -5680,34 +5708,7 @@ window.productosData = [
             "Stock disponible: 1"
         ]
     },
-    {
-        "id": "ves009",
-        "nombre": "VESTIDO CORRUGADO R/B",
-        "precio": 0.0,
-        "categoria": "dama-vestidos",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/vestidos/VESTIDO CORRUGADO R/B.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/vestidos/VESTIDO CORRUGADO R/B.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/vestidos/VESTIDO CORRUGADO R/B.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "VESTIDO CORRUGADO R/B",
-        "detalles": [
-            "Categoría: Vestidos",
-            "Stock disponible: 5"
-        ]
-    },
+  
     {
         "id": "ves010",
         "nombre": "VESTIDO LARGO SATINADO CLASIC DE SEDA",
@@ -5717,7 +5718,7 @@ window.productosData = [
         "imagen": "images/fotos_productos/vestidos/VESTIDO LARGO SATINADO CLASIC DE SEDA GRIS.jpeg",
         "fotosExtras": [
             "images/fotos_productos/vestidos/VESTIDO LARGO SATINADO CLASIC DE SEDA GRIS.jpeg",
-            "images/fotos_productos/vestidos/VESTIDO LARGO SATINADO CLASIC DE SEDA.jpeg",
+            "images/fotos_productos/vestidos/VESTIDO LARGO SATINADO CLASIC DE SEDA MARRON.jpeg",
             "images/fotos_productos/vestidos/VESTIDO LARGO SATINADO CLASIC DE SEDA CHAMPAGE.jpeg"
         ],
         "tallas": [
@@ -5733,7 +5734,13 @@ window.productosData = [
             {
                 "nombre": "marron",
                 "hex": "#8B4513",
-                "foto": "images/fotos_productos/vestidos/VESTIDO LARGO SATINADO CLASIC DE SEDA.jpeg",
+                "foto": "images/fotos_productos/vestidos/VESTIDO LARGO SATINADO CLASIC DE SEDA MARRON.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "champage",
+                "hex": "#b99d4e",
+                "foto": "images/fotos_productos/vestidos/VESTIDO LARGO SATINADO CLASIC DE SEDA CHAMPAGE.jpeg",
                 "stock": 1
             }
         ],
@@ -5790,21 +5797,21 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#c9a166",
                 "foto": "images/fotos_productos/vestidos/VESTIDO TIPO SUETER MANGA LARGA BEIGE.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
                 "nombre": "azul",
-                "hex": "#0000FF",
+                "hex": "#6b99d4",
                 "foto": "images/fotos_productos/vestidos/VESTIDO TIPO SUETER MANGA LARGA AZUL CLARO.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/vestidos/VESTIDO TIPO SUETER MANGA LARGA NEGRO.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -5858,7 +5865,7 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#d8b58c",
                 "foto": "images/fotos_productos/vestidos/VESTIDO DE NOCHE BEIGE CON ESTAMPADO DE LENTEJUELAS BLANCAS.jpeg",
                 "stock": 1
             }
@@ -5886,7 +5893,7 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#ccb370",
                 "foto": "images/fotos_productos/vestidos/VESTIDO BEIGE MANGA LARGA CON PIEDRERIA.jpeg",
                 "stock": 1
             }
@@ -5914,7 +5921,7 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#d1b37c",
                 "foto": "images/fotos_productos/vestidos/VESTIDO DE NOCHE BEIGE CON ESTAMPADO DE LENTEJUELAS NEGRAS.jpeg",
                 "stock": 1
             }
@@ -5924,34 +5931,6 @@ window.productosData = [
         "detalles": [
             "Categoría: Vestidos",
             "Stock disponible: 1"
-        ]
-    },
-    {
-        "id": "ves017",
-        "nombre": "VESTIDO DE TULL NEGRO MANGA LARGA",
-        "precio": 0.0,
-        "categoria": "dama-vestidos",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/vestidos/VESTIDO DE TULL NEGRO MANGA LARGA.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/vestidos/VESTIDO DE TULL NEGRO MANGA LARGA.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "negro",
-                "hex": "#000000",
-                "foto": "images/fotos_productos/vestidos/VESTIDO DE TULL NEGRO MANGA LARGA.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "VESTIDO DE TULL NEGRO MANGA LARGA",
-        "detalles": [
-            "Categoría: Vestidos",
-            "Stock disponible: 5"
         ]
     },
     {
@@ -5969,8 +5948,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "lila",
+                "hex": "#ca46b9",
                 "foto": "images/fotos_productos/vestidos/VESTIDO LILA CON RELIEVE DE FLORES Y PIEDRIA.jpeg",
                 "stock": 1
             }
@@ -6003,25 +5982,25 @@ window.productosData = [
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/vestidos/VESTIDO CHIFON LARGO NEGRO.jpeg",
-                "stock": 4
+                "stock": 1
             },
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/vestidos/VESTIDO CHIFON LARGO AZUL OSCURO.jpeg",
-                "stock": 4
+                "stock": 1
             },
             {
                 "nombre": "vino",
                 "hex": "#722F37",
                 "foto": "images/fotos_productos/vestidos/VESTIDO CHIFON LARGO VINO TINTO.jpeg",
-                "stock": 4
+                "stock": 1
             },
             {
                 "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/vestidos/VESTIDO CHIFON LARGO ROJO.jpeg",
-                "stock": 4
+                "stock": 1
             }
         ],
         "stock": 4,
@@ -6050,13 +6029,13 @@ window.productosData = [
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/vestidos/VESTIDO LINO CASUAL NEGRO.jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#dab57e",
                 "foto": "images/fotos_productos/vestidos/VESTIDO LINO CASUAL BEIGE.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -6068,23 +6047,23 @@ window.productosData = [
     },
     {
         "id": "ves021",
-        "nombre": "VESTUDO DE FLOR ROSA  LARGO",
+        "nombre": "VESTIDO DE FLOR ROSA  LARGO",
         "precio": 55.0,
         "categoria": "dama-vestidos",
         "marca": "stradiverius",
-        "imagen": "images/fotos_productos/vestidos/VESTUDO DE FLOR ROSA  LARGO.jpeg",
+        "imagen": "images/fotos_productos/vestidos/VESTIDO DE FLOR ROSA  LARGO.jpeg",
         "fotosExtras": [
-            "images/fotos_productos/vestidos/VESTUDO DE FLOR ROSA  LARGO.jpeg"
+            "images/fotos_productos/vestidos/VESTIDO DE FLOR ROSA  LARGO.jpeg"
         ],
         "tallas": [
-            "M- S"
+            "M","S",
         ],
         "colores": [
             {
                 "nombre": "rosa",
                 "hex": "#FFC0CB",
-                "foto": "images/fotos_productos/vestidos/VESTUDO DE FLOR ROSA  LARGO.jpeg",
-                "stock": 2
+                "foto": "images/fotos_productos/vestidos/VESTIDO DE FLOR ROSA  LARGO.jpeg",
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -6095,7 +6074,7 @@ window.productosData = [
         ]
     },
     {
-        "id": "ves021",
+        "id": "ves022",
         "nombre": "VESTUDO DE FLOR ROSA  CORTO",
         "precio": 40.0,
         "categoria": "dama-vestidos",
@@ -6104,16 +6083,34 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/vestidos/VESTIDO DE FLOR ROSA  CORTO.jpeg"
         ],
-        "tallas": [
-            "2M-2L"
-        ],
-        "colores": [
-            {
-                "nombre": "rosa",
+
+         "colores": [
+
+        {
+
+          "nombre": "rosa",
                 "hex": "#FFC0CB",
                 "foto": "images/fotos_productos/vestidos/VESTIDO DE FLOR ROSA  CORTO.jpeg",
-                "stock": 4
-            }
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "L",
+                    "stock": 2
+
+                },
+                 {
+
+                    "nombre": "M",
+                    "stock": 2
+
+                }
+
+            ]
+
+        }
         ],
         "stock": 4,
         "descripcion": "VESTIDO DE FLOR ROSA  CORTO",
@@ -6152,7 +6149,7 @@ window.productosData = [
                 "nombre": "fucsia",
                 "hex": "#FF00FF",
                 "foto": "images/fotos_productos/top/T-SHIRT FUCSIA CON DISEÑO DE DISNEY SIDE BY SIDE GRRRR YUM YUM.jpeg",
-                "stock": 3
+              
             }
         ],
         "stock": 3,
@@ -6193,7 +6190,7 @@ window.productosData = [
                 "nombre": "amarillo",
                 "hex": "#FFFF00",
                 "foto":"images/fotos_productos/top/T-SHIRT AMARILLO PASTEL  CON ESTAMPADO DE CALIFORNIA CON FRESAS CON BRILLO FOTO 2_.jpg",
-                "stock": 5
+             
             }
         ],
         "stock": 5,
@@ -6234,7 +6231,7 @@ window.productosData = [
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/top/T-SHIRT NEGRA CON ESTAMPADO DE MUJER PRETTY HURS  FOTO 2",
-                "stock": 5
+               
             }
         ],
         "stock": 5,
@@ -6398,30 +6395,52 @@ window.productosData = [
             "images/fotos_productos/top/T-SHIRT NUDO KGH VERDE.jpeg"
         ],
 
-         "tallas": [
+
+
+          "colores": [
+
         {
-            "nombre": "L",
-            "stock": 2
-        },
-        {
-            "nombre": "M",
-            "stock": 1
-        }
-    ],
-        "colores": [
-            {
-                "nombre": "negro",
+
+           "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/top/T-SHIRT ENCAJE NEGRA KGH.jpeg",
-                "stock": 2
-            },
-            {
-                "nombre": "blanco",
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "L",
+                    "stock": 2
+
+                }
+
+            ]
+
+        },
+
+        {
+
+             "nombre": "blanco",
                 "hex": "#ececec",
                 "foto": "images/fotos_productos/top/T-SHIRT NUDO KGH VERDE.jpeg",
-                "stock": 1
-            }
-        ],
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "M",
+
+                    "stock": 1
+
+                }
+
+            ]
+
+        }
+
+    ],
         "stock": 3,
         "descripcion": "T-SHIRT ENCAJE KGH",
         "detalles": [
@@ -6440,23 +6459,51 @@ window.productosData = [
             "images/fotos_productos/top/T-SHIRT NUDO KGH VERDE.jpeg",
             "images/fotos_productos/top/T-SHIRT NUDO KGH MARRON.jpeg"
         ],
-        "tallas": [
-            "2M VERDE - 1M MARRON"
-        ],
+
+
         "colores": [
-            {
-                "nombre": "verde",
+
+        {
+
+           "nombre": "verde",
                 "hex": "#008000",
                 "foto": "images/fotos_productos/top/T-SHIRT NUDO KGH VERDE.jpeg",
-                "stock": 2
-            },
-            {
-                "nombre": "marron",
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "M",
+                    "stock": 2
+
+                }
+
+            ]
+
+        },
+
+        {
+
+             "nombre": "marron",
                 "hex": "#8B4513",
                 "foto": "images/fotos_productos/top/T-SHIRT NUDO KGH MARRON.jpeg",
-                "stock": 2
-            }
-        ],
+
+            "tallas": [
+
+                {
+
+                    "nombre": "M",
+
+                    "stock": 1
+
+                }
+
+            ]
+
+        }
+
+    ],
         "stock": 2,
         "descripcion": "T-SHIRT NUDO KGH",
         "detalles": [
@@ -6475,14 +6522,14 @@ window.productosData = [
             "images/fotos_productos/top/TOP BASICO KGH VERDE.jpeg"
         ],
         "tallas": [
-            "M-S"
+            "M","S",
         ],
         "colores": [
             {
                 "nombre": "verde",
                 "hex": "#008000",
                 "foto": "images/fotos_productos/top/TOP BASICO KGH VERDE.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -6492,52 +6539,25 @@ window.productosData = [
             "Stock disponible: 2"
         ]
     },
-    {
-        "id": "top014",
-        "nombre": "TOP CORTE IMPERIAL KGH",
-        "precio": 0.0,
-        "categoria": "dama-top",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/top/TOP CORTE IMPERIAL KGH.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/top/TOP CORTE IMPERIAL KGH.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/top/TOP CORTE IMPERIAL KGH.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "TOP CORTE IMPERIAL KGH",
-        "detalles": [
-            "Categoría: Top",
-            "Stock disponible: 5"
-        ]
-    },
+    
     {
         "id": "top015",
         "nombre": "TOP CUELLO ALTO KGH",
         "precio": 10.0,
         "categoria": "dama-top",
         "marca": "kgh",
-        "imagen": "images/fotos_productos/top/TOP CUELLO ALTO KGH",
+        "imagen": "images/fotos_productos/top/TOP CUELLO ALTO BRONCE KGH.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/TOP CUELLO ALTO KGH"
+            "images/fotos_productos/top/TOP CUELLO ALTO BRONCE KGH.jpg"
         ],
         "tallas": [
             "S"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/top/TOP CUELLO ALTO KGH",
+                "nombre": "bronce",
+                "hex": "#ca5729",
+                "foto": "images/fotos_productos/top/TOP CUELLO ALTO BRONCE KGH.jpg",
                 "stock": 1
             }
         ],
@@ -6554,9 +6574,9 @@ window.productosData = [
         "precio": 30.0,
         "categoria": "dama-top",
         "marca": "kgh",
-        "imagen": "images/fotos_productos/top/TOP AZUL CON FLORES LENTEJUELAS TELA DE FIESTA KGH",
+        "imagen": "images/fotos_productos/top/TOP AZUL CON FLORES LENTEJUELAS TELA DE FIESTA KGH.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/TOP AZUL CON FLORES LENTEJUELAS TELA DE FIESTA KGH"
+            "images/fotos_productos/top/TOP AZUL CON FLORES LENTEJUELAS TELA DE FIESTA KGH.jpg"
         ],
         "tallas": [
             "S"
@@ -6565,7 +6585,7 @@ window.productosData = [
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
-                "foto": "images/fotos_productos/top/TOP AZUL CON FLORES LENTEJUELAS TELA DE FIESTA KGH",
+                "foto": "images/fotos_productos/top/TOP AZUL CON FLORES LENTEJUELAS TELA DE FIESTA KGH.jpg",
                 "stock": 1
             }
         ],
@@ -6591,8 +6611,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "turquesa",
+                "hex": "#51e9e1",
                 "foto": "images/fotos_productos/top/TOP DE VESTIR TURQUESA KGH.jpeg",
                 "stock": 1
             }
@@ -6716,34 +6736,7 @@ window.productosData = [
             "Stock disponible: 1"
         ]
     },
-    {
-        "id": "top022",
-        "nombre": "TOP DE VESTIR CON CINTA",
-        "precio": 0.0,
-        "categoria": "dama-top",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/top/TOP DE VESTIR CON CINTA.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/top/TOP DE VESTIR CON CINTA.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/top/TOP DE VESTIR CON CINTA.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "TOP DE VESTIR CON CINTA",
-        "detalles": [
-            "Categoría: Top",
-            "Stock disponible: 5"
-        ]
-    },
+    
     {
         "id": "top023",
         "nombre": "TOP MANGA BOMBACHE KGH LADRILLO",
@@ -6755,14 +6748,14 @@ window.productosData = [
             "images/fotos_productos/top/TOP MANGA BOMBACHE KGH LADRILLO.jpeg"
         ],
         "tallas": [
-            "S-M"
+            "S","M",
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "ladrillo",
+                "hex": "#df6243",
                 "foto": "images/fotos_productos/top/TOP MANGA BOMBACHE KGH LADRILLO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -6774,7 +6767,7 @@ window.productosData = [
     },
     {
         "id": "top024",
-        "nombre": "TOP MANGA BOMBACHE KGH PLATEAD",
+        "nombre": "TOP MANGA BOMBACHE KGH PLATEADO",
         "precio": 35.0,
         "categoria": "dama-top",
         "marca": "kgh",
@@ -6783,14 +6776,14 @@ window.productosData = [
             "images/fotos_productos/top/TOP MANGA BOMBACHE KGH PLATEADO.jpeg"
         ],
         "tallas": [
-            "M-L-S"
+            "M","L","S",
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "plateado",
+                "hex": "#888888",
                 "foto": "images/fotos_productos/top/TOP MANGA BOMBACHE KGH PLATEADO.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -6802,7 +6795,7 @@ window.productosData = [
     },
     {
         "id": "top025",
-        "nombre": "TOP MANGA BOMBACHE KGH CHAMPAG",
+        "nombre": "TOP MANGA BOMBACHE KGH CHAMPAGE",
         "precio": 35.0,
         "categoria": "dama-top",
         "marca": "kgh",
@@ -6811,14 +6804,14 @@ window.productosData = [
             "images/fotos_productos/top/TOP MANGA BOMBACHE KGH CHAMPAG.jpeg"
         ],
         "tallas": [
-            "M-L-S"
+            "M","L","S",
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "Champage",
+                "hex": "#cfa853",
                 "foto": "images/fotos_productos/top/TOP MANGA BOMBACHE KGH CHAMPAG.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -6839,14 +6832,14 @@ window.productosData = [
             "images/fotos_productos/top/TOP ZARA NEGRO.jpeg"
         ],
         "tallas": [
-            "M-S"
+            "M","S",
         ],
         "colores": [
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/top/TOP ZARA NEGRO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -6862,9 +6855,9 @@ window.productosData = [
         "precio": 20.0,
         "categoria": "dama-top",
         "marca": "zara",
-        "imagen": "images/fotos_productos/top/TOP ZARA RAYAS ZEBRA NEGRO",
+        "imagen": "images/fotos_productos/top/TOP ZARA RAYAS ZEBRA NEGRO.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/TOP ZARA RAYAS ZEBRA NEGRO"
+            "images/fotos_productos/top/TOP ZARA RAYAS ZEBRA NEGRO.jpg"
         ],
         "tallas": [
             "M"
@@ -6873,7 +6866,7 @@ window.productosData = [
             {
                 "nombre": "negro",
                 "hex": "#000000",
-                "foto": "images/fotos_productos/top/TOP ZARA RAYAS ZEBRA NEGRO",
+                "foto": "images/fotos_productos/top/TOP ZARA RAYAS ZEBRA NEGRO.jpg",
                 "stock": 1
             }
         ],
@@ -6884,43 +6877,16 @@ window.productosData = [
             "Stock disponible: 1"
         ]
     },
-    {
-        "id": "top028",
-        "nombre": "TOP ZARA BLANCO",
-        "precio": 0.0,
-        "categoria": "dama-top",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/top/TOP ZARA BLANCO.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/top/TOP ZARA BLANCO.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "blanco",
-                "hex": "#FFFFFF",
-                "foto": "images/fotos_productos/top/TOP ZARA BLANCO.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "TOP ZARA BLANCO",
-        "detalles": [
-            "Categoría: Top",
-            "Stock disponible: 5"
-        ]
-    },
+    
     {
         "id": "top029",
         "nombre": "TOP ZARA VERDE",
         "precio": 20.0,
         "categoria": "dama-top",
         "marca": "zara",
-        "imagen": "images/fotos_productos/top/TOP ZARA VERDE MANZANA",
+        "imagen": "images/fotos_productos/top/TOP ZARA VERDE MANZANA.jpg",
         "fotosExtras": [
-            "images/fotos_productos/top/TOP ZARA VERDE MANZANA"
+            "images/fotos_productos/top/TOP ZARA VERDE MANZANA.jpg"
         ],
         "tallas": [
             "M"
@@ -6929,7 +6895,7 @@ window.productosData = [
             {
                 "nombre": "verde",
                 "hex": "#008000",
-                "foto": "images/fotos_productos/top/TOP ZARA VERDE MANZANA",
+                "foto": "images/fotos_productos/top/TOP ZARA VERDE MANZANA.jpg",
                 "stock": 1
             }
         ],
@@ -6951,14 +6917,14 @@ window.productosData = [
             "images/fotos_productos/top/BLUSA BASICA CUELLO BOBO KGH NEGRO TELA DE SEDA.jpeg"
         ],
         "tallas": [
-            "M-S"
+            "M","S",
         ],
         "colores": [
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/top/BLUSA BASICA CUELLO BOBO KGH NEGRO TELA DE SEDA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -6979,14 +6945,14 @@ window.productosData = [
             "images/fotos_productos/top/BLUSA BASICA CUELLO BOBO KGH GRIS TELA DE SEDA.jpeg"
         ],
         "tallas": [
-            "S-M"
+            "S","M",
         ],
         "colores": [
             {
                 "nombre": "gris",
                 "hex": "#808080",
                 "foto": "images/fotos_productos/top/BLUSA BASICA CUELLO BOBO KGH GRIS TELA DE SEDA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -7007,14 +6973,14 @@ window.productosData = [
             "images/fotos_productos/top/BLUSA BASICA DE SEDA KGH LILA.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "lila",
+                "hex": "#c36be6",
                 "foto": "images/fotos_productos/top/BLUSA BASICA DE SEDA KGH LILA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -7035,14 +7001,14 @@ window.productosData = [
             "images/fotos_productos/top/BLUSA BASICA DE SEDA KGH GRIS.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "gris",
                 "hex": "#808080",
                 "foto": "images/fotos_productos/top/BLUSA BASICA DE SEDA KGH GRIS.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -7091,14 +7057,14 @@ window.productosData = [
             "images/fotos_productos/top/BODY CORTE IMPERIAL KGH ROSADO.jpeg"
         ],
         "tallas": [
-            "L-M"
+            "L","M",
         ],
         "colores": [
             {
                 "nombre": "rosa",
                 "hex": "#FFC0CB",
                 "foto": "images/fotos_productos/top/BODY CORTE IMPERIAL KGH ROSADO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -7123,8 +7089,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "ladrillo",
+                "hex": "#cf6241",
                 "foto": "images/fotos_productos/top/BODY CORTE IMPERIAL KGH LADRILLO.jpeg",
                 "stock": 1
             }
@@ -7147,7 +7113,7 @@ window.productosData = [
             "images/fotos_productos/top/BODY ESCOTE CORAZON KGH AMARILLO.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+            "S","M","L",
         ],
         "colores": [
             {
@@ -7452,7 +7418,7 @@ window.productosData = [
     },
 
 /*============ */
-/*CHAQUETA   */
+/*CHAQUETAS   */
 /*===========*/
 
     {
@@ -7470,8 +7436,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "azul claro",
+                "hex": "#5aa7be",
                 "foto": "images/fotos_productos/chaquetas/CHAQUETA DE JEAN CLASICA.jpeg",
                 "stock": 2
             }
@@ -7526,8 +7492,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "azul claro",
+                "hex": "#26c6ee",
                 "foto": "images/fotos_productos/chaquetas/CHAQUETA JEAN TIPO TOP CON DETALLES DE METAL.jpeg",
                 "stock": 2
             }
@@ -7550,14 +7516,14 @@ window.productosData = [
             "images/fotos_productos/chaquetas/BLAZER MOSTAZA.jpeg"
         ],
         "tallas": [
-            "L-S-M"
+            "L","S","M",
         ],
         "colores": [
             {
                 "nombre": "mostaza",
                 "hex": "#FFDB58",
                 "foto": "images/fotos_productos/chaquetas/BLAZER MOSTAZA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -7578,14 +7544,14 @@ window.productosData = [
             "images/fotos_productos/chaquetas/CHAQUETA TIPO TOP ROJO KGH.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+            "S","M","L",
         ],
         "colores": [
             {
                 "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/chaquetas/CHAQUETA TIPO TOP ROJO KGH.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -7634,23 +7600,50 @@ window.productosData = [
             "images/fotos_productos/chaquetas/CHAQUETA DE LANA STRADIVARIUS ROJO.jpeg",
             "images/fotos_productos/chaquetas/CHAQUETA DE LANA STRADIVARIUS AZUL.jpeg"
         ],
-        "tallas": [
-            "1 ROJA L - 2 M AZUL"
-        ],
+
         "colores": [
-            {
-                "nombre": "rojo",
+
+        {
+
+           "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/chaquetas/CHAQUETA DE LANA STRADIVARIUS ROJO.jpeg",
-                "stock": 2
-            },
-            {
-                "nombre": "azul",
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "L",
+                    "stock": 1
+
+                }
+
+            ]
+
+        },
+
+        {
+
+               "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/chaquetas/CHAQUETA DE LANA STRADIVARIUS AZUL.jpeg",
-                "stock": 2
-            }
-        ],
+                
+            "tallas": [
+
+                {
+
+                    "nombre": "M",
+
+                    "stock": 2
+
+                }
+
+            ]
+
+        }
+
+    ],
         "stock": 2,
         "descripcion": "CHAQUETA DE LANA STRADIVARIUS",
         "detalles": [
@@ -7658,38 +7651,73 @@ window.productosData = [
             "Stock disponible: 2"
         ]
     },
+    
     {
-        "id": "chaq008",
-        "nombre": "CHAQUETA DE CUERO CLASICA CON BOTONES ESCONDIDOS",
-        "precio": 180.0,
-        "categoria": "dama-chaquetas",
-        "marca": "mng",
-        "imagen": "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS MARRON.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS MARRON.jpeg",
-            "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS  NEGRA.jpeg",
-            "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS VINI TINTO OSCURO.jpeg"
-        ],
-        "tallas": [
-            "1 L- 1 M MARRON",
-            "2 M NEGRAS - 1 S NEGRA",
-            "1 S-1 M VINOTINTO OSCURO"
-        ],
-        "colores": [
-            {
-                "nombre": "marron",
-                "hex": "#8B4513",
-                "foto": "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS MARRON.jpeg",
-                "stock": 7
-            }
-        ],
-        "stock": 7,
-        "descripcion": "CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS",
-        "detalles": [
-            "Categoría: Chaquetas",
-            "Stock disponible: 7"
-        ]
-    },
+    "id": "chaq008",
+    "nombre": "CHAQUETA DE CUERO CLASICA CON BOTONES ESCONDIDOS",
+    "precio": 180.0,
+    "categoria": "dama-chaquetas",
+    "marca": "mng",
+    "imagen": "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS MARRON.jpeg",
+    "fotosExtras": [
+        "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS MARRON.jpeg",
+        "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS  NEGRA.jpeg",
+        "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS VINI TINTO OSCURO.jpeg"
+    ],
+    "colores": [
+        {
+            "nombre": "marron",
+            "hex": "#8B4513",
+            "foto": "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS MARRON.jpeg",
+            "tallas": [
+                {
+                    "nombre": "L",
+                    "stock": 1
+                },
+                {
+                    "nombre": "M",
+                    "stock": 1
+                }
+            ]
+        },
+        {
+            "nombre": "negra",
+            "hex": "#111111",
+            "foto": "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS  NEGRA.jpeg",
+            "tallas": [
+                {
+                    "nombre": "M",
+                    "stock": 2
+                },
+                {
+                    "nombre": "S",
+                    "stock": 1
+                }
+            ]
+        },
+        {
+            "nombre": "vinotinto",
+            "hex": "#58111A",
+            "foto": "images/fotos_productos/chaquetas/CHAQUETA DE CUERO  MNG CLASICA CON BOTONES ESCONDIDOS VINI TINTO OSCURO.jpeg",
+            "tallas": [
+                {
+                    "nombre": "S",
+                    "stock": 1
+                },
+                {
+                    "nombre": "M",
+                    "stock": 1
+                }
+            ]
+        }
+    ],
+    "stock": 7,
+    "descripcion": "CHAQUETA DE CUERO MNG CLASICA CON BOTONES ESCONDIDOS",
+    "detalles": [
+        "Categoría: Chaquetas",
+        "Stock disponible: 7"
+    ]
+},
     {
         "id": "chaq009",
         "nombre": "CHAQUETA DE GAMUSA MARRON",
@@ -7729,14 +7757,14 @@ window.productosData = [
             "images/fotos_productos/chaquetas/CHAQUETA DE CUERO CLASICA CON BOTONES AFUERA  COLOR LADRILLO.jpeg"
         ],
         "tallas": [
-            "L- XL"
+            "L","XL",
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": ",ladrillo",
+                "hex": "#e9784c",
                 "foto": "images/fotos_productos/chaquetas/CHAQUETA DE CUERO CLASICA CON BOTONES AFUERA  COLOR LADRILLO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -7756,17 +7784,46 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/chaquetas/CHAQUETA  DE CUERO NEGRA CON SINTA Y ESTAMPADO POR DENTRO.jpeg"
         ],
-        "tallas": [
-            "XXL - L -3XL"
-        ],
-        "colores": [
-            {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+
+         "colores": [
+
+        {
+
+           "nombre": "negro",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/chaquetas/CHAQUETA  DE CUERO NEGRA CON SINTA Y ESTAMPADO POR DENTRO.jpeg",
-                "stock": 3
-            }
-        ],
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "L",
+                    "stock": 1
+
+                },
+
+                {
+                    
+                    "nombre": "XL",
+                    "stock": 1
+                },
+
+                {
+                    
+                    "nombre": "3XL",
+                    "stock": 1
+                },
+
+
+            ]
+
+        },
+        
+         
+
+    ],
+
         "stock": 3,
         "descripcion": "CHAQUETA  DE CUERO NEGRA CON SINTA Y ESTAMPADO POR DENTRO",
         "detalles": [
@@ -7785,23 +7842,74 @@ window.productosData = [
             "images/fotos_productos/chaquetas/BLAZER MNG ROJO FOTO 2 - copia.jpeg",
             "images/fotos_productos/chaquetas/BLAZER MNG NEGRO.jpeg"
         ],
-        "tallas": [
-            "XL - S ROJA",
-            "S- L- XL - M  NEGRA"
-        ],
+
+
+
         "colores": [
-            {
-                "nombre": "rojo",
+
+        {
+
+           "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/chaquetas/BLAZER MNG ROJO FOTO 2 - copia.jpeg",
-                "stock": 6
-            },
-            {
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "XL",
+                    "stock": 1
+
+                },
+
+                {
+                    
+                    "nombre": "S",
+                    "stock": 1
+                }
+
+            ]
+
+        },
+        {
+
+           
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/chaquetas/BLAZER MNG NEGRO.jpeg",
-                "stock": 6
-            }
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "S",
+                    "stock": 1
+
+                },
+
+                {
+                    
+                    "nombre": "L",
+                    "stock": 1
+                },
+
+                {
+                    
+                    "nombre": "XL",
+                    "stock": 1
+                },
+                {
+                    
+                    "nombre": "M",
+                    "stock": 1
+                },
+
+
+            ]
+
+        },
         ],
         "stock": 6,
         "descripcion": "BLAZER MNG",
@@ -7822,7 +7930,7 @@ window.productosData = [
             "images/fotos_productos/chaquetas/BLAZER BORDADO VINO TINTO MNG.jpeg"
         ],
         "tallas": [
-            "XL- S"
+            "XL","S",
         ],
         "colores": [
             {
@@ -7920,13 +8028,13 @@ window.productosData = [
                 "nombre": "verde",
                 "hex": "#008000",
                 "foto": "images/fotos_productos/pantalones/PANTALON PALAZO VERDE.jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/pantalones/PANTALON PALAZO BLANCO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -7983,13 +8091,13 @@ window.productosData = [
                 "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/pantalones/PANTALON LARGO DE RAYON ROJO .jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
                 "nombre": "mostaza",
                 "hex": "#FFDB58",
                 "foto": "images/fotos_productos/pantalones/PANTALON LARGO DE RAYON MOSTAZA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -8010,14 +8118,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON PALAZO DE RAYON CORTO ROSADO KGH.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+            "S","M","L",
         ],
         "colores": [
             {
                 "nombre": "rosa",
                 "hex": "#FFC0CB",
                 "foto": "images/fotos_productos/pantalones/PANTALON PALAZO DE RAYON CORTO ROSADO KGH.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -8066,14 +8174,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON PALAZO DE RAYON CORTO FUCSIA KGH.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+            "S","M","L",
         ],
         "colores": [
             {
                 "nombre": "fucsia",
                 "hex": "#FF00FF",
                 "foto": "images/fotos_productos/pantalones/PANTALON PALAZO DE RAYON CORTO FUCSIA KGH.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -8094,14 +8202,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALONES CON PLICES AZUL.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/pantalones/PANTALONES CON PLICES AZUL.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -8122,15 +8230,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALONES CON PLICES AZUL.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/pantalones/PANTALONES CON PLICES AZUL.jpeg",
-                "stock": 3
-            }
+                "stock": 1            }
         ],
         "stock": 3,
         "descripcion": "PANTALON DE VESTIR CON PLICES NARANJA CON PLICES KGH",
@@ -8150,15 +8257,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON DE VESTIR PLICES BEIGE.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#d4a171",
                 "foto": "images/fotos_productos/pantalones/PANTALON DE VESTIR PLICES BEIGE.jpeg",
-                "stock": 3
-            }
+                "stock": 1            }
         ],
         "stock": 3,
         "descripcion": "PANTALON DE VESTIR PLICES BEIGE",
@@ -8178,14 +8284,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON CLASICO NEGRO CON BOLSILLO KGH.jpeg"
         ],
         "tallas": [
-            "L-S"
+            "L","S",
         ],
         "colores": [
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/pantalones/PANTALON CLASICO NEGRO CON BOLSILLO KGH.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -8234,14 +8340,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON  BEIGE CLASICO CON BOLSILLOS  KGH.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#b19767",
                 "foto": "images/fotos_productos/pantalones/PANTALON  BEIGE CLASICO CON BOLSILLOS  KGH.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -8262,7 +8368,7 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON DE VESTIR GRIS KGH.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
@@ -8291,29 +8397,80 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON ESTAMPADO KGH STRESCH  rojo con gris.jpeg",
             "images/fotos_productos/pantalones/PANTALON ESTAMPADO KGH STRESCH negro oscuro.jpeg"
         ],
-        "tallas": [
-            "2L-1M"
-        ],
+
+
         "colores": [
-            {
-                "nombre": "blanco",
+
+        {
+
+           "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/pantalones/PANTALON ESTAMPADO KGH STRESCH blanco con rayas negras.jpeg",
-                "stock": 3
-            },
-            {
+
+            "tallas": [
+
+                {
+
+                    "nombre": "M",
+                    "stock": 1
+
+                },
+                
+
+            ]
+
+        },
+
+        {
+
+             
                 "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/pantalones/PANTALON ESTAMPADO KGH STRESCH  rojo con gris.jpeg",
-                "stock": 3
-            },
-            {
-                "nombre": "negro",
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "L",
+
+                    "stock": 1
+
+                }
+               
+
+            ]
+
+        },
+
+         {
+
+            "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/pantalones/PANTALON ESTAMPADO KGH STRESCH negro oscuro.jpeg",
-                "stock": 3
-            }
-        ],
+                
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "L",
+
+                    "stock": 1
+
+                }
+
+            ]
+
+        }
+
+    ],
+
+
+
+        
         "stock": 3,
         "descripcion": "PANTALON ESTAMPADO KGH STRESCH",
         "detalles": [
@@ -8332,14 +8489,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON ESTAMPADO DE CUADROS MARRON KGH TELA PLANA.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "marron",
                 "hex": "#8B4513",
                 "foto": "images/fotos_productos/pantalones/PANTALON ESTAMPADO DE CUADROS MARRON KGH TELA PLANA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -8360,14 +8517,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON ESTAMPADO DE CUADROS BLANCO KGHTELA LISA.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S",
         ],
         "colores": [
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/pantalones/PANTALON ESTAMPADO DE CUADROS BLANCO KGHTELA LISA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -8388,14 +8545,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON CARGO CUERINA KGH  NEGRO.png"
         ],
         "tallas": [
-            "S-M"
+            "S","M",
         ],
         "colores": [
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/pantalones/PANTALON CARGO CUERINA KGH  NEGRO.png",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -8473,14 +8630,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES.jpeg"
         ],
         "tallas": [
-            "M-S"
+            "M","S",
         ],
         "colores": [
             {
                 "nombre": "mostaza",
                 "hex": "#FFDB58",
                 "foto": "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES .png",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -8557,7 +8714,7 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON MOSTAZA CON BOLSILLO CARGO KGH.jpeg"
         ],
         "tallas": [
-            "L-M"
+            "L","M",
         ],
         "colores": [
             {
@@ -8589,8 +8746,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "Ladrillo",
+                "hex": "#eb7659",
                 "foto": "images/fotos_productos/pantalones/PANTALON CARGO CON BOLSILLO LADRILLO.jpeg",
                 "stock": 1
             }
@@ -8670,14 +8827,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/JOGGER MOSTAZA CLASICO KGH DAMA.jpeg"
         ],
         "tallas": [
-            "L-M"
+            "L","M",
         ],
         "colores": [
             {
                 "nombre": "mostaza",
                 "hex": "#FFDB58",
                 "foto": "images/fotos_productos/pantalones/JOGGER MOSTAZA CLASICO KGH DAMA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -8698,14 +8855,14 @@ window.productosData = [
             "images/fotos_productos/pantalones/PANTALON JEAN NEGRO ISIS ROTO.jpeg"
         ],
         "tallas": [
-            "M-L"
+            "M","L",
         ],
         "colores": [
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/pantalones/PANTALON JEAN NEGRO ISIS ROTO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -8800,7 +8957,7 @@ window.productosData = [
         ]
     },
     {
-        "id": "p2035",
+        "id": "p2036",
         "nombre": "PANTALON CLASICO DE JEAN",
         "precio": 80.0,
         "categoria": "dama-pantalones",
@@ -8809,16 +8966,35 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/pantalones/PANTALON CLASICO DE JEAN NEGRO PRELAVADO.jpeg"
         ],
-        "tallas": [
-            "2 38 - 1 36"
-        ],
-        "colores": [
-            {
-                "nombre": "negro",
+
+         "colores": [
+
+        {
+
+           "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/pantalones/PANTALON CLASICO DE JEAN NEGRO PRELAVADO.jpeg",
-                "stock": 3
-            }
+
+            "tallas": [
+
+                {
+
+                    "nombre": "38",
+                    "stock": 2
+
+                },
+                  {
+
+                    "nombre": "36",
+                    "stock": 1
+
+                }
+
+
+            ]
+
+        }
+
         ],
         "stock": 3,
         "descripcion": "PANTALON CLASICO DE JEAN NEGRO PRELAVADO",
@@ -8837,17 +9013,49 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/pantalones/PANTALON BASICO MNG CON CIERRE A LOS LADOS.jpeg"
         ],
-        "tallas": [
-            "38-40-36-44"
-        ],
-        "colores": [
-            {
-                "nombre": "rojo",
+
+
+         "colores": [
+
+        {
+
+           "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/pantalones/PANTALON BASICO MNG CON CIERRE A LOS LADOS.jpeg",
-                "stock": 4
-            }
+            "tallas": [
+
+                {
+
+                    "nombre": "38",
+                    "stock": 1
+
+                },
+                  {
+
+                    "nombre": "36",
+                    "stock": 1
+
+                },
+                 {
+
+                    "nombre": "40",
+                    "stock": 1
+
+                },
+                 {
+
+                    "nombre": "44",
+                    "stock": 1
+
+                }
+
+
+            ]
+
+        }
+
         ],
+
         "stock": 4,
         "descripcion": "PANTALON BASICO MNG CON CIERRE A LOS LADOS",
         "detalles": [
@@ -8865,17 +9073,44 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/pantalones/PANTALON NEGRO BASICO MNG CON CIERRE A LOS LADOS.jpeg"
         ],
-        "tallas": [
-            "2 38- 40-46"
-        ],
-        "colores": [
-            {
+
+         "colores": [
+
+        {
+
+          
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/pantalones/PANTALON NEGRO BASICO MNG CON CIERRE A LOS LADOS.jpeg",
-                "stock": 4
-            }
+            "tallas": [
+
+                {
+
+                    "nombre": "38",
+                    "stock": 2
+
+                },
+                 
+                 {
+
+                    "nombre": "40",
+                    "stock": 1
+
+                },
+                 {
+
+                    "nombre": "46",
+                    "stock": 1
+
+                }
+
+
+            ]
+
+        }
+
         ],
+
         "stock": 4,
         "descripcion": "PANTALON NEGRO BASICO MNG CON CIERRE A LOS LADOS",
         "detalles": [
@@ -8885,7 +9120,7 @@ window.productosData = [
     },
     {
         "id": "p2037",
-        "nombre": "PANTALON NEGRO CLASICO MNG BASICO SIN BOLSILLO",
+        "nombre": "PANTALON VINO TINTO CLASICO MNG BASICO SIN BOLSILLO",
         "precio": 120.0,
         "categoria": "dama-pantalones",
         "marca": "mng",
@@ -8893,17 +9128,45 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/pantalones/PANTALON VINO TINTO CLASICO MNG BASICO SIN BOLSILLO.jpeg"
         ],
-        "tallas": [
-            "40-38-42"
-        ],
+
+
         "colores": [
-            {
+
+        {
+
+          
                 "nombre": "vino",
                 "hex": "#722F37",
                 "foto": "images/fotos_productos/pantalones/PANTALON VINO TINTO CLASICO MNG BASICO SIN BOLSILLO.jpeg",
-                "stock": 3
-            }
+            "tallas": [
+
+                {
+
+                    "nombre": "38",
+                    "stock": 1
+
+                },
+                 
+                 {
+
+                    "nombre": "40",
+                    "stock": 1
+
+                },
+                 {
+
+                    "nombre": "42",
+                    "stock": 1
+
+                }
+
+
+            ]
+
+        }
+
         ],
+
         "stock": 3,
         "descripcion": "PANTALON VINO TINTO CLASICO MNG BASICO SIN BOLSILLO",
         "detalles": [
@@ -8934,13 +9197,13 @@ window.productosData = [
                 "nombre": "rosa",
                 "hex": "#FFC0CB",
                 "foto": "images/fotos_productos/conjuntos/SET DE SHORT DE TELA SEMI TRANSPARENTE ROSA ESTAMPADO.jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/conjuntos/SET DE SHORT DE TELA SEMI TRANSPARENTE AZUL  ESTAMPADO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -9052,23 +9315,32 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "azul",
-                "hex": "#0000FF",
+                "nombre": "Azul Oscuro",
+                "hex": "#122ca0",
                 "foto": "images/fotos_productos/conjuntos/CONJUNTO SHORT Y CHALECO CON BOLSILLO FALSO DENIN AZUL OSCURO.jpeg",
-                "stock": 8
+                "stock": 2
             },
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/conjuntos/CONJUNTO SHORT Y CHALECO CON BOLSILLO FALSO DENIN BLANCO.jpeg",
-                "stock": 8
+                "stock": 2
             },
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/conjuntos/CONJUNTO SHORT Y CHALECO CON BOLSILLO FALSO DENIN NEGRO .png",
-                "stock": 8
+                "stock": 2
+            },
+
+             {
+                "nombre": "AZUL CLARO",
+                "hex": "#5da8e6",
+                "foto": "images/fotos_productos/conjuntos/CONJUNTO SHORT Y CHALECO CON BOLSILLO FALSO DENIN AZUL CLARO.jpeg",
+                "stock": 2
             }
+
+
         ],
         "stock": 8,
         "descripcion": "CONJUNTO SHORT Y CHALECO CON BOLSILLO FALSO DENIN",
@@ -9083,9 +9355,9 @@ window.productosData = [
         "precio": 120.0,
         "categoria": "dama-conjuntos",
         "marca": "sin marca",
-        "imagen": "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a.jpg",
+        "imagen": "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a GRIS NEGRO.jpg",
         "fotosExtras": [
-            "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a.jpg",
+            "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a GRIS NEGRO.jpg",
             "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a AZUL.jpeg",
             "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a GRIS.jpeg"
         ],
@@ -9094,26 +9366,26 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "negro",
-                "hex": "#000000",
-                "foto": "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a.jpg",
-                "stock": 5
+                "nombre": "gris negro",
+                "hex": "#1f1f1f",
+                "foto": "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a GRIS NEGRO.jpg",
+                "stock": 2
             },
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a AZUL.jpeg",
-                "stock": 5
+                "stock": 1
             },
             {
                 "nombre": "gris",
                 "hex": "#808080",
                 "foto": "images/fotos_productos/conjuntos/SET DE SHORT DE JEAN CON PIEDRERIA a GRIS.jpeg",
-                "stock": 5
+                "stock": 1
             }
         ],
-        "stock": 5,
-        "descripcion": "SET DE SHORT DE JEAN CON PIEDRERIA ESTAMPADO DE a",
+        "stock": 4,
+        "descripcion": "SET DE SHORT DE JEAN CON PIEDRERIA ",
         "detalles": [
             "Categoría: Conjuntos set",
             "Stock disponible: 5"
@@ -9166,13 +9438,13 @@ window.productosData = [
                 "nombre": "fucsia",
                 "hex": "#FF00FF",
                 "foto": "images/fotos_productos/conjuntos/SET DE LINO ELEGANTE FUCSIA.png",
-                "stock": 2
+                "stock": 1
             },
             {
                 "nombre": "mostaza",
                 "hex": "#FFDB58",
                 "foto": "images/fotos_productos/conjuntos/SET DE LINO ELEGANTE MOSTAZA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -9198,10 +9470,16 @@ window.productosData = [
         ],
         "colores": [
             {
+                "nombre": "ladrillo",
+                "hex": "#d45231",
+                "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CON FLORES DE RELIEVE LADRILLO.png",
+                "stock": 1
+            },
+              {
                 "nombre": "negro",
                 "hex": "#000000",
-                "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CON FLORES DE RELIEVE LADRILLO.png",
-                "stock": 2
+                "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CON FLORES DE RELIEVE NEGRO.jpeg",
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -9231,19 +9509,19 @@ window.productosData = [
                 "nombre": "verde",
                 "hex": "#008000",
                 "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CON ESTAMPADO DE FLORES VERDE.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
                 "nombre": "fucsia",
                 "hex": "#FF00FF",
                 "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CON ESTAMPADO DE FLORES FUCSIA.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
                 "nombre": "mostaza",
                 "hex": "#FFDB58",
                 "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CON ESTAMPADO DE FLORES MOSTAZA.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -9371,9 +9649,9 @@ window.productosData = [
         "precio": 200.0,
         "categoria": "dama-conjuntos",
         "marca": "sin marca",
-        "imagen": "images/fotos_productos/conjuntos/SET DE PANTALON CRUZADO NEGRO",
+        "imagen": "images/fotos_productos/conjuntos/SET DE PANTALON CRUZADO NEGRO.jpg",
         "fotosExtras": [
-            "images/fotos_productos/conjuntos/SET DE PANTALON CRUZADO NEGRO",
+            "images/fotos_productos/conjuntos/SET DE PANTALON CRUZADO NEGRO.jpg",
             "images/fotos_productos/conjuntos/SET DE PANTALON CRUZADO BLANCO.jpeg"
         ],
         "tallas": [
@@ -9383,14 +9661,14 @@ window.productosData = [
             {
                 "nombre": "negro",
                 "hex": "#000000",
-                "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CRUZADO NEGRO",
-                "stock": 2
+                "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CRUZADO NEGRO.jpg",
+                "stock": 1
             },
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/conjuntos/SET DE PANTALON CRUZADO BLANCO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -9439,18 +9717,18 @@ window.productosData = [
             "images/fotos_productos/conjuntos/SET DE CHAQTOP Y PALAZO CORTO AZUL MARIN.jpeg"
         ],
         "tallas": [
-            "S-M-L"
+            "S","M","L",
         ],
         "colores": [
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/conjuntos/SET DE CHAQTOP Y PALAZO CORTO AZUL MARIN.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
-        "descripcion": "SET DE CHAQTOP Y PALAZO CORTO AZUL MARIN",
+        "descripcion": "SET DE CHAQTOP Y PALAZO CORTO AZUL MARINO",
         "detalles": [
             "Categoría: Conjuntos set",
             "Stock disponible: 3"
@@ -9551,7 +9829,7 @@ window.productosData = [
             "images/fotos_productos/conjuntos/SET DE SHORT DE ALGODON  NEGRO CON ESTAMPADO CON FLORES DE TELA Y BRILLO.jpeg"
         ],
         "tallas": [
-            "averiguar talla"
+            "talla unica"
         ],
         "colores": [
             {
@@ -9579,7 +9857,7 @@ window.productosData = [
             "images/fotos_productos/conjuntos/SET DE SHORT DE ALGODON  ROSA CON ESTAMPADO DE MARIPOSAS DORADA.jpeg"
         ],
         "tallas": [
-            "averiguar talla"
+            " talla unica "
         ],
         "colores": [
             {
@@ -9606,16 +9884,40 @@ window.productosData = [
         "fotosExtras": [
             "images/fotos_productos/chalecos/CHALECO ROJO CON ESPALDA DESCUBIERTA.jpeg"
         ],
-        "tallas": [
-            "2 M-L-S"
-        ],
-        "colores": [
-            {
-                "nombre": "rojo",
+
+         "colores": [
+
+        {
+
+           "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/chalecos/CHALECO ROJO CON ESPALDA DESCUBIERTA.jpeg",
-                "stock": 4
-            }
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "M",
+                    "stock": 2
+
+                },
+                {
+
+                    "nombre": "L",
+                    "stock": 1
+
+                },
+                {
+
+                    "nombre": "S",
+                    "stock": 1
+
+                }
+
+            ]
+
+        }
         ],
         "stock": 4,
         "descripcion": "CHALECO ROJO CON ESPALDA DESCUBIERTA",

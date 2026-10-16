@@ -211,8 +211,52 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// ==========================================================================
+// 🧠 FUNCIÓN MAESTRA: OBTIENE EL STOCK INTELIGENTE DE CUALQUIER FORMATO
+// ==========================================================================
+function obtenerStockActual(producto, colorNombre, tallaNombre) {
+    // 1. Buscar el objeto del color seleccionado (o el primero por defecto)
+    let colorObj = producto.colores ? producto.colores.find(c => c.nombre === colorNombre) : (producto.colores ? producto.colores[0] : null);
+    
+    // 2. Si el color tiene sus propias tallas detalladas en objetos con stock
+    if (colorObj && colorObj.tallas && colorObj.tallas.length > 0) {
+        let tallaObj = colorObj.tallas.find(t => (typeof t === 'object' ? t.nombre : t) === tallaNombre);
+        if (tallaObj && typeof tallaObj === 'object' && tallaObj.stock !== undefined) {
+            return tallaObj.stock;
+        }
+    }
+    
+    // 3. Si el color tiene stock directo (Ej: { nombre: "negro", stock: 2 }) y la talla es genérica ("UNICA")
+    if (colorObj && colorObj.stock !== undefined) {
+        return colorObj.stock;
+    }
+    
+    // 4. Si hay tallas generales en el producto que son objetos con stock
+    if (producto.tallas && producto.tallas.length > 0) {
+        let tallaObj = producto.tallas.find(t => (typeof t === 'object' ? t.nombre : t) === tallaNombre);
+        if (tallaObj && typeof tallaObj === 'object' && tallaObj.stock !== undefined) {
+            return tallaObj.stock;
+        }
+    }
+    
+    // 5. Si el producto tiene un stock general definido
+    if (producto.stock !== undefined) {
+        return producto.stock;
+    }
+    
+    // 6. Fallback automático: sumar el stock de todos los colores si existe
+    if (producto.colores && producto.colores.length > 0) {
+        let sumaColores = producto.colores.reduce((acc, c) => acc + (c.stock || 0), 0);
+        if (sumaColores > 0) return sumaColores;
+    }
+    
+    return 5; // Último recurso por seguridad
+}
+
+
 // --- LÓGICA DEL MODAL DE DETALLES Y MINIATURAS ---
 function abrirModal(id) {
+    window.idProductoEnModal = id; // Guardamos el ID actual para referencias globales
     window.colorSeleccionado = null;
     const producto = productosData.find(p => p.id === id);
     if (!producto) return;
@@ -232,71 +276,68 @@ function abrirModal(id) {
     const existingSelectors = document.getElementById('selector-opciones-dinamico');
     if (existingSelectors) existingSelectors.remove();
 
-    // 👈 Definir el stock inicial de forma inteligente (soporta texto y objetos)
-    let stockInicial = 5;
-    if (producto.tallas && producto.tallas.length > 0) {
-        let primeraTalla = producto.tallas[0];
-        if (typeof primeraTalla === 'object' && primeraTalla !== null) {
-            stockInicial = primeraTalla.stock || 5;
-        } else {
-            stockInicial = producto.stock || 5;
-        }
-    } else if (producto.colores && producto.colores.length > 0) {
-        stockInicial = producto.colores[0].stock || 5;
-    } else if (producto.stock) {
-        stockInicial = producto.stock;
-    }
-
     let opcionesHTML = `<div id="selector-opciones-dinamico" style="margin: 15px 0;">`;
 
-    if (producto.tallas && producto.tallas.length > 0) {
-        let optionsTallasHTML = "";
-       
-        producto.tallas.forEach(t => {
-            let nombreTalla = "";
-            let stockTalla = 5;
+    // 1. Determinar el color inicial y su foto
+    let colorInicial = null;
+    let nombreColorInicial = null;
+    if (producto.colores && producto.colores.length > 0) {
+        colorInicial = producto.colores[0];
+        nombreColorInicial = colorInicial.nombre;
+        window.colorSeleccionado = nombreColorInicial;
+        if (colorInicial.foto) {
+            document.getElementById('modal-img').src = colorInicial.foto;
+        }
+    }
 
-            // CASO 1: Es un texto plano (ej: "M")
-            if (typeof t === 'string') {
-                nombreTalla = t;
-                stockTalla = producto.stock || 5; // Usa el stock general del producto
-            }
-            // CASO 2: Es un objeto (ej: { nombre: "M", stock: 2 })
-            else if (typeof t === 'object' && t !== null) {
-                nombreTalla = t.nombre || "";
-                stockTalla = t.stock !== undefined ? t.stock : (producto.stock || 5);
-            }
+    // 2. Extraer las tallas a visualizar
+    let tallasAVisualizar = [];
+    if (colorInicial && colorInicial.tallas && colorInicial.tallas.length > 0) {
+        tallasAVisualizar = colorInicial.tallas;
+    } else if (producto.tallas && producto.tallas.length > 0) {
+        tallasAVisualizar = producto.tallas;
+    }
 
-            optionsTallasHTML += `<option value="${nombreTalla}" data-stock="${stockTalla}">${nombreTalla} (Stock: ${stockTalla})</option>`;
-        });
+    // Obtener el nombre de la primera talla inicial para calcular el stock correcto
+    let primeraTallaObj = tallasAVisualizar.length > 0 ? tallasAVisualizar[0] : null;
+    let nombreTallaInicial = typeof primeraTallaObj === 'object' && primeraTallaObj !== null ? primeraTallaObj.nombre : primeraTallaObj;
 
+    // 3. Renderizar Selector de Tallas si existen
+    if (tallasAVisualizar.length > 0) {
         opcionesHTML += `
             <div style="margin-bottom:10px;">
                 <label><strong>Talla:</strong></label>
                 <select id="modal-select-talla" style="width:100%; padding:8px; margin-top:5px;" onchange="actualizarStockPorTalla()">
-                    ${optionsTallasHTML}
+                    ${generarOpcionesTallasHTML(tallasAVisualizar, producto, nombreColorInicial)}
                 </select>
             </div>`;
     }
 
-    // 🎨 SELECTOR DE COLORES (¡Aquí está lo que faltaba para pintar los círculos!)
+    // 4. Renderizar Selector de Colores si existen
     if (producto.colores && producto.colores.length > 0) {
         opcionesHTML += `
             <div style="margin-bottom:10px;">
                 <label><strong>Color:</strong></label>
                 <div id="modal-select-color" style="display:flex; gap:10px; margin-top:5px;">
-                    ${producto.colores.map(c => `
-                        <div class="color-circle" data-color="${c.nombre}" 
-                             style="width:30px; height:30px; border-radius:50%; background-color:${c.hex}; border:2px solid #ccc; cursor:pointer;"
-                             onclick="marcarColor(this, '${c.nombre}', '${c.foto}',${c.stock || 5})"
-                             title="${c.nombre} (Stock:${c.stock || 5})">
-                        </div>
-                    `).join('')}
+                    ${producto.colores.map((c, index) => {
+                        let bordeColor = (index === 0) ? '#000' : '#ccc';
+                        let stockColorVisual = c.stock !== undefined ? c.stock : 'N/D';
+                        return `
+                            <div class="color-circle" data-color="${c.nombre}" 
+                                 style="width:30px; height:30px; border-radius:50%; background-color:${c.hex}; border:2px solid${bordeColor}; cursor:pointer;"
+                                 onclick="marcarColor(this, '${producto.id}', '${c.nombre}')"
+                                 title="${c.nombre} (Stock:${stockColorVisual})">
+                            </div>
+                        `;
+                    }).join('')}
                 </div>
             </div>`;
     }
 
-    // 🛒 SELECTOR DE CANTIDAD CON CLASE CSS PERSONALIZADA
+    // 5. Calcular el stock inicial utilizando nuestra función maestra
+    let stockInicial = obtenerStockActual(producto, nombreColorInicial, nombreTallaInicial);
+
+    // 6. Selector de Cantidad
     opcionesHTML += `
         <div style="margin-bottom:15px;">
             <label><strong>Cantidad:</strong></label>
@@ -311,6 +352,7 @@ function abrirModal(id) {
     opcionesHTML += `</div>`;
     document.getElementById('modal-descripcion').insertAdjacentHTML('afterend', opcionesHTML);
 
+    // Miniaturas
     const contenedorMiniaturas = document.getElementById('modal-miniaturas');
     if (contenedorMiniaturas) {
         contenedorMiniaturas.innerHTML = '';
@@ -352,8 +394,7 @@ function abrirModal(id) {
            
             let colorElegido = window.colorSeleccionado;
             if (!colorElegido && producto.colores && producto.colores.length > 0) {
-                const circuloMarcado = document.querySelector('.color-circle[style*="border-color: rgb(0, 0, 0)"]') || document.querySelector('.color-circle[style*="border-color: #000"]');
-                colorElegido = circuloMarcado ? circuloMarcado.getAttribute('data-color') : producto.colores[0].nombre;
+                colorElegido = producto.colores[0].nombre;
             }
 
             agregarAlCarritoPorId(producto.id, talla, colorElegido);
@@ -364,25 +405,55 @@ function abrirModal(id) {
     document.getElementById('modal-producto').style.display = 'flex';
 }
 
-// 🎨 MARCAR COLOR Y ACTUALIZAR EL STOCK MÁXIMO DEL INPUT AUTOMÁTICAMENTE
-window.marcarColor = function(elemento, nombreColor, fotoColor, stockColor) {
+// 🛠️ GENERAR OPCIONES DE TALLAS INTELIGENTE
+function generarOpcionesTallasHTML(tallasArray, producto, nombreColor) {
+    let optionsHTML = "";
+    tallasArray.forEach(t => {
+        let nombreTalla = (typeof t === 'string') ? t : (t.nombre || "");
+        // Consultar el stock real usando nuestra función maestra para cada talla
+        let stockTalla = obtenerStockActual(producto, nombreColor, nombreTalla);
+
+        optionsHTML += `<option value="${nombreTalla}" data-stock="${stockTalla}">${nombreTalla} (Stock: ${stockTalla})</option>`;
+    });
+    return optionsHTML;
+}
+
+// 🎨 MARCAR COLOR INTELIGENTE
+window.marcarColor = function(elemento, productoId, nombreColor) {
     window.colorSeleccionado = nombreColor;
     document.querySelectorAll('.color-circle').forEach(el => el.style.borderColor = '#ccc');
     elemento.style.borderColor = '#000';
 
-    if (fotoColor) {
-        document.getElementById('modal-img').src = fotoColor;
+    const producto = productosData.find(p => p.id === productoId);
+    if (!producto) return;
+
+    const colorObj = producto.colores ? producto.colores.find(c => c.nombre === nombreColor) : null;
+
+    if (colorObj) {
+        if (colorObj.foto) {
+            document.getElementById('modal-img').src = colorObj.foto;
+        }
+
+        const selectTalla = document.getElementById('modal-select-talla');
+        if (selectTalla) {
+            let tallasDelColor = colorObj.tallas || producto.tallas || [];
+            selectTalla.innerHTML = generarOpcionesTallasHTML(tallasDelColor, producto, nombreColor);
+        }
     }
 
-    // Actualizar el límite del input según el stock específico de este color
+    // Actualizar el stock máximo y reiniciar el input de cantidad
     const inputCant = document.getElementById('modal-input-cantidad');
+    const selectTallaActual = document.getElementById('modal-select-talla');
+    let tallaActualNombre = selectTallaActual ? selectTallaActual.value : null;
+
     if (inputCant) {
-        inputCant.max = stockColor;
-        inputCant.value = 1; // Reiniciar a 1 por seguridad al cambiar de tono
+        let nuevoStockMax = obtenerStockActual(producto, nombreColor, tallaActualNombre);
+        inputCant.max = nuevoStockMax;
+        inputCant.value = 1; 
     }
 };
 
-// ➕➖ CONTROLADORES DE LOS BOTONES DE CANTIDAD EN EL MODAL
+// ➕➖ CONTROLADORES DE LOS BOTONES DE CANTIDAD
 window.cambiarCantidadModal = function(operador) {
     const input = document.getElementById('modal-input-cantidad');
     if (!input) return;
@@ -395,16 +466,41 @@ window.cambiarCantidadModal = function(operador) {
     } else if (operador === '-' && actual > 1) {
         input.value = actual - 1;
     } else if (operador === '+' && actual >= maxStock) {
-        alert(`¡Lo sentimos! Solo quedan ${maxStock} unidades disponibles en este color.`);
+        alert(`¡Lo sentimos! Solo quedan ${maxStock} unidades disponibles.`);
     }
 };
 
+// 📏 ACTUALIZAR STOCK AL CAMBIAR DE TALLA MANUALMENTE
+window.actualizarStockPorTalla = function() {
+    const selectTalla = document.getElementById('modal-select-talla');
+    if (!selectTalla) return;
+    const tallaSeleccionada = selectTalla.value;
+   
+    const producto = productosData.find(p => p.id === window.idProductoEnModal);
+    if (!producto) return;
+
+    let stockTalla = obtenerStockActual(producto, window.colorSeleccionado, tallaSeleccionada);
+   
+    const inputCant = document.getElementById('modal-input-cantidad');
+    if (inputCant) {
+        inputCant.max = stockTalla;
+        let actual = parseInt(inputCant.value) || 1;
+        if (actual > stockTalla) {
+            inputCant.value = stockTalla; 
+        }
+    }
+};
+
+// ❌ CERRAR MODAL
 function cerrarModal() {
-    document.getElementById('modal-producto').style.display = 'none';
+    const modal = document.getElementById('modal-producto');
+    if (modal) {
+        modal.style.display = 'none';
+    }
     window.indiceItemEnEdicion = null;
 }
 
-// --- CERRAR MODAL DE PRODUCTO AL HACER CLIC FUERA (EN EL FONDO OSCURO) ---
+// --- CERRAR MODAL AL HACER CLIC FUERA ---
 document.addEventListener('DOMContentLoaded', () => {
     const modalProducto = document.getElementById('modal-producto');
     if (modalProducto) {
@@ -415,43 +511,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// 📏 ACTUALIZAR STOCK MÁXIMO AL CAMBIAR DE TALLA
-window.actualizarStockPorTalla = function() {
-    const selectTalla = document.getElementById('modal-select-talla');
-    if (!selectTalla) return;
-    const optionSeleccionada = selectTalla.options[selectTalla.selectedIndex];
-    const stockTalla = parseInt(optionSeleccionada.getAttribute('data-stock')) || 5;
-   
-    const inputCant = document.getElementById('modal-input-cantidad');
-    if (inputCant) {
-        inputCant.max = stockTalla;
-        let actual = parseInt(inputCant.value) || 1;
-        if (actual > stockTalla) {
-            inputCant.value = stockTalla; // Ajusta si la cantidad supera el nuevo stock
-        }
-    }
-};
-
-
-
-// 📏 ACTUALIZAR STOCK MÁXIMO AL CAMBIAR DE TALLA
-window.actualizarStockPorTalla = function() {
-    const selectTalla = document.getElementById('modal-select-talla');
-    if (!selectTalla) return;
-    const optionSeleccionada = selectTalla.options[selectTalla.selectedIndex];
-    const stockTalla = parseInt(optionSeleccionada.getAttribute('data-stock')) || 5;
-    
-    const inputCant = document.getElementById('modal-input-cantidad');
-    if (inputCant) {
-        inputCant.max = stockTalla;
-        let actual = parseInt(inputCant.value) || 1;
-        if (actual > stockTalla) {
-            inputCant.value = stockTalla; // Ajusta si la cantidad supera el nuevo stock
-        }
-    }
-};
-
 // --- LÓGICA AUTOMÁTICA PARA EL SHOP THE LOOK (AL HACER CLIC) ---
 window.toggleLookPopup = function(btn, event) {
     event.stopPropagation();
