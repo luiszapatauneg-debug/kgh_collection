@@ -6403,7 +6403,7 @@ window.productosData = [
 
            "nombre": "negro",
                 "hex": "#000000",
-                "foto": "images/fotos_productos/top/T-SHIRT ENCAJE NEGRA KGH.jpeg",
+                "foto": "images/fotos_productos/top/T-SHIRT NUDO KGH  NEGRO.jpeg",
                 
 
             "tallas": [
@@ -6423,7 +6423,7 @@ window.productosData = [
 
              "nombre": "blanco",
                 "hex": "#ececec",
-                "foto": "images/fotos_productos/top/T-SHIRT NUDO KGH VERDE.jpeg",
+                "foto": "images/fotos_productos/top/T-SHIRT ENCAJE NEGRA KGH.jpeg",
                 
 
             "tallas": [

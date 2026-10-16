@@ -383,7 +383,7 @@ img.img-modal-detalle {
     top: -8px;    /* Lo sube hacia la esquina superior */
     right: -8px;  /* Lo mueve hacia la esquina derecha */
     
-    background-color: #ff4757;
+    background-color: #dbb344;
     color: white;
     border-radius: 50%;
     
@@ -454,7 +454,7 @@ img.img-modal-detalle {
 
 
 /* ========================================================================== */
-/*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) */
+/*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) LO MAS VENDIDO PRIMER CARRUSEL*/
 /* ========================================================================== */
 
 
@@ -508,7 +508,7 @@ img.img-modal-detalle {
 }
 
 .categoria-card-title {
-    color: #fff;
+    color: #c7af46;
     font-size: 1.6rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -521,10 +521,46 @@ img.img-modal-detalle {
     padding: 15px;
     text-align: center;
     background: #151515;
+    
 }
 
+.categoria-card-footer a.button {
+    color: #c7af46 !important; /* Aquí pones el color que quieras para las letras */
+}
 
+/* Centrar el título de la sección y eliminar la línea blanca inferior */
+#seccion-categorias-destacadas header.major {
+    text-align: center;
+    border-bottom: none !important;
+    margin-bottom: 30px;
+}
 
+#seccion-categorias-destacadas header.major h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* --- ELIMINAR DEFINITIVAMENTE CUALQUIER LÍNEA EN EL TÍTULO DE LO MÁS VENDIDO --- */
+#seccion-categorias-destacadas header.major,
+#seccion-categorias-destacadas header.major h2 {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+#seccion-categorias-destacadas header.major::after,
+#seccion-categorias-destacadas header.major::before,
+#seccion-categorias-destacadas header.major h2::after,
+#seccion-categorias-destacadas header.major h2::before {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+}
 /* ========================================================================== */
 /* 3. COMPORTAMIENTO DE CARRUSEL HORIZONTAL (SOLO EN EL INICIO) */
 /* ========================================================================== */
@@ -1021,34 +1057,61 @@ img.img-modal-detalle {
     ==========================================
    ========================================== */
 
-   /* ==========================================
+  /* ==========================================
+
    ==============================================
-  CONFIGUARACIONES PARA BILLBOARDS Y CARRUSELES 
+
+  CONFIGUARACIONES PARA BILLBOARDS Y CARRUSELES
+
    ==============================================
+
    ============================================== */
+
+
 
    /* ---1. CONFIGURACIÓN GLOBAL Y RESET DE LÍNEAS--- */
 
+
+
 html, body {
+
     overflow-x: hidden !important;
+
 }
+
+
 
 /* Eliminar líneas divisorias y decoraciones de cabeceras que ensucian el diseño */
-hr, 
-.major::after, 
+
+hr,
+
+.major::after,
+
 section > header.major::before,
+
 section > header.major::after {
+
     display: none !important;
+
     border: none !important;
+
     background: transparent !important;
+
     box-shadow: none !important;
+
     height: 0 !important;
+
 }
 
-#contenedor-ofertas, 
+
+
+#contenedor-ofertas,
+
 section {
+
     border-top: none !important;
-}
+
+} 
 
 
 /* ==========================================================================
@@ -1091,29 +1154,15 @@ section {
     box-sizing: border-box !important;
 }
 
-/* Si el slide es el mosaico triple, se adapta sin romper la pista */
-.billboard-slide.slide-mosaico {
+/* Adaptación para slides de altura personalizada (mosaico e imagen única) */
+.billboard-slide.slide-mosaico,
+.billboard-slide.slide-imagen-unica {
     height: auto !important;
     max-height: none !important;
 }
 
-/* Slide clásico (para el segundo banner de ofertas) */
-.billboard-slide:not(.slide-mosaico) {
-    aspect-ratio: 17/10 !important;
-    max-height: 310px !important;
-}
-
-.billboard-slide:not(.slide-mosaico) img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    border-radius: 10px !important;
-    display: block !important;
-}
-
 /* ==========================================================================
-   ESTILO DEL MOSAICO TRIPLE DE 3 COLUMNAS
+   ESTILO DEL MOSAICO TRIPLE DE 3 COLUMNAS (SLIDE 1)
    ========================================================================== */
 
 .banner-mosaico-container {
@@ -1126,7 +1175,7 @@ section {
     overflow: hidden !important;
 }
 
-/* Panel individual (altura grande para no cortar las cabezas) */
+/* Panel individual */
 .banner-panel {
     flex: 1 !important;
     position: relative !important;
@@ -1138,7 +1187,7 @@ section {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: top !important; /* Prioriza la parte superior (cabezas) */
+    object-position: top !important;
     display: block !important;
 }
 
@@ -1147,6 +1196,31 @@ section {
     align-items: center !important;
     justify-content: center !important;
 }
+
+/* ==========================================================================
+   ESTILO PARA EL SLIDE DE IMAGEN ÚNICA (SLIDE 2 - MISMA ALTURA)
+   ========================================================================== */
+
+.banner-imagen-unica-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 520px !important; /* 👈 Altura exacta igual al mosaico */
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+}
+
+.banner-imagen-unica-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+/* ==========================================================================
+   ESTILOS COMPARTIDOS DE TEXTOS Y BOTONES SUPERPUESTOS 
+   ========================================================================== */
 
 .banner-overlay-content {
     position: absolute !important;
@@ -1158,14 +1232,14 @@ section {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    background: rgba(0, 0, 0, 0.15) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
     padding: 15px !important;
     box-sizing: border-box !important;
     text-align: center !important;
 }
 
 .banner-overlay-content h2 {
-    color: #ffffff !important;
+    color: #bd9339!important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     text-transform: lowercase !important;
@@ -1179,8 +1253,8 @@ section {
 }
 
 .btn-shop-now {
-    background-color: #e8d5d1 !important;
-    color: #1a1a1a !important;
+    background-color: #000000 !important;
+    color: #bd9339 !important;
     padding: 12px 35px !important;
     font-size: 0.95rem !important;
     font-weight: 500 !important;
@@ -1197,45 +1271,16 @@ section {
     transform: translateY(-2px) !important;
 }
 
+
+
 /* ==========================================================================
-   ESTILOS DE CONTENIDO PARA EL SEGUNDO BANNER CLÁSICO
+   ADAPTACIÓN PARA DISPOSITIVOS MÓVILES (Misma altura en ambos slides)
    ========================================================================== */
 
-.billboard-content {
-    position: absolute !important;
-    bottom: 6px !important;
-    left: 6px !important;
-    right: 6px !important;
-    background: rgba(0, 0, 0, 0.4) !important;
-    padding: 4px 8px !important;
-    border-radius: 6px !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-.billboard-titulo-personalizado {
-    font-size: 0.75rem !important;  
-    margin: 0 !important;
-    color: #ffffff !important;
-    font-weight: bold !important;
-    text-transform: uppercase;
-}
-
-.billboard-btn-personalizado {
-    background-color: #000 !important;
-    color: #fff !important;
-    border: 1px solid #444 !important;
-    padding: 5px 10px !important;
-    font-size: 0.75rem !important;
-    border-radius: 4px !important;
-    text-decoration: none !important;
-}
-
-/* Adaptación para dispositivos móviles */
 @media (max-width: 768px) {
-    .banner-panel {
-        height: 380px !important;
+    .banner-panel,
+    .banner-imagen-unica-container {
+        height: 380px !important; /* 👈 Altura uniforme en celulares */
     }
     
     .banner-overlay-content h2 {
@@ -1409,4 +1454,6 @@ section header.major {
     background: #d1ba54;
     color: #000;
 }
+
+
 
