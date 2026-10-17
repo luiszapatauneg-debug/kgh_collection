@@ -523,7 +523,7 @@ header#header::before {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 25px !important; /* Empuja los íconos visiblemente a la izquierda */
+    padding-right: 35px !important; /* Empuja los íconos visiblemente a la izquierda */
 }
 
 .header-right .icons {
