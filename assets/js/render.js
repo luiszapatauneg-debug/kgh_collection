@@ -580,3 +580,14 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplayInterval = iniciarAutoplay();
     });
 });
+
+// --- REUBICAR EL BOTÓN DE MENÚ OFICIAL DENTRO DEL HEADER ---
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const toggleBtn = document.querySelector('body > .toggle');
+        const headerLeft = document.querySelector('.header-left');
+        if (toggleBtn && headerLeft) {
+            headerLeft.prepend(toggleBtn);
+        }
+    }, 50);
+});
