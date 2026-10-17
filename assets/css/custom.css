@@ -402,79 +402,112 @@ img.img-modal-detalle {
 /*  CSS PARA BARRA DE ANUNCIOS Y HEADER CENTRADO (ESTILO REFERENCIA)  */
 /* ========================================================================== */
 
+/* ==========================================================================
+   HEADER INTEGRADO: MENÚ + CARRITO + LOGO + REDES SOCIALES
+   ========================================================================== */
+
 /* --- BARRA DE ANUNCIOS SUPERIOR --- */
 .barra-anuncios {
     background: #000;
     color: #fff;
     text-align: center;
-    padding: 10px 15px;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    border-bottom: 1px solid #222;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    margin-bottom: 0px !important; /* Pega la barra de anuncios directamente al header */
+    margin-bottom: 0px !important;
 }
 
-/* --- HEADER CENTRADO Y LIMPIO --- */
+/* --- HEADER PRINCIPAL --- */
 header#header.header-limpio {
     background: #000000 !important;
-    padding: 15px 20px !important;
+    padding: 12px 15px !important;
     margin-bottom: 0 !important;
     border-bottom: none !important;
     box-shadow: none !important;
+    position: relative;
+    z-index: 10;
 }
 
-/* Eliminar líneas divisoras por defecto de la plantilla */
 header#header::after,
 header#header::before {
     display: none !important;
     content: none !important;
 }
 
-/* Grilla de 3 columnas: Izquierda (menú), Centro (logo), Derecha (redes) */
+/* Grilla balanceada de 3 columnas */
 .header-inner-content {
     display: grid !important;
-    grid-template-columns: 1fr auto 1fr !important;
+    grid-template-columns: 80px 1fr 60px !important; /* Espacio para menú + carrito a la izq, redes a la der */
     align-items: center !important;
     width: 100% !important;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Columna Izquierda (Menú / Hamburguesa) */
+/* --- COLUMNA IZQUIERDA: MENÚ + CARRITO --- */
 .header-left {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    gap: 15px; /* Separación entre las 3 barritas y la bolsa */
 }
 
 .toggle-menu-btn {
-    font-size: 1.2rem;
     color: #ffffff !important;
+    font-size: 1.2rem;
     text-decoration: none !important;
     border: none !important;
 }
 
-/* Columna Centro (Logo centrado) */
+.header-cart-link {
+    position: relative;
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    text-decoration: none !important;
+    border: none !important;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Contador en la bolsa */
+.cart-badge-header {
+    position: absolute;
+    top: -6px;
+    right: -9px;
+    background-color: #bd9339;
+    color: #000000;
+    font-size: 0.6rem;
+    font-weight: 700;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- COLUMNA CENTRO: LOGO MARCA --- */
 .header-center {
     text-align: center;
+    overflow: hidden;
 }
 
 .logo-texto {
-    font-size: 1.2rem !important;
+    font-size: 0.9rem !important;
     font-weight: 300 !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 1.5px !important;
     color: #ffffff !important;
     text-transform: uppercase;
     text-decoration: none !important;
     border: none !important;
+    white-space: nowrap;
 }
 
 .logo-texto strong {
     font-weight: 700 !important;
 }
 
-/* Columna Derecha (Redes Sociales) */
+/* --- COLUMNA DERECHA: REDES SOCIALES --- */
 .header-right {
     display: flex;
     justify-content: flex-end;
@@ -486,15 +519,29 @@ header#header::before {
     padding: 0 !important;
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 10px !important;
 }
 
 .header-right .icons a {
     color: #ffffff !important;
-    font-size: 1.2rem;
+    font-size: 0.95rem !important;
     border: none !important;
 }
 
+/* --- ESTILIZAR EL BOTÓN GRIS FLOTANTE DE LA PLANTILLA --- */
+#header .toggle, 
+a[href="#sidebar"].toggle {
+    position: static !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: #ffffff !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: normal !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
 /* ========================================================================== */
 /*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) LO MAS VENDIDO PRIMER CARRUSEL*/
