@@ -403,7 +403,7 @@ img.img-modal-detalle {
 /* ========================================================================== */
 
 /* ==========================================================================
-   HEADER OFICIAL Y DEFINITIVO: MENÚ NATIVO + CARRITO + LOGO + REDES
+   HEADER PERFECTAMENTE EQUILIBRADO Y LIMPIO
    ========================================================================== */
 
 /* --- BARRA DE ANUNCIOS SUPERIOR --- */
@@ -435,41 +435,42 @@ header#header::before {
     content: none !important;
 }
 
-/* Distribución flexible para evitar desorden */
+/* Distribución exacta para simetría central */
 .header-inner-content {
-    display: flex !important;
-    justify-content: space-between !important;
+    display: grid !important;
+    grid-template-columns: 90px 1fr 90px !important; /* Mismo espacio fijo a la izquierda y derecha para que el centro sea real */
     align-items: center !important;
     width: 100% !important;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- COLUMNA IZQUIERDA: MENÚ DE 3 LÍNEAS + CARRITO --- */
+/* --- COLUMNA IZQUIERDA: MENÚ + CARRITO --- */
 .header-left {
     display: flex;
     align-items: center;
     gap: 15px;
+    justify-content: flex-start;
 }
 
-/* Botón original .toggle con las 3 rayitas clásicas blancas y funcionales */
+/* Botón oficial .toggle con las 3 rayitas limpias */
 #header .toggle {
     position: relative !important;
     display: inline-block !important;
-    width: 2.2em !important;
-    height: 2.2em !important;
+    width: 2em !important;
+    height: 2em !important;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z' fill='%23ffffff'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    background-size: 1.2em !important;
-    text-indent: -9999px;
+    background-size: 1.1em !important;
+    text-indent: -9999px !important;
     cursor: pointer;
     border: none !important;
     box-shadow: none !important;
     margin: 0 !important;
 }
 
-/* Enlace de la bolsita de compras */
+/* Enlace de la bolsita */
 .header-cart-link {
     position: relative;
     color: #ffffff !important;
@@ -496,11 +497,10 @@ header#header::before {
     justify-content: center;
 }
 
-/* --- COLUMNA CENTRO: LOGO MARCA --- */
+/* --- COLUMNA CENTRO: LOGO MARCA (100% CENTRADO) --- */
 .header-center {
     text-align: center;
-    flex-grow: 1;
-    padding: 0 10px;
+    overflow: hidden;
 }
 
 .logo-texto {
@@ -517,9 +517,10 @@ header#header::before {
     font-weight: 700 !important;
 }
 
-/* --- COLUMNA DERECHA: REDES SOCIALES (COMPACTAS Y CENTRADAS) --- */
+/* --- COLUMNA DERECHA: REDES SOCIALES (COMPACTAS Y DENTRO DEL CUADRO) --- */
 .header-right {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -529,7 +530,7 @@ header#header::before {
     list-style: none;
     display: flex;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 8px !important; /* Espacio reducido para que quepan holgadas */
 }
 
 .header-right .icons li {
@@ -539,16 +540,15 @@ header#header::before {
 
 .header-right .icons a {
     color: #ffffff !important;
-    font-size: 0.95rem !important; /* Tamaño pequeño y elegante */
+    font-size: 0.85rem !important; /* Reducidas para que encajen perfecto */
     text-decoration: none !important;
     border: none !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
 }
-
 /* ========================================================================== */
 /*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) LO MAS VENDIDO PRIMER CARRUSEL*/
 /* ========================================================================== */
