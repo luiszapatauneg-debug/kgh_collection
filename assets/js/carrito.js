@@ -629,25 +629,32 @@ function guardarEdicionCarrito(index) {
     renderizarCarritoVisual();
 }
 
-//para saber cuantos productos hay en el carrito 
+// para saber cuantos productos hay en el carrito 
 function actualizarContadorCarrito() {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     
     // Suma la cantidad total de piezas de todos los productos en el carrito
     let totalItems = carrito.reduce((acumulador, item) => acumulador + (item.cantidad || 1), 0);
     
-    // Actualizamos el badge del botón flotante
+    // 1. Actualizamos el badge del botón flotante
     const badgeFlotante = document.getElementById('contador-carrito-flotante');
     if (badgeFlotante) {
         badgeFlotante.textContent = totalItems;
         badgeFlotante.style.display = totalItems === 0 ? 'none' : 'inline-block';
     }
 
-    // Actualizamos el badge del menú lateral
+    // 2. Actualizamos el badge del menú lateral
     const badgeMenu = document.getElementById('contador-carrito-menu');
     if (badgeMenu) {
         badgeMenu.textContent = totalItems;
         badgeMenu.style.display = totalItems === 0 ? 'none' : 'inline-block';
+    }
+
+    // 3. ✨ NUEVO: Actualizamos el badge del header principal que acabamos de crear
+    const badgeHeader = document.getElementById('contador-carrito-header');
+    if (badgeHeader) {
+        badgeHeader.textContent = totalItems;
+        badgeHeader.style.display = totalItems === 0 ? 'none' : 'flex';
     }
 }
 
