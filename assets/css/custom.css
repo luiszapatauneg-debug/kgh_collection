@@ -518,12 +518,11 @@ header#header::before {
     font-weight: 700 !important;
 }
 
-/* --- COLUMNA DERECHA (DESPLAZAMIENTO HACIA LA IZQUIERDA) --- */
+/* --- COLUMNA DERECHA (MOVIMIENTO DIRECTO HACIA LA IZQUIERDA) --- */
 .header-right {
     display: flex;
-    justify-content: flex-start; /* Alinea los iconos al inicio de su columna */
+    justify-content: flex-end;
     align-items: center;
-    margin-right: 50px !important; /* Este margen controlado los aleja del borde de la pantalla */
 }
 
 .header-right .icons {
@@ -532,7 +531,8 @@ header#header::before {
     list-style: none;
     display: flex;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 12px !important; /* Separación entre Instagram y WhatsApp */
+    transform: translateX(-35px) !important; /* <--- ESTE ES EL QUE LOS MUEVE. Cambia -35px si quieres más o menos */
 }
 
 .header-right .icons li {
