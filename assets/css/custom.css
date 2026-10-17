@@ -403,7 +403,7 @@ img.img-modal-detalle {
 /* ========================================================================== */
 
 /* ==========================================================================
-   HEADER FINAL: LÍNEAS ELIMINADAS, LOGO COMPLETO Y REDES CENTRADAS
+   HEADER FINAL: ICONOS AJUSTADOS HACIA ADENTRO Y SEPARADOS
    ========================================================================== */
 
 .barra-anuncios {
@@ -433,10 +433,10 @@ header#header::before {
     content: none !important;
 }
 
-/* Grilla optimizada para dar más aire al centro y espacio a los lados */
+/* Grilla equilibrada con espacio controlado a los lados */
 .header-inner-content {
     display: grid !important;
-    grid-template-columns: 75px 1fr 75px !important; 
+    grid-template-columns: 75px 1fr 90px !important; 
     align-items: center !important;
     width: 100% !important;
     max-width: 1200px;
@@ -494,7 +494,7 @@ header#header::before {
     justify-content: center;
 }
 
-/* --- COLUMNA CENTRO (LOGO COMPLETO Y SIN LÍNEAS) --- */
+/* --- COLUMNA CENTRO (LOGO) --- */
 .header-center {
     text-align: center;
     overflow: hidden;
@@ -502,13 +502,13 @@ header#header::before {
 }
 
 .logo-texto {
-    font-size: 0.78rem !important; /* Tamaño optimizado para móviles */
+    font-size: 0.78rem !important;
     font-weight: 300 !important;
-    letter-spacing: 1px !important; /* Espaciado equilibrado para que no se corte */
+    letter-spacing: 1px !important;
     color: #ffffff !important;
     text-transform: uppercase;
     text-decoration: none !important;
-    border-bottom: none !important; /* Adiós a la línea punteada */
+    border-bottom: none !important;
     border: none !important;
     white-space: nowrap;
     display: inline-block;
@@ -518,12 +518,12 @@ header#header::before {
     font-weight: 700 !important;
 }
 
-/* --- COLUMNA DERECHA (REDES DESPLAZADAS HACIA ADENTRO) --- */
+/* --- COLUMNA DERECHA (REDES DESPLAZADAS Y SEPARADAS) --- */
 .header-right {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 4px; /* Mueve los iconos hacia la izquierda */
+    padding-right: 12px; /* Empuja los íconos más hacia la izquierda para que no toquen el borde */
 }
 
 .header-right .icons {
@@ -532,7 +532,7 @@ header#header::before {
     list-style: none;
     display: flex;
     align-items: center !important;
-    gap: 6px !important; /* Espacio reducido entre íconos */
+    gap: 12px !important; /* Mayor separación entre Instagram y WhatsApp */
 }
 
 .header-right .icons li {
@@ -548,8 +548,8 @@ header#header::before {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
 }
 /* ========================================================================== */
 /*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) LO MAS VENDIDO PRIMER CARRUSEL*/
