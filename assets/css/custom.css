@@ -403,7 +403,7 @@ img.img-modal-detalle {
 /* ========================================================================== */
 
 /* ==========================================================================
-   HEADER DEFINITIVO: MENÚ FUNCIONAL + CARRITO + LOGO CENTRADO + REDES ORDENADAS
+   HEADER OFICIAL Y DEFINITIVO: MENÚ NATIVO + CARRITO + LOGO + REDES
    ========================================================================== */
 
 /* --- BARRA DE ANUNCIOS SUPERIOR --- */
@@ -421,7 +421,7 @@ img.img-modal-detalle {
 /* --- HEADER PRINCIPAL --- */
 header#header.header-limpio {
     background: #000000 !important;
-    padding: 12px 15px !important;
+    padding: 10px 15px !important;
     margin-bottom: 0 !important;
     border-bottom: none !important;
     box-shadow: none !important;
@@ -435,37 +435,38 @@ header#header::before {
     content: none !important;
 }
 
-/* Grilla balanceada de 3 columnas */
+/* Distribución flexible para evitar desorden */
 .header-inner-content {
-    display: grid !important;
-    grid-template-columns: 80px 1fr 70px !important;
+    display: flex !important;
+    justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- COLUMNA IZQUIERDA: MENÚ NATIVO + CARRITO --- */
+/* --- COLUMNA IZQUIERDA: MENÚ DE 3 LÍNEAS + CARRITO --- */
 .header-left {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-/* Botón de las 3 barritas oficial de la plantilla HTML5 UP */
-#header .toggle, 
-a[href="#sidebar"].toggle {
-    position: static !important;
-    background: transparent !important;
-    box-shadow: none !important;
+/* Botón original .toggle con las 3 rayitas clásicas blancas y funcionales */
+#header .toggle {
+    position: relative !important;
+    display: inline-block !important;
+    width: 2.2em !important;
+    height: 2.2em !important;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z' fill='%23ffffff'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 1.2em !important;
+    text-indent: -9999px;
+    cursor: pointer;
     border: none !important;
-    color: #ffffff !important;
-    width: auto !important;
-    height: auto !important;
-    line-height: normal !important;
+    box-shadow: none !important;
     margin: 0 !important;
-    padding: 0 !important;
-    font-size: 1.1rem !important;
 }
 
 /* Enlace de la bolsita de compras */
@@ -474,13 +475,11 @@ a[href="#sidebar"].toggle {
     color: #ffffff !important;
     font-size: 1.1rem;
     text-decoration: none !important;
-    border: none !important;
     display: inline-flex;
     align-items: center;
-    line-height: 1;
 }
 
-/* Contador de la bolsa */
+/* Contador flotante de la bolsa */
 .cart-badge-header {
     position: absolute;
     top: -6px;
@@ -497,20 +496,20 @@ a[href="#sidebar"].toggle {
     justify-content: center;
 }
 
-/* --- COLUMNA CENTRO: LOGO --- */
+/* --- COLUMNA CENTRO: LOGO MARCA --- */
 .header-center {
     text-align: center;
-    overflow: hidden;
+    flex-grow: 1;
+    padding: 0 10px;
 }
 
 .logo-texto {
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     font-weight: 300 !important;
     letter-spacing: 1.5px !important;
     color: #ffffff !important;
     text-transform: uppercase;
     text-decoration: none !important;
-    border: none !important;
     white-space: nowrap;
 }
 
@@ -518,10 +517,9 @@ a[href="#sidebar"].toggle {
     font-weight: 700 !important;
 }
 
-/* --- COLUMNA DERECHA: REDES SOCIALES (CENTRADAS Y COMPACTAS) --- */
+/* --- COLUMNA DERECHA: REDES SOCIALES (COMPACTAS Y CENTRADAS) --- */
 .header-right {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
 }
 
@@ -541,13 +539,14 @@ a[href="#sidebar"].toggle {
 
 .header-right .icons a {
     color: #ffffff !important;
-    font-size: 1rem !important; /* Tamaño pequeño y elegante */
+    font-size: 0.95rem !important; /* Tamaño pequeño y elegante */
     text-decoration: none !important;
     border: none !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    line-height: 1 !important;
+    width: 28px;
+    height: 28px;
 }
 
 /* ========================================================================== */
