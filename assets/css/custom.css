@@ -399,7 +399,7 @@ img.img-modal-detalle {
 }
 
 /* ========================================================================== */
-/*  CSS PARA ENVIO Y PRINCIPIO DE LA PAGINA  */
+/*  CSS PARA BARRA DE ANUNCIOS Y HEADER CENTRADO (ESTILO REFERENCIA)  */
 /* ========================================================================== */
 
 /* --- BARRA DE ANUNCIOS SUPERIOR --- */
@@ -412,45 +412,88 @@ img.img-modal-detalle {
     letter-spacing: 1.5px;
     border-bottom: 1px solid #222;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 0px !important; /* Pega la barra de anuncios directamente al header */
 }
 
-/* --- HEADER LIMPIO --- */
-#header.header-limpio {
-    background: transparent;
-    padding: 20px 10px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* --- HEADER CENTRADO Y LIMPIO --- */
+header#header.header-limpio {
+    background: #000000 !important;
+    padding: 15px 20px !important;
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
+/* Eliminar líneas divisoras por defecto de la plantilla */
+header#header::after,
+header#header::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* Grilla de 3 columnas: Izquierda (menú), Centro (logo), Derecha (redes) */
 .header-inner-content {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Columna Izquierda (Menú / Hamburguesa) */
+.header-left {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
 }
 
-#header.header-limpio .logo {
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: none;
+.toggle-menu-btn {
+    font-size: 1.2rem;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border: none !important;
 }
 
-#header.header-limpio .icons {
-    margin: 0;
+/* Columna Centro (Logo centrado) */
+.header-center {
+    text-align: center;
+}
+
+.logo-texto {
+    font-size: 1.2rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 2px !important;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    border: none !important;
+}
+
+.logo-texto strong {
+    font-weight: 700 !important;
+}
+
+/* Columna Derecha (Redes Sociales) */
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-right .icons {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none;
     display: flex;
     gap: 15px;
-    list-style: none;
-    padding: 0;
 }
 
-#header.header-limpio .icons a {
-    color: #fff;
+.header-right .icons a {
+    color: #ffffff !important;
     font-size: 1.2rem;
+    border: none !important;
 }
-
 
 
 /* ========================================================================== */
