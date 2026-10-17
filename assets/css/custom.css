@@ -399,7 +399,7 @@ img.img-modal-detalle {
 }
 
 /* ========================================================================== */
-/*  CSS PARA BARRA DE ANUNCIOS Y HEADER CENTRADO (ESTILO REFERENCIA)  */
+/*  CSS PARA BARRA DE ANUNCIOS Y HEADER CENTRADO (ESTILO REFERENCIA) para el principio de la pagina  */
 /* ========================================================================== */
 
 /* ==========================================================================
@@ -505,7 +505,7 @@ header#header::before {
     font-size: 0.88rem !important;
     font-weight: 300 !important;
     letter-spacing: 1px !important;
-    color: #ffffff !important;
+    color: #e2cc4c !important;
     text-transform: uppercase;
     text-decoration: none !important;
     border-bottom: none !important;
@@ -913,6 +913,9 @@ header#header::before {
     border-radius: 4px;
     z-index: 2; /* Para asegurarnos de que quede por encima de la foto */
 }
+
+
+
 
 /* ========================================== */
 /* ESTILOS PARA EL BOTON DE RESPIRAR FUERTE  */
@@ -1382,6 +1385,91 @@ section {
     background: transparent !important; /* Por si tiene algún fondo blanco por error */
 }
 
+
+/* ==========================================================================
+   SEGUNDO BILLBOARD: ESTILO EXACTO DE LA REFERENCIA (DENIM)
+   ========================================================================== */
+
+.billboard-denim-exacto {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para que la imagen del HTML cubra todo el espacio como un fondo */
+.img-fondo-billboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* La caja con el texto y el botón queda flotando por encima de la imagen */
+.denim-inner-box {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 450px;
+}
+
+/* Título elegante */
+.denim-titulo {
+    font-family: 'Times New Roman', serif, Georgia !important;
+    font-size: 2.1rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.5px !important;
+    color: #1a1a1a !important; /* Si tu foto es muy oscura, cambia esto a #ffffff */
+    margin-bottom: 6px !important;
+    text-transform: none !important;
+}
+
+/* Subtítulo descriptivo */
+.denim-subtitulo {
+    font-size: 0.88rem !important;
+    font-weight: 300 !important;
+    color: #333333 !important; /* Ajustable a blanco si el fondo lo requiere */
+    margin-bottom: 25px !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Botón idéntico con caja en tono nude y bordes suaves */
+.btn-nude-collection {
+    display: inline-block;
+    background-color: #ebdcd5 !important; /* Tono nude exacto de la referencia */
+    color: #1a1a1a !important;
+    padding: 12px 35px !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: none !important; /* Mantiene las minúsculas exactas de la foto */
+    text-decoration: none !important;
+    border-radius: 4px !important; /* Ligeramente redondeado como en la captura */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease;
+}
+
+.btn-nude-collection:hover {
+    background-color: #dcc7be !important;
+}
+
+.titulo-choose-favorite {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #666666 !important;
+    text-align: center;
+    margin: 35px 0 20px 0 !important;
+    font-weight: 600;
+}
 /* ==========================================================================
    ADAPTACIÓN PARA DISPOSITIVOS MÓVILES (Misma altura en ambos slides)
    ========================================================================== */
