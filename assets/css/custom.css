@@ -502,7 +502,7 @@ header#header::before {
 }
 
 .logo-texto {
-    font-size: 0.78rem !important;
+    font-size: 0.88rem !important;
     font-weight: 300 !important;
     letter-spacing: 1px !important;
     color: #ffffff !important;
@@ -532,7 +532,7 @@ header#header::before {
     display: flex;
     align-items: center !important;
     gap: 12px !important; /* Separación entre Instagram y WhatsApp */
-    transform: translateX(-35px) !important; /* <--- ESTE ES EL QUE LOS MUEVE. Cambia -35px si quieres más o menos */
+    transform: translateX(-35px) translateY(-2px) !important; /* <--- ESTE ES EL QUE LOS MUEVE. Cambia -35px si quieres más o menos */
 }
 
 .header-right .icons li {
