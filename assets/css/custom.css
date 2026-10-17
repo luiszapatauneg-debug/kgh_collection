@@ -403,7 +403,7 @@ img.img-modal-detalle {
 /* ========================================================================== */
 
 /* ==========================================================================
-   HEADER FINAL: ICONOS AJUSTADOS HACIA ADENTRO Y SEPARADOS
+   HEADER DEFINITIVO: REDES COMPLETAMENTE DENTRO Y ALINEADAS
    ========================================================================== */
 
 .barra-anuncios {
@@ -433,10 +433,10 @@ header#header::before {
     content: none !important;
 }
 
-/* Grilla equilibrada con espacio controlado a los lados */
+/* Grilla optimizada: reduce la columna derecha para empujar los iconos hacia la izquierda */
 .header-inner-content {
     display: grid !important;
-    grid-template-columns: 75px 1fr 90px !important; 
+    grid-template-columns: 70px 1fr 70px !important; 
     align-items: center !important;
     width: 100% !important;
     max-width: 1200px;
@@ -447,7 +447,7 @@ header#header::before {
 .header-left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     justify-content: flex-start;
 }
 
@@ -518,12 +518,12 @@ header#header::before {
     font-weight: 700 !important;
 }
 
-/* --- COLUMNA DERECHA (REDES DESPLAZADAS Y SEPARADAS) --- */
+/* --- COLUMNA DERECHA (EMPUJADA BIEN HACIA ADENTRO) --- */
 .header-right {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 12px; /* Empuja los íconos más hacia la izquierda para que no toquen el borde */
+    padding-right: 25px !important; /* Empuja los íconos visiblemente a la izquierda */
 }
 
 .header-right .icons {
@@ -532,7 +532,7 @@ header#header::before {
     list-style: none;
     display: flex;
     align-items: center !important;
-    gap: 12px !important; /* Mayor separación entre Instagram y WhatsApp */
+    gap: 8px !important; /* Separación limpia entre íconos */
 }
 
 .header-right .icons li {
@@ -548,8 +548,8 @@ header#header::before {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 }
 /* ========================================================================== */
 /*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) LO MAS VENDIDO PRIMER CARRUSEL*/
