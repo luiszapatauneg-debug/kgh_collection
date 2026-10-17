@@ -551,3 +551,32 @@ window.toggleLookPopup = function(btn, event) {
 document.addEventListener('click', () => {
     document.querySelectorAll('.look-popup').forEach(p => p.classList.remove('active'));
 });
+
+
+// --- ANIMACIÓN AUTOMÁTICA PARA EL CARRUSEL (BILLBOARD) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const billboard = document.getElementById('billboard-principal');
+    if (!billboard) return;
+
+    let tiempoTransicion = 4000; // Cambia de slide cada 4 segundos (puedes subirlo a 5000 si prefieres)
+
+    function iniciarAutoplay() {
+        return setInterval(() => {
+            const anchoSlide = billboard.clientWidth;
+            // Si llega al final del carrusel, regresa suavemente al inicio; si no, avanza al siguiente
+            if (billboard.scrollLeft + billboard.clientWidth >= billboard.scrollWidth - 10) {
+                billboard.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                billboard.scrollBy({ left: anchoSlide, behavior: 'smooth' });
+            }
+        }, tiempoTransicion);
+    }
+
+    let autoplayInterval = iniciarAutoplay();
+
+    // Pausar el movimiento automático cuando el usuario ponga el mouse encima (ideal para computadoras)
+    billboard.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    billboard.addEventListener('mouseleave', () => {
+        autoplayInterval = iniciarAutoplay();
+    });
+});
