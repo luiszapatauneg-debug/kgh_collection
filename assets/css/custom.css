@@ -523,7 +523,7 @@ header#header::before {
     display: flex;
     justify-content: flex-start; /* Alinea los iconos al inicio de su columna */
     align-items: center;
-    margin-right: 25px !important; /* Este margen controlado los aleja del borde de la pantalla */
+    margin-right: 50px !important; /* Este margen controlado los aleja del borde de la pantalla */
 }
 
 .header-right .icons {
