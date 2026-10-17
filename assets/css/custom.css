@@ -403,7 +403,7 @@ img.img-modal-detalle {
 /* ========================================================================== */
 
 /* ==========================================================================
-   HEADER DEFINITIVO: REDES COMPLETAMENTE DENTRO Y ALINEADAS
+   HEADER DEFINITIVO: CONTROL DE REDES SOCIALES
    ========================================================================== */
 
 .barra-anuncios {
@@ -433,10 +433,10 @@ header#header::before {
     content: none !important;
 }
 
-/* Grilla optimizada: reduce la columna derecha para empujar los iconos hacia la izquierda */
+/* Grilla: le damos 110px a la derecha para tener control total de movimiento */
 .header-inner-content {
     display: grid !important;
-    grid-template-columns: 70px 1fr 70px !important; 
+    grid-template-columns: 70px 1fr 110px !important; 
     align-items: center !important;
     width: 100% !important;
     max-width: 1200px;
@@ -518,12 +518,12 @@ header#header::before {
     font-weight: 700 !important;
 }
 
-/* --- COLUMNA DERECHA (EMPUJADA BIEN HACIA ADENTRO) --- */
+/* --- COLUMNA DERECHA (DESPLAZAMIENTO HACIA LA IZQUIERDA) --- */
 .header-right {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start; /* Alinea los iconos al inicio de su columna */
     align-items: center;
-    padding-right: 1500px !important; /* Empuja los íconos visiblemente a la izquierda */
+    margin-right: 25px !important; /* Este margen controlado los aleja del borde de la pantalla */
 }
 
 .header-right .icons {
@@ -532,7 +532,7 @@ header#header::before {
     list-style: none;
     display: flex;
     align-items: center !important;
-    gap: 8px !important; /* Separación limpia entre íconos */
+    gap: 8px !important;
 }
 
 .header-right .icons li {
