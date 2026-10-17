@@ -403,7 +403,7 @@ img.img-modal-detalle {
 /* ========================================================================== */
 
 /* ==========================================================================
-   HEADER FINAL: MENÚ, CARRITO, LOGO CENTRADO Y REDES AJUSTADAS
+   HEADER FINAL: LÍNEAS ELIMINADAS, LOGO COMPLETO Y REDES CENTRADAS
    ========================================================================== */
 
 .barra-anuncios {
@@ -419,7 +419,7 @@ img.img-modal-detalle {
 
 header#header.header-limpio {
     background: #000000 !important;
-    padding: 10px 15px !important;
+    padding: 10px 10px !important;
     margin-bottom: 0 !important;
     border-bottom: none !important;
     box-shadow: none !important;
@@ -433,10 +433,10 @@ header#header::before {
     content: none !important;
 }
 
-/* Grilla con mayor espacio a la derecha para desplazar los iconos hacia la izquierda */
+/* Grilla optimizada para dar más aire al centro y espacio a los lados */
 .header-inner-content {
     display: grid !important;
-    grid-template-columns: 90px 1fr 110px !important; 
+    grid-template-columns: 75px 1fr 75px !important; 
     align-items: center !important;
     width: 100% !important;
     max-width: 1200px;
@@ -447,37 +447,35 @@ header#header::before {
 .header-left {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     justify-content: flex-start;
 }
 
-/* Estilo para el botón de menú oficial .toggle reubicado */
 #header .toggle, 
 .header-left .toggle {
     position: relative !important;
     display: inline-block !important;
-    width: 2em !important;
-    height: 2em !important;
+    width: 1.8em !important;
+    height: 1.8em !important;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z' fill='%23ffffff'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    background-size: 1.1em !important;
+    background-size: 1em !important;
     text-indent: -9999px !important;
     cursor: pointer;
     border: none !important;
     box-shadow: none !important;
     margin: 0 !important;
-    top: auto !important;
-    left: auto !important;
 }
 
 .header-cart-link {
     position: relative;
     color: #ffffff !important;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-decoration: none !important;
     display: inline-flex;
     align-items: center;
+    border: none !important;
 }
 
 .cart-badge-header {
@@ -486,42 +484,46 @@ header#header::before {
     right: -9px;
     background-color: #bd9339;
     color: #000000;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     font-weight: 700;
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* --- COLUMNA CENTRO --- */
+/* --- COLUMNA CENTRO (LOGO COMPLETO Y SIN LÍNEAS) --- */
 .header-center {
     text-align: center;
     overflow: hidden;
+    padding: 0 2px;
 }
 
 .logo-texto {
-    font-size: 0.9rem !important;
+    font-size: 0.78rem !important; /* Tamaño optimizado para móviles */
     font-weight: 300 !important;
-    letter-spacing: 1.5px !important;
+    letter-spacing: 1px !important; /* Espaciado equilibrado para que no se corte */
     color: #ffffff !important;
     text-transform: uppercase;
     text-decoration: none !important;
+    border-bottom: none !important; /* Adiós a la línea punteada */
+    border: none !important;
     white-space: nowrap;
+    display: inline-block;
 }
 
 .logo-texto strong {
     font-weight: 700 !important;
 }
 
-/* --- COLUMNA DERECHA (REDES DESPLAZADAS HACIA LA IZQUIERDA) --- */
+/* --- COLUMNA DERECHA (REDES DESPLAZADAS HACIA ADENTRO) --- */
 .header-right {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 15px; /* Empuja los iconos ligeramente más hacia el centro */
+    padding-right: 4px; /* Mueve los iconos hacia la izquierda */
 }
 
 .header-right .icons {
@@ -530,7 +532,7 @@ header#header::before {
     list-style: none;
     display: flex;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 6px !important; /* Espacio reducido entre íconos */
 }
 
 .header-right .icons li {
@@ -540,14 +542,14 @@ header#header::before {
 
 .header-right .icons a {
     color: #ffffff !important;
-    font-size: 0.85rem !important;
+    font-size: 0.8rem !important;
     text-decoration: none !important;
     border: none !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
 }
 /* ========================================================================== */
 /*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) LO MAS VENDIDO PRIMER CARRUSEL*/
