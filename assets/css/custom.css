@@ -403,7 +403,7 @@ img.img-modal-detalle {
 /* ========================================================================== */
 
 /* ==========================================================================
-   HEADER INTEGRADO: MENÚ + CARRITO + LOGO + REDES SOCIALES
+   HEADER DEFINITIVO: MENÚ FUNCIONAL + CARRITO + LOGO CENTRADO + REDES ORDENADAS
    ========================================================================== */
 
 /* --- BARRA DE ANUNCIOS SUPERIOR --- */
@@ -438,27 +438,37 @@ header#header::before {
 /* Grilla balanceada de 3 columnas */
 .header-inner-content {
     display: grid !important;
-    grid-template-columns: 80px 1fr 60px !important; /* Espacio para menú + carrito a la izq, redes a la der */
+    grid-template-columns: 80px 1fr 70px !important;
     align-items: center !important;
     width: 100% !important;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- COLUMNA IZQUIERDA: MENÚ + CARRITO --- */
+/* --- COLUMNA IZQUIERDA: MENÚ NATIVO + CARRITO --- */
 .header-left {
     display: flex;
     align-items: center;
-    gap: 15px; /* Separación entre las 3 barritas y la bolsa */
+    gap: 15px;
 }
 
-.toggle-menu-btn {
-    color: #ffffff !important;
-    font-size: 1.2rem;
-    text-decoration: none !important;
+/* Botón de las 3 barritas oficial de la plantilla HTML5 UP */
+#header .toggle, 
+a[href="#sidebar"].toggle {
+    position: static !important;
+    background: transparent !important;
+    box-shadow: none !important;
     border: none !important;
+    color: #ffffff !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: normal !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1.1rem !important;
 }
 
+/* Enlace de la bolsita de compras */
 .header-cart-link {
     position: relative;
     color: #ffffff !important;
@@ -467,9 +477,10 @@ header#header::before {
     border: none !important;
     display: inline-flex;
     align-items: center;
+    line-height: 1;
 }
 
-/* Contador en la bolsa */
+/* Contador de la bolsa */
 .cart-badge-header {
     position: absolute;
     top: -6px;
@@ -486,14 +497,14 @@ header#header::before {
     justify-content: center;
 }
 
-/* --- COLUMNA CENTRO: LOGO MARCA --- */
+/* --- COLUMNA CENTRO: LOGO --- */
 .header-center {
     text-align: center;
     overflow: hidden;
 }
 
 .logo-texto {
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
     font-weight: 300 !important;
     letter-spacing: 1.5px !important;
     color: #ffffff !important;
@@ -507,7 +518,7 @@ header#header::before {
     font-weight: 700 !important;
 }
 
-/* --- COLUMNA DERECHA: REDES SOCIALES --- */
+/* --- COLUMNA DERECHA: REDES SOCIALES (CENTRADAS Y COMPACTAS) --- */
 .header-right {
     display: flex;
     justify-content: flex-end;
@@ -519,28 +530,24 @@ header#header::before {
     padding: 0 !important;
     list-style: none;
     display: flex;
-    gap: 10px !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.header-right .icons li {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .header-right .icons a {
     color: #ffffff !important;
-    font-size: 0.95rem !important;
+    font-size: 1rem !important; /* Tamaño pequeño y elegante */
+    text-decoration: none !important;
     border: none !important;
-}
-
-/* --- ESTILIZAR EL BOTÓN GRIS FLOTANTE DE LA PLANTILLA --- */
-#header .toggle, 
-a[href="#sidebar"].toggle {
-    position: static !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-    color: #ffffff !important;
-    width: auto !important;
-    height: auto !important;
-    line-height: normal !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1 !important;
 }
 
 /* ========================================================================== */
