@@ -591,3 +591,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 50);
 });
+
+// Función para desplazar el carrusel horizontalmente al tocar las flechas
+window.deslizarCarrusel = function(idContenedor, desplazamiento) {
+    const contenedor = document.getElementById(idContenedor)?.parentElement;
+    if (contenedor) {
+        contenedor.scrollBy({ left: desplazamiento, behavior: 'smooth' });
+    }
+};

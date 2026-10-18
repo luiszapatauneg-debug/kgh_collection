@@ -355,21 +355,33 @@
     </div>
 </section>
 
- <!-- 2. CARRUSEL EN EL MEDIO -->
-                            <section class="seccion-carrusel-home bloque-home">
-                                <header class="major">
-                                    <h2 id="titulo-seccion-principal">👗 Lo Mejor para Dama</h2>
-                                </header>
-                                <div class="carrusel-productos-container">
-                                    <div class="posts" id="contenedor-dama-camisas">
-                                        <!-- Productos se inyectan dinámicamente aquí -->
-                                    </div>
-                                </div>
-                                <div id="contenedor-btn-ver-todo" style="text-align: center; margin: 40px 0;">
-                                    <a href="index.html?cat=dama" class="btn-respirar-fuerte">👗 Ver todo Dama</a>
-                                </div>
-                            </section>
+<!-- ULTIMO CARRUSEL (DISEÑO MINIMALISTA DE LUJO) -->
+<section class="seccion-carrusel-home bloque-home">
+    <!-- Encabezado de 3 líneas estilo alta costura -->
+    <div class="carrusel-encabezado-elegante">
+        <p class="carrusel-subtexto-top">Descubre nuestros diseños y elige tus favoritos</p>
+        <h2 id="titulo-seccion-principal" class="carrusel-titulo-main">FAVORITOS DE LA TEMPORADA</h2>
+        <p class="carrusel-subtexto-bottom">Look our products and choose your favorites</p>
+    </div>
 
+    <!-- Contenedor del Carrusel -->
+    <div class="carrusel-productos-container">
+        <div class="posts" id="contenedor-dama-camisas">
+            <!-- Productos se inyectan dinámicamente aquí -->
+        </div>
+    </div>
+
+    <!-- Botones de Navegación (Flechas circulares) -->
+    <div class="carrusel-flechas-nav">
+        <button type="button" class="btn-flecha-carrusel" onclick="deslizarCarrusel('contenedor-dama-camisas', -300)" aria-label="Anterior">&lt;</button>
+        <button type="button" class="btn-flecha-carrusel" onclick="deslizarCarrusel('contenedor-dama-camisas', 300)" aria-label="Siguiente">&gt;</button>
+    </div>
+
+    <!-- Botón de categoría en el carrusel -->
+<div id="contenedor-btn-ver-todo" style="text-align: center; margin: 30px 0 10px 0;">
+    <a href="index.html?cat=dama-chaquetas" class="btn-categoria-minimal">Ver Chaquetas</a>
+</div>
+</section>
 
 
                         </div>
