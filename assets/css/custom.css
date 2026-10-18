@@ -1387,21 +1387,22 @@ section {
 
 
 /* ==========================================================================
-   SEGUNDO BILLBOARD: ESTILO EXACTO DE LA REFERENCIA (DENIM)
+   SEGUNDO BILLBOARD: TEXTO DESPLAZADO HACIA ABAJO
    ========================================================================== */
 
 .billboard-denim-exacto {
     position: relative;
     width: 100%;
-    height: 480px;
+    height: 480px; 
     overflow: hidden;
     margin: 30px 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* <--- Esto empuja todo el contenido hacia la parte baja de la foto */
     justify-content: center;
+    padding-bottom: 45px;  /* <--- Distancia de separación desde el borde inferior */
 }
 
-/* Estilo para que la imagen del HTML cubra todo el espacio como un fondo */
+/* Imagen de fondo o etiqueta img según lo estés manejando */
 .img-fondo-billboard {
     position: absolute;
     top: 0;
@@ -1412,7 +1413,7 @@ section {
     z-index: 1;
 }
 
-/* La caja con el texto y el botón queda flotando por encima de la imagen */
+/* Caja contenedora con el texto y el botón */
 .denim-inner-box {
     position: relative;
     z-index: 2;
@@ -1424,51 +1425,43 @@ section {
 /* Título elegante */
 .denim-titulo {
     font-family: 'Times New Roman', serif, Georgia !important;
-    font-size: 2.1rem !important;
+    font-size: 2rem !important;
     font-weight: 400 !important;
     letter-spacing: 0.5px !important;
-    color: #1a1a1a !important; /* Si tu foto es muy oscura, cambia esto a #ffffff */
+    color: #ffffff !important; /* Blanco para que resalte perfectamente sobre el vestido azul */
     margin-bottom: 6px !important;
     text-transform: none !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* Sombra suave para legibilidad */
 }
 
 /* Subtítulo descriptivo */
 .denim-subtitulo {
     font-size: 0.88rem !important;
     font-weight: 300 !important;
-    color: #333333 !important; /* Ajustable a blanco si el fondo lo requiere */
-    margin-bottom: 25px !important;
+    color: #f0f0f0 !important; /* Blanco suave */
+    margin-bottom: 20px !important;
     letter-spacing: 0.5px !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Botón idéntico con caja en tono nude y bordes suaves */
+/* Botón "Shop collection" en tono nude */
 .btn-nude-collection {
     display: inline-block;
-    background-color: #ebdcd5 !important; /* Tono nude exacto de la referencia */
+    background-color: #ebdcd5 !important;
     color: #1a1a1a !important;
-    padding: 12px 35px !important;
+    padding: 11px 32px !important;
     font-size: 0.82rem !important;
     font-weight: 500 !important;
     letter-spacing: 0.5px !important;
-    text-transform: none !important; /* Mantiene las minúsculas exactas de la foto */
+    text-transform: none !important;
     text-decoration: none !important;
-    border-radius: 4px !important; /* Ligeramente redondeado como en la captura */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-radius: 4px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
 .btn-nude-collection:hover {
     background-color: #dcc7be !important;
-}
-
-.titulo-choose-favorite {
-    font-size: 0.85rem !important;
-    letter-spacing: 2px !important;
-    text-transform: uppercase !important;
-    color: #666666 !important;
-    text-align: center;
-    margin: 35px 0 20px 0 !important;
-    font-weight: 600;
 }
 /* ==========================================================================
    ADAPTACIÓN PARA DISPOSITIVOS MÓVILES (Misma altura en ambos slides)
