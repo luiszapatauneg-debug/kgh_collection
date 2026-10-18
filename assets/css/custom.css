@@ -1387,81 +1387,72 @@ section {
 
 
 /* ==========================================================================
-   SEGUNDO BILLBOARD: TEXTO DESPLAZADO HACIA ABAJO
+   SEGUNDO BILLBOARD: BAJAR TEXTO SOBRE EL VESTIDO (FORZADO)
    ========================================================================== */
 
 .billboard-denim-exacto {
-    position: relative;
-    width: 100%;
-    height: 480px; 
-    overflow: hidden;
-    margin: 30px 0;
-    display: flex;
-    align-items: flex-end; /* <--- Esto empuja todo el contenido hacia la parte baja de la foto */
-    justify-content: center;
-    padding-bottom: 45px;  /* <--- Distancia de separación desde el borde inferior */
+    position: relative !important;
+    width: 100% !important;
+    height: 480px !important; 
+    overflow: hidden !important;
+    margin: 30px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-/* Imagen de fondo o etiqueta img según lo estés manejando */
 .img-fondo-billboard {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 1 !important;
 }
 
-/* Caja contenedora con el texto y el botón */
+/* Movemos directamente toda la caja de texto hacia abajo */
 .denim-inner-box {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 0 20px;
-    max-width: 450px;
+    position: relative !important;
+    z-index: 2 !important;
+    text-align: center !important;
+    padding: 0 20px !important;
+    max-width: 450px !important;
+    transform: translateY(90px) !important; /* <--- ¡ESTO LO EMPUJA 90PX ABAJO! */
 }
 
-/* Título elegante */
+/* Título */
 .denim-titulo {
     font-family: 'Times New Roman', serif, Georgia !important;
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
     font-weight: 400 !important;
-    letter-spacing: 0.5px !important;
-    color: #ffffff !important; /* Blanco para que resalte perfectamente sobre el vestido azul */
-    margin-bottom: 6px !important;
+    color: #ffffff !important; /* Blanco para resaltar sobre el vestido */
+    margin-bottom: 4px !important;
     text-transform: none !important;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* Sombra suave para legibilidad */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7) !important; /* Sombra oscura para que se lea perfecto */
 }
 
-/* Subtítulo descriptivo */
+/* Subtítulo */
 .denim-subtitulo {
-    font-size: 0.88rem !important;
+    font-size: 0.85rem !important;
     font-weight: 300 !important;
-    color: #f0f0f0 !important; /* Blanco suave */
-    margin-bottom: 20px !important;
-    letter-spacing: 0.5px !important;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    color: #f0f0f0 !important;
+    margin-bottom: 15px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Botón "Shop collection" en tono nude */
+/* Botón "Shop collection" */
 .btn-nude-collection {
-    display: inline-block;
+    display: inline-block !important;
     background-color: #ebdcd5 !important;
     color: #1a1a1a !important;
-    padding: 11px 32px !important;
-    font-size: 0.82rem !important;
+    padding: 10px 28px !important;
+    font-size: 0.8rem !important;
     font-weight: 500 !important;
-    letter-spacing: 0.5px !important;
     text-transform: none !important;
     text-decoration: none !important;
     border-radius: 4px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-}
-
-.btn-nude-collection:hover {
-    background-color: #dcc7be !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
 }
 /* ==========================================================================
    ADAPTACIÓN PARA DISPOSITIVOS MÓVILES (Misma altura en ambos slides)
