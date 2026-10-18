@@ -516,8 +516,8 @@ header#header::before {
 
 .logo-texto strong {
     font-weight: 700 !important;
+    color: #bd9339 !important; /* Fuerza el color dorado en KGH */
 }
-
 /* --- COLUMNA DERECHA (MOVIMIENTO DIRECTO HACIA LA IZQUIERDA) --- */
 .header-right {
     display: flex;
@@ -541,7 +541,7 @@ header#header::before {
 }
 
 .header-right .icons a {
-    color: #ffffff !important;
+    color: #d3b450 !important;
     font-size: 0.8rem !important;
     text-decoration: none !important;
     border: none !important;
@@ -551,6 +551,9 @@ header#header::before {
     width: 20px;
     height: 20px;
 }
+
+
+
 /* ========================================================================== */
 /*  COMPORTAMIENTO DE CARRUSEL DE CATEGORIAS (SOLO EN EL INICIO) LO MAS VENDIDO PRIMER CARRUSEL*/
 /* ========================================================================== */
@@ -1426,7 +1429,7 @@ section {
     font-family: 'Times New Roman', serif, Georgia !important;
     font-size: 1.8rem !important;
     font-weight: 400 !important;
-    color: #ffffff !important; /* Blanco para resaltar sobre el vestido */
+    color: #bd9a3b !important; /* Blanco para resaltar sobre el vestido */
     margin-bottom: 4px !important;
     text-transform: none !important;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7) !important; /* Sombra oscura para que se lea perfecto */
@@ -1436,16 +1439,19 @@ section {
 .denim-subtitulo {
     font-size: 0.85rem !important;
     font-weight: 300 !important;
-    color: #f0f0f0 !important;
+    color: #bd9a3b !important;
     margin-bottom: 15px !important;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
 }
 
 /* Botón "Shop collection" */
-.btn-nude-collection {
+.btn-nude-collection,
+.btn-nude-collection:hover,
+.btn-nude-collection:focus,
+.btn-nude-collection:active {
     display: inline-block !important;
-    background-color: #ebdcd5 !important;
-    color: #1a1a1a !important;
+    background-color: #000000 !important;
+    color: #bd9a3b !important;
     padding: 10px 28px !important;
     font-size: 0.8rem !important;
     font-weight: 500 !important;
@@ -1453,6 +1459,9 @@ section {
     text-decoration: none !important;
     border-radius: 4px !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+    border: none !important;         /* <--- Adiós a los bordes */
+    border-bottom: none !important;  /* <--- Adiós a la línea inferior */
+    outline: none !important;        /* <--- Adiós al contorno de enfoque */
 }
 /* ==========================================================================
    ADAPTACIÓN PARA DISPOSITIVOS MÓVILES (Misma altura en ambos slides)

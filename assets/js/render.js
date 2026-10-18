@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
        if (seccionLooks) seccionLooks.style.setProperty('display', 'none', 'important');
         if (billboard) billboard.style.setProperty('display', 'none', 'important');
-        if (segundoBillboard) segundoBillboard.style.display = 'none';
+        if (segundoBillboard) segundoBillboard.style.setProperty('display', 'none', 'important');
         if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en búsqueda
         if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
         if (tituloSeccion) tituloSeccion.textContent = "🔍 Resultados de búsqueda";
