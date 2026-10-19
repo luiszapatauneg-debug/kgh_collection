@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const seccionCarruselHome = document.getElementById('seccion-carrusel-home'); // 👈 Capturamos el carrusel nuevo
     const barraEnvios = document.getElementById('barra-envios'); 
     const seccionLooks = document.getElementById('seccion-looks');
     const seccionIdeasLooks = document.querySelectorAll('.seccion-ideas-looks');
@@ -128,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.seccion-comfort').forEach(sec => {
             sec.style.setProperty('display', 'none', 'important');
         });
-
+       if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'none', 'important');
        if (seccionLooks) seccionLooks.style.setProperty('display', 'none', 'important');
         if (billboard) billboard.style.setProperty('display', 'none', 'important');
         if (segundoBillboard) segundoBillboard.style.setProperty('display', 'none', 'important');
@@ -139,75 +140,135 @@ document.addEventListener('DOMContentLoaded', () => {
         window.renderizarProductosEnContenedor('contenedor-dama-camisas', lista);
     };
 
-    // --- LÓGICA DE CARGA INICIAL DE LA PÁGINA ---
-    const esPaginaInicio = !categoriaFiltro || categoriaFiltro === "todos" || categoriaFiltro === "todo";
+   // ==========================================================================
+// 🎛️ CONFIGURACIÓN FÁCIL DEL CARRUSEL DE LA PÁGINA PRINCIPAL
+// ==========================================================================
+const CONFIG_CARRUSEL_HOME = {
+    // Modo de selección:
+    // 'categoria'  -> Muestra productos filtrando por su categoría.
+    // 'ids'        -> Muestra SOLO los productos exactos definidos en productosIncluidosByIDs.
+    // 'excluir'    -> Muestra la categoría elegida PERO excluye los IDs en productosExcluidosByIDs.
+    modo: 'categoria', 
 
-    if (esPaginaInicio) {
-        // VISTA PÁGINA PRINCIPAL (HOME)
-        document.querySelectorAll('.seccion-ideas-looks').forEach(sec => {
-            sec.style.setProperty('display', 'block', 'important');
-        });
+    // Categoría a buscar cuando modo es 'categoria' o 'excluir' (Ej: "dama-chaquetas", "chaqueta", "dama", "todos")
+    categoriaElegida: 'dama-chaquetas',
 
-        document.querySelectorAll('.seccion-comfort').forEach(sec => {
-            sec.style.setProperty('display', 'block', 'important'); // 👈 Se muestra en el Home
-        });
+    // Límites de cantidad:
+    // pon un número (Ej: 6) para limitar la cantidad, o null / 0 para mostrar TODA la categoría
+    limiteCantidad: 8,
 
-       if (seccionLooks) seccionLooks.style.setProperty('display', 'block', 'important');
-        if (barraEnvios) barraEnvios.style.setProperty('display', 'block', 'important');
-        if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'block', 'important');
-        if (billboard) billboard.style.display = 'block';
-        if (segundoBillboard) segundoBillboard.style.display = 'block';
-        if (seccionCategorias) seccionCategorias.style.setProperty('display', 'block', 'important'); // 👈 Se muestra en el Home
-        if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'block', 'important');
-        document.body.classList.add('pagina-inicio');
+    // IDs exactos de productos para el modo 'ids' (Ej: ['1', 'camisa-rosa', '5'])
+    productosIncluidosByIDs: ['1', '2', '3', '4','5','6'],
 
-        if (tituloSeccion) tituloSeccion.textContent = "👗 Lo Mejor para Dama";
+    // IDs exactos a quitar cuando estés en modo 'excluir'
+    productosExcluidosByIDs: ["chaq004",]
+};
 
-        if (contDama && typeof productosData !== 'undefined') {
-            let prodsDama = productosData.filter(p => p.categoria && p.categoria.toLowerCase().includes("dama"));
-            window.renderizarProductosEnContenedor('contenedor-dama-camisas', prodsDama);
-        }
-    } else {
-        // VISTA DE CATEGORÍA ESPECÍFICA
-        if (barraEnvios) barraEnvios.style.setProperty('display', 'none', 'important');
-        if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'none', 'important');
-       if (billboard) billboard.style.setProperty('display', 'none', 'important');
-        if (segundoBillboard) segundoBillboard.style.display = 'none';
-        if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en categorías
-        if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
-        document.body.classList.remove('pagina-inicio');
 
-        const catLimpia = categoriaFiltro.toLowerCase().trim();
-        let productosAMostrar = typeof productosData !== 'undefined' ? productosData : [];
+// --- LÓGICA DE CARGA INICIAL DE LA PÁGINA ---
+const esPaginaInicio = !categoriaFiltro || categoriaFiltro === "todos" || categoriaFiltro === "todo";
 
-        if (catLimpia === "ofertas") {
-            productosAMostrar = productosData.filter(p => p.precioTachado || p.categoria === "ofertas");
+if (esPaginaInicio) {
+    // VISTA PÁGINA PRINCIPAL (HOME)
+    document.querySelectorAll('.seccion-ideas-looks').forEach(sec => {
+        sec.style.setProperty('display', 'block', 'important');
+    });
+
+    document.querySelectorAll('.seccion-comfort').forEach(sec => {
+        sec.style.setProperty('display', 'block', 'important');
+    });
+
+    if (seccionLooks) seccionLooks.style.setProperty('display', 'block', 'important');
+    if (barraEnvios) barraEnvios.style.setProperty('display', 'block', 'important');
+    if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'block', 'important');
+    if (billboard) billboard.style.display = 'block';
+    if (segundoBillboard) segundoBillboard.style.display = 'block';
+    if (seccionCategorias) seccionCategorias.style.setProperty('display', 'block', 'important');
+    if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'block', 'important');
+    if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'block', 'important');
+    
+    document.body.classList.add('pagina-inicio');
+
+    if (tituloSeccion) tituloSeccion.textContent = "👗 Lo Mejor para Dama";
+
+   // 🧠 MOTOR INTELIGENTE PARA EL FILTRADO DEL CARRUSEL EN EL HOME
+    if (contDama && typeof productosData !== 'undefined') {
+        let productosFiltrados = [];
+
+        if (CONFIG_CARRUSEL_HOME.modo === 'ids') {
+            // Modo: Mostrar solo los IDs específicos de la lista
+            productosFiltrados = productosData.filter(p => 
+                CONFIG_CARRUSEL_HOME.productosIncluidosByIDs.map(String).includes(String(p.id))
+            );
         } else {
-            productosAMostrar = productosData.filter(p => {
+            // Modo: Filtrar por categoría
+            const catBusqueda = CONFIG_CARRUSEL_HOME.categoriaElegida.toLowerCase();
+            
+            productosFiltrados = productosData.filter(p => {
                 if (!p.categoria) return false;
                 const catProd = p.categoria.toLowerCase();
-
-                if (catLimpia.endsWith("-ofertas")) {
-                    const categoriaBase = catLimpia.replace("-ofertas", "");
-                    return (catProd === categoriaBase || catProd.startsWith(categoriaBase + "-")) && (p.precioTachado || p.categoria === "ofertas");
-                }
-
-                return catProd === catLimpia || catProd.startsWith(catLimpia + "-");
+                return catBusqueda === 'todos' || catProd.includes(catBusqueda);
             });
         }
 
-        // Cambiar título según la categoría activa
-        if (tituloSeccion) {
-            if (nombresCategorias[catLimpia]) {
-                tituloSeccion.textContent = nombresCategorias[catLimpia];
-            } else {
-                tituloSeccion.textContent = "Catálogo de " + categoriaFiltro.charAt(0).toUpperCase() + categoriaFiltro.slice(1);
-            }
+        // 🛑 FILTRO DE EXCLUSIÓN UNIVERSAL: Si pones IDs aquí, se eliminan siempre automáticamente
+        if (CONFIG_CARRUSEL_HOME.productosExcluidosByIDs && CONFIG_CARRUSEL_HOME.productosExcluidosByIDs.length > 0) {
+            const excluidosStr = CONFIG_CARRUSEL_HOME.productosExcluidosByIDs.map(String);
+            productosFiltrados = productosFiltrados.filter(p => !excluidosStr.includes(String(p.id)));
         }
 
-        // Pintar productos en la pantalla
-        window.renderizarProductosEnContenedor('contenedor-dama-camisas', productosAMostrar);
+        // Aplicar límite de cantidad si está definido
+        if (CONFIG_CARRUSEL_HOME.limiteCantidad && CONFIG_CARRUSEL_HOME.limiteCantidad > 0) {
+            productosFiltrados = productosFiltrados.slice(0, CONFIG_CARRUSEL_HOME.limiteCantidad);
+        }
+
+        // Renderizar los productos resultantes en el carrusel
+        window.renderizarProductosEnContenedor('contenedor-dama-camisas', productosFiltrados);
     }
+
+} else {
+    // VISTA DE CATEGORÍA ESPECÍFICA (OCULTA SECCIONES DEL HOME)
+    if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'none', 'important');
+    if (barraEnvios) barraEnvios.style.setProperty('display', 'none', 'important');
+    if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'none', 'important');
+    if (billboard) billboard.style.setProperty('display', 'none', 'important');
+    if (segundoBillboard) segundoBillboard.style.display = 'none';
+    if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important');
+    if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
+    
+    document.body.classList.remove('pagina-inicio');
+
+    const catLimpia = categoriaFiltro.toLowerCase().trim();
+    let productosAMostrar = typeof productosData !== 'undefined' ? productosData : [];
+
+    if (catLimpia === "ofertas") {
+        productosAMostrar = productosData.filter(p => p.precioTachado || p.categoria === "ofertas");
+    } else {
+        productosAMostrar = productosData.filter(p => {
+            if (!p.categoria) return false;
+            const catProd = p.categoria.toLowerCase();
+
+            if (catLimpia.endsWith("-ofertas")) {
+                const categoriaBase = catLimpia.replace("-ofertas", "");
+                return (catProd === categoriaBase || catProd.startsWith(categoriaBase + "-")) && (p.precioTachado || p.categoria === "ofertas");
+            }
+
+            return catProd === catLimpia || catProd.startsWith(catLimpia + "-");
+        });
+    }
+
+    // Cambiar título según la categoría activa
+    if (tituloSeccion) {
+        if (nombresCategorias[catLimpia]) {
+            tituloSeccion.textContent = nombresCategorias[catLimpia];
+        } else {
+            tituloSeccion.textContent = "Catálogo de " + categoriaFiltro.charAt(0).toUpperCase() + categoriaFiltro.slice(1);
+        }
+    }
+
+    // Pintar productos normales de la categoría en pantalla
+    window.renderizarProductosEnContenedor('contenedor-dama-camisas', productosAMostrar);
+}
 });
 
 
@@ -592,10 +653,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
 });
 
-// Función para desplazar el carrusel horizontalmente al tocar las flechas
+// Función de desplazamiento suave y segura para evitar tirones o pantalla negra
 window.deslizarCarrusel = function(idContenedor, desplazamiento) {
-    const contenedor = document.getElementById(idContenedor)?.parentElement;
+    // Buscamos directamente el contenedor del carrusel por su ID seguro
+    const contenedor = document.getElementById('carrusel-scroll-box');
     if (contenedor) {
         contenedor.scrollBy({ left: desplazamiento, behavior: 'smooth' });
+    } else {
+        // Fallback por si acaso
+        const contenedorAlternativo = document.getElementById(idContenedor)?.parentElement;
+        if (contenedorAlternativo) {
+            contenedorAlternativo.scrollBy({ left: desplazamiento, behavior: 'smooth' });
+        }
     }
 };

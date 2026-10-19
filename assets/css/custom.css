@@ -991,21 +991,38 @@ header#header::before {
     text-align: left !important;
 }
 
-/* Contenedor de la foto de la prenda con fondo gris suave */
+/* ==========================================================================
+   CORRECCIÓN DE IMÁGENES EN EL CARRUSEL (IMPECABLES Y COMPLETAS)
+   ========================================================================== */
+
 .carrusel-productos-container article .image {
     display: block !important;
-    background: rgb(255, 255, 255) !important;
-    border-radius: 0px !important;
-    overflow: hidden;
-    margin-bottom: 12px !important;
-    position: relative;
+    background: #111111 !important; /* Fondo oscuro elegante acorde a tu tienda */
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    margin-bottom: 10px !important;
+    position: relative !important;
+    height: 260px !important; /* Altura fija para que todas las tarjetas sean simétricas */
 }
 
 .carrusel-productos-container article .image img {
     width: 100% !important;
-    height: 230px !important;
-    object-fit: contain !important; /* Preserva la prenda sin recortarla */
-    mix-blend-mode: multiply;
+    height: 100% !important;
+    object-fit: cover !important; /* Ajusta la foto perfectamente al espacio sin deformarla ni dejar barras */
+    display: block !important;
+    mix-blend-mode: normal !important; /* Evita mezclas de colores extrañas */
+}
+
+/* Ancho exacto de las tarjetas en el carrusel para móviles */
+.carrusel-productos-container article {
+    flex: 0 0 65% !important; /* Muestra una principal y parte de la siguiente de forma fluida */
+    max-width: 65% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-right: 15px !important;
+    text-align: left !important;
 }
 
 /* Título de la prenda */
