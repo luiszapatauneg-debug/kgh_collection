@@ -189,7 +189,7 @@ if (esPaginaInicio) {
     
     document.body.classList.add('pagina-inicio');
 
-    if (tituloSeccion) tituloSeccion.textContent = "👗 Lo Mejor para Dama";
+   // if (tituloSeccion) tituloSeccion.textContent = "👗 Lo Mejor para Dama";
 
    // 🧠 MOTOR INTELIGENTE PARA EL FILTRADO DEL CARRUSEL EN EL HOME
     if (contDama && typeof productosData !== 'undefined') {
@@ -653,17 +653,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
 });
 
-// Función de desplazamiento suave y segura para evitar tirones o pantalla negra
-window.deslizarCarrusel = function(idContenedor, desplazamiento) {
-    // Buscamos directamente el contenedor del carrusel por su ID seguro
-    const contenedor = document.getElementById('carrusel-scroll-box');
-    if (contenedor) {
-        contenedor.scrollBy({ left: desplazamiento, behavior: 'smooth' });
-    } else {
-        // Fallback por si acaso
-        const contenedorAlternativo = document.getElementById(idContenedor)?.parentElement;
-        if (contenedorAlternativo) {
-            contenedorAlternativo.scrollBy({ left: desplazamiento, behavior: 'smooth' });
-        }
-    }
+// Función de desplazamiento ultra fluida y a prueba de rebotes/bugs
+window.deslizarCarrusel = function(idContenedor, direccion) {
+    const contenedor = document.getElementById('carrusel-scroll-box') || document.getElementById(idContenedor)?.parentElement;
+    if (!contenedor) return;
+
+    // Calcula el ancho de una tarjeta de producto individual + su margen
+    const primeraTarjeta = contenedor.querySelector('article');
+    const paso = primeraTarjeta ? primeraTarjeta.offsetWidth + 15 : 250;
+
+    // Si direccion > 0 avanza, si es < 0 retrocede
+    const desplazamiento = direccion > 0 ? paso : -paso;
+
+    // Desplazamiento seguro sin desbordar los bordes
+    contenedor.scrollBy({
+        left: desplazamiento,
+        behavior: 'smooth'
+    });
 };
