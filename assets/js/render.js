@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const seccionCarruselHome = document.getElementById('seccion-carrusel-home'); // 👈 Capturamos el carrusel nuevo
     const barraEnvios = document.getElementById('barra-envios'); 
     const seccionLooks = document.getElementById('seccion-looks');
     const seccionIdeasLooks = document.querySelectorAll('.seccion-ideas-looks');
@@ -7,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const billboard = document.getElementById('billboard-principal');
     const segundoBillboard = document.getElementById('billboard-segundo'); 
     const seccionCategorias = document.getElementById('seccion-categorias-destacadas'); // 👈 Capturamos el nuevo carrusel
+    const seccionCarruselHome = document.getElementById('seccion-carrusel-home'); // Capturamos la sección del carrusel home
     const tituloSeccion = document.getElementById('titulo-seccion-principal') || document.querySelector('section > header.major > h2');
     const seccionComfort = document.querySelectorAll('.seccion-comfort');
+    
     // Leer qué categoría viene en la URL
     const params = new URLSearchParams(window.location.search);
     const categoriaFiltro = params.get('cat');
@@ -18,21 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnVerTodoDama = document.getElementById('contenedor-btn-ver-todo');
 
 
-// --- SOLUCIÓN DEFINITIVA PARA ACORDEÓN MULTINIVEL EN EL MENÚ ---
+    // --- SOLUCIÓN DEFINITIVA PARA ACORDEÓN MULTINIVEL EN EL MENÚ ---
     setTimeout(() => {
-        if (typeof $ !== 'undefined') {
-            // 1. Desactivar el evento global original de la plantilla en los openers
-            $('#menu .opener').off('click');
+        if (typeof $!== 'undefined') { // 1. Desactivar el evento global original de la plantilla en los openers$('#menu .opener').off('click');
 
             // 2. Crear nuestro propio evento seguro con stopPropagation
             $('#menu').on('click', '.opener', function(e) {
                 e.preventDefault();
                 e.stopPropagation(); // ¡Esto es lo que frena el cierre global!
 
-                const $this = $(this);
-                $this.toggleClass('active');
-                $this.parent().toggleClass('active');
-                $this.next('ul').slideToggle(300);
+                const $this = $(this);$this.toggleClass('active');
+                $this.parent().toggleClass('active');$this.next('ul').slideToggle(300);
             });
         }
     }, 400);
@@ -48,34 +45,33 @@ document.addEventListener('DOMContentLoaded', () => {
         "caballero-accesorios": "🕶️ Accesorios de Caballero",
         "caballero-ofertas": "🔥 Ofertas Exclusivas para Caballero",
         // DAMA GENERAL
-        // General
-    "dama": "👗 Catálogo para Dama",
-    "dama-ofertas": "🔥 Ofertas Exclusivas para Dama",
-    "todos": "📦 Catálogo Completo",
+        "dama": "👗 Catálogo para Dama",
+        "dama-ofertas": "🔥 Ofertas Exclusivas para Dama",
+        "todos": "📦 Catálogo Completo",
 
-    // 1. Ropa Superior
-    "dama-camisas": "👚 Camisas ",
-    "dama-top": "👕 Tops y T-Shirts de Dama",
-    "dama-chaquetas": "🧥 Chaquetas de Dama",
-    "dama-chalecos": "🦺 Chalecos de Dama",
+        // 1. Ropa Superior
+        "dama-camisas": "👚 Camisas ",
+        "dama-top": "👕 Tops y T-Shirts de Dama",
+        "dama-chaquetas": "🧥 Chaquetas de Dama",
+        "dama-chalecos": "🦺 Chalecos de Dama",
 
-    // 2. Ropa Inferior y Piezas
-    "dama-pantalones": "👖 Pantalones de Dama",
-    "dama-vestidos": "👗 Vestidos de Dama",
-    "dama-conjuntos": "✨ Conjuntos y Sets de Dama",
-    "dama-faldas": "💃 Faldas de Dama",
-    "dama-bragas": "🩱 Bragas y Jumpsuits de Dama",
+        // 2. Ropa Inferior y Piezas
+        "dama-pantalones": "👖 Pantalones de Dama",
+        "dama-vestidos": "👗 Vestidos de Dama",
+        "dama-conjuntos": "✨ Conjuntos y Sets de Dama",
+        "dama-faldas": "💃 Faldas de Dama",
+        "dama-bragas": "🩱 Bragas y Jumpsuits de Dama",
 
-    // 3. Calzado y Marroquinería
-    "dama-calzado": "👠 Calzado de Dama",
-    "dama-carteras": "👜 Carteras de Dama",
-    "dama-monederos": "👛 Monederos y Billeteras de Dama",
+        // 3. Calzado y Marroquinería
+        "dama-calzado": "👠 Calzado de Dama",
+        "dama-carteras": "👜 Carteras de Dama",
+        "dama-monederos": "👛 Monederos y Billeteras de Dama",
 
-    // 4. Accesorios y Belleza
-    "dama-accesorios": "💎 Accesorios y Joyería de Dama",
-    "dama-lentes": "🕶️ Lentes de Dama",
-    "dama-relojes": "⌚ Relojes de Dama",
-    "dama-perfumeria": "✨ Perfumería de Dama"
+        // 4. Accesorios y Belleza
+        "dama-accesorios": "💎 Accesorios y Joyería de Dama",
+        "dama-lentes": "🕶️ Lentes de Dama",
+        "dama-relojes": "⌚ Relojes de Dama",
+        "dama-perfumeria": "✨ Perfumería de Dama"
     };
 
     // Función global para pintar productos en un contenedor específico
@@ -129,8 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.seccion-comfort').forEach(sec => {
             sec.style.setProperty('display', 'none', 'important');
         });
-       if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'none', 'important');
-       if (seccionLooks) seccionLooks.style.setProperty('display', 'none', 'important');
+
+        if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'none', 'important');
+        if (seccionLooks) seccionLooks.style.setProperty('display', 'none', 'important');
         if (billboard) billboard.style.setProperty('display', 'none', 'important');
         if (segundoBillboard) segundoBillboard.style.setProperty('display', 'none', 'important');
         if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en búsqueda
@@ -140,135 +137,88 @@ document.addEventListener('DOMContentLoaded', () => {
         window.renderizarProductosEnContenedor('contenedor-dama-camisas', lista);
     };
 
-   // ==========================================================================
-// 🎛️ CONFIGURACIÓN FÁCIL DEL CARRUSEL DE LA PÁGINA PRINCIPAL
-// ==========================================================================
-const CONFIG_CARRUSEL_HOME = {
-    // Modo de selección:
-    // 'categoria'  -> Muestra productos filtrando por su categoría.
-    // 'ids'        -> Muestra SOLO los productos exactos definidos en productosIncluidosByIDs.
-    // 'excluir'    -> Muestra la categoría elegida PERO excluye los IDs en productosExcluidosByIDs.
-    modo: 'categoria', 
+    // --- LÓGICA DE CARGA INICIAL DE LA PÁGINA ---
+    const esPaginaInicio = !categoriaFiltro || categoriaFiltro === "todos" || categoriaFiltro === "todo";
 
-    // Categoría a buscar cuando modo es 'categoria' o 'excluir' (Ej: "dama-chaquetas", "chaqueta", "dama", "todos")
-    categoriaElegida: 'dama-chaquetas',
+    if (esPaginaInicio) {
+        // VISTA PÁGINA PRINCIPAL (HOME)
+        document.querySelectorAll('.seccion-ideas-looks').forEach(sec => {
+            sec.style.setProperty('display', 'block', 'important');
+        });
 
-    // Límites de cantidad:
-    // pon un número (Ej: 6) para limitar la cantidad, o null / 0 para mostrar TODA la categoría
-    limiteCantidad: 8,
+        document.querySelectorAll('.seccion-comfort').forEach(sec => {
+            sec.style.setProperty('display', 'block', 'important'); // 👈 Se muestra en el Home
+        });
 
-    // IDs exactos de productos para el modo 'ids' (Ej: ['1', 'camisa-rosa', '5'])
-    productosIncluidosByIDs: ['1', '2', '3', '4','5','6'],
+        if (seccionLooks) seccionLooks.style.setProperty('display', 'block', 'important');
+        if (barraEnvios) barraEnvios.style.setProperty('display', 'block', 'important');
+        if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'block', 'important');
+        if (billboard) billboard.style.display = 'block';
+        if (segundoBillboard) segundoBillboard.style.display = 'block';
+        if (seccionCategorias) seccionCategorias.style.setProperty('display', 'block', 'important'); // 👈 Se muestra en el Home
+        if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'block', 'important');
+        if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'block', 'important');
+        document.body.classList.add('pagina-inicio');
 
-    // IDs exactos a quitar cuando estés en modo 'excluir'
-    productosExcluidosByIDs: ["chaq004",]
-};
+        if (tituloSeccion) tituloSeccion.textContent = "FAVORITOS DE LA TEMPORADA";
 
-
-// --- LÓGICA DE CARGA INICIAL DE LA PÁGINA ---
-const esPaginaInicio = !categoriaFiltro || categoriaFiltro === "todos" || categoriaFiltro === "todo";
-
-if (esPaginaInicio) {
-    // VISTA PÁGINA PRINCIPAL (HOME)
-    document.querySelectorAll('.seccion-ideas-looks').forEach(sec => {
-        sec.style.setProperty('display', 'block', 'important');
-    });
-
-    document.querySelectorAll('.seccion-comfort').forEach(sec => {
-        sec.style.setProperty('display', 'block', 'important');
-    });
-
-    if (seccionLooks) seccionLooks.style.setProperty('display', 'block', 'important');
-    if (barraEnvios) barraEnvios.style.setProperty('display', 'block', 'important');
-    if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'block', 'important');
-    if (billboard) billboard.style.display = 'block';
-    if (segundoBillboard) segundoBillboard.style.display = 'block';
-    if (seccionCategorias) seccionCategorias.style.setProperty('display', 'block', 'important');
-    if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'block', 'important');
-    if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'block', 'important');
-    
-    document.body.classList.add('pagina-inicio');
-
-   // if (tituloSeccion) tituloSeccion.textContent = "👗 Lo Mejor para Dama";
-
-   // 🧠 MOTOR INTELIGENTE PARA EL FILTRADO DEL CARRUSEL EN EL HOME
-    if (contDama && typeof productosData !== 'undefined') {
-        let productosFiltrados = [];
-
-        if (CONFIG_CARRUSEL_HOME.modo === 'ids') {
-            // Modo: Mostrar solo los IDs específicos de la lista
-            productosFiltrados = productosData.filter(p => 
-                CONFIG_CARRUSEL_HOME.productosIncluidosByIDs.map(String).includes(String(p.id))
-            );
-        } else {
-            // Modo: Filtrar por categoría
-            const catBusqueda = CONFIG_CARRUSEL_HOME.categoriaElegida.toLowerCase();
+        if (contDama && typeof productosData !== 'undefined') {
+            // 🎯 CONFIGURACIÓN FÁCIL Y SEGURA DEL CARRUSEL EN EL HOME:
+            // Puedes cambiar la categoría elegida (ej. "dama-chaquetas") o limitar la cantidad con .slice(0, 6)
+            const categoriaElegida = "dama-chaquetas"; 
+            const idsExcluidos = ["chaq004"]; // IDs de productos que NO quieres que salgan en el carrusel
             
-            productosFiltrados = productosData.filter(p => {
+            let prodsCarrusel = productosData.filter(p => {
+                if (!p.categoria) return false;
+                const coincideCat = p.categoria.toLowerCase().includes(categoriaElegida);
+                const noEstaExcluido = !idsExcluidos.includes(String(p.id));
+                return coincideCat && noEstaExcluido;
+            }).slice(0, 6); // Limita a máximo 6 productos en el carrusel de portada
+
+            window.renderizarProductosEnContenedor('contenedor-dama-camisas', prodsCarrusel);
+        }
+    } else {
+        // VISTA DE CATEGORÍA ESPECÍFICA (EXACTAMENTE TU CÓDIGO ORIGINAL)
+        if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'none', 'important');
+        if (barraEnvios) barraEnvios.style.setProperty('display', 'none', 'important');
+        if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'none', 'important');
+        if (billboard) billboard.style.setProperty('display', 'none', 'important');
+        if (segundoBillboard) segundoBillboard.style.display = 'none';
+        if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important'); // 👈 Se oculta en categorías
+        if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
+        document.body.classList.remove('pagina-inicio');
+
+        const catLimpia = categoriaFiltro.toLowerCase().trim();
+        let productosAMostrar = typeof productosData !== 'undefined' ? productosData : [];
+
+        if (catLimpia === "ofertas") {
+            productosAMostrar = productosData.filter(p => p.precioTachado || p.categoria === "ofertas");
+        } else {
+            productosAMostrar = productosData.filter(p => {
                 if (!p.categoria) return false;
                 const catProd = p.categoria.toLowerCase();
-                return catBusqueda === 'todos' || catProd.includes(catBusqueda);
+
+                if (catLimpia.endsWith("-ofertas")) {
+                    const categoriaBase = catLimpia.replace("-ofertas", "");
+                    return (catProd === categoriaBase || catProd.startsWith(categoriaBase + "-")) && (p.precioTachado || p.categoria === "ofertas");
+                }
+
+                return catProd === catLimpia || catProd.startsWith(catLimpia + "-");
             });
         }
 
-        // 🛑 FILTRO DE EXCLUSIÓN UNIVERSAL: Si pones IDs aquí, se eliminan siempre automáticamente
-        if (CONFIG_CARRUSEL_HOME.productosExcluidosByIDs && CONFIG_CARRUSEL_HOME.productosExcluidosByIDs.length > 0) {
-            const excluidosStr = CONFIG_CARRUSEL_HOME.productosExcluidosByIDs.map(String);
-            productosFiltrados = productosFiltrados.filter(p => !excluidosStr.includes(String(p.id)));
-        }
-
-        // Aplicar límite de cantidad si está definido
-        if (CONFIG_CARRUSEL_HOME.limiteCantidad && CONFIG_CARRUSEL_HOME.limiteCantidad > 0) {
-            productosFiltrados = productosFiltrados.slice(0, CONFIG_CARRUSEL_HOME.limiteCantidad);
-        }
-
-        // Renderizar los productos resultantes en el carrusel
-        window.renderizarProductosEnContenedor('contenedor-dama-camisas', productosFiltrados);
-    }
-
-} else {
-    // VISTA DE CATEGORÍA ESPECÍFICA (OCULTA SECCIONES DEL HOME)
-    if (seccionCarruselHome) seccionCarruselHome.style.setProperty('display', 'none', 'important');
-    if (barraEnvios) barraEnvios.style.setProperty('display', 'none', 'important');
-    if (bannerLogoPrincipal) bannerLogoPrincipal.style.setProperty('display', 'none', 'important');
-    if (billboard) billboard.style.setProperty('display', 'none', 'important');
-    if (segundoBillboard) segundoBillboard.style.display = 'none';
-    if (seccionCategorias) seccionCategorias.style.setProperty('display', 'none', 'important');
-    if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'none', 'important');
-    
-    document.body.classList.remove('pagina-inicio');
-
-    const catLimpia = categoriaFiltro.toLowerCase().trim();
-    let productosAMostrar = typeof productosData !== 'undefined' ? productosData : [];
-
-    if (catLimpia === "ofertas") {
-        productosAMostrar = productosData.filter(p => p.precioTachado || p.categoria === "ofertas");
-    } else {
-        productosAMostrar = productosData.filter(p => {
-            if (!p.categoria) return false;
-            const catProd = p.categoria.toLowerCase();
-
-            if (catLimpia.endsWith("-ofertas")) {
-                const categoriaBase = catLimpia.replace("-ofertas", "");
-                return (catProd === categoriaBase || catProd.startsWith(categoriaBase + "-")) && (p.precioTachado || p.categoria === "ofertas");
+        // Cambiar título según la categoría activa
+        if (tituloSeccion) {
+            if (nombresCategorias[catLimpia]) {
+                tituloSeccion.textContent = nombresCategorias[catLimpia];
+            } else {
+                tituloSeccion.textContent = "Catálogo de " + categoriaFiltro.charAt(0).toUpperCase() + categoriaFiltro.slice(1);
             }
-
-            return catProd === catLimpia || catProd.startsWith(catLimpia + "-");
-        });
-    }
-
-    // Cambiar título según la categoría activa
-    if (tituloSeccion) {
-        if (nombresCategorias[catLimpia]) {
-            tituloSeccion.textContent = nombresCategorias[catLimpia];
-        } else {
-            tituloSeccion.textContent = "Catálogo de " + categoriaFiltro.charAt(0).toUpperCase() + categoriaFiltro.slice(1);
         }
-    }
 
-    // Pintar productos normales de la categoría en pantalla
-    window.renderizarProductosEnContenedor('contenedor-dama-camisas', productosAMostrar);
-}
+        // Pintar productos en la pantalla
+        window.renderizarProductosEnContenedor('contenedor-dama-camisas', productosAMostrar);
+    }
 });
 
 
@@ -572,6 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 // --- LÓGICA AUTOMÁTICA PARA EL SHOP THE LOOK (AL HACER CLIC) ---
 window.toggleLookPopup = function(btn, event) {
     event.stopPropagation();
@@ -613,18 +564,16 @@ document.addEventListener('click', () => {
     document.querySelectorAll('.look-popup').forEach(p => p.classList.remove('active'));
 });
 
-
 // --- ANIMACIÓN AUTOMÁTICA PARA EL CARRUSEL (BILLBOARD) ---
 document.addEventListener('DOMContentLoaded', () => {
     const billboard = document.getElementById('billboard-principal');
     if (!billboard) return;
 
-    let tiempoTransicion = 4000; // Cambia de slide cada 4 segundos (puedes subirlo a 5000 si prefieres)
+    let tiempoTransicion = 4000; // Cambia de slide cada 4 segundos
 
     function iniciarAutoplay() {
         return setInterval(() => {
             const anchoSlide = billboard.clientWidth;
-            // Si llega al final del carrusel, regresa suavemente al inicio; si no, avanza al siguiente
             if (billboard.scrollLeft + billboard.clientWidth >= billboard.scrollWidth - 10) {
                 billboard.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
@@ -635,7 +584,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let autoplayInterval = iniciarAutoplay();
 
-    // Pausar el movimiento automático cuando el usuario ponga el mouse encima (ideal para computadoras)
     billboard.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
     billboard.addEventListener('mouseleave', () => {
         autoplayInterval = iniciarAutoplay();
@@ -653,21 +601,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
 });
 
-// Función de desplazamiento ultra fluida y a prueba de rebotes/bugs
-window.deslizarCarrusel = function(idContenedor, direccion) {
-    const contenedor = document.getElementById('carrusel-scroll-box') || document.getElementById(idContenedor)?.parentElement;
-    if (!contenedor) return;
+// --- ANIMACIÓN AUTOMÁTICA PARA EL CARRUSEL DE PRODUCTOS HOME (PING-PONG) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const carruselProductos = document.getElementById('carrusel-scroll-box');
+    if (!carruselProductos) return;
 
-    // Calcula el ancho de una tarjeta de producto individual + su margen
-    const primeraTarjeta = contenedor.querySelector('article');
-    const paso = primeraTarjeta ? primeraTarjeta.offsetWidth + 15 : 250;
+    let tiempoTransicion = 3500;
+    let direccion = 1;
+    let autoplayInterval = null;
 
-    // Si direccion > 0 avanza, si es < 0 retrocede
-    const desplazamiento = direccion > 0 ? paso : -paso;
+    function iniciarAutoplayProductos() {
+        return setInterval(() => {
+            const tarjeta = carruselProductos.querySelector('article');
+            const paso = tarjeta ? tarjeta.offsetWidth + 15 : 220;
 
-    // Desplazamiento seguro sin desbordar los bordes
-    contenedor.scrollBy({
-        left: desplazamiento,
-        behavior: 'smooth'
-    });
-};
+            const scrollMaximo = carruselProductos.scrollWidth - carruselProductos.clientWidth;
+            const posicionActual = carruselProductos.scrollLeft;
+
+            if (direccion === 1 && posicionActual >= scrollMaximo - 10) {
+                direccion = -1;
+            } else if (direccion === -1 && posicionActual <= 10) {
+                direccion = 1;
+            }
+
+            carruselProductos.scrollBy({ left: paso * direccion, behavior: 'smooth' });
+        }, tiempoTransicion);
+    }
+
+    autoplayInterval = iniciarAutoplayProductos();
+
+    const pausar = () => clearInterval(autoplayInterval);
+    const reanudar = () => {
+        clearInterval(autoplayInterval);
+        autoplayInterval = iniciarAutoplayProductos();
+    };
+
+    carruselProductos.addEventListener('mouseenter', pausar);
+    carruselProductos.addEventListener('mouseleave', reanudar);
+    carruselProductos.addEventListener('touchstart', pausar, { passive: true });
+    carruselProductos.addEventListener('touchend', reanudar, { passive: true });
+});
