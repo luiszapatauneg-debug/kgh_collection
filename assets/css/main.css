@@ -2383,3 +2383,12 @@ button,
 }
 
 
+/* Forzar visibilidad del botón de 3 rayitas (Menú) */
+#header .toggle,
+.header-left .toggle,
+body > .toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10001 !important;
+}

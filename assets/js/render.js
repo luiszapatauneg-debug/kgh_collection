@@ -641,3 +641,29 @@ document.addEventListener('DOMContentLoaded', () => {
     carruselProductos.addEventListener('touchstart', pausar, { passive: true });
     carruselProductos.addEventListener('touchend', reanudar, { passive: true });
 });
+
+
+// --- ASEGURAR QUE LAS 3 RAYITAS DEL MENÚ NUNCA DESAPAREZCAN ---
+document.addEventListener('DOMContentLoaded', () => {
+    const asegurarBotonMenu = () => {
+        const toggleBtn = document.querySelector('.toggle') || document.querySelector('body > .toggle');
+        const headerLeft = document.querySelector('.header-left');
+        
+        if (toggleBtn) {
+            // Forzar que el botón de las 3 rayitas siempre sea visible en cualquier vista
+            toggleBtn.style.setProperty('display', 'block', 'important');
+            toggleBtn.style.setProperty('visibility', 'visible', 'important');
+            toggleBtn.style.setProperty('z-index', '10001', 'important');
+
+            // Reubicar dentro del header si aún no está allí
+            if (headerLeft && !headerLeft.contains(toggleBtn)) {
+                headerLeft.prepend(toggleBtn);
+            }
+        }
+    };
+
+    // Ejecutar inmediatamente y con ligeros retardo para ganar a la plantilla
+    asegurarBotonMenu();
+    setTimeout(asegurarBotonMenu, 100);
+    setTimeout(asegurarBotonMenu, 400);
+});
