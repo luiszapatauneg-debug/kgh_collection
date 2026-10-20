@@ -927,7 +927,7 @@ header#header::before {
 
 /* Estilo base y animación de "respiración" para el botón Ver Más ofertas */
 .btn-respirar-fuerte {
-    background: linear-gradient(135deg, #ff4b2b, #ff416c) !important; /* Color degradado (puedes cambiarlo) */
+    background: linear-gradient(135deg, #daab48, #ffad41) !important; /* Color degradado (puedes cambiarlo) */
     color: #ffffff !important; /* Texto blanco obligado */
     padding: 14px 28px !important;
     border-radius: 30px !important;
@@ -1217,6 +1217,29 @@ section {
 
 } 
 
+/* Centrado y color personalizado para el título del carrusel */
+.titulo-carrusel-custom,
+#titulo-seccion-principal {
+    text-align: center !important;
+    color: #c29b48; /* 👈 Cambia este código HEX para ajustar el color de la letra */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Alineación del contenedor del encabezado */
+header.major {
+    text-align: center !important;
+}
+
+/* Ocultar la línea decorativa debajo del título h2 */
+header.major::after,
+header.major h2::after,
+#titulo-seccion-principal::after {
+    display: none !important;
+    border: none !important;
+    background: none !important;
+}
 
 /* ==========================================================================
    ESTRUCTURA CORRECTA DEL CARRUSEL (BILLBOARD) Y EL MOSAICO (FULL-WIDTH)
