@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btnVerTodoDama) btnVerTodoDama.style.setProperty('display', 'block', 'important');
         document.body.classList.add('pagina-inicio');
 
-        if (tituloSeccion) tituloSeccion.textContent = "FAVORITOS DE LA TEMPORADA";
+      //  if (tituloSeccion) tituloSeccion.textContent = "FAVORITOS DE LA TEMPORADA";
 
         if (contDama && typeof productosData !== 'undefined') {
             // 🎯 CONFIGURACIÓN FÁCIL Y SEGURA DEL CARRUSEL EN EL HOME:

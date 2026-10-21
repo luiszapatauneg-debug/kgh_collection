@@ -1217,11 +1217,16 @@ section {
 
 } 
 
+
+/* ==========================================================================
+    Centrado y color personalizado para el título del carruse ultimo carrusel 
+   ========================================================================== */
+
 /* Centrado y color personalizado para el título del carrusel */
 .titulo-carrusel-custom,
 #titulo-seccion-principal {
     text-align: center !important;
-    color: #c29b48; /* 👈 Cambia este código HEX para ajustar el color de la letra */
+    color: #b99850; /* 👈 Cambia este código HEX para ajustar el color de la letra */
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -1232,13 +1237,35 @@ header.major {
     text-align: center !important;
 }
 
-/* Ocultar la línea decorativa debajo del título h2 */
+/* eliminar raya */
+header.major,
+header.major h2,
+#titulo-seccion-principal {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
 header.major::after,
+header.major::before,
 header.major h2::after,
-#titulo-seccion-principal::after {
+header.major h2::before,
+#titulo-seccion-principal::after,
+#titulo-seccion-principal::before {
+    content: none !important;
     display: none !important;
     border: none !important;
     background: none !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+/* Por si la línea es una etiqueta <hr> interna de la plantilla */
+.seccion-carrusel-home hr,
+.bloque-home hr,
+header.major hr {
+    display: none !important;
+    visibility: hidden !important;
 }
 
 /* ==========================================================================
@@ -1666,4 +1693,34 @@ section header.major {
 .comfort-btn-whatsapp:hover {
     background: #d1ba54;
     color: #000;
+}
+
+
+/* ==========================================================
+   2. AGRANDAR EL BOTÓN DE LAS 3 RAYITAS (MENÚ)
+   ========================================================== */
+/* Aumenta el tamaño del contenedor del botón */
+#header .toggle,
+.header-left .toggle,
+body > .toggle {
+    transform: scale(1.3) !important; /* Aumenta un 30% el tamaño general */
+    transform-origin: left center;
+    margin-right: 15px !important;
+}
+
+/* Si prefieres ajustarle la letra/icono directamente: */
+#header .toggle::before,
+.header-left .toggle::before,
+body > .toggle::before {
+    font-size: 1.6rem !important; /* Hace las 3 rayitas más gruesas/grandes */
+}
+
+/* Forzar visibilidad del botón de 3 rayitas (Menú) */
+#header .toggle,
+.header-left .toggle,
+body > .toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10001 !important;
 }

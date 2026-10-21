@@ -1,3 +1,46 @@
  git add .             
 >> git commit -m "novena prueba para ver como se ve el principio "                                                    
->>git push                         
+>>git push
+
+document.body.classList.remove('pagina-inicio');
+
+        const catLimpia = categoriaFiltro.toLowerCase().trim();
+        let productosAMostrar = [];
+
+        if (typeof productosData !== 'undefined') {
+            if (catLimpia === "ofertas") {
+                productosAMostrar = productosData.filter(p => p.precioTachado || p.categoria === "ofertas");
+            } else {
+                // FILTRO FLEXIBLE DE CATEGORÍAS (Busca coincidencia directa, parcial o subcategorías)
+                productosAMostrar = productosData.filter(p => {
+                    if (!p.categoria) return false;
+                    const catProd = p.categoria.toLowerCase().trim();
+
+                    // 1. Si son exactamente iguales (ej: "dama-chaquetas" === "dama-chaquetas")
+                    if (catProd === catLimpia) return true;
+
+                    // 2. Si la categoría del producto empieza con la categoría de la URL o viceversa (ej: "dama" abarca "dama-chaquetas")
+                    if (catProd.startsWith(catLimpia + "-") || catLimpia.startsWith(catProd + "-")) return true;
+
+                    // 3. Si una contiene a la otra (ej: "dama-chaquetas" contiene "chaqueta")
+                    if (catProd.includes(catLimpia) || catLimpia.includes(catProd)) return true;
+
+                    return false;
+                });
+            }
+        }
+
+        // Cambiar título según la categoría activa
+        if (tituloSeccion) {
+            if (nombresCategorias[catLimpia]) {
+                tituloSeccion.textContent = nombresCategorias[catLimpia];
+            } else {
+                tituloSeccion.textContent = "Catálogo de " + categoriaFiltro.charAt(0).toUpperCase() + categoriaFiltro.slice(1);
+            }
+        }
+
+        // Asegurar que el contenedor esté visible y pintar productos
+        if (contDama) contDama.style.display = "flex";
+        window.renderizarProductosEnContenedor('contenedor-dama-camisas', productosAMostrar);
+    }
+});
