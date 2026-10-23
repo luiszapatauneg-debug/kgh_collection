@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // 📍 DICCIONARIO DE GERENTES: Reemplaza estos números con los reales de cada tienda (con código de país)
             const numerosGerentes = {
                 "Puerto Ordaz - villa colombia": "5804249081574",     // Cambia por el número real del gerente de Centro
-                "Puerto Ordaz - Alta Vista": "5804249081574",  // Cambia por el número real del gerente de Alta Vista
+                "Puerto Ordaz - Alta Vista": "5804121311937",  // Cambia por el número real del gerente de Alta Vista
                 "puerto ordaz- unare": "5804249081574"         // Cambia por el número real del gerente de Valencia
             };
 

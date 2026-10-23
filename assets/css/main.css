@@ -112,11 +112,11 @@ a {
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color: #ecc92de5;
+  color: #c7c7c7e5;
   text-decoration: none; }
   a:hover {
-    border-bottom-color: #ecc92de5;
-    color: #ecc92de5 !important; }
+    border-bottom-color: #c7c7c7e5;
+    color: #c7c7c7e5 !important; }
     a:hover strong {
       color: inherit; }
 
@@ -1215,8 +1215,8 @@ input[type="radio"] {
     content: '\f00c'; }
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
-    border-color: #ecc92de5;
-    box-shadow: 0 0 0 1px #ecc92de5; }
+    border-color: #c7c7c7e5;
+    box-shadow: 0 0 0 1px #c7c7c7e5; }
 
 input[type="checkbox"] + label:before {
   border-radius: 0.375em; }
@@ -1491,10 +1491,10 @@ ul.pagination {
       padding: 0 0.5em;
       text-align: center; }
       ul.pagination li > .page.active {
-        background-color: #ecc92de5;
+        background-color: #c7c7c7e5;
         color: #ffffff !important; }
         ul.pagination li > .page.active:hover {
-          background-color: #ecc92de5; }
+          background-color: #c7c7c7e5; }
         ul.pagination li > .page.active:active {
           background-color: #ecc92de5; }
     ul.pagination li:first-child {
@@ -2139,7 +2139,7 @@ button,
       text-indent: 7.25em;
       width: 7.25em; }
       #sidebar .toggle:before {
-        color: #d4bc4fe5;
+        color: #c7c7c7e5;
         margin-left: -0.0625em;
         margin-top: -0.25em;
         font-size: 1.1rem;
@@ -2283,7 +2283,7 @@ button,
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #d4bc4fe5;
+  color: #c7c7c7e5;
   font-family: "Roboto Slab", serif;
   font-weight: 400;
   letter-spacing: 0.075em;
@@ -2324,7 +2324,7 @@ button,
         -webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
         -ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
         transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-        color: #d4bc4fe5;
+        color: #9fa3a6;
         content: '\f078';
         position: absolute;
         right: 0; }

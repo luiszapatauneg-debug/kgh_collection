@@ -1732,14 +1732,14 @@ body > .toggle {
 /* 1. Devolver los iconos (dibujos) a su color gris original de la plantilla */
 .contact .icon::before,
 .contact i {
-    color: inherit !important; /* Hereda el color gris original */
+    color:  #d1b648 !important; /* Hereda el color gris original */
 }
 
 /* 2. Poner en color dorado el título, el párrafo y los enlaces de contacto */
 section h2,
 .contact p,
 .contact a {
-    color: #d4af37 !important; /* Color dorado elegante */
+    color: #b8b5ae !important; /* Color dorado elegante */
 }
 
 /* 3. Eliminar líneas punteadas o rayas en los enlaces de contacto */
@@ -1751,7 +1751,7 @@ section h2,
 
 /* Efecto hover suave para los enlaces de contacto */
 .contact a:hover {
-    color: #f3e5ab !important; 
+    color: #d1b648 !important; 
 }
 
 ul.contact li {
