@@ -206,59 +206,75 @@
                 });
             </script>
 
-       <!-- VENTANA MODAL PARA DATOS DE WHATSAPP -->
-            <div id="modal-whatsapp" class="modal-overlay" style="display: none;">
-                <div class="modal-contenido">
-                    <button id="cerrar-modal-wsp" class="btn-cerrar">&times;</button>
-                    <h3 style="text-align: center; color: #fff; margin-bottom: 20px;">📦 Finalizar Pedido</h3>
-                    
-                    <form id="form-whatsapp-datos">
-                        <div>
-                            <label>Nombre y Apellido:</label>
-                            <input type="text" id="wsp-nombre" required placeholder="Ej. Carlos Pérez">
-                        </div>
-                        
-                        <div>
-                            <label>Sucursal de preferencia:</label>
-                            <select id="wsp-sucursal">
-                               
-                                <option value="Puerto Ordaz - Alta Vista">📍 Puerto Ordaz - Alta Vista - c.c mami</option>
-                               
-                            </select>
-                        </div>
-
-                        <div>
-                            <label>Tipo de Entrega:</label>
-                            <select id="wsp-entrega" onchange="actualizarOpcionesEntrega()">
-                                <option value="Delivery">🛵 Delivery a domicilio</option>
-                                <option value="Retirar en Tienda">📦 Retirar en tienda física</option>
-                            </select>
-                        </div>
-
-                        <div id="aviso-delivery" style="background: #2d3b26; padding: 10px; border-radius: 5px; font-size: 0.85rem; color: #a8d08d; margin-bottom: 15px;">
-                            ℹ️ El delivery tiene un costo extra según la zona.
-                        </div>
-
-                        <div id="contenedor-zona">
-                            <label>Zona / Sector:</label>
-                            <input type="text" id="wsp-zona" required placeholder="Ej. Alta Vista, Unare, Centro...">
-                        </div>
-
-                        <div>
-                            <label>Método de Pago:</label>
-                            <select id="wsp-pago">
-                                <option value="Efectivo USD">💵 Efectivo USD</option>
-                                <option value="Pago Móvil">📱 Pago Móvil (Bs)</option>
-                                <option value="Zelle">💳 Zelle</option>
-                                <option value="Binance (USDT)">🪙 Binance (USDT)</option>
-                                <option id="opcion-punto-venta" value="Punto de Venta">💳 POS - Punto de Venta (Solo en Tienda)</option>
-                            </select>
-                        </div>
-                        
-                        <button type="submit" class="btn-enviar-wsp">Enviar Pedido a WhatsApp 📱</button>
-                    </form>
-                </div>
+     <!-- VENTANA MODAL PARA DATOS DE WHATSAPP -->
+<div id="modal-whatsapp" class="modal-overlay" style="display: none;">
+    <div class="modal-contenido">
+        <button id="cerrar-modal-wsp" class="btn-cerrar">&times;</button>
+        <h3 style="text-align: center; color: #fff; margin-bottom: 20px;">📦 Finalizar Pedido</h3>
+        
+        <form id="form-whatsapp-datos">
+            <div>
+                <label>Nombre y Apellido:</label>
+                <input type="text" id="wsp-nombre" required placeholder="Ej. Carlos Pérez">
             </div>
+            
+            <div>
+                <label>Sucursal de preferencia:</label>
+                <select id="wsp-sucursal">
+                    <option value="Puerto Ordaz - Alta Vista">📍 Puerto Ordaz - Alta Vista - C.C. Mami</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Tipo de Entrega:</label>
+                <select id="wsp-entrega" onchange="actualizarOpcionesEntrega()">
+                    <option value="Delivery">🛵 Delivery a domicilio</option>
+                    <option value="Envio Nacional">🚚 Envío Nacional (MRW, Zoom, Tealca...)</option>
+                    <option value="Retirar en Tienda">📦 Retirar en tienda física</option>
+                </select>
+            </div>
+
+            <!-- AVISO Y CAMPOS PARA DELIVERY (Oculto por defecto con style="display: none;") -->
+            <div id="aviso-delivery" style="display: none; background: #2d3b26; padding: 10px; border-radius: 5px; font-size: 0.85rem; color: #a8d08d; margin-bottom: 15px;">
+                ℹ️ El delivery tiene un costo extra según la zona.
+            </div>
+
+            <div id="contenedor-zona" style="display: none; margin-bottom: 15px;">
+                <label>Zona / Sector:</label>
+                <input type="text" id="wsp-zona" placeholder="Ej. Alta Vista, Unare, Centro...">
+            </div>
+
+            <!-- AVISO Y CAMPOS PARA ENVÍO NACIONAL (Ocultos por defecto) -->
+            <div id="aviso-envio" style="display: none; background: #1c2d3d; padding: 10px; border-radius: 5px; font-size: 0.85rem; color: #8ecae6; margin-bottom: 15px;">
+                🚚 El envío nacional tiene un costo adicional cobrado en destino según la agencia elegida.
+            </div>
+
+            <div id="contenedor-empresa-envio" style="display: none; margin-bottom: 15px;">
+                <label>Empresa de Envío:</label>
+                <select id="wsp-empresa-envio">
+                    <option value="MRW">MRW</option>
+                    <option value="Tealca">Tealca</option>
+                    <option value="Zoom">Zoom</option>
+                    <option value="Domesa">Domesa</option>
+                    <option value="Liberty Express">Liberty Express</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Método de Pago:</label>
+                <select id="wsp-pago">
+                    <option value="Efectivo USD">💵 Efectivo USD</option>
+                    <option value="Pago Móvil">📱 Pago Móvil (Bs)</option>
+                    <option value="Zelle">💳 Zelle</option>
+                    <option value="Binance (USDT)">🪙 Binance (USDT)</option>
+                    <option id="opcion-punto-venta" value="Punto de Venta" style="display: none;">💳 POS - Punto de Venta (Solo en Tienda)</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn-enviar-wsp">Enviar Pedido a WhatsApp 📱</button>
+        </form>
+    </div>
+</div>
 
         </div> <!-- Fin del Wrapper -->
 

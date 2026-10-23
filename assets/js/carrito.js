@@ -391,59 +391,76 @@ function finalizarCompraWhatsApp(numeroWhatsApp) {
 // Controlar visibilidad del delivery, zona y métodos de pago según la opción elegida
 
 function actualizarOpcionesEntrega() {
-
     const tipo = document.getElementById('wsp-entrega').value;
-
     const contZona = document.getElementById('contenedor-zona');
-
+    const inputZona = document.getElementById('wsp-zona');
+    const labelZona = contZona ? contZona.querySelector('label') : null;
+    
+    // Avisos
     const avisoDelivery = document.getElementById('aviso-delivery');
-
+    const avisoEnvio = document.getElementById('aviso-envio');
+    
+    // Empresa de Envío
+    const contEmpresaEnvio = document.getElementById('contenedor-empresa-envio');
+    
+    // Métodos de pago
     const opcionPuntoVenta = document.getElementById('opcion-punto-venta');
-
     const selectPago = document.getElementById('wsp-pago');
 
-
-
     if (tipo === 'Retirar en Tienda') {
+        // --- 1. RETIRAR EN TIENDA ---
+        if (contZona) contZona.style.setProperty('display', 'none', 'important');
+        if (inputZona) inputZona.required = false;
+        if (avisoDelivery) avisoDelivery.style.setProperty('display', 'none', 'important');
+        if (avisoEnvio) avisoEnvio.style.setProperty('display', 'none', 'important');
+        if (contEmpresaEnvio) contEmpresaEnvio.style.setProperty('display', 'none', 'important');
 
-        if (contZona) contZona.style.display = 'none';
+        // Mostramos Punto de Venta
+        if (opcionPuntoVenta) opcionPuntoVenta.style.setProperty('display', 'block', 'important');
 
-        if (avisoDelivery) avisoDelivery.style.display = 'none';
+    } else if (tipo === 'Envio Nacional') {
+        // --- 2. ENVÍO NACIONAL ---
+        if (contZona) contZona.style.setProperty('display', 'block', 'important');
+        if (inputZona) {
+            inputZona.required = true;
+            inputZona.placeholder = "Ej. Ciudad, Estado...";
+        }
+        if (labelZona) labelZona.textContent = "Dirección de Destino / Agencia:";
 
-       
+        if (avisoDelivery) avisoDelivery.style.setProperty('display', 'none', 'important');
+        if (avisoEnvio) avisoEnvio.style.setProperty('display', 'block', 'important');
+        if (contEmpresaEnvio) contEmpresaEnvio.style.setProperty('display', 'block', 'important');
 
-        // Si elige retirar en tienda, mostramos el Punto de Venta
-
-        if (opcionPuntoVenta) opcionPuntoVenta.style.display = 'block';
+        // Si tenía seleccionado Punto de Venta, lo cambiamos
+        if (selectPago && selectPago.value === 'Punto de Venta') {
+            selectPago.value = 'Pago Móvil';
+        }
+        if (opcionPuntoVenta) opcionPuntoVenta.style.setProperty('display', 'none', 'important');
 
     } else {
-
-        // Si elige Delivery
-
-        if (contZona) contZona.style.display = 'block';
-
-        if (avisoDelivery) avisoDelivery.style.display = 'block';
-
-       
-
-        // Si selecciona delivery y tenía seleccionado punto de venta, lo cambiamos a Pago Móvil o Efectivo para evitar errores
-
-        if (selectPago && selectPago.value === 'Punto de Venta') {
-
-            selectPago.value = 'Pago Móvil';
-
+        // --- 3. DELIVERY A DOMICILIO ---
+        if (contZona) contZona.style.setProperty('display', 'block', 'important');
+        if (inputZona) {
+            inputZona.required = true;
+            inputZona.placeholder = "Ej. Alta Vista, Unare, Centro...";
         }
+        if (labelZona) labelZona.textContent = "Zona / Sector:";
 
-       
+        if (avisoDelivery) avisoDelivery.style.setProperty('display', 'block', 'important');
+        if (avisoEnvio) avisoEnvio.style.setProperty('display', 'none', 'important');
+        if (contEmpresaEnvio) contEmpresaEnvio.style.setProperty('display', 'none', 'important');
 
-        // Ocultamos la opción de Punto de Venta porque no aplica para delivery
-
-        if (opcionPuntoVenta) opcionPuntoVenta.style.display = 'none';
-
+        // Si tenía seleccionado Punto de Venta, lo cambiamos a Pago Móvil
+        if (selectPago && selectPago.value === 'Punto de Venta') {
+            selectPago.value = 'Pago Móvil';
+        }
+        if (opcionPuntoVenta) opcionPuntoVenta.style.setProperty('display', 'none', 'important');
     }
-
 }
 
+// ⚠️ IMPORTANTE: Asegúrate de llamar a esta función justo cuando se abra el modal del carrito 
+// para que el formulario se pinte bien desde el primer segundo según lo que esté seleccionado por defecto:
+// actualizarOpcionesEntrega();
 
 
 // Eventos para cerrar y enviar el formulario del modal de WhatsApp
