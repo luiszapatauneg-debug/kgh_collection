@@ -9,6 +9,7 @@ window.productosData = [
         "id": "cam001",
         "nombre": "CAMISA MANGA BOMBACHE KGH ROSA",
         "precio": 50.0,
+         precioTachado: 20,
         "categoria": "dama-camisas",
         "marca": "kgh",
         "imagen": "images/fotos_productos/camisas/CAMISA MANGA BOMBACHE KGH ROSA.jpeg",

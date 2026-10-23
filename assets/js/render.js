@@ -74,41 +74,53 @@ document.addEventListener('DOMContentLoaded', () => {
         "dama-perfumeria": "✨ Perfumería de Dama"
     };
 
-    // Función global para pintar productos en un contenedor específico
-    window.renderizarProductosEnContenedor = function(idContenedor, lista) {
-        const contenedor = document.getElementById(idContenedor);
-        if (!contenedor) return;
+    // Función global para pintar productos (Con cálculo de oferta, porcentaje y conversor automático)
+window.renderizarProductosEnContenedor = function(idContenedor, lista) {
+    const contenedor = document.getElementById(idContenedor);
+    if (!contenedor) return;
 
-        contenedor.innerHTML = "";
+    contenedor.innerHTML = "";
+    
+    if (!lista || lista.length === 0) {
+        contenedor.innerHTML = "<p style='padding: 20px; text-align: center;'>No hay productos disponibles por el momento.</p>";
+        return;
+    }
+
+    lista.forEach(prod => {
+        let etiquetaDescuento = "";
         
-        if (!lista || lista.length === 0) {
-            contenedor.innerHTML = "<p style='padding: 20px; text-align: center;'>No hay productos disponibles por el momento.</p>";
-            return;
+        // Convertimos a número para asegurar el cálculo matemático exacto
+        let precioNum = parseFloat(prod.precio);
+        let tachadoNum = prod.precioTachado ? parseFloat(prod.precioTachado) : 0;
+
+        // Si hay precio tachado mayor al precio normal, calculamos el porcentaje de oferta
+        if (tachadoNum > precioNum) {
+            let descuento = Math.round(100 - (precioNum * 100) / tachadoNum);
+            etiquetaDescuento = `<span class="badge-descuento">-${descuento}%</span>`;
         }
 
-        lista.forEach(prod => {
-            let etiquetaDescuento = "";
-            if (prod.precioTachado && prod.precioTachado > prod.precio) {
-                let descuento = Math.round(100 - (prod.precio * 100) / prod.precioTachado);
-                etiquetaDescuento = `<span class="badge-descuento">-${descuento}%</span>`;
-            }
+        // Estructura HTML con las clases exactas para tachar y convertir moneda
+        let htmlPrecio = tachadoNum > precioNum
+            ? `Precio normal: <span class="precio-tachado" data-precio-usd="${tachadoNum}">$${tachadoNum.toFixed(2)}</span> <span class="precio-oferta">¡Oferta: <span class="monto-precio-usd" data-precio-usd="${precioNum}">$${precioNum.toFixed(2)}</span>!</span>`
+            : `Precio: <span class="precio-normal monto-precio-usd" data-precio-usd="${precioNum}">$${precioNum.toFixed(2)}</span>`;
 
-            let htmlPrecio = prod.precioTachado
-                ? `Precio normal: <span class="precio-tachado">$${prod.precioTachado}</span> <span class="precio-oferta">¡Oferta: $${prod.precio}!</span>`
-                : `Precio: <span class="precio-normal">$${prod.precio}</span>`;
+        let article = document.createElement('article');
+        article.innerHTML = `
+            <a href="javascript:void(0)" class="image" onclick="abrirModal('${prod.id}')">
+                ${etiquetaDescuento}
+                <img src="${prod.imagen}" alt="${prod.nombre}" />
+            </a>
+            <h3><a href="javascript:void(0)" onclick="abrirModal('${prod.id}')" style="text-decoration:none; color:inherit;">${prod.nombre}</a></h3>
+            <p class="precio-producto">${htmlPrecio}</p>
+        `;
+        contenedor.appendChild(article);
+    });
 
-            let article = document.createElement('article');
-            article.innerHTML = `
-                <a href="javascript:void(0)" class="image" onclick="abrirModal('${prod.id}')">
-                    ${etiquetaDescuento}
-                    <img src="${prod.imagen}" alt="${prod.nombre}" />
-                </a>
-                <h3><a href="javascript:void(0)" onclick="abrirModal('${prod.id}')" style="text-decoration:none; color:inherit;">${prod.nombre}</a></h3>
-                <p class="precio-producto">${htmlPrecio}</p>
-            `;
-            contenedor.appendChild(article);
-        });
-    };
+    // Aplicar la moneda actual (USD o VES) de inmediato al terminar de pintar
+    if (typeof actualizarPreciosEnPantalla === 'function') {
+        actualizarPreciosEnPantalla();
+    }
+};
 
     // FUNCIÓN PUENTE: Activa el modo de búsqueda SOLO si se ejecuta activamente una búsqueda con texto
     window.mostrarProductos = function(lista) {
@@ -666,4 +678,78 @@ document.addEventListener('DOMContentLoaded', () => {
     asegurarBotonMenu();
     setTimeout(asegurarBotonMenu, 100);
     setTimeout(asegurarBotonMenu, 400);
+});
+
+// Variables globales para la moneda y la tasa automática
+let tasaCambioBCV = 36.50; // Valor de respaldo por si falla el internet
+let monedaActual = 'USD';
+
+// 1. Obtener la tasa de cambio oficial automáticamente al cargar la página
+async function obtenerTasaBCVAutomatica() {
+    try {
+        const respuesta = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
+        const datos = await respuesta.json();
+        if (datos && datos.promedio) {
+            tasaCambioBCV = datos.promedio;
+            const infoTasa = document.getElementById('tasa-auto-info');
+            if (infoTasa) {
+                infoTasa.textContent = `Tasa BCV oficial: Bs. ${tasaCambioBCV.toFixed(2)}`;
+            }
+            // Si el usuario ya había seleccionado Bolívares, recalculamos los precios con la tasa fresca
+            if (monedaActual === 'VES') {
+                actualizarPreciosEnPantalla();
+            }
+        }
+    } catch (error) {
+        console.log("No se pudo conectar a la API de tasas, usando tasa referencial.", error);
+        const infoTasa = document.getElementById('tasa-auto-info');
+        if (infoTasa) {
+            infoTasa.textContent = `Tasa referencial: Bs. ${tasaCambioBCV}`;
+        }
+    }
+}
+
+// 2. Función que cambia la moneda seleccionada
+function cambiarMoneda(nuevaMoneda) {
+    monedaActual = nuevaMoneda;
+    actualizarPreciosEnPantalla();
+}
+
+// 3. Recorre y actualiza todos los precios de los productos en el DOM
+function actualizarPreciosEnPantalla() {
+    const tasa = typeof tasaCambioBCV !== 'undefined' ? tasaCambioBCV : 36.50;
+    const moneda = typeof monedaActual !== 'undefined' ? monedaActual : 'USD';
+
+    // 1. Actualizar precios normales y de oferta
+    const preciosNormales = document.querySelectorAll('.monto-precio-usd');
+    preciosNormales.forEach(el => {
+        const usd = parseFloat(el.getAttribute('data-precio-usd'));
+        if (!isNaN(usd)) {
+            if (moneda === 'VES') {
+                const bs = usd * tasa;
+                el.textContent = `Bs. ${bs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            } else {
+                el.textContent = `$${usd.toFixed(2)}`;
+            }
+        }
+    });
+
+    // 2. Actualizar precios tachados manteniendo su estructura
+    const preciosTachados = document.querySelectorAll('.precio-tachado[data-precio-usd]');
+    preciosTachados.forEach(el => {
+        const usd = parseFloat(el.getAttribute('data-precio-usd'));
+        if (!isNaN(usd)) {
+            if (moneda === 'VES') {
+                const bs = usd * tasa;
+                el.textContent = `Bs. ${bs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            } else {
+                el.textContent = `$${usd.toFixed(2)}`;
+            }
+        }
+    });
+}
+
+// Ejecutar al iniciar la página
+document.addEventListener('DOMContentLoaded', () => {
+    obtenerTasaBCVAutomatica();
 });
