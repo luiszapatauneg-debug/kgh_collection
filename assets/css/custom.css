@@ -229,7 +229,7 @@ img.img-modal-detalle {
 
 /* Título dentro de la caja */
 #titulo-categoria-activa {
-    color: #ffffff;
+    color: #dfc05a;
     margin-bottom: 15px;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -1605,7 +1605,7 @@ section header.major {
     border: 1px solid #000000;
     border-radius: 4px;
     text-decoration: none;
-    color: #dabc37;
+    color: #cfbd56;
     font-weight: 500;
     letter-spacing: 1px;
     font-size: 0.9rem;
@@ -1613,7 +1613,7 @@ section header.major {
 }
 
 .btn-siguenos:hover {
-    background: #dabc37;
+    background: #cfbd56;
     color: #000;
 }
 
@@ -1621,14 +1621,14 @@ section header.major {
     display: block;
     margin-top: 8px;
     font-size: 0.85rem;
-    color: #c79731;
+    color:#cfbd56;
 }
 
 .comfort-titulo {
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 30px;
-    color: #e4c436;
+    color: #cfbd56;
 }
 
 /* --- CARRUSEL HORIZONTAL --- */
@@ -1661,13 +1661,13 @@ section header.major {
 
 .comfort-icon {
     margin-bottom: 20px;
-    color: #ebd244;
+    color: #cfbd56;
 }
 
 .comfort-card h3 {
     font-size: 1.25rem;
     margin-bottom: 12px;
-    color: #ebe157;
+    color: #cfbd56;
 }
 
 .comfort-card p {
@@ -1723,4 +1723,63 @@ body > .toggle {
     visibility: visible !important;
     opacity: 1 !important;
     z-index: 10001 !important;
+}
+
+/* ==========================================================
+   AJUSTES FINALES SECCIÓN CONTACTO: Iconos grises y textos dorados
+   ========================================================== */
+
+/* 1. Devolver los iconos (dibujos) a su color gris original de la plantilla */
+.contact .icon::before,
+.contact i {
+    color: inherit !important; /* Hereda el color gris original */
+}
+
+/* 2. Poner en color dorado el título, el párrafo y los enlaces de contacto */
+section h2,
+.contact p,
+.contact a {
+    color: #d4af37 !important; /* Color dorado elegante */
+}
+
+/* 3. Eliminar líneas punteadas o rayas en los enlaces de contacto */
+.contact a {
+    border-bottom: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+/* Efecto hover suave para los enlaces de contacto */
+.contact a:hover {
+    color: #f3e5ab !important; 
+}
+
+ul.contact li {
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+}
+
+/* ==========================================================
+   DORADO PARA TÍTULO "MENÚ" Y PÁRRAFO DE DUDAS
+   ========================================================== */
+
+/* 1. Título "Menú" en el panel lateral */
+#menu h2,
+#menu h3,
+#menu .title {
+    color: #d4af37 !important;
+}
+
+/* 2. Párrafo de dudas ("¿Tienes dudas?...") en el menú */
+#menu p,
+.contact p {
+    color: #d4af37 !important;
+}
+/* ==========================================================
+   FORZAR COLOR DORADO EN EL PÁRRAFO DE CONTACTO
+   ========================================================== */
+#menu p,
+section > p {
+    color: #d4af37 !important;
 }
