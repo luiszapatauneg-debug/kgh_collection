@@ -996,8 +996,8 @@ hr {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #c9c9c9; /* El color blanco/gris elegante de la plantilla */
-    color: #000000!important;
+    background-color: #000000e5; /* El color blanco/gris elegante de la plantilla */
+    color: #d4bc4fe5!important;
     padding: 12px 20px;
     border-radius: 50px; /* ¡Esto lo vuelve completamente redondo/ovalado de los lados! */
     font-size: 1.1em; /* Letras un poco más grandes para que destaquen */
@@ -1009,7 +1009,7 @@ hr {
 }
 
 .btn-carrito-flotante:hover {
-    background-color: #e55656;
+    background-color: #d4bc4fe5;
     transform: scale(1.05); /* Pequeño efecto de zoom al pasar el mouse */
 }
 
@@ -1625,7 +1625,7 @@ button,
   .button.primary {
     background-color: #000000e5;
     box-shadow: none;
-    color: #ffffff !important; }
+    color: #d4bc4fe5 !important; }
     input[type="submit"].primary:hover,
     input[type="reset"].primary:hover,
     input[type="button"].primary:hover,
@@ -1930,7 +1930,7 @@ button,
     max-width: 110em; }
     #main > .inner > section {
       padding: 6em 0 4em 0 ;
-      border-top: solid 2px rgba(210, 215, 217, 0.75); }
+      border-top: solid 2px #d4bc4fe5 }
       #main > .inner > section:first-of-type {
         border-top: 0 !important; }
   @media screen and (max-width: 1680px) {
@@ -1984,7 +1984,7 @@ button,
     -webkit-transform: scaleX(-1);
     -ms-transform: scaleX(-1);
     transform: scaleX(-1);
-    color: #181a1b;
+    color: #d4bc4fe5;
     content: '\f002';
     cursor: default;
     display: block;
@@ -2024,7 +2024,7 @@ button,
     position: relative;
     width: 26em; }
     #sidebar > .inner > * {
-      border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+      border-bottom: solid 2px #d4bc4fe5;
       margin: 0 0 3.5em 0;
       padding: 0 0 3.5em 0; }
       #sidebar > .inner > * > :last-child {
@@ -2139,7 +2139,7 @@ button,
       text-indent: 7.25em;
       width: 7.25em; }
       #sidebar .toggle:before {
-        color: #e0e0e0;
+        color: #d4bc4fe5;
         margin-left: -0.0625em;
         margin-top: -0.25em;
         font-size: 1.1rem;
@@ -2160,7 +2160,7 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #ecc92de5;
+  border-bottom: solid 5px #d4bc4fe5;
   padding: 6em 0 1em 0;
   position: relative; }
   #header > * {
@@ -2272,7 +2272,7 @@ button,
 
 /* Footer */
 #footer .copyright {
-  color: #e0e0e0;
+  color: #d4bc4fe5;
   font-size: 0.9em; }
   #footer .copyright a {
     color: inherit; }
@@ -2283,7 +2283,7 @@ button,
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #e0e0e0;
+  color: #d4bc4fe5;
   font-family: "Roboto Slab", serif;
   font-weight: 400;
   letter-spacing: 0.075em;
@@ -2324,7 +2324,7 @@ button,
         -webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
         -ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
         transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-        color: #9fa3a6;
+        color: #d4bc4fe5;
         content: '\f078';
         position: absolute;
         right: 0; }
@@ -2339,11 +2339,11 @@ button,
         transform: rotate(-180deg); }
 
 #menu > ul > li {
-  border-top: solid 1px rgba(210, 215, 217, 0.75);
+  border-top: solid 1px #d4bc4fe5;
   margin: 0.5em 0 0 0;
   padding: 0.5em 0 0 0; }
   #menu > ul > li > ul {
-    color: #ffffff;
+    color: #d4bc4fe5;
     display: none;
     margin: 0.5em 0 1.5em 0;
     padding-left: 1em; }
@@ -2382,32 +2382,3 @@ button,
     transform: scale(1.2); /* Se agrandan un poquito al pasar el mouse */
 }
 
-
-/* ==========================================================
-   2. AGRANDAR EL BOTÓN DE LAS 3 RAYITAS (MENÚ)
-   ========================================================== */
-/* Aumenta el tamaño del contenedor del botón */
-#header .toggle,
-.header-left .toggle,
-body > .toggle {
-    transform: scale(1.3) !important; /* Aumenta un 30% el tamaño general */
-    transform-origin: left center;
-    margin-right: 15px !important;
-}
-
-/* Si prefieres ajustarle la letra/icono directamente: */
-#header .toggle::before,
-.header-left .toggle::before,
-body > .toggle::before {
-    font-size: 1.6rem !important; /* Hace las 3 rayitas más gruesas/grandes */
-}
-
-/* Forzar visibilidad del botón de 3 rayitas (Menú) */
-#header .toggle,
-.header-left .toggle,
-body > .toggle {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 10001 !important;
-}
