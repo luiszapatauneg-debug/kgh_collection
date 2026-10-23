@@ -774,7 +774,7 @@ window.productosData = [
                 "nombre": "único",
                 "hex": "#CCCCCC",
                 "foto": "images/fotos_productos/accesorios/PULSERA DE FRUTAS DORADAS.jpeg",
-                "stock": 5
+                "stock": 1
             }
         ],
         "stock": 5,
@@ -1001,15 +1001,21 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#caa46a",
                 "foto": "images/fotos_productos/accesorios/SET PULSERAS PLAYERAS BEIGE.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
                 "nombre": "marron",
                 "hex": "#8B4513",
                 "foto": "images/fotos_productos/accesorios/SET PULSERAS PLAYERAS MARRON.jpeg",
-                "stock": 3
+                "stock": 1
+            },
+             {
+                "nombre": "azul",
+                "hex": "#1a6fbe",
+                "foto": "images/fotos_productos/accesorios/SET PULSERAS PLAYERAS AZUL.jpeg",
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -1034,8 +1040,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "dorado",
+                "hex": "#c2a556",
                 "foto": "images/fotos_productos/accesorios/COLLAR TORSAL DORADO.jpeg",
                 "stock": 1
             }
@@ -1063,10 +1069,16 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "dorado",
+                "hex": "#c2a556",
                 "foto": "images/fotos_productos/accesorios/CADENAS DIJE  VARIADAS  CRUZ.jpeg",
-                "stock": 2
+                "stock": 1
+            },
+            {
+                "nombre": "dorado 2",
+                "hex": "#c2a556",
+                "foto":   "images/fotos_productos/accesorios/CADENAS DIJE  VARIADAS  BASEBALL.jpeg",
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -1218,7 +1230,7 @@ window.productosData = [
     },
     {
         "id": "ac017",
-        "nombre": "CORBATIN DELGAD",
+        "nombre": "CORBATIN DELGADO",
         "precio": 20.0,
         "categoria": "dama-accesorios",
         "marca": "sin marca",
@@ -1280,18 +1292,31 @@ window.productosData = [
         "marca": "sin marca",
         "imagen": "images/fotos_productos/accesorios/ANILLOS DELGADOS 2.jpeg",
         "fotosExtras": [
-            "images/fotos_productos/accesorios/ANILLOS DELGADOS 2.jpeg",
-            "images/fotos_productos/accesorios/ANILLOS DELGADOS 2.jpeg"
+            "images/fotos_productos/accesorios/ANILLOS DELGADOS.jpeg",
+            "images/fotos_productos/accesorios/ANILLOS DELGADOS 3.jpeg",
+             "images/fotos_productos/accesorios/ANILLOS DELGADOS 2.jpeg"
         ],
         "tallas": [
             "SIN TALLA"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "dorado",
+                "hex": "#c2a058",
                 "foto": "images/fotos_productos/accesorios/ANILLOS DELGADOS 2.jpeg",
-                "stock": 3
+                "stock": 1
+            },
+            {
+                "nombre": "dorado 2",
+                "hex": "#c2a058",
+                "foto": "images/fotos_productos/accesorios/ANILLOS DELGADOS.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "dorado 3",
+                "hex": "#c2a058",
+                "foto":  "images/fotos_productos/accesorios/ANILLOS DELGADOS 3.jpeg",
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -1338,7 +1363,9 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/ANILLOS CON DIJES 1.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/ANILLOS CON DIJES 1.jpeg",
-            "images/fotos_productos/accesorios/ANILLOS CON DIJES 2.jpeg"
+            "images/fotos_productos/accesorios/ANILLOS CON DIJES 2.jpeg",
+             "images/fotos_productos/accesorios/ANILLOS CON DIJES 3.jpeg",
+             "images/fotos_productos/accesorios/ANILLOS CON DIJES 4.jpeg"
         ],
         "tallas": [
             "SIN TALLA"
@@ -1346,10 +1373,29 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "único",
-                "hex": "#CCCCCC",
+                "hex": "#b89b4c",
+                "foto": "images/fotos_productos/accesorios/ANILLOS CON DIJES 3.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 2",
+                "hex": "#b89b4c",
+                "foto": "images/fotos_productos/accesorios/ANILLOS CON DIJES 4.jpeg",
+                "stock": 1
+            },
+             {
+                "nombre": "único 3",
+                "hex": "#b89b4c",
                 "foto": "images/fotos_productos/accesorios/ANILLOS CON DIJES 1.jpeg",
-                "stock": 4
+                "stock": 1
+            },
+             {
+                "nombre": "único 4",
+                "hex": "#b89b4c",
+                "foto":   "images/fotos_productos/accesorios/ANILLOS CON DIJES 2.jpeg",
+                "stock": 1
             }
+
         ],
         "stock": 4,
         "descripcion": "ANILLOS CON DIJES",
@@ -1377,13 +1423,13 @@ window.productosData = [
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS DE ARTE GRANDE NEGROS.jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
                 "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS DE ARTE GRANDE ROJOS.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -1402,7 +1448,9 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO AZUL.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO AZUL.jpeg",
-            "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO  DORADO.jpeg"
+            "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO  DORADO.jpeg",
+             "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO AZUL CON BLANCO.jpeg",
+             "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO BLANCO.jpeg"
         ],
         "tallas": [
             "SIN TALLA"
@@ -1412,14 +1460,27 @@ window.productosData = [
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO AZUL.jpeg",
-                "stock": 4
+                "stock": 1
+            },
+            {
+                "nombre": "azul con blanco",
+                "hex": "#5090d8",
+                "foto": "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO AZUL CON BLANCO.jpeg",
+                "stock": 1
+            },
+             {
+                "nombre": "dorado",
+                "hex": "#c29b47",
+                "foto": "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO  DORADO.jpeg",
+                "stock": 1
             },
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
-                "foto": "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO  DORADO.jpeg",
-                "stock": 4
+                "foto": "images/fotos_productos/accesorios/ZARCILLO DE ARTE MEDIANO BLANCO.jpeg",
+                "stock": 1
             }
+
         ],
         "stock": 4,
         "descripcion": "ZARCILLO DE ARTE MEDIANO",
@@ -1447,7 +1508,13 @@ window.productosData = [
                 "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS DE ARTE PEQUE ROJO.jpeg",
-                "stock": 2
+                "stock": 1
+            },
+            {
+                "nombre": "tornasol",
+                "hex": "#7a4747",
+                "foto": "images/fotos_productos/accesorios/ZARCILLOS DE ARTE PEQUE TORNASOL.jpeg",
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -1466,7 +1533,16 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 1.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 1.jpeg",
-            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 2.jpeg"
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 2.jpeg",
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 3.jpeg",
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 4.jpeg",
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 5.jpeg",
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 6.jpeg",
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 7.jpeg",
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 8.jpeg",
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 9.jpeg",
+            "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 10.jpeg"
+
         ],
         "tallas": [
             "VARIADOS"
@@ -1476,8 +1552,63 @@ window.productosData = [
                 "nombre": "único",
                 "hex": "#CCCCCC",
                 "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 1.jpeg",
-                "stock": 10
+                "stock": 1
+            },
+            {
+                "nombre": "único 2",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 2.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 3",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 3.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 4",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 4.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 5",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 5.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 6",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 6.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 7",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 7.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 8",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 8.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 9",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 9.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "único 10",
+                "hex": "#CCCCCC",
+                "foto": "images/fotos_productos/accesorios/EAR CUFF ( PARA OREJA) 10.jpeg",
+                "stock": 1
             }
+            
         ],
         "stock": 10,
         "descripcion": "EAR CUFF ( PARA OREJA)",
@@ -2167,21 +2298,35 @@ window.productosData = [
         "precio": 35.0,
         "categoria": "dama-calzado",
         "marca": "aimeigao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS TIRAS DETALLE METALICO MOSTAZA.jpeg",
+        "imagen": "images/fotos_productos/calzado/SANDALIAS TIRAS DETALLE METALICO MOSTAZA FOTO  2.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS TIRAS DETALLE METALICO MOSTAZA.jpeg",
             "images/fotos_productos/calzado/SANDALIAS TIRAS DETALLE METALICO MOSTAZA FOTO  2.jpeg"
         ],
-        "tallas": [
-            "2 PARES 38 1 PAR 37"
-        ],
-        "colores": [
-            {
-                "nombre": "mostaza",
+
+          "colores": [
+
+        {
+
+           "nombre": "mostaza",
                 "hex": "#FFDB58",
                 "foto": "images/fotos_productos/calzado/SANDALIAS TIRAS DETALLE METALICO MOSTAZA.jpeg",
-                "stock": 3
-            }
+                
+
+            "tallas": [
+
+                 {
+            "nombre": "38",
+            "stock": 2
+        },
+        {
+            "nombre": "37",
+            "stock": 1
+        }
+            ]
+
+
+        }
         ],
         "stock": 3,
         "descripcion": "SANDALIAS TIRAS DETALLE METALICO MOSTAZA",
@@ -2196,21 +2341,41 @@ window.productosData = [
         "precio": 35.0,
         "categoria": "dama-calzado",
         "marca": "aimegao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS DETALLE MATALICO NEGRO.jpeg",
+        "imagen":"images/fotos_productos/calzado/SANDALIAS DETALLE MATALICO NEGRO FOTO 2.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS DETALLE MATALICO NEGRO.jpeg",
             "images/fotos_productos/calzado/SANDALIAS DETALLE MATALICO NEGRO FOTO 2.jpeg"
         ],
-        "tallas": [
-            "1 PAR 39 Y  1 PAR 36"
-        ],
-        "colores": [
-            {
-                "nombre": "negro",
+         
+
+         "colores": [
+
+        {
+
+          "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/calzado/SANDALIAS DETALLE MATALICO NEGRO.jpeg",
-                "stock": 2
-            }
+                
+
+            "tallas": [
+
+                {
+
+                    "nombre": "39",
+                    "stock": 1
+
+                },
+                {
+
+                    "nombre": "36",
+                    "stock": 1
+
+                }
+
+            ]
+
+
+        }
         ],
         "stock": 2,
         "descripcion": "SANDALIAS DETALLE MATALICO NEGRO",
@@ -2225,20 +2390,20 @@ window.productosData = [
         "precio": 35.0,
         "categoria": "dama-calzado",
         "marca": "aimegao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO BLANCO.jpeg",
+        "imagen":  "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO BLANCO FOTO 2.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO BLANCO.jpeg",
             "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO BLANCO FOTO 2.jpeg"
         ],
         "tallas": [
-            "1 par de 38 y un par de 36"
+            "38","36"
         ],
         "colores": [
             {
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO BLANCO.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -2254,19 +2419,19 @@ window.productosData = [
         "precio": 35.0,
         "categoria": "dama-calzado",
         "marca": "aimegao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO NUDE.jpeg",
+        "imagen":    "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO NUDE FOTO 2.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO NUDE.jpeg",
             "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO NUDE FOTO 2.jpeg"
         ],
         "tallas": [
-            "2 PARES 39"
+            " 39"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO NUDE.jpeg",
+                "nombre": "nude",
+                "hex": "#e49696",
+                "foto":    "images/fotos_productos/calzado/SANDALIAS DETALLE METALICO NUDE FOTO 2.jpeg",
                 "stock": 2
             }
         ],
@@ -2289,7 +2454,7 @@ window.productosData = [
             "images/fotos_productos/calzado/STILETTOS CERRADOS NEGROS CON PIEDRAS.jpeg"
         ],
         "tallas": [
-            "UN PAR DE 37"
+            "37"
         ],
         "colores": [
             {
@@ -2317,7 +2482,7 @@ window.productosData = [
             "images/fotos_productos/calzado/STILETTOS CON PIEDRA BAJITO GRIS.jpeg"
         ],
         "tallas": [
-            "UN PAR DE 37"
+            " 37"
         ],
         "colores": [
             {
@@ -2342,21 +2507,22 @@ window.productosData = [
         "precio": 55.0,
         "categoria": "dama-calzado",
         "marca": "aimeigao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASIC BEIGE.jpeg",
+        "imagen": "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASIC BEIGE FOTO 2.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASIC BEIGE.jpeg",
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASIC BEIGE FOTO 2.jpeg"
         ],
+        
         "tallas": [
-            "1 PAR DE 38",
-            "UN PAR DE 39 Y UN PAR DE 40"
+            "38",
+            " 39","40"
         ],
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
-                "foto": "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASIC BEIGE.jpeg",
-                "stock": 3
+                "hex": "#d4a570",
+                "foto":"images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASIC BEIGE FOTO 2.jpeg",
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -2372,20 +2538,20 @@ window.productosData = [
         "precio": 55.0,
         "categoria": "dama-calzado",
         "marca": "maimegao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASICA CAMEL.jpeg",
+        "imagen":  "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASICA CAMEL FOTO 2.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASICA CAMEL.jpeg",
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASICA CAMEL FOTO 2.jpeg"
         ],
         "tallas": [
-            "UN PAR DE 38 Y UN PAR DE 40"
+            "38", "40"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "ladrillo",
+                "hex": "#e65656",
                 "foto": "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO CLASICA CAMEL.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -2401,13 +2567,13 @@ window.productosData = [
         "precio": 55.0,
         "categoria": "dama-calzado",
         "marca": "aimeigao",
-        "imagen": "images/fotos_productos/calzado/SADALIAS TACON CUADRADO PIEDRAS PLATA.jpeg",
+        "imagen":  "images/fotos_productos/calzado/SADALIAS TACON CUADRADO PIEDRAS GRIS PLATA.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SADALIAS TACON CUADRADO PIEDRAS PLATA.jpeg",
             "images/fotos_productos/calzado/SADALIAS TACON CUADRADO PIEDRAS GRIS PLATA.jpeg"
         ],
         "tallas": [
-            "UN PAR  DE 38"
+            "38"
         ],
         "colores": [
             {
@@ -2430,13 +2596,13 @@ window.productosData = [
         "precio": 55.0,
         "categoria": "dama-calzado",
         "marca": "aimeigao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO PIEDRA ROSAGOLD.jpeg",
+        "imagen":"images/fotos_productos/calzado/SANDALIAS TACON CUADRADO PIEDRA ROSAGOLD FOTO 2.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO PIEDRA ROSAGOLD.jpeg",
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO PIEDRA ROSAGOLD FOTO 2.jpeg"
         ],
         "tallas": [
-            "UN PAR DE 38"
+            "38"
         ],
         "colores": [
             {
@@ -2459,13 +2625,13 @@ window.productosData = [
         "precio": 55.0,
         "categoria": "dama-calzado",
         "marca": "aimeigao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO PIEDRA NEGR.jpeg",
+        "imagen": "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO PIEDRA NEGRO.jpeg",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO PIEDRA NEGR.jpeg",
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRADO PIEDRA NEGRO.jpeg"
         ],
         "tallas": [
-            "2 PARES 38"
+            "38"
         ],
         "colores": [
             {
@@ -2488,18 +2654,18 @@ window.productosData = [
         "precio": 55.0,
         "categoria": "dama-calzado",
         "marca": "aimeigao",
-        "imagen": "images/fotos_productos/calzado/SANDALIAS TACON CUADRAD PIEDRA DORADO.jpeg",
+        "imagen": "images/fotos_productos/calzado/SANDALIAS TACON CUADRAD PIEDRA DORADO FOTO 2 .png",
         "fotosExtras": [
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRAD PIEDRA DORADO.jpeg",
             "images/fotos_productos/calzado/SANDALIAS TACON CUADRAD PIEDRA DORADO FOTO 2 .png"
         ],
         "tallas": [
-            "UN PAR DE 38"
+            "38"
         ],
         "colores": [
             {
                 "nombre": "único",
-                "hex": "#CCCCCC",
+                "hex": "#af9c47",
                 "foto": "images/fotos_productos/calzado/SANDALIAS TACON CUADRAD PIEDRA DORADO.jpeg",
                 "stock": 1
             }
@@ -2523,7 +2689,7 @@ window.productosData = [
             "images/fotos_productos/calzado/STILETTOS TACON Y PIEDRAS GRIS PLATA.jpeg"
         ],
         "tallas": [
-            "UN PAR DE 39 Y UN PAR DE 40"
+            "39 ","40"
         ],
         "colores": [
            
@@ -2531,7 +2697,7 @@ window.productosData = [
                 "nombre": "gris",
                 "hex": "#808080",
                 "foto": "images/fotos_productos/calzado/STILETTOS TACON Y PIEDRAS GRIS PLATA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -2553,19 +2719,13 @@ window.productosData = [
             "images/fotos_productos/calzado/STILETTOS TACON PIEDRA BLANCO PERLA FOTO 2A.jpeg"
         ],
         "tallas": [
-            "UN PAR DE 41"
+            "41"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/calzado/STILETTOS TACON PIEDRA PLATA.jpeg",
-                "stock": 1
-            },
-            {
-                "nombre": "blanco",
-                "hex": "#FFFFFF",
-                "foto": "images/fotos_productos/calzado/STILETTOS TACON PIEDRA BLANCO PERLA.jpeg",
+                "nombre": "blanco", 
+                "hex": "#fcfcfc",
+                "foto": "images/fotos_productos/calzado/STILETTOS TACON PIEDRA BLANCO PERLA FOTO 2A.jpeg",
                 "stock": 1
             }
         ],
@@ -2587,7 +2747,7 @@ window.productosData = [
             "images/fotos_productos/calzado/BOTAS NEGRAS CON BRILLO.jpeg"
         ],
         "tallas": [
-            "UN PAR DE 37"
+            "37"
         ],
         "colores": [
             {
@@ -2615,7 +2775,7 @@ window.productosData = [
             "images/fotos_productos/calzado/BOTAS MARRON.jpeg"
         ],
         "tallas": [
-            "1 PAR DE 37"
+            "37"
         ],
         "colores": [
             {
@@ -2643,7 +2803,7 @@ window.productosData = [
             "images/fotos_productos/calzado/DEPORTIVOS NEGROS PIEDRERIA.jpeg"
         ],
         "tallas": [
-            "UN PAR DE 37"
+            "37"
         ],
         "colores": [
             {
@@ -2672,17 +2832,17 @@ window.productosData = [
             "images/fotos_productos/calzado/SANDALIAS R Y B FUCSIA.jpeg"
         ],
         "tallas": [
-            "UN PAR 41"
+            "41"
         ],
         "colores": [
             {
                 "nombre": "fucsia",
                 "hex": "#FF00FF",
                 "foto": "images/fotos_productos/calzado/SANDALIAS R Y B FUCSIA.jpeg",
-                "stock": 5
+                "stock": 1
             }
         ],
-        "stock": 5,
+        "stock": 1,
         "descripcion": "SANDALIAS R/B FUCSIA",
         "detalles": [
             "Categoría: Calzado",
@@ -2912,13 +3072,14 @@ window.productosData = [
 
     {
         "id": "car1001",
-        "nombre": "CARTERA MARRON ESTAMPADA",
+        "nombre": "CARTERA MARRON ESTAMPADA CRISBELLA",
         "precio": 55.0,
         "categoria": "dama-carteras",
         "marca": "crisbella",
-        "imagen": "images/fotos_productos/carteras/CARTERA MARRON ESTAMPADA.jpeg",
+        "imagen": "images/fotos_productos/carteras/CARTERA MARRON ESTAMPADA CRISBELLA FOTO 2.jpg",
         "fotosExtras": [
-            "images/fotos_productos/carteras/CARTERA MARRON ESTAMPADA.jpeg"
+            "images/fotos_productos/carteras/CARTERA MARRON ESTAMPADA CRISBELLA_.jpg",
+             "images/fotos_productos/carteras/CARTERA MARRON ESTAMPADA CRISBELLA FOTO 2.jpg"
         ],
         "tallas": [
             "UNICA"
@@ -2927,7 +3088,7 @@ window.productosData = [
             {
                 "nombre": "marron",
                 "hex": "#8B4513",
-                "foto": "images/fotos_productos/carteras/CARTERA MARRON ESTAMPADA.jpeg",
+                "foto": "images/fotos_productos/carteras/CARTERA MARRON ESTAMPADA CRISBELLA FOTO 2.jpg",
                 "stock": 1
             }
         ],
@@ -2938,34 +3099,7 @@ window.productosData = [
             "Stock disponible: 1"
         ]
     },
-    {
-        "id": "car1002",
-        "nombre": "CARTERA CON PIEDRAS DORADAS",
-        "precio": 60.0,
-        "categoria": "dama-carteras",
-        "marca": "crisbella",
-        "imagen": "images/fotos_productos/carteras/CARTERA CON PIEDRAS DORADAS.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/carteras/CARTERA CON PIEDRAS DORADAS.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/carteras/CARTERA CON PIEDRAS DORADAS.jpeg",
-                "stock": 1
-            }
-        ],
-        "stock": 1,
-        "descripcion": "CARTERA CON PIEDRAS DORADAS",
-        "detalles": [
-            "Categoría: Carteras",
-            "Stock disponible: 1"
-        ]
-    },
+    
     {
         "id": "car1003",
         "nombre": "CARTERAS MINIS",
@@ -2978,20 +3112,20 @@ window.productosData = [
             "images/fotos_productos/carteras/CARTERAS MINI NEGRA.jpeg"
         ],
         "tallas": [
-            "UNICA-MINI"
+            "MINI"
         ],
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#b3885f",
                 "foto": "images/fotos_productos/carteras/CARTERAS MINI BEIGE.jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "negro",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/carteras/CARTERAS MINI NEGRA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -3019,8 +3153,14 @@ window.productosData = [
             {
                 "nombre": "marron",
                 "hex": "#8B4513",
+                "foto": "images/fotos_productos/carteras/CARTERAS  MARRON CON LLAVEROS DE CUERO MEDIANA.jpeg",
+                "stock": 1
+            },
+              {
+                "nombre": "negro",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/carteras/CARTERAS CON LLAVEROS DE CUERO MEDIANA NEGRA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -3046,16 +3186,16 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "marron",
-                "hex": "#8B4513",
+                "nombre": "negra",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/carteras/CARTERA NEGRA CON DETALLE DE ARRUCHE MEDIANA.jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#bb884e",
                 "foto": "images/fotos_productos/carteras/CARTERA BEIGE CON DETALLE DE ARRUCHE MEDIANA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -3065,34 +3205,7 @@ window.productosData = [
             "Stock disponible: 2"
         ]
     },
-    {
-        "id": "car1006",
-        "nombre": "CARTERA CON DETALLE PLIZADO BEIGE",
-        "precio": 0.0,
-        "categoria": "dama-carteras",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/carteras/CARTERA CON DETALLE PLIZADO BEIGE.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/carteras/CARTERA CON DETALLE PLIZADO BEIGE.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "beige",
-                "hex": "#F5F5DC",
-                "foto": "images/fotos_productos/carteras/CARTERA CON DETALLE PLIZADO BEIGE.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "CARTERA CON DETALLE PLIZADO BEIGE",
-        "detalles": [
-            "Categoría: Carteras",
-            "Stock disponible: 5"
-        ]
-    },
+   
     {
         "id": "car1007",
         "nombre": "CARTERA CON PAÑOLETA NEGRA",
@@ -3109,8 +3222,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "negra",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/carteras/CARTERA CON CIERRE GIRATORIO Y PAÑOLETA NEGRA.jpeg",
                 "stock": 1
             }
@@ -3138,16 +3251,16 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "beige",
-                "hex": "#F5F5DC",
+                "nombre": "negra",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/carteras/CARTERA NEGRA CON TAPA Y PAÑOLETAS.jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
-                "nombre": "marron",
-                "hex": "#8B4513",
+                "nombre": "beige",
+                "hex": "#c4885d",
                 "foto": "images/fotos_productos/carteras/CARTERA MARRON CON TAPA Y PAÑOLETAS.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -3157,34 +3270,7 @@ window.productosData = [
             "Stock disponible: 2"
         ]
     },
-    {
-        "id": "car1009",
-        "nombre": "CARTERA RECTAGUGAR CON TAPA NEGRA",
-        "precio": 0.0,
-        "categoria": "dama-carteras",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/carteras/CARTERA RECTAGUGAR CON TAPA NEGRA.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/carteras/CARTERA RECTAGUGAR CON TAPA NEGRA.jpeg"
-        ],
-        "tallas": [
-            "UNICA"
-        ],
-        "colores": [
-            {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/carteras/CARTERA RECTAGUGAR CON TAPA NEGRA.jpeg",
-                "stock": 5
-            }
-        ],
-        "stock": 5,
-        "descripcion": "CARTERA RECTAGUGAR CON TAPA NEGRA",
-        "detalles": [
-            "Categoría: Carteras",
-            "Stock disponible: 5"
-        ]
-    },
+   
     {
         "id": "car1010",
         "nombre": "CARTERA NEGRA CON CANDADO",
@@ -3200,8 +3286,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "negra",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/carteras/CARTERA NEGRA CON CANDADO.jpeg",
                 "stock": 1
             }
@@ -3232,8 +3318,15 @@ window.productosData = [
                 "nombre": "marron",
                 "hex": "#8B4513",
                 "foto": "images/fotos_productos/carteras/CARTERAS MARRON CON DETALLES DE PANA.jpeg",
-                "stock": 2
+                "stock": 1
+            },
+             {
+                "nombre": "negra",
+                "hex": "#000000",
+                "foto":  "images/fotos_productos/carteras/CARTERAS NEGRA CON DETALLES DE PANA.jpeg",
+                "stock": 1
             }
+
         ],
         "stock": 2,
         "descripcion": "CARTERAS CON DETALLES DE PANA",
@@ -3257,8 +3350,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "marron",
+                "hex": "#70340c",
                 "foto": "images/fotos_productos/carteras/CARTERA CON LLAVERO DE BC.jpeg",
                 "stock": 1
             }
@@ -3287,9 +3380,15 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "rosa",
-                "hex": "#FFC0CB",
+                "hex": "#ffb3bf",
                 "foto": "images/fotos_productos/carteras/CARTERA CON DISEÑO DE RELIEVE ROSADA.jpeg",
-                "stock": 2
+                "stock": 1
+            },
+             {
+                "nombre": "negra",
+                "hex": "#000000",
+                "foto":  "images/fotos_productos/carteras/CARTERA CON DISEÑO DE RELIEVE NEGRA.jpeg",
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -3319,14 +3418,20 @@ window.productosData = [
                 "nombre": "gris",
                 "hex": "#808080",
                 "foto": "images/fotos_productos/carteras/CARTERAS ESCARCHADAS DE FIESTA DE MANO GRIS.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "dorada",
+                "hex": "#c5a359",
                 "foto": "images/fotos_productos/carteras/CARTERAS ESCARCHADAS DE FIESTA DE MANO DORADA.jpeg",
-                "stock": 3
-            }
+                "stock": 1
+            },
+             {
+                "nombre": "negro",
+                "hex": "#000000",
+                "foto":  "images/fotos_productos/carteras/CARTERAS ESCARCHADAS DE FIESTA DE MANO NEGRA.jpeg",
+                "stock": 1
+            },
         ],
         "stock": 3,
         "descripcion": "CARTERAS ESCARCHADAS DE FIESTA DE MANO",
@@ -3353,15 +3458,21 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#b3a168",
                 "foto": "images/fotos_productos/carteras/CARTERAS BEIGE CON TIRAS DE MORRAL.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
                 "nombre": "marron",
                 "hex": "#8B4513",
                 "foto": "images/fotos_productos/carteras/CARTERAS MARRON CON TIRAS DE MORRAL.jpeg",
-                "stock": 3
+                "stock": 1
+            },
+            {
+                "nombre": "negra",
+                "hex": "#000000",
+                "foto":  "images/fotos_productos/carteras/CARTERAS NEGRA CON TIRAS DE MORRAL.jpeg",
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -3387,7 +3498,7 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#b8986f",
                 "foto": "images/fotos_productos/carteras/CARTERAS CON LLAVEROS Y MONEDEROS.jpeg",
                 "stock": 1
             }
@@ -3419,7 +3530,19 @@ window.productosData = [
                 "nombre": "gris",
                 "hex": "#808080",
                 "foto": "images/fotos_productos/carteras/CARTERAS ESCARCHADAS  GRIS CON PAÑOLETAS .jpeg",
-                "stock": 3
+                "stock": 1
+            },
+            {
+                "nombre": "negra",
+                "hex": "#000000",
+                "foto":   "images/fotos_productos/carteras/CARTERAS ESCARCHADAS NEGRA  CON PAÑOLETAS.jpeg",
+                "stock": 1
+            },
+            {
+                "nombre": "plomo",
+                "hex": "#616060",
+                "foto": "images/fotos_productos/carteras/CARTERAS ESCARCHADAS PLOMO OSCURO CON PAÑOLETAS.jpeg",
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -3444,8 +3567,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "negra",
+                "hex": "#000000",
                 "foto": "images/fotos_productos/carteras/CARTERA MICHAEL KORS NEGRA.jpeg",
                 "stock": 1
             }
@@ -3473,7 +3596,7 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "amarillo",
-                "hex": "#FFFF00",
+                "hex": "#dce654",
                 "foto": "images/fotos_productos/carteras/CARTERAS GUESS AMARILLA.jpeg",
                 "stock": 1
             }
@@ -3504,13 +3627,13 @@ window.productosData = [
                 "nombre": "marron",
                 "hex": "#8B4513",
                 "foto": "images/fotos_productos/carteras/CARTERA R Y B MARRON.jpeg",
-                "stock": 2
+                "stock": 1
             },
             {
                 "nombre": "rosa",
                 "hex": "#FFC0CB",
                 "foto": "images/fotos_productos/carteras/CARTERA R Y B ROSADA.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -3535,8 +3658,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "roja",
+                "hex": "#df1c1c",
                 "foto": "images/fotos_productos/carteras/CARTERA MALIBU PARCHITA ROJA.jpeg",
                 "stock": 1
             }
@@ -3638,9 +3761,8 @@ window.productosData = [
         "precio": 90.0,
         "categoria": "dama-carteras",
         "marca": "crisbella",
-        "imagen": "images/fotos_productos/carteras/CARTERA CHRISBELLA NEGRA DE SOBRE TIPO LAZO.jpeg",
+        "imagen": "images/fotos_productos/carteras/CARTERA CHRISBELLA NEGRA DE SOBRE TIPO LAZO CON BRILLO.jpeg",
         "fotosExtras": [
-            "images/fotos_productos/carteras/CARTERA CHRISBELLA NEGRA DE SOBRE TIPO LAZO.jpeg",
             "images/fotos_productos/carteras/CARTERA CHRISBELLA NEGRA DE SOBRE TIPO LAZO CON BRILLO.jpeg"
         ],
         "tallas": [
@@ -3649,9 +3771,15 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/carteras/CARTERA CHRISBELLA NEGRA DE SOBRE TIPO LAZO.jpeg",
-                "stock": 3
+                "hex": "#000000",
+                "foto": "images/fotos_productos/carteras/CARTERA CHRISBELLA NEGRA DE SOBRE TIPO LAZO CON BRILLO.jpeg",
+                "stock": 1
+            },
+             {
+                "nombre": "plateado",
+                "hex": "#aaa7a7",
+                "foto": "images/fotos_productos/carteras/CARTERA CHRISBELLA PLATEADA DE SOBRE TIPO LAZO CON BRILLO .jpeg",
+                "stock": 2
             }
         ],
         "stock": 3,
@@ -3667,18 +3795,18 @@ window.productosData = [
         "precio": 120.0,
         "categoria": "dama-carteras",
         "marca": "parchita",
-        "imagen": "images/fotos_productos/carteras/CARTERA PARCHITA BLANCA GRANDE",
+        "imagen": "images/fotos_productos/carteras/CARTERA PARCHITA BLANCA GRANDE.jpg",
         "fotosExtras": [
-            "images/fotos_productos/carteras/CARTERA PARCHITA BLANCA GRANDE"
+            "images/fotos_productos/carteras/CARTERA PARCHITA BLANCA GRANDE.jpg"
         ],
         "tallas": [
             "GRANDE"
         ],
         "colores": [
             {
-                "nombre": "único",
+                "nombre": "blanco",
                 "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/carteras/CARTERA PARCHITA BLANCA GRANDE",
+                "foto": "images/fotos_productos/carteras/CARTERA PARCHITA BLANCA GRANDE.jpg",
                 "stock": 1
             }
         ],
@@ -5270,7 +5398,7 @@ window.productosData = [
         "colores": [
             {
                 "nombre": "beige",
-                "hex": "#F5F5DC",
+                "hex": "#d49a72",
                 "foto": "images/fotos_productos/bragas/BRAGA CORTA ESTAMPADA de hojas KGH.jpeg",
                 "stock": 1
             }
@@ -5298,15 +5426,9 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "blanco",
-                "hex": "#FFFFFF",
+                "nombre": "blanco con rosa",
+                "hex": "#f0cdcd",
                 "foto": "images/fotos_productos/bragas/BRAGA ESTAMPADA DE FLORES COLOR BLANCO CON ROSADO.jpeg",
-                "stock": 1
-            },
-            {
-                "nombre": "rosa",
-                "hex": "#FFC0CB",
-                "foto": "images/fotos_productos/bragas/BRAGA LARGA ESTAMPADA DE FLORES BLANCA CON ROSADO KGH FOTO 2.jpeg",
                 "stock": 1
             }
         ],
@@ -5356,14 +5478,14 @@ window.productosData = [
             "images/fotos_productos/bragas/BRAGA LENTEJUELAS MARRON KGH.jpeg"
         ],
         "tallas": [
-            "S-M"
+            "S","M"
         ],
         "colores": [
             {
                 "nombre": "marron",
                 "hex": "#8B4513",
                 "foto": "images/fotos_productos/bragas/BRAGA LENTEJUELAS MARRON KGH.jpeg",
-                "stock": 2
+                "stock": 1
             }
         ],
         "stock": 2,
@@ -5384,14 +5506,14 @@ window.productosData = [
             "images/fotos_productos/bragas/BRAGA DE LENTEJUELAS  AZUL KGH.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S"
         ],
         "colores": [
             {
                 "nombre": "azul",
                 "hex": "#0000FF",
                 "foto": "images/fotos_productos/bragas/BRAGA DE LENTEJUELAS  AZUL KGH.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -5412,14 +5534,14 @@ window.productosData = [
             "images/fotos_productos/bragas/BRAGA LENTEJUELAS CELESTE KGH.jpeg"
         ],
         "tallas": [
-            "L-M-S"
+            "L","M","S"
         ],
         "colores": [
             {
                 "nombre": "celeste",
                 "hex": "#87CEEB",
                 "foto": "images/fotos_productos/bragas/BRAGA LENTEJUELAS CELESTE KGH.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -7366,18 +7488,18 @@ window.productosData = [
         "precio": 60.0,
         "categoria": "dama-faldas",
         "marca": "sin marca",
-        "imagen": "images/fotos_productos/faldas/T-SHIRT BLANCA  CON ESTAMPADO DE MUJER VIBE CON LENTEJUELAS DORADAS.jpeg",
+        "imagen":  "images/fotos_productos/top/T-SHIRT BLANCA  CON ESTAMPADO DE MUJER VIBE CON LENTEJUELAS DORADAS.jpeg",
         "fotosExtras": [
-            "images/fotos_productos/faldas/T-SHIRT BLANCA  CON ESTAMPADO DE MUJER VIBE CON LENTEJUELAS DORADAS.jpeg"
+             "images/fotos_productos/top/T-SHIRT BLANCA  CON ESTAMPADO DE MUJER VIBE CON LENTEJUELAS DORADAS.jpeg"
         ],
         "tallas": [
-            "SIN TALLA"
+            "unica"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
-                "foto": "images/fotos_productos/faldas/T-SHIRT BLANCA  CON ESTAMPADO DE MUJER VIBE CON LENTEJUELAS DORADAS.jpeg",
+                "nombre": "dorado",
+                "hex": "#bd964d",
+                "foto":  "images/fotos_productos/top/T-SHIRT BLANCA  CON ESTAMPADO DE MUJER VIBE CON LENTEJUELAS DORADAS.jpeg",
                 "stock": 1
             }
         ],
@@ -7394,18 +7516,18 @@ window.productosData = [
         "precio": 90.0,
         "categoria": "dama-faldas",
         "marca": "sin marca",
-        "imagen": "images/fotos_productos/faldas/BODY ESCOTE CORAZON ROSA VIEJA.jpeg",
+        "imagen": "images/fotos_productos/top/BODY ESCOTE CORAZON ROSA VIEJA.jpeg",
         "fotosExtras": [
-            "images/fotos_productos/faldas/BODY ESCOTE CORAZON ROSA VIEJA.jpeg"
+            "images/fotos_productos/top/BODY ESCOTE CORAZON ROSA VIEJA.jpeg"
         ],
         "tallas": [
             "SIN TALLA"
         ],
         "colores": [
             {
-                "nombre": "rosa",
-                "hex": "#FFC0CB",
-                "foto": "images/fotos_productos/faldas/BODY ESCOTE CORAZON ROSA VIEJA.jpeg",
+                "nombre": "blanco satinado",
+                "hex": "#f0f0f0",
+                "foto": "images/fotos_productos/top/BODY ESCOTE CORAZON ROSA VIEJA.jpeg",
                 "stock": 1
             }
         ],
@@ -8303,7 +8425,7 @@ window.productosData = [
     },
     {
         "id": "p2014",
-        "nombre": "PANTALON  ROJO CLASICO CON BOLSILLO  KGH",
+        "nombre": "PANTALON ROJO CLASICO CON BOLSILLO KGH",
         "precio": 50.0,
         "categoria": "dama-pantalones",
         "marca": "kgh",
