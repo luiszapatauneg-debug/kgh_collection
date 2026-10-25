@@ -409,7 +409,6 @@ function finalizarCompraWhatsApp(numeroWhatsApp) {
 // Ocultar/Mostrar campo de zona según el tipo de entrega
 
 // Controlar visibilidad del delivery, zona y métodos de pago según la opción elegida
-
 function actualizarOpcionesEntrega() {
     const tipo = document.getElementById('wsp-entrega').value;
     const contZona = document.getElementById('contenedor-zona');
@@ -425,8 +424,8 @@ function actualizarOpcionesEntrega() {
     
     // Métodos de pago
     const opcionPuntoVenta = document.getElementById('opcion-punto-venta');
-    const selectPago = document.getElementById('wsp-pago');
     const opcionEfectivo = document.getElementById('opcion-efectivo');
+    const selectPago = document.getElementById('wsp-pago');
 
     if (tipo === 'Retirar en Tienda') {
         // --- 1. RETIRAR EN TIENDA ---
@@ -436,8 +435,15 @@ function actualizarOpcionesEntrega() {
         if (avisoEnvio) avisoEnvio.style.setProperty('display', 'none', 'important');
         if (contEmpresaEnvio) contEmpresaEnvio.style.setProperty('display', 'none', 'important');
 
-        // Mostramos Punto de Venta
-        if (opcionPuntoVenta) opcionPuntoVenta.style.setProperty('display', 'block', 'important');
+        // Mostramos Efectivo y ocultamos Punto de Venta (o muéstralo si aplica en tienda)
+        if (opcionEfectivo) {
+            opcionEfectivo.hidden = false;
+            opcionEfectivo.disabled = false;
+        }
+        if (opcionPuntoVenta) {
+            opcionPuntoVenta.hidden = false;
+            opcionPuntoVenta.disabled = false;
+        }
 
     } else if (tipo === 'Envio Nacional') {
         // --- 2. ENVÍO NACIONAL ---
@@ -451,15 +457,22 @@ function actualizarOpcionesEntrega() {
         if (avisoDelivery) avisoDelivery.style.setProperty('display', 'none', 'important');
         if (avisoEnvio) avisoEnvio.style.setProperty('display', 'block', 'important');
         if (contEmpresaEnvio) contEmpresaEnvio.style.setProperty('display', 'block', 'important');
+        
+        // 💡 Ocultar Efectivo y Punto de Venta usando hidden y disabled
+        if (opcionEfectivo) {
+            opcionEfectivo.hidden = true;
+            opcionEfectivo.disabled = true;
+        }
+        if (opcionPuntoVenta) {
+            opcionPuntoVenta.hidden = true;
+            opcionPuntoVenta.disabled = true;
+        }
 
-// Ocultar Punto de Venta y Efectivo USD
-        if (opcionPuntoVenta) opcionPuntoVenta.style.setProperty('display', 'none', 'important');
-        if (opcionEfectivo) opcionEfectivo.style.setProperty('display', 'none', 'important');
-
-        // Si tenía seleccionado Punto de Venta o Efectivo, lo cambiamos automáticamente a Pago Móvil
-        if (selectPago && (selectPago.value === 'Punto de Venta' || selectPago.value === 'Efectivo USD')) {
+        // Si tenía seleccionado Efectivo o Punto de Venta, lo cambiamos automáticamente a Pago Móvil
+        if (selectPago && (selectPago.value === 'Efectivo USD' || selectPago.value === 'Punto de Venta')) {
             selectPago.value = 'Pago Móvil';
         }
+
     } else {
         // --- 3. DELIVERY A DOMICILIO ---
         if (contZona) contZona.style.setProperty('display', 'block', 'important');
@@ -473,11 +486,20 @@ function actualizarOpcionesEntrega() {
         if (avisoEnvio) avisoEnvio.style.setProperty('display', 'none', 'important');
         if (contEmpresaEnvio) contEmpresaEnvio.style.setProperty('display', 'none', 'important');
 
+        // Permitir Efectivo (por si pagan al delivery) pero ocultar Punto de Venta
+        if (opcionEfectivo) {
+            opcionEfectivo.hidden = false;
+            opcionEfectivo.disabled = false;
+        }
+        if (opcionPuntoVenta) {
+            opcionPuntoVenta.hidden = true;
+            opcionPuntoVenta.disabled = true;
+        }
+
         // Si tenía seleccionado Punto de Venta, lo cambiamos a Pago Móvil
         if (selectPago && selectPago.value === 'Punto de Venta') {
             selectPago.value = 'Pago Móvil';
         }
-        if (opcionPuntoVenta) opcionPuntoVenta.style.setProperty('display', 'none', 'important');
     }
 }
 
