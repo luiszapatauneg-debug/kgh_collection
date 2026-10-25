@@ -291,9 +291,9 @@ function abrirModal(id) {
     let htmlDetalles = producto.detalles ? producto.detalles.map(det => `<li>${det}</li>`).join('') : '';
     document.getElementById('modal-detalles').innerHTML = htmlDetalles;
    
-    let htmlPrecio = producto.precioTachado
-        ? `Precio normal: <span class="precio-tachado">$${producto.precioTachado}</span> <span class="precio-oferta">¡Oferta: $${producto.precio}!</span>`
-        : `Precio: $${producto.precio}`;
+let htmlPrecio = producto.precioTachado
+        ? `Precio normal: <span class="precio-tachado">${formatearPrecio(producto.precioTachado)}</span> <span class="precio-oferta">¡Oferta: ${formatearPrecio(producto.precio)}!</span>`
+        : `Precio: ${formatearPrecio(producto.precio)}`;
     document.getElementById('modal-precio').innerHTML = htmlPrecio;
 
     const existingSelectors = document.getElementById('selector-opciones-dinamico');
@@ -680,9 +680,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(asegurarBotonMenu, 400);
 });
 
-// Variables globales para la moneda y la tasa automática
+// Variables globales para la moneda y la tasa automática (Recuerda la selección del usuario)
 let tasaCambioBCV = 36.50; // Valor de respaldo por si falla el internet
-let monedaActual = 'USD';
+let monedaActual = localStorage.getItem('monedaSeleccionada') || 'USD';
 
 // 1. Obtener la tasa de cambio oficial automáticamente al cargar la página
 async function obtenerTasaBCVAutomatica() {
@@ -695,7 +695,7 @@ async function obtenerTasaBCVAutomatica() {
             if (infoTasa) {
                 infoTasa.textContent = `Tasa BCV oficial: Bs. ${tasaCambioBCV.toFixed(2)}`;
             }
-            // Si el usuario ya había seleccionado Bolívares, recalculamos los precios con la tasa fresca
+            // Si el usuario ya tenía seleccionado Bolívares, recalculamos los precios con la tasa fresca
             if (monedaActual === 'VES') {
                 actualizarPreciosEnPantalla();
             }
@@ -709,9 +709,10 @@ async function obtenerTasaBCVAutomatica() {
     }
 }
 
-// 2. Función que cambia la moneda seleccionada
+// 2. Función que cambia la moneda seleccionada y la guarda en la memoria
 function cambiarMoneda(nuevaMoneda) {
     monedaActual = nuevaMoneda;
+    localStorage.setItem('monedaSeleccionada', nuevaMoneda); // 👈 Esto evita que se reinicie al cambiar de categoría
     actualizarPreciosEnPantalla();
 }
 
@@ -751,5 +752,24 @@ function actualizarPreciosEnPantalla() {
 
 // Ejecutar al iniciar la página
 document.addEventListener('DOMContentLoaded', () => {
+    // Sincronizar el select con la moneda guardada
+    const selectMoneda = document.getElementById('moneda-select');
+    if (selectMoneda) {
+        selectMoneda.value = monedaActual;
+    }
+    
     obtenerTasaBCVAutomatica();
+    actualizarPreciosEnPantalla();
 });
+
+function formatearPrecio(precioUsd) {
+    const tasa = typeof tasaCambioBCV !== 'undefined' ? tasaCambioBCV : 36.50;
+    const moneda = typeof monedaActual !== 'undefined' ? monedaActual : 'USD';
+    
+    if (moneda === 'VES') {
+        const bs = precioUsd * tasa;
+        return `Bs. ${bs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    } else {
+        return `$${precioUsd.toFixed(2)}`;
+    }
+}
