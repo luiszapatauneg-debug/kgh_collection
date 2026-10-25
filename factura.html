@@ -315,7 +315,8 @@
 
                 // 💡 CÁLCULO DE AMBOS TOTALES (USD y VES) PARA LA FACTURA
                 // Usamos la tasa BCV guardada o una tasa por defecto de respaldo
-                const tasa = typeof tasaCambioBCV !== 'undefined' ? tasaCambioBCV : 36.50;
+                // 💡 Leemos primero la tasa guardada en localStorage, luego la variable global, y de último el respaldo
+const tasa = parseFloat(localStorage.getItem('tasaBCV')) || (typeof tasaCambioBCV !== 'undefined' ? tasaCambioBCV : 36.50);
                 const totalBs = totalGeneralUsd * tasa;
                 const totalBsFormateado = totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 

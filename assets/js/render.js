@@ -680,10 +680,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(asegurarBotonMenu, 400);
 });
 
-// Variables globales para la moneda y la tasa automática (Recuerda la selección del usuario)
-let tasaCambioBCV = 36.50; // Valor de respaldo por si falla el internet
+// Variables globales para la moneda y la tasa automática (Recuerda la selección del usuario) // Valor de respaldo por si falla el internet
+let tasaCambioBCV = parseFloat(localStorage.getItem('tasaBCV')) || 36.50; // Valor de respaldo por si falla el internet
 let monedaActual = localStorage.getItem('monedaSeleccionada') || 'USD';
-
 // 1. Obtener la tasa de cambio oficial automáticamente al cargar la página
 async function obtenerTasaBCVAutomatica() {
     try {
@@ -691,6 +690,9 @@ async function obtenerTasaBCVAutomatica() {
         const datos = await respuesta.json();
         if (datos && datos.promedio) {
             tasaCambioBCV = datos.promedio;
+
+            localStorage.setItem('tasaBCV', tasaCambioBCV);
+
             const infoTasa = document.getElementById('tasa-auto-info');
             if (infoTasa) {
                 infoTasa.textContent = `Tasa BCV oficial: Bs. ${tasaCambioBCV.toFixed(2)}`;
