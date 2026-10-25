@@ -1,6 +1,17 @@
 // --- CARRITO DE COMPRAS - COMPUTADORAS VENEZUELA ---
 
+document.addEventListener("DOMContentLoaded", () => {
+    // Sincronizar el select del carrito con lo que guardó el usuario
+    const selectMoneda = document.getElementById('moneda-select');
+    if (selectMoneda && typeof monedaActual !== 'undefined') {
+        selectMoneda.value = monedaActual;
+    }
 
+    // Pintar el carrito
+    if (typeof renderizarCarritoVisual === 'function') {
+        renderizarCarritoVisual();
+    }
+});
 
 // 1. Sincronizar todos los precios del carrito con la lista maestra (PRODUCTOS.JS)
 
@@ -304,7 +315,7 @@ function renderizarCarritoVisual() {
                     <h4 style="margin: 0 0 5px 0;">${item.nombre}</h4>
                     ${descripcion ? `<p style="margin: 0 0 5px 0; font-size: 0.85rem; color: #666;">${descripcion}</p>` : ''}
                     ${variacionesHtml ? `<p style="margin: 0 0 5px 0; font-size: 0.85rem; color: #444;">${variacionesHtml}</p>` : ''}
-                    <p style="margin: 0 0 10px 0; color: #333; font-weight: bold;">$${item.precio} USD</p>
+                <p style="margin: 0 0 10px 0; color: #333; font-weight: bold;">${formatearPrecio(item.precio)}</p>
                     
                     <div class="carrito-botones-cantidad" style="display: flex; align-items: center; gap: 10px;">
                         <button class="btn-cantidad" onclick="disminuirCantidad(${index})">-</button>
@@ -318,7 +329,7 @@ function renderizarCarritoVisual() {
                         <button class="btn-editar" onclick="abrirModalEdicion(${index})" title="Editar opciones" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; margin-right: 5px;">✏️</button>
                         <button class="btn-eliminar" onclick="eliminarDelCarrito(${index})" title="Eliminar producto" style="background: none; border: none; cursor: pointer; font-size: 1.1rem;">🗑️</button>
                     </div>
-                    <p style="font-weight: bold; margin: 0; color: #222;">$${subtotal.toFixed(2)}</p>
+              <p style="font-weight: bold; margin: 0; color: #222;">${formatearPrecio(subtotal)}</p>
                 </div>
             </div>
         `;
@@ -326,12 +337,21 @@ function renderizarCarritoVisual() {
     
     html += `</div>`;
     
+    // 💡 Calculamos ambos montos de forma fija para mostrarlos juntos
+    const tasa = typeof tasaCambioBCV !== 'undefined' ? tasaCambioBCV : 36.50;
+    const totalBs = totalGeneral * tasa;
+    const totalBsFormateado = totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
     html += `
-        <div style="margin-top: 20px; text-align: right;">
-            <h3>Total: $${totalGeneral.toFixed(2)} USD</h3>
+        <div style="margin-top: 20px; text-align: right; border-top: 2px solid #ddd; padding-top: 15px;">
+            <h3 style="margin: 0 0 5px 0; font-size: 1rem; color: #e2e0da;">Total a Pagar:</h3>
+            <div style="font-size: 1.3rem; font-weight: bold; color: #d4af37;">
+                <span>$${totalGeneral.toFixed(2)} USD</span> 
+                <span style="color: #d4af37; margin: 0 8px;">/</span> 
+                <span style="color: #d4af37;">Bs. ${totalBsFormateado}</span>
+            </div>
         </div>
     `;
-
     contenedor.innerHTML = html;
 }
 
@@ -406,6 +426,7 @@ function actualizarOpcionesEntrega() {
     // Métodos de pago
     const opcionPuntoVenta = document.getElementById('opcion-punto-venta');
     const selectPago = document.getElementById('wsp-pago');
+    const opcionEfectivo = document.getElementById('opcion-efectivo');
 
     if (tipo === 'Retirar en Tienda') {
         // --- 1. RETIRAR EN TIENDA ---
@@ -431,12 +452,14 @@ function actualizarOpcionesEntrega() {
         if (avisoEnvio) avisoEnvio.style.setProperty('display', 'block', 'important');
         if (contEmpresaEnvio) contEmpresaEnvio.style.setProperty('display', 'block', 'important');
 
-        // Si tenía seleccionado Punto de Venta, lo cambiamos
-        if (selectPago && selectPago.value === 'Punto de Venta') {
+// Ocultar Punto de Venta y Efectivo USD
+        if (opcionPuntoVenta) opcionPuntoVenta.style.setProperty('display', 'none', 'important');
+        if (opcionEfectivo) opcionEfectivo.style.setProperty('display', 'none', 'important');
+
+        // Si tenía seleccionado Punto de Venta o Efectivo, lo cambiamos automáticamente a Pago Móvil
+        if (selectPago && (selectPago.value === 'Punto de Venta' || selectPago.value === 'Efectivo USD')) {
             selectPago.value = 'Pago Móvil';
         }
-        if (opcionPuntoVenta) opcionPuntoVenta.style.setProperty('display', 'none', 'important');
-
     } else {
         // --- 3. DELIVERY A DOMICILIO ---
         if (contZona) contZona.style.setProperty('display', 'block', 'important');
@@ -474,6 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
             modalWsp.style.display = 'none';
         });
     }
+    
     if (formWspDatos) {
         formWspDatos.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -482,27 +506,21 @@ document.addEventListener("DOMContentLoaded", () => {
             let listaProductos = typeof productosData !== 'undefined' ? productosData : [];
 
             const nombre = document.getElementById('wsp-nombre').value;
-            const sucursalSeleccionada = document.getElementById('wsp-sucursal').value; // 📍 Captura la sucursal seleccionada
+            const sucursalSeleccionada = document.getElementById('wsp-sucursal').value;
             const entrega = document.getElementById('wsp-entrega').value;
             const zona = document.getElementById('wsp-zona').value;
+            const empresaEnvio = document.getElementById('wsp-empresa-envio') ? document.getElementById('wsp-empresa-envio').value : '';
             const pago = document.getElementById('wsp-pago').value;
            
-            // 📍 DICCIONARIO DE GERENTES: Reemplaza estos números con los reales de cada tienda (con código de país)
+            // 📍 DICCIONARIO DE GERENTES
             const numerosGerentes = {
-                "Puerto Ordaz - villa colombia": "5804249081574",     // Cambia por el número real del gerente de Centro
-                "Puerto Ordaz - Alta Vista": "5804121311937",  // Cambia por el número real del gerente de Alta Vista
-                "puerto ordaz- unare": "5804249081574"         // Cambia por el número real del gerente de Valencia
+                "Puerto Ordaz - villa colombia": "5804249081574",    
+                "Puerto Ordaz - Alta Vista": "5804249081574",  
+                "puerto ordaz- unare": "5804121311937"         
             };
 
-            // Busca el número de la sucursal, si no encuentra usa el número global por defecto
             const numeroDestino = numerosGerentes[sucursalSeleccionada] || numeroWhatsAppGlobal;
 
-            const tieneLicores = carrito.some(item => {
-                let prodOriginal = listaProductos.find(p => p.id === item.id || p.nombre === item.nombre);
-                return prodOriginal && (prodOriginal.categoria === "rones" || prodOriginal.categoria === "licores");
-            });
-
-          
             // 📍 EMPAQUETAR TODOS LOS DATOS PARA LA ORDEN DE PEDIDO VISUAL
             const datosPedidoFactura = {
                 fecha: new Date().toLocaleString(),
@@ -510,54 +528,64 @@ document.addEventListener("DOMContentLoaded", () => {
                 cliente: nombre,
                 entrega: entrega,
                 zona: zona || 'N/A',
+                empresaEnvio: empresaEnvio || 'N/A',
                 pago: pago,
                 productos: carrito
             };
 
-            // Convertimos a JSON y lo codificamos para que viaje seguro por la URL
             const jsonString = JSON.stringify(datosPedidoFactura);
             const datosCodificados = encodeURIComponent(jsonString);
 
-            // Construcción del mensaje indicando la sucursal de destino
+            // Construcción del mensaje para WhatsApp
             let mensaje = `*¡Hola! Nuevo Pedido Web 🛒*\n`;
             mensaje += `📍 *Sucursal Destino:* ${sucursalSeleccionada}\n\n`;
             mensaje += `👤 *Cliente:* ${nombre}\n`;
             mensaje += `🚚 *Método de Entrega:* ${entrega}\n`;
             
-            if (entrega !== 'Retirar en Tienda') {
+            // Si es Envío Nacional, añadimos la empresa elegida y la agencia/dirección
+            if (entrega === 'Envio Nacional') {
+                mensaje += `📦 *Empresa de Envío:* ${empresaEnvio}\n`;
+                mensaje += `📍 *Destino / Agencia:* ${zona}\n`;
+            } else if (entrega === 'Delivery') {
                 mensaje += `📍 *Zona / Sector:* ${zona}\n`;
             }
 
             mensaje += `💳 *Método de Pago:* ${pago}\n`;
-
             mensaje += `\n*Detalle del pedido:*\n`;
 
-            let totalGeneral = 0;
+            let totalGeneralUsd = 0;
             carrito.forEach((item, index) => {
                 let subtotal = item.precio * item.cantidad;
-                totalGeneral += subtotal;
+                totalGeneralUsd += subtotal;
 
                 let detallesExtra = "";
                 if (item.talla && item.talla !== 'N/A') detallesExtra += ` (Talla: ${item.talla})`;
                 if (item.color && item.color !== 'N/A') detallesExtra += ` (Color: ${item.color})`;
 
-                mensaje += `${index + 1}. *${item.nombre}* x${item.cantidad} - $${subtotal}${detallesExtra}\n`;
+                // Imprimimos cada producto limpio
+                mensaje += `${index + 1}. *${item.nombre}* x${item.cantidad} - ${formatearPrecio(subtotal)}${detallesExtra}\n`;
             });
 
-            mensaje += `\n💰 *Total a pagar: $${totalGeneral} USD*\n`;
+            // 💡 CÁLCULO DE AMBOS TOTALES (USD y VES) PARA EL MENSAJE FINAL
+            const tasa = typeof tasaCambioBCV !== 'undefined' ? tasaCambioBCV : 36.50;
+            const totalBs = totalGeneralUsd * tasa;
+            const totalBsFormateado = totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-            // 🔗 ENLACE DE LA ORDEN VISUAL CON DATOS INTEGRADOS
+            mensaje += `\n💰 *TOTAL A PAGAR:*\n`;
+            mensaje += `• $${totalGeneralUsd.toFixed(2)} USD\n`;
+            mensaje += `• Bs. ${totalBsFormateado}\n`;
+
+            // 🔗 ENLACE DE LA ORDEN VISUAL
             let urlBase = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
             let urlFacturaVisual = `${urlBase}/factura.html?data=${datosCodificados}`;
             
             mensaje += `\n🔗 *Ver orden visual y fotos:* ${urlFacturaVisual}\n`;
-
             mensaje += `\n¿Me confirman disponibilidad y métodos de pago?`;
 
             let mensajeCodificado = encodeURIComponent(mensaje);
             let urlWhatsApp = `https://wa.me/${numeroDestino}?text=${mensajeCodificado}`;
 
-           window.location.href = urlWhatsApp;
+            window.location.href = urlWhatsApp;
             if (modalWsp) modalWsp.style.display = 'none';
         });
     }
@@ -677,3 +705,15 @@ function actualizarContadorCarrito() {
 
 // Ejecutar automáticamente al cargar la página
 document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+
+function formatearPrecio(precioUsd) {
+    const tasa = typeof tasaCambioBCV !== 'undefined' ? tasaCambioBCV : 36.50;
+    const moneda = typeof monedaActual !== 'undefined' ? monedaActual : 'USD';
+    
+    if (moneda === 'VES') {
+        const bs = precioUsd * tasa;
+        return `Bs. ${bs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    } else {
+        return `$${precioUsd.toFixed(2)}`;
+    }
+}

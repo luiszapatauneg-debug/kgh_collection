@@ -710,12 +710,21 @@ async function obtenerTasaBCVAutomatica() {
 }
 
 // 2. Función que cambia la moneda seleccionada y la guarda en la memoria
+// Función universal para cambiar la moneda en todo el sitio
 function cambiarMoneda(nuevaMoneda) {
     monedaActual = nuevaMoneda;
-    localStorage.setItem('monedaSeleccionada', nuevaMoneda); // 👈 Esto evita que se reinicie al cambiar de categoría
-    actualizarPreciosEnPantalla();
+    localStorage.setItem('monedaSeleccionada', nuevaMoneda);
+    
+    // 1. Si estamos en el inicio o catálogo, actualiza los precios normales
+    if (typeof actualizarPreciosEnPantalla === 'function') {
+        actualizarPreciosEnPantalla();
+    }
+    
+    // 2. 💡 SI ESTAMOS EN EL CARRITO, actualiza y vuelve a pintar los productos de inmediato
+    if (typeof renderizarCarritoVisual === 'function') {
+        renderizarCarritoVisual();
+    }
 }
-
 // 3. Recorre y actualiza todos los precios de los productos en el DOM
 function actualizarPreciosEnPantalla() {
     const tasa = typeof tasaCambioBCV !== 'undefined' ? tasaCambioBCV : 36.50;
