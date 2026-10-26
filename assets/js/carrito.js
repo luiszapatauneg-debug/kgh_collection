@@ -399,9 +399,13 @@ function finalizarCompraWhatsApp(numeroWhatsApp) {
     // Mostrar modal de datos
 
     const modalWsp = document.getElementById('modal-whatsapp');
-
-    if (modalWsp) modalWsp.style.display = 'flex';
-
+    if (modalWsp) {
+        modalWsp.style.display = 'flex';
+        
+        // 💡 COLÓCALO AQUÍ EXACTAMENTE: 
+        // Esto obliga a que el formulario lea la opción seleccionada y se pinte bien al instante
+        actualizarOpcionesEntrega(); 
+    }
 }
 
 
