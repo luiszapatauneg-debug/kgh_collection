@@ -1633,10 +1633,16 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "dorado",
+                "hex": "#cab555",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS PEQ DE CORAZON METALICO DORADO.jpeg",
-                "stock": 3
+                "stock": 2
+            },
+             {
+                "nombre": "plateado",
+                "hex": "#757575",
+                "foto": "images/fotos_productos/accesorios/ZARCILLOS PEQ DE CORAZON METALICO PLATEADO.jpeg",
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -1655,17 +1661,31 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/ARETES PLATEADOS MEDIANOS.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/ARETES PLATEADOS MEDIANOS.jpeg",
-            "images/fotos_productos/accesorios/ARETES MEDIANOS  DORADOS CON JOYAS MEDIANAS.jpeg"
+            "images/fotos_productos/accesorios/ARETES MEDIANOS  DORADOS CON JOYAS MEDIANAS.jpeg",
+            "images/fotos_productos/accesorios/ARETES DORADOS MEDIANOS CON JOYAS PEQUEÑAS.jpeg"
+
         ],
         "tallas": [
             "MEDIANO"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "ARETES PLATEADOS MEDIANOS",
+                "hex": "#8a8888",
                 "foto": "images/fotos_productos/accesorios/ARETES PLATEADOS MEDIANOS.jpeg",
-                "stock": 5
+                "stock": 1
+            },
+              {
+                "nombre": "ARETES MEDIANOS  DORADOS CON JOYAS MEDIANAS",
+                "hex": "#d1b569",
+                "foto": "images/fotos_productos/accesorios/ARETES MEDIANOS  DORADOS CON JOYAS MEDIANAS.jpeg",
+                "stock": 2
+            },
+              {
+                "nombre": "ARETES DORADOS MEDIANOS CON JOYAS PEQUEÑAS",
+                "hex": "#d1b569",
+                "foto": "images/fotos_productos/accesorios/ARETES DORADOS MEDIANOS CON JOYAS PEQUEÑAS.jpeg",
+                "stock": 2
             }
         ],
         "stock": 5,
@@ -1684,7 +1704,8 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/COLLARES DE PERLA GRIS CON BLANCO.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/COLLARES DE PERLA GRIS CON BLANCO.jpeg",
-            "images/fotos_productos/accesorios/COLLARES DE PERLA NEGRO CON BLANCO.jpeg"
+            "images/fotos_productos/accesorios/COLLARES DE PERLA NEGRO CON BLANCO.jpeg",
+            "images/fotos_productos/accesorios/COLLARES DE PERLA ROJO CON BLANCO.jpeg"
         ],
         "tallas": [
             "MEDIANO"
@@ -1694,13 +1715,19 @@ window.productosData = [
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/accesorios/COLLARES DE PERLA GRIS CON BLANCO.jpeg",
-                "stock": 3
+                "stock": 1
             },
             {
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/accesorios/COLLARES DE PERLA NEGRO CON BLANCO.jpeg",
-                "stock": 3
+                "stock": 1
+            },
+              {
+                "nombre": "rojo con blanco",
+                "hex": "#eb5858",
+                "foto": "images/fotos_productos/accesorios/COLLARES DE PERLA ROJO CON BLANCO.jpeg",
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -1944,7 +1971,8 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/COLLAR VAN CLEEF NEGRO.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/COLLAR VAN CLEEF NEGRO.jpeg",
-            "images/fotos_productos/accesorios/COLLAR VAN CLEEF ROJO.jpeg"
+            "images/fotos_productos/accesorios/COLLAR VAN CLEEF ROJO.jpeg",
+            "images/fotos_productos/accesorios/COLLAR VAN CLEEF VERDE.jpeg"
         ],
         "tallas": [
             "SIN TALLA"
@@ -1954,13 +1982,19 @@ window.productosData = [
                 "nombre": "negro",
                 "hex": "#000000",
                 "foto": "images/fotos_productos/accesorios/COLLAR VAN CLEEF NEGRO.jpeg",
-                "stock": 6
+                "stock": 2
             },
             {
                 "nombre": "rojo",
                 "hex": "#FF0000",
                 "foto": "images/fotos_productos/accesorios/COLLAR VAN CLEEF ROJO.jpeg",
-                "stock": 6
+                "stock": 2
+            },
+            {
+                "nombre": "verde",
+                "hex": "#43c51b",
+                "foto": "images/fotos_productos/accesorios/COLLAR VAN CLEEF VERDE.jpeg",
+                "stock": 2
             }
         ],
         "stock": 6,
@@ -1979,7 +2013,8 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/ZARCILLOS VAN CLEEF BLANCOS.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/ZARCILLOS VAN CLEEF BLANCOS.jpeg",
-            "images/fotos_productos/accesorios/ZARCILLOS VAN CLEEF DORADOS.jpeg"
+            "images/fotos_productos/accesorios/ZARCILLOS VAN CLEEF DORADOS.jpeg",
+            "images/fotos_productos/accesorios/ZARCILLOS VAN CLEEF NEGROS.jpeg"
         ],
         "tallas": [
             "PEQUEÑO"
@@ -1989,13 +2024,19 @@ window.productosData = [
                 "nombre": "blanco",
                 "hex": "#FFFFFF",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS VAN CLEEF BLANCOS.jpeg",
-                "stock": 6
+                "stock": 2
             },
             {
                 "nombre": "negro",
                 "hex": "#000000",
+                "foto": "images/fotos_productos/accesorios/ZARCILLOS VAN CLEEF NEGROS.jpeg",
+                "stock": 2
+            },
+            {
+                "nombre": "dorado",
+                "hex": "#d1af51",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS VAN CLEEF DORADOS.jpeg",
-                "stock": 6
+                "stock": 2
             }
         ],
         "stock": 6,
@@ -2014,17 +2055,37 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/ZARCILLOS CON JOYA CUADRADO.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/ZARCILLOS CON JOYA CUADRADO.jpeg",
-            "images/fotos_productos/accesorios/ZARCILLOS CON JOYA DE CORAZON CON JOYA PEQUEÑA.jpeg"
+            "images/fotos_productos/accesorios/ZARCILLOS CON JOYA DE CORAZON CON JOYA PEQUEÑA.jpeg",
+             "images/fotos_productos/accesorios/ZARCILLOS CON JOYA DE CORAZON.jpeg",
+              "images/fotos_productos/accesorios/ZARCILLOS CON JOYA DE ESTRELLA.jpeg"
         ],
         "tallas": [
             "PEQUEÑO"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "DORADO 1",
+                "hex": "#cea54d",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS CON JOYA CUADRADO.jpeg",
-                "stock": 6
+                "stock": 2
+            },
+             {
+                "nombre": "DORADO 2",
+                "hex": "#cea54d",
+                "foto": "images/fotos_productos/accesorios/ZARCILLOS CON JOYA DE CORAZON CON JOYA PEQUEÑA.jpeg",
+                "stock": 1
+            },
+             {
+                "nombre": "DORADO 3",
+                "hex": "#cea54d",
+                "foto": "images/fotos_productos/accesorios/ZARCILLOS CON JOYA DE CORAZON.jpeg",
+                "stock": 2
+            },
+             {
+                "nombre": "DORADO 4",
+                "hex": "#cea54d",
+                "foto": "images/fotos_productos/accesorios/ZARCILLOS CON JOYA DE ESTRELLA.jpeg",
+                "stock": 1
             }
         ],
         "stock": 6,
@@ -2071,17 +2132,44 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/ARETES PEQUEÑOS  DORADO CON JOYAS PEQUEÑO.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/ARETES PEQUEÑOS  DORADO CON JOYAS PEQUEÑO.jpeg",
-            "images/fotos_productos/accesorios/ARETES PEQUEÑOS  PLATEADO CON JOYAS MEDIADO.jpeg"
+            "images/fotos_productos/accesorios/ARETES PEQUEÑOS  PLATEADO CON JOYAS MEDIANO.jpeg",
+             "images/fotos_productos/accesorios/ARETES PEQUEÑOS  PLATEADO CON JOYAS PEQUEÑO.jpeg",
+              "images/fotos_productos/accesorios/ARETES  DORADOS.jpeg",
+               "images/fotos_productos/accesorios/DORADO CON UNA JOYA GRANDE.jpeg"
         ],
         "tallas": [
             "PEQUEÑO"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "DORADO 1",
+                "hex": "#c7a956",
                 "foto": "images/fotos_productos/accesorios/ARETES PEQUEÑOS  DORADO CON JOYAS PEQUEÑO.jpeg",
-                "stock": 5
+                "stock": 1
+            },
+             {
+                "nombre": "DORADO 2",
+                "hex": "#c7a956",
+                "foto": "images/fotos_productos/accesorios/ARETES PEQUEÑOS  PLATEADO CON JOYAS MEDIANO.jpeg",
+                "stock": 1
+            },
+             {
+                "nombre": "DORADO 3",
+                "hex": "#c7a956",
+                "foto": "images/fotos_productos/accesorios/ARETES PEQUEÑOS  PLATEADO CON JOYAS PEQUEÑO.jpeg",
+                "stock": 1
+            },
+             {
+                "nombre": "DORADO 4",
+                "hex": "#c7a956",
+                "foto": "images/fotos_productos/accesorios/ARETES  DORADOS.jpeg",
+                "stock": 1
+            },
+             {
+                "nombre": "DORADO 5",
+                "hex": "#cfb665",
+                "foto": "images/fotos_productos/accesorios/DORADO CON UNA JOYA GRANDE.jpeg",
+                "stock": 1
             }
         ],
         "stock": 5,
@@ -2134,8 +2222,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "DORADO",
+                "hex": "#c4944e",
                 "foto": "images/fotos_productos/accesorios/ANIMAL PRINT DORADO.jpeg",
                 "stock": 1
             }
@@ -2162,8 +2250,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "DORADO",
+                "hex": "#c9a054",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS  DE CORAZON ANIMAL PRINT DORADO.jpeg",
                 "stock": 1
             }
@@ -2190,8 +2278,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "PLATEADOS",
+                "hex": "#525252",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS REDONDOS  PLATEADOS MEDIANOS.jpeg",
                 "stock": 1
             }
@@ -2218,8 +2306,8 @@ window.productosData = [
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "TORNASOL",
+                "hex": "#9e5252",
                 "foto": "images/fotos_productos/accesorios/ZARCILLOS REDONDOS  TORNASOL MEDIANOS PARA GUINDAR.jpeg",
                 "stock": 1
             }
@@ -2240,17 +2328,44 @@ window.productosData = [
         "imagen": "images/fotos_productos/accesorios/SET DE ZARCILLOS DE CORAZON CON ARETES CON JOYA.jpeg",
         "fotosExtras": [
             "images/fotos_productos/accesorios/SET DE ZARCILLOS DE CORAZON CON ARETES CON JOYA.jpeg",
-            "images/fotos_productos/accesorios/SET DE ZARCILLOS DE CORAZON CON ARETES DORADO.jpeg"
+            "images/fotos_productos/accesorios/SET DE ZARCILLOS DE CORAZON CON ARETES DORADO.jpeg",
+            "images/fotos_productos/accesorios/SET DE ZARCILLOS DE NUDO Y ZARCILLO DE CORAZON Y PEQUEÑA JOYA.jpeg",
+            "images/fotos_productos/accesorios/SET DE ZARCILLOS DE NUDO Y ZARCILLO DE ESTRELLA Y PEQUEÑA JOYA.jpeg",
+            "images/fotos_productos/accesorios/SETS DE ZARCILLOS DE PIÑA CON ARETES DORADO.jpeg"
         ],
         "tallas": [
             "VARIADOS"
         ],
         "colores": [
             {
-                "nombre": "único",
-                "hex": "#CCCCCC",
+                "nombre": "DORADO 1",
+                "hex": "#b88944",
                 "foto": "images/fotos_productos/accesorios/SET DE ZARCILLOS DE CORAZON CON ARETES CON JOYA.jpeg",
-                "stock": 5
+                "stock": 1
+            },
+              {
+                "nombre": "DORADO 2",
+                "hex": "#b88944",
+                "foto": "images/fotos_productos/accesorios/SET DE ZARCILLOS DE CORAZON CON ARETES DORADO.jpeg",
+                "stock": 1
+            },
+              {
+                "nombre": "DORADO 3",
+                "hex": "#b88944",
+                "foto": "images/fotos_productos/accesorios/SET DE ZARCILLOS DE NUDO Y ZARCILLO DE CORAZON Y PEQUEÑA JOYA.jpeg",
+                "stock": 1
+            },
+              {
+                "nombre": "DORADO 4",
+                "hex": "#ceb04f",
+                "foto": "images/fotos_productos/accesorios/SET DE ZARCILLOS DE NUDO Y ZARCILLO DE ESTRELLA Y PEQUEÑA JOYA.jpeg",
+                "stock": 1
+            },
+              {
+                "nombre": "DORADO 5",
+                "hex": "#b88944",
+                "foto": "images/fotos_productos/accesorios/SETS DE ZARCILLOS DE PIÑA CON ARETES DORADO.jpeg",
+                "stock": 1
             }
         ],
         "stock": 5,
@@ -4046,34 +4161,7 @@ window.productosData = [
             "Stock disponible: 1"
         ]
     },
-    {
-        "id": "len009",
-        "nombre": "LENTES MONTURA NEGRA CON CRISTAL AZUL Y PATAS MARRON ANIMAL PRINT",
-        "precio": 35.0,
-        "categoria": "dama-lentes",
-        "marca": "sin marca",
-        "imagen": "images/fotos_productos/lentes/LENTES MONTURA NEGRA CON CRISTAL AZUL Y PATAS MARRON ANIMAL PRINT.jpeg",
-        "fotosExtras": [
-            "images/fotos_productos/lentes/LENTES MONTURA NEGRA CON CRISTAL AZUL Y PATAS MARRON ANIMAL PRINT.jpeg"
-        ],
-        "tallas": [
-            "SIN TALLA"
-        ],
-        "colores": [
-            {
-                "nombre": "azul",
-                "hex": "#0000FF",
-                "foto": "images/fotos_productos/lentes/LENTES MONTURA NEGRA CON CRISTAL AZUL Y PATAS MARRON ANIMAL PRINT.jpeg",
-                "stock": 0
-            }
-        ],
-        "stock": 0,
-        "descripcion": "LENTES MONTURA NEGRA CON CRISTAL AZUL Y MARRON",
-        "detalles": [
-            "Categoría:  lentes",
-            "Stock disponible: 0"
-        ]
-    },
+    
     {
         "id": "len010",
         "nombre": "LENTES MONTURA CUADRADA DORADA",
@@ -4277,9 +4365,9 @@ window.productosData = [
         "precio": 35.0,
         "categoria": "dama-lentes",
         "marca": "sin marca",
-        "imagen": "images/fotos_productos/lentes/LENTES MARRON A. PRINT  CON PATAS VINOTINTO CON CRISTALES MARRON",
+        "imagen": "images/fotos_productos/lentes/LENTES MARRON A. PRINT  CON PATAS VINOTINTO CON CRISTALES MARRON_.jpg",
         "fotosExtras": [
-            "images/fotos_productos/lentes/LENTES MARRON A. PRINT  CON PATAS VINOTINTO CON CRISTALES MARRON"
+            "images/fotos_productos/lentes/LENTES MARRON A. PRINT  CON PATAS VINOTINTO CON CRISTALES MARRON_.jpg"
         ],
         "tallas": [
             "SIN TALLA"
@@ -4288,7 +4376,7 @@ window.productosData = [
             {
                 "nombre": "marron",
                 "hex": "#8B4513",
-                "foto": "images/fotos_productos/lentes/LENTES MARRON A. PRINT  CON PATAS VINOTINTO CON CRISTALES MARRON",
+                "foto": "images/fotos_productos/lentes/LENTES MARRON A. PRINT  CON PATAS VINOTINTO CON CRISTALES MARRON_.jpg",
                 "stock": 1
             }
         ],
@@ -8497,7 +8585,7 @@ window.productosData = [
                 "nombre": "gris",
                 "hex": "#808080",
                 "foto": "images/fotos_productos/pantalones/PANTALON DE VESTIR GRIS KGH.jpeg",
-                "stock": 3
+                "stock": 1
             }
         ],
         "stock": 3,
@@ -8746,10 +8834,10 @@ window.productosData = [
         "precio": 35.0,
         "categoria": "dama-pantalones",
         "marca": "kgh",
-        "imagen": "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES .png",
+        "imagen": "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES  FOTO 2.jpeg",
         "fotosExtras": [
             "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES .png",
-            "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES.jpeg"
+            "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES  FOTO 2.jpeg"
         ],
         "tallas": [
             "M","S",
@@ -8758,7 +8846,7 @@ window.productosData = [
             {
                 "nombre": "mostaza",
                 "hex": "#FFDB58",
-                "foto": "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES .png",
+                "foto": "images/fotos_productos/pantalones/JOGGER MOSTAZA CON BOLSILLOS LATERALES  FOTO 2.jpeg",
                 "stock": 1
             }
         ],
