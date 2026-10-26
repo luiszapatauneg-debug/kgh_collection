@@ -537,7 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // 📍 DICCIONARIO DE GERENTES
             const numerosGerentes = {
                 "Puerto Ordaz - villa colombia": "5804249081574",    
-                "Puerto Ordaz - Alta Vista": "5804249081574",  
+                "Puerto Ordaz - Alta Vista": "5804121311937",  
                 "puerto ordaz- unare": "5804121311937"         
             };
 
