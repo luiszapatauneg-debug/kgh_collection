@@ -173,6 +173,63 @@ img.img-modal-detalle {
     border-color: rgb(247, 244, 69) !important;
 }
 
+/* ==========================================
+   SCROLL HORIZONTAL PARA MINIATURAS Y COLORES
+   ========================================== */
+
+/* Contenedor horizontal para las fotos secundarias / miniaturas */
+.modal-miniaturas-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 2px;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 15px;
+}
+
+/* Estilo de cada miniatura dentro del modal */
+.modal-miniatura-img {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    border: 2px solid #444 !important;
+    flex-shrink: 0 !important;
+    -webkit-user-drag: none; /* Evita el arrastre fantasma en navegadores */
+    user-select: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Efecto cuando la miniatura está seleccionada */
+.modal-miniatura-img.seleccionada {
+    border-color: rgb(221, 195, 81) !important;
+}
+
+/* Contenedor horizontal para los selectores de colores */
+.modal-colores-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px 0;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Opcional: Barra de desplazamiento sutil y elegante */
+.modal-miniaturas-container::-webkit-scrollbar,
+.modal-colores-container::-webkit-scrollbar {
+    height: 4px;
+}
+.modal-miniaturas-container::-webkit-scrollbar-thumb,
+.modal-colores-container::-webkit-scrollbar-thumb {
+    background: rgb(221, 195, 81);
+    border-radius: 4px;
+}
+
 /* ========================================== */
 /* ESTILOS PARA EL PANEL Y BOTÓN DE FILTROS   */
 /* ========================================== */

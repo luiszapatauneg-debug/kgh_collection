@@ -341,7 +341,7 @@ let htmlPrecio = producto.precioTachado
         opcionesHTML += `
             <div style="margin-bottom:10px;">
                 <label><strong>Color:</strong></label>
-                <div id="modal-select-color" style="display:flex; gap:10px; margin-top:5px;">
+                <div id="modal-select-color" class="modal-colores-container" style="display:flex; gap:10px; margin-top:5px;">
                     ${producto.colores.map((c, index) => {
                         let bordeColor = (index === 0) ? '#000' : '#ccc';
                         let stockColorVisual = c.stock !== undefined ? c.stock : 'N/D';
@@ -356,7 +356,6 @@ let htmlPrecio = producto.precioTachado
                 </div>
             </div>`;
     }
-
     // 5. Calcular el stock inicial utilizando nuestra función maestra
     let stockInicial = obtenerStockActual(producto, nombreColorInicial, nombreTallaInicial);
 
@@ -375,20 +374,26 @@ let htmlPrecio = producto.precioTachado
     opcionesHTML += `</div>`;
     document.getElementById('modal-descripcion').insertAdjacentHTML('afterend', opcionesHTML);
 
-    // Miniaturas
+   // Miniaturas con soporte de scroll horizontal seguro
     const contenedorMiniaturas = document.getElementById('modal-miniaturas');
     if (contenedorMiniaturas) {
         contenedorMiniaturas.innerHTML = '';
         if (producto.fotosExtras && producto.fotosExtras.length > 0) {
+            // 💡 Le asignamos la clase de scroll horizontal que creamos en el CSS
+            contenedorMiniaturas.className = 'modal-miniaturas-container';
+
             producto.fotosExtras.forEach(foto => {
                 const imgMini = document.createElement('img');
                 imgMini.src = foto;
-                imgMini.style.width = '60px';
-                imgMini.style.height = '60px';
-                imgMini.style.objectFit = 'cover';
-                imgMini.style.borderRadius = '6px';
-                imgMini.style.cursor = 'pointer';
-                imgMini.onclick = () => { document.getElementById('modal-img').src = foto; };
+                imgMini.className = 'modal-miniatura-img'; // 👈 Clase CSS unificada
+                imgMini.setAttribute('draggable', 'false'); // 👈 Evita el arrastre fantasma en móviles
+                
+                imgMini.onclick = () => { 
+                    document.getElementById('modal-img').src = foto; 
+                    // Opcional: marcar visualmente cuál está seleccionada
+                    contenedorMiniaturas.querySelectorAll('img').forEach(i => i.classList.remove('seleccionada'));
+                    imgMini.classList.add('seleccionada');
+                };
                 contenedorMiniaturas.appendChild(imgMini);
             });
         }
