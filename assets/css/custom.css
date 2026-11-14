@@ -183,26 +183,30 @@ img.img-modal-detalle {
     gap: 10px;
     overflow-x: auto;
     white-space: nowrap;
-    flex-wrap: nowrap; /* 👈 Evita que se bajen de línea */
     padding: 8px 2px;
     max-width: 100%;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x; /* 👈 Obliga al celular a permitir el scroll horizontal fluido */
     margin-bottom: 15px;
+      flex-wrap: nowrap!important; /* 👈 Evita que se bajen de línea */
+touch-action: pan-x!important;/* 👈 Obliga al celular a permitir el scroll horizontal fluido */
 }
 
-/* Contenedor horizontal para los selectores de colores */
-.modal-colores-container {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
-    flex-wrap: nowrap; /* 👈 Evita que se bajen de línea */
-    padding: 5px 0;
-    max-width: 100%;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x; /* 👈 Obliga al celular a permitir el scroll horizontal fluido */
+/* Estilo de cada miniatura dentro del modal */
+.modal-miniatura-img {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    border: 2px solid #444 !important;
+    flex-shrink: 0 !important;
+    -webkit-user-drag: none; /* Evita el arrastre fantasma en navegadores */
+    user-select: none;
+    transition: border-color 0.2s ease;
+    flex-wrap: nowrap!important;/* 👈 Evita que se bajen de línea */
+touch-action: pan-x !important;/* 👈 Obliga al celular a permitir el scroll horizontal fluido */
 }
+
 /* Efecto cuando la miniatura está seleccionada */
 .modal-miniatura-img.seleccionada {
     border-color: rgb(221, 195, 81) !important;
